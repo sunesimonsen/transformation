@@ -1,0 +1,20 @@
+{
+  "name": "@transformation/core",
+  "version": "1.0.0",
+  "description": "Create transformation pipelines",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": "transformation,automation,pipeline",
+  "author": "Sune Simonsen",
+  "license": "MIT",
+  "dependencies": {
+    "medium": "1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "6.2.2",
+    "unexpected": "11.8.1",
+    "unexpected-steps": "1.0.0"
+  }
+}
