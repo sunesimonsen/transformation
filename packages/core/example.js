@@ -17,13 +17,13 @@ module.exports = pipeline(
   map(row => ({ ...row, value: row.price * row.quantity })),
   map(row => ({ ...row, dkkValue: row.value * row.dkkRate })),
   map(row => ({ ...row, dkkValue: row.value * row.dkkRate })),
-  accumulate({
-    totalPrice: (row, totalPrice) => row.price + totalPrice
-  }),
+  accumulate(
+    (row, previous) => ({
+      ...row,
+      totalPrice: previous.totalPrice + row.price
+    }),
+    { totalPrice: 0 }
+  ),
   sortBy("date"),
-  tapTable({
-    value: "sum",
-    capitalGain: "sum",
-    price: ["min", "max", "average"]
-  })
+  tapTable()
 );
