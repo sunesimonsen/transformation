@@ -1,21 +1,36 @@
-const reduce = require("./reduce");
+const { go, close, chan, put } = require("medium");
+const takeAll = require("./takeAll");
 
-const groupBy = fieldOrSelector => {
+const groupBy = fieldOrSelector => input => {
   const selector =
     typeof fieldOrSelector === "string"
       ? value => value[fieldOrSelector]
       : fieldOrSelector;
 
-  return reduce((grouping, item) => {
-    const key = selector(item);
-    const group = grouping[key];
-    if (group) {
-      group.push(item);
-    } else {
-      grouping[key] = [item];
+  const output = chan();
+
+  go(async () => {
+    const grouping = {};
+    const items = await takeAll(input);
+
+    items.forEach(item => {
+      const key = selector(item);
+      const group = grouping[key];
+      if (group) {
+        group.push(item);
+      } else {
+        grouping[key] = [item];
+      }
+    });
+
+    for (let [key, items] of Object.entries(grouping)) {
+      await put(output, { key, items });
     }
-    return grouping;
-  }, {});
+
+    close(output);
+  });
+
+  return output;
 };
 
 module.exports = groupBy;

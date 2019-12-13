@@ -29,11 +29,15 @@ describe("withGroup", () => {
       "to yield items",
       [
         {
-          GOOG: [
+          key: "GOOG",
+          items: [
             { symbol: "GOOG", price: 1349, label: "GOOG: 1349" },
             { symbol: "GOOG", price: 1351, label: "GOOG: 1351" }
-          ],
-          AAPL: [
+          ]
+        },
+        {
+          key: "AAPL",
+          items: [
             { symbol: "AAPL", price: 274, label: "AAPL: 274" },
             { symbol: "AAPL", price: 275, label: "AAPL: 275" },
             { symbol: "AAPL", price: 279, label: "AAPL: 279" }

@@ -5,18 +5,9 @@ const emitItems = require("./emitItems");
 const tap = require("./tap");
 
 const withGroup = (...steps) =>
-  map(async grouping => {
-    const entries = await Promise.all(
-      Object.keys(grouping).map(async key => [
-        key,
-        await takeAll(pipeline(emitItems(...grouping[key]), ...steps))
-      ])
-    );
-
-    return entries.reduce((result, [key, items]) => {
-      result[key] = items;
-      return result;
-    }, {});
-  });
+  map(async group => ({
+    ...group,
+    items: await takeAll(pipeline(emitItems(...group.items), ...steps))
+  }));
 
 module.exports = withGroup;

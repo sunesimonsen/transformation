@@ -14,7 +14,10 @@ describe("groupBy", () => {
           groupBy(value => (value % 2 === 0 ? "even" : "odd"))
         ),
         "to yield items",
-        [{ even: [0, 2, 4, 6], odd: [1, 3, 5] }]
+        [
+          { key: "even", items: [0, 2, 4, 6] },
+          { key: "odd", items: [1, 3, 5] }
+        ]
       );
     });
   });
@@ -35,11 +38,15 @@ describe("groupBy", () => {
         "to yield items",
         [
           {
-            GOOG: [
+            key: "GOOG",
+            items: [
               { symbol: "GOOG", price: 1349 },
               { symbol: "GOOG", price: 1351 }
-            ],
-            AAPL: [
+            ]
+          },
+          {
+            key: "AAPL",
+            items: [
               { symbol: "AAPL", price: 274 },
               { symbol: "AAPL", price: 275 },
               { symbol: "AAPL", price: 279 }
