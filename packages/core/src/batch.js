@@ -4,16 +4,24 @@ const batch = size => input => {
   const output = chan();
 
   go(async () => {
+    let batchNumber = 0;
     while (true) {
-      let valeu;
+      let value;
       const nextBatch = [];
-      for (var i = 0; i < size; i += 1) {
+      for (let i = 0; i < size; i += 1) {
         value = await take(input);
         if (value === CLOSED) break;
         nextBatch.push(value);
       }
 
-      await put(output, nextBatch);
+      const start = batchNumber * size;
+      const end = start + size - 1;
+      batchNumber++;
+
+      await put(output, {
+        key: `[${start};${end}]`,
+        items: nextBatch
+      });
 
       if (value === CLOSED) break;
     }
