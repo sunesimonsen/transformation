@@ -1,4 +1,3 @@
-const { chan } = require("medium");
 const flush = require("./flush");
 const pipeline = require("./pipeline");
 

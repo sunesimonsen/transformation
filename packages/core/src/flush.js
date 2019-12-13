@@ -8,10 +8,6 @@ const flush = async stepOrChannel => {
     const value = await take(output);
     if (value === CLOSED) break;
   }
-
-  close(output);
-
-  return output;
 };
 
 module.exports = flush;

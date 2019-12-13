@@ -1,5 +1,5 @@
 const forEach = require("./forEach");
-const program = require("./pipeline");
+const program = require("./program");
 
 const takeAll = async stepOrChannel => {
   const result = [];
