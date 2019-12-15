@@ -1,19 +1,24 @@
-const { go, close, chan, put } = require("medium");
-const csv = require("neat-csv");
+const { close, chan, put } = require("medium");
+const csvParser = require("csv-parser");
 const fs = require("fs");
+const { Writable } = require("stream");
 
 const readCSV = (path, options) => {
   const output = chan();
 
-  go(async () => {
-    const rows = await csv(fs.createReadStream(path), options);
-
-    for (let row of rows) {
-      await put(output, row);
-    }
-
-    close(output);
-  });
+  fs.createReadStream(path)
+    .pipe(csvParser(options))
+    .pipe(
+      new Writable({
+        write: (data, encoding, callback) => {
+          put(output, data).then(() => callback());
+        },
+        objectMode: true
+      })
+    )
+    .on("finish", () => {
+      close(output);
+    });
 
   return output;
 };
