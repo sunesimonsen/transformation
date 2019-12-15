@@ -11,10 +11,11 @@
   "license": "MIT",
   "dependencies": {
     "csv-parser": "2.3.2",
+    "csv-writer": "1.5.0",
+    "@transformation/core": "1.0.0",
     "medium": "1.0.2"
   },
   "devDependencies": {
-    "@transformation/core": "1.0.0",
     "mocha": "6.2.2",
     "unexpected": "11.8.1",
     "unexpected-steps": "1.0.0"
