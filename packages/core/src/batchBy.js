@@ -1,5 +1,5 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
-const { createGroup } = require("./Group");
+const Group = require("./Group");
 
 const batchBy = fieldOrSelector => input => {
   const selector =
@@ -17,7 +17,7 @@ const batchBy = fieldOrSelector => input => {
       if (value === CLOSED) {
         await put(
           output,
-          createGroup({
+          Group.create({
             key: batchKey,
             items: nextBatch
           })
@@ -32,7 +32,7 @@ const batchBy = fieldOrSelector => input => {
       } else {
         await put(
           output,
-          createGroup({
+          Group.create({
             key: batchKey,
             items: nextBatch
           })

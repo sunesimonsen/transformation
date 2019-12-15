@@ -1,6 +1,6 @@
 const { go, close, chan, put } = require("medium");
 const takeAll = require("./takeAll");
-const { createGroup } = require("./Group");
+const Group = require("./Group");
 
 const groupBy = fieldOrSelector => input => {
   const selector =
@@ -25,7 +25,7 @@ const groupBy = fieldOrSelector => input => {
     });
 
     for (let [key, items] of Object.entries(grouping)) {
-      await put(output, createGroup({ key, items }));
+      await put(output, Group.create({ key, items }));
     }
 
     close(output);

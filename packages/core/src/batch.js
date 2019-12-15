@@ -1,5 +1,5 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
-const { createGroup } = require("./Group");
+const Group = require("./Group");
 
 const batch = size => input => {
   const output = chan();
@@ -21,7 +21,7 @@ const batch = size => input => {
 
       await put(
         output,
-        createGroup({
+        Group.create({
           key: `[${start};${end}]`,
           items: nextBatch
         })

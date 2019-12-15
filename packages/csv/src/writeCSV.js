@@ -1,19 +1,31 @@
 const { createObjectCsvWriter } = require("csv-writer");
-const { forEach } = require("@transformation/core");
+const { forEach, Group } = require("@transformation/core");
 
-const writeCSV = (path, options = {}) => {
-  let writer;
+const getHeaders = value => {
+  const firstItem = Group.isGroup(value) ? value.items[0] : value;
+
+  return Object.keys(firstItem).map(id => ({ id, title: id }));
+};
+
+const writeCSV = (pathOrFunction, options = {}) => {
+  const writers = {};
   return forEach(async value => {
-    if (!writer) {
-      writer = createObjectCsvWriter({
+    const path =
+      typeof pathOrFunction === "function"
+        ? pathOrFunction(value)
+        : pathOrFunction;
+
+    if (!writers[path]) {
+      writers[path] = createObjectCsvWriter({
         ...options,
-        path: typeof path === "function" ? path(value) : path,
-        header:
-          options.header || Object.keys(value).map(id => ({ id, title: id }))
+        path,
+        header: options.header || getHeaders(value)
       });
     }
 
-    await writer.writeRecords([value]);
+    await writers[path].writeRecords(
+      Group.isGroup(value) ? value.items : [value]
+    );
   });
 };
 

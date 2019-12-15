@@ -1,6 +1,6 @@
 const groupSymbol = Symbol("group");
 
-const createGroup = ({ key, items, ...other }) => {
+const create = ({ key, items, ...other }) => {
   return {
     [groupSymbol]: true,
     key,
@@ -12,6 +12,6 @@ const createGroup = ({ key, items, ...other }) => {
 const isGroup = value => value && groupSymbol in value;
 
 module.exports = {
-  createGroup,
+  create,
   isGroup
 };

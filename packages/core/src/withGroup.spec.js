@@ -6,7 +6,7 @@ const pipeline = require("./pipeline");
 const groupBy = require("./groupBy");
 const map = require("./map");
 const withGroup = require("./withGroup");
-const { createGroup } = require("./Group");
+const Group = require("./Group");
 
 describe("withGroup", () => {
   it("runs the given steps on the items of the incoming groups", async () => {
@@ -29,14 +29,14 @@ describe("withGroup", () => {
       ),
       "to yield items",
       [
-        createGroup({
+        Group.create({
           key: "GOOG",
           items: [
             { symbol: "GOOG", price: 1349, label: "GOOG: 1349" },
             { symbol: "GOOG", price: 1351, label: "GOOG: 1351" }
           ]
         }),
-        createGroup({
+        Group.create({
           key: "AAPL",
           items: [
             { symbol: "AAPL", price: 274, label: "AAPL: 274" },

@@ -1,3 +1,4 @@
+const Group = require("./Group");
 const accumulate = require("./accumulate");
 const batch = require("./batch");
 const buffer = require("./buffer");
@@ -7,7 +8,7 @@ const fanOut = require("./fanOut");
 const filter = require("./filter");
 const flush = require("./flush");
 const forEach = require("./forEach");
-const index = require("./index");
+const groupBy = require("./groupBy");
 const map = require("./map");
 const pipeline = require("./pipeline");
 const program = require("./program");
@@ -22,6 +23,7 @@ const toArray = require("./toArray");
 // TODO forkJoin: fork out and return array
 
 module.exports = {
+  Group,
   accumulate,
   batch,
   buffer,
@@ -31,7 +33,7 @@ module.exports = {
   filter,
   flush,
   forEach,
-  index,
+  groupBy,
   map,
   pipeline,
   program,

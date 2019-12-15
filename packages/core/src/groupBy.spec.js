@@ -4,7 +4,7 @@ const expect = require("unexpected")
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const groupBy = require("./groupBy");
-const { createGroup } = require("./Group");
+const Group = require("./Group");
 
 describe("groupBy", () => {
   describe("when given a function", () => {
@@ -16,8 +16,8 @@ describe("groupBy", () => {
         ),
         "to yield items",
         [
-          createGroup({ key: "even", items: [0, 2, 4, 6] }),
-          createGroup({ key: "odd", items: [1, 3, 5] })
+          Group.create({ key: "even", items: [0, 2, 4, 6] }),
+          Group.create({ key: "odd", items: [1, 3, 5] })
         ]
       );
     });
@@ -38,14 +38,14 @@ describe("groupBy", () => {
         ),
         "to yield items",
         [
-          createGroup({
+          Group.create({
             key: "GOOG",
             items: [
               { symbol: "GOOG", price: 1349 },
               { symbol: "GOOG", price: 1351 }
             ]
           }),
-          createGroup({
+          Group.create({
             key: "AAPL",
             items: [
               { symbol: "AAPL", price: 274 },

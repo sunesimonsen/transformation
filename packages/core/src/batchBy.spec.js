@@ -4,7 +4,7 @@ const expect = require("unexpected")
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const batchBy = require("./batchBy");
-const { createGroup } = require("./Group");
+const Group = require("./Group");
 
 describe("batchBy", () => {
   describe("when given a function", () => {
@@ -22,22 +22,22 @@ describe("batchBy", () => {
         ),
         "to yield items",
         [
-          createGroup({
+          Group.create({
             key: "GOOG",
             items: [{ symbol: "GOOG", price: 1349 }]
           }),
-          createGroup({
+          Group.create({
             key: "AAPL",
             items: [
               { symbol: "AAPL", price: 274 },
               { symbol: "AAPL", price: 275 }
             ]
           }),
-          createGroup({
+          Group.create({
             key: "GOOG",
             items: [{ symbol: "GOOG", price: 1351 }]
           }),
-          createGroup({
+          Group.create({
             key: "AAPL",
             items: [{ symbol: "AAPL", price: 279 }]
           })
@@ -61,22 +61,22 @@ describe("batchBy", () => {
         ),
         "to yield items",
         [
-          createGroup({
+          Group.create({
             key: "GOOG",
             items: [{ symbol: "GOOG", price: 1349 }]
           }),
-          createGroup({
+          Group.create({
             key: "AAPL",
             items: [
               { symbol: "AAPL", price: 274 },
               { symbol: "AAPL", price: 275 }
             ]
           }),
-          createGroup({
+          Group.create({
             key: "GOOG",
             items: [{ symbol: "GOOG", price: 1351 }]
           }),
-          createGroup({
+          Group.create({
             key: "AAPL",
             items: [{ symbol: "AAPL", price: 279 }]
           })
