@@ -7,7 +7,7 @@ const writeCSV = (path, options = {}) => {
     if (!writer) {
       writer = createObjectCsvWriter({
         ...options,
-        path,
+        path: typeof path === "function" ? path(value) : path,
         header:
           options.header || Object.keys(value).map(id => ({ id, title: id }))
       });
