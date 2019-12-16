@@ -1,6 +1,6 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
 
-const splitArrays = () => input => {
+const splitArray = () => input => {
   const output = chan();
 
   go(async () => {
@@ -22,4 +22,4 @@ const splitArrays = () => input => {
   return output;
 };
 
-module.exports = splitArrays;
+module.exports = splitArray;

@@ -14,7 +14,7 @@ const pipeline = require("./pipeline");
 const program = require("./program");
 const reduce = require("./reduce");
 const sortBy = require("./sortBy");
-const splitArrays = require("./splitArrays");
+const splitArray = require("./splitArray");
 const takeAll = require("./takeAll");
 const tap = require("./tap");
 const toArray = require("./toArray");
@@ -39,7 +39,7 @@ module.exports = {
   program,
   reduce,
   sortBy,
-  splitArrays,
+  splitArray,
   takeAll,
   tap,
   toArray
