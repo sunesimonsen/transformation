@@ -3,7 +3,7 @@ const expect = require("unexpected")
   .use(require("unexpected-steps"));
 
 const path = require("path");
-const { pipeline } = require("@transformation/core");
+const { program, pipeline } = require("@transformation/core");
 const readCSV = require("./readCSV");
 
 const csvFilePath = path.join(__dirname, "..", "test", "test.csv");
@@ -233,5 +233,25 @@ describe("readCSV", () => {
         type: "earthquake"
       }
     ]);
+  });
+
+  it("fails if the file doesn't exists", async () => {
+    await expect(
+      program(readCSV("wat")),
+      "to be rejected with",
+      new Error("ENOENT: no such file or directory, open 'wat'")
+    );
+  });
+
+  it("fails if the file can't be parsed", async () => {
+    await expect(
+      program(
+        readCSV(csvFilePath, {
+          maxRowBytes: 10
+        })
+      ),
+      "to be rejected with",
+      new Error("Row exceeds the maximum size")
+    );
   });
 });

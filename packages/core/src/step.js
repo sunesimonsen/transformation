@@ -1,14 +1,19 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
 
-const step = body => input => {
+const step = body => (input, errors) => {
   const output = chan();
 
   const takeWrapper = () => take(input);
   const putWrapper = value => put(output, value);
 
   go(async () => {
-    await body(takeWrapper, putWrapper, CLOSED);
-    close(output);
+    try {
+      await body(takeWrapper, putWrapper, CLOSED);
+    } catch (err) {
+      await put(errors, err);
+    } finally {
+      close(output);
+    }
   });
 
   return output;

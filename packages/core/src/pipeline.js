@@ -1,12 +1,12 @@
 const { chan } = require("medium");
 
-const pipeline = (...steps) => input => {
+const pipeline = (...steps) => (input, errors) => {
   let channel = input || chan();
 
   steps.forEach(stepOrChannel => {
     channel =
       typeof stepOrChannel === "function"
-        ? stepOrChannel(channel)
+        ? stepOrChannel(channel, errors)
         : stepOrChannel;
   });
 

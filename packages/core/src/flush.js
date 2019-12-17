@@ -1,11 +1,22 @@
-const { chan, CLOSED, take, close } = require("medium");
+const { chan, CLOSED, take } = require("medium");
 
 const flush = async stepOrChannel => {
+  const input = chan();
+  const errors = chan();
   const output =
-    typeof stepOrChannel === "function" ? stepOrChannel(chan()) : stepOrChannel;
+    typeof stepOrChannel === "function"
+      ? stepOrChannel(input, errors)
+      : stepOrChannel;
+
+  let error = null;
+
+  take(errors).then(e => {
+    error = e;
+  });
 
   while (true) {
     const value = await take(output);
+    if (error) throw error;
     if (value === CLOSED) break;
   }
 };

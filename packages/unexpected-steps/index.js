@@ -2,10 +2,17 @@ const { chan, take, CLOSED } = require("medium");
 
 const takeAll = async step => {
   const result = [];
-  const output = step(chan());
+  const errors = chan();
+  const output = step(chan(), errors);
+
+  let error = null;
+  take(errors).then(e => {
+    error = e;
+  });
 
   while (true) {
     const value = await take(output);
+    if (error) throw error;
     if (value === CLOSED) break;
     result.push(value);
   }
