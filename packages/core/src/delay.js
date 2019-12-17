@@ -1,11 +1,11 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const { go, close, CLOSED, chan, put, take, sleep } = require("medium");
 
 const delay = ms => input => {
   const output = chan();
 
   go(async () => {
     while (true) {
-      await new Promise(resolve => setTimeout(resolve, ms));
+      await sleep(ms);
 
       const value = await take(input);
       if (value === CLOSED) break;
