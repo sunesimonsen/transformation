@@ -1,18 +1,12 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const step = require("./step");
 
-const map = mapper => input => {
-  const output = chan();
-
-  go(async () => {
+const map = mapper =>
+  step(async (take, put, CLOSED) => {
     while (true) {
-      const value = await take(input);
+      const value = await take();
       if (value === CLOSED) break;
-      await put(output, await mapper(value));
+      await put(await mapper(value));
     }
-    close(output);
   });
-
-  return output;
-};
 
 module.exports = map;

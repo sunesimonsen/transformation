@@ -1,20 +1,15 @@
-const { go, close, CLOSED, chan, put, take, sleep } = require("medium");
+const { sleep } = require("medium");
+const step = require("./step");
 
-const delay = ms => input => {
-  const output = chan();
-
-  go(async () => {
+const delay = ms =>
+  step(async (take, put, CLOSED) => {
     while (true) {
       await sleep(ms);
 
-      const value = await take(input);
+      const value = await take();
       if (value === CLOSED) break;
-      await put(output, value);
+      await put(value);
     }
-    close(output);
   });
-
-  return output;
-};
 
 module.exports = delay;

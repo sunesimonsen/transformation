@@ -1,11 +1,9 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const step = require("./step");
 
-const tap = selector => input => {
-  const output = chan();
-
-  go(async () => {
+const tap = selector =>
+  step(async (take, put, CLOSED) => {
     while (true) {
-      const value = await take(input);
+      const value = await take();
       if (value === CLOSED) break;
 
       if (selector) {
@@ -14,12 +12,8 @@ const tap = selector => input => {
         console.log(value);
       }
 
-      await put(output, value);
+      await put(value);
     }
-    close(output);
   });
-
-  return output;
-};
 
 module.exports = tap;

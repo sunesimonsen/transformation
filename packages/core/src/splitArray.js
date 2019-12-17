@@ -1,25 +1,19 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const step = require("./step");
 
-const splitArray = () => input => {
-  const output = chan();
-
-  go(async () => {
+const splitArray = () =>
+  step(async (take, put, CLOSED) => {
     while (true) {
-      const value = await take(input);
+      const value = await take();
       if (value === CLOSED) break;
 
       if (Array.isArray(value)) {
         for (let item of value) {
-          await put(output, item);
+          await put(item);
         }
       } else {
-        await put(output, value);
+        await put(value);
       }
     }
-    close(output);
   });
-
-  return output;
-};
 
 module.exports = splitArray;

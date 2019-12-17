@@ -1,22 +1,19 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const step = require("./step");
 const Group = require("./Group");
 
-const batchBy = fieldOrSelector => input => {
-  const selector =
-    typeof fieldOrSelector === "string"
-      ? value => value[fieldOrSelector]
-      : fieldOrSelector;
+const batchBy = fieldOrSelector =>
+  step(async (take, put, CLOSED) => {
+    const selector =
+      typeof fieldOrSelector === "string"
+        ? value => value[fieldOrSelector]
+        : fieldOrSelector;
 
-  const output = chan();
-
-  go(async () => {
     let batchKey = null;
     let nextBatch = [];
     while (true) {
-      const value = await take(input);
+      const value = await take();
       if (value === CLOSED) {
         await put(
-          output,
           Group.create({
             key: batchKey,
             items: nextBatch
@@ -31,7 +28,6 @@ const batchBy = fieldOrSelector => input => {
         nextBatch.push(value);
       } else {
         await put(
-          output,
           Group.create({
             key: batchKey,
             items: nextBatch
@@ -42,11 +38,6 @@ const batchBy = fieldOrSelector => input => {
         nextBatch = [value];
       }
     }
-
-    close(output);
   });
-
-  return output;
-};
 
 module.exports = batchBy;

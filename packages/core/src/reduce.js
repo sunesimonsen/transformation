@@ -1,22 +1,16 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const step = require("./step");
 
-const reduce = (accumulator, initialValue) => input => {
-  const output = chan();
-
-  go(async () => {
+const reduce = (accumulator, initialValue) =>
+  step(async (take, put, CLOSED) => {
     let accumulation = initialValue;
 
     while (true) {
-      const value = await take(input);
+      const value = await take();
       if (value === CLOSED) break;
-      accumulation = accumulator(accumulation, value);
+      accumulation = await accumulator(accumulation, value);
     }
 
-    await put(output, accumulation);
-    close(output);
+    await put(accumulation);
   });
-
-  return output;
-};
 
 module.exports = reduce;

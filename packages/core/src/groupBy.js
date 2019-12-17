@@ -1,18 +1,20 @@
-const { go, close, chan, put } = require("medium");
-const takeAll = require("./takeAll");
+const step = require("./step");
 const Group = require("./Group");
 
-const groupBy = fieldOrSelector => input => {
+const groupBy = fieldOrSelector => {
   const selector =
     typeof fieldOrSelector === "string"
       ? value => value[fieldOrSelector]
       : fieldOrSelector;
 
-  const output = chan();
-
-  go(async () => {
+  return step(async (take, put, CLOSED) => {
     const grouping = {};
-    const items = await takeAll(input);
+    const items = [];
+    while (true) {
+      const value = await take();
+      if (value === CLOSED) break;
+      items.push(value);
+    }
 
     items.forEach(item => {
       const key = selector(item);
@@ -25,13 +27,9 @@ const groupBy = fieldOrSelector => input => {
     });
 
     for (let [key, items] of Object.entries(grouping)) {
-      await put(output, Group.create({ key, items }));
+      await put(Group.create({ key, items }));
     }
-
-    close(output);
   });
-
-  return output;
 };
 
 module.exports = groupBy;

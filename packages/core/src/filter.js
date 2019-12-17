@@ -1,20 +1,14 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const step = require("./step");
 
-const filter = predicate => input => {
-  const output = chan();
-
-  go(async () => {
+const filter = predicate =>
+  step(async (take, put, CLOSED) => {
     while (true) {
-      const value = await take(input);
+      const value = await take();
       if (value === CLOSED) break;
       if (await predicate(value)) {
-        await put(output, value);
+        await put(value);
       }
     }
-    close(output);
   });
-
-  return output;
-};
 
 module.exports = filter;

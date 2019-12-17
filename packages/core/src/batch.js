@@ -1,16 +1,14 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const step = require("./step");
 const Group = require("./Group");
 
-const batch = size => input => {
-  const output = chan();
-
-  go(async () => {
+const batch = size =>
+  step(async (take, put, CLOSED) => {
     let batchNumber = 0;
     while (true) {
       let value;
       const nextBatch = [];
       for (let i = 0; i < size; i += 1) {
-        value = await take(input);
+        value = await take();
         if (value === CLOSED) break;
         nextBatch.push(value);
       }
@@ -20,7 +18,6 @@ const batch = size => input => {
       batchNumber++;
 
       await put(
-        output,
         Group.create({
           key: `[${start};${end}]`,
           items: nextBatch
@@ -29,11 +26,6 @@ const batch = size => input => {
 
       if (value === CLOSED) break;
     }
-
-    close(output);
   });
-
-  return output;
-};
 
 module.exports = batch;

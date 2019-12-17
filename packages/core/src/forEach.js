@@ -1,19 +1,13 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const step = require("./step");
 
-const forEach = callback => input => {
-  const output = chan();
-
-  go(async () => {
+const forEach = callback =>
+  step(async (take, put, CLOSED) => {
     while (true) {
-      const value = await take(input);
+      const value = await take();
       if (value === CLOSED) break;
       await callback(value);
-      await put(output, value);
+      await put(value);
     }
-    close(output);
   });
-
-  return output;
-};
 
 module.exports = forEach;
