@@ -1,6 +1,7 @@
 const Group = require("./Group");
 const accumulate = require("./accumulate");
 const partition = require("./partition");
+const partitionBy = require("./partitionBy");
 const buffer = require("./buffer");
 const delay = require("./delay");
 const emitItems = require("./emitItems");
@@ -27,6 +28,7 @@ module.exports = {
   Group,
   accumulate,
   partition,
+  partitionBy,
   buffer,
   delay,
   emitItems,
