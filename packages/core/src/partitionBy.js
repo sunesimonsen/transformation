@@ -1,21 +1,21 @@
 const step = require("./step");
 const Group = require("./Group");
 
-const batchBy = fieldOrSelector =>
+const partitionBy = fieldOrSelector =>
   step(async (take, put, CLOSED) => {
     const selector =
       typeof fieldOrSelector === "string"
         ? value => value[fieldOrSelector]
         : fieldOrSelector;
 
-    let batchKey = null;
+    let partitionKey = null;
     let nextBatch = [];
     while (true) {
       const value = await take();
       if (value === CLOSED) {
         await put(
           Group.create({
-            key: batchKey,
+            key: partitionKey,
             items: nextBatch
           })
         );
@@ -23,21 +23,21 @@ const batchBy = fieldOrSelector =>
       }
 
       const currentKey = selector(value);
-      batchKey = batchKey || currentKey;
-      if (batchKey === currentKey) {
+      partitionKey = partitionKey || currentKey;
+      if (partitionKey === currentKey) {
         nextBatch.push(value);
       } else {
         await put(
           Group.create({
-            key: batchKey,
+            key: partitionKey,
             items: nextBatch
           })
         );
 
-        batchKey = currentKey;
+        partitionKey = currentKey;
         nextBatch = [value];
       }
     }
   });
 
-module.exports = batchBy;
+module.exports = partitionBy;

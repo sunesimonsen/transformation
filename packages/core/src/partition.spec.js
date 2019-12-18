@@ -3,13 +3,13 @@ const expect = require("unexpected")
   .use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
-const batch = require("./batch");
+const partition = require("./partition");
 const Group = require("./Group");
 
-describe("batch", () => {
-  it("creates groups with the given batch size", async () => {
+describe("partition", () => {
+  it("creates groups with the given partition size", async () => {
     await expect(
-      pipeline(emitItems(0, 1, 2, 3, 4, 5, 6), batch(2)),
+      pipeline(emitItems(0, 1, 2, 3, 4, 5, 6), partition(2)),
       "to yield items",
       [
         Group.create({ key: "[0;1]", items: [0, 1] }),

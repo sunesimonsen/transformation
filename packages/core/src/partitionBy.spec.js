@@ -3,10 +3,10 @@ const expect = require("unexpected")
   .use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
-const batchBy = require("./batchBy");
+const partitionBy = require("./partitionBy");
 const Group = require("./Group");
 
-describe("batchBy", () => {
+describe("partitionBy", () => {
   describe("when given a function", () => {
     it("creates a new group when key return by the function changes", async () => {
       await expect(
@@ -18,7 +18,7 @@ describe("batchBy", () => {
             { symbol: "GOOG", price: 1351 },
             { symbol: "AAPL", price: 279 }
           ),
-          batchBy(({ symbol }) => symbol)
+          partitionBy(({ symbol }) => symbol)
         ),
         "to yield items",
         [
@@ -57,7 +57,7 @@ describe("batchBy", () => {
             { symbol: "GOOG", price: 1351 },
             { symbol: "AAPL", price: 279 }
           ),
-          batchBy("symbol")
+          partitionBy("symbol")
         ),
         "to yield items",
         [

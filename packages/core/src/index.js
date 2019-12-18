@@ -1,6 +1,6 @@
 const Group = require("./Group");
 const accumulate = require("./accumulate");
-const batch = require("./batch");
+const partition = require("./partition");
 const buffer = require("./buffer");
 const delay = require("./delay");
 const emitItems = require("./emitItems");
@@ -26,7 +26,7 @@ const toArray = require("./toArray");
 module.exports = {
   Group,
   accumulate,
-  batch,
+  partition,
   buffer,
   delay,
   emitItems,

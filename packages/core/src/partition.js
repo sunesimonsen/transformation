@@ -1,9 +1,9 @@
 const step = require("./step");
 const Group = require("./Group");
 
-const batch = size =>
+const partition = size =>
   step(async (take, put, CLOSED) => {
-    let batchNumber = 0;
+    let partitionNumber = 0;
     while (true) {
       let value;
       const nextBatch = [];
@@ -13,9 +13,9 @@ const batch = size =>
         nextBatch.push(value);
       }
 
-      const start = batchNumber * size;
+      const start = partitionNumber * size;
       const end = start + size - 1;
-      batchNumber++;
+      partitionNumber++;
 
       await put(
         Group.create({
@@ -28,4 +28,4 @@ const batch = size =>
     }
   });
 
-module.exports = batch;
+module.exports = partition;
