@@ -15,6 +15,7 @@ const program = require("./program");
 const reduce = require("./reduce");
 const sortBy = require("./sortBy");
 const splitArray = require("./splitArray");
+const step = require("./step");
 const takeAll = require("./takeAll");
 const tap = require("./tap");
 const toArray = require("./toArray");
@@ -40,6 +41,7 @@ module.exports = {
   reduce,
   sortBy,
   splitArray,
+  step,
   takeAll,
   tap,
   toArray
