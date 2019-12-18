@@ -1,6 +1,6 @@
 {
   "name": "@transformation/csv",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Reading CSV files and emitting rows as objects",
   "main": "./src/index.js",
   "scripts": {
