@@ -1,7 +1,7 @@
 {
   "name": "@transformation/csv",
   "version": "1.1.1",
-  "description": "Reading CSV files and emitting rows as objects",
+  "description": "Reading and writing CSV files from a transformation pipeline",
   "main": "./src/index.js",
   "scripts": {
     "test": "mocha"
