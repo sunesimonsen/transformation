@@ -8,7 +8,8 @@ const renderTemplate = async (templatePath, options = {}) => {
   const templateSource = await readFile(templatePath, "utf-8");
 
   const template = ejs.compile(templateSource, {
-    ...options
+    ...options,
+    filename: templatePath
   });
 
   return map(value =>
