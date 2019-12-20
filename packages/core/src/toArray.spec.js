@@ -4,7 +4,6 @@ const expect = require("unexpected")
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const toArray = require("./toArray");
-const tap = require("./tap");
 
 describe("toArray", () => {
   it("collects all the input values and emits an array", async () => {
