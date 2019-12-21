@@ -1,7 +1,7 @@
-const readCSV = require("./readCSV");
-const writeCSV = require("./writeCSV");
+const renderTemplate = require("./renderTemplate");
+const writeTemplate = require("./writeTemplate");
 
 module.exports = {
-  readCSV,
-  writeCSV
+  renderTemplate,
+  writeTemplate
 };
