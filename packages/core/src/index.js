@@ -21,7 +21,6 @@ const takeAll = require("./takeAll");
 const tap = require("./tap");
 const toArray = require("./toArray");
 
-// TODO fork: fork out of main pipeline
 // TODO forkJoin: fork out and return array
 
 module.exports = {
@@ -36,6 +35,7 @@ module.exports = {
   filter,
   flush,
   forEach,
+  fork,
   groupBy,
   map,
   pipeline,
