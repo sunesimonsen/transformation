@@ -33,4 +33,19 @@ describe("pipeline", () => {
       ["0 elephants", "4 elephants", "16 elephants"]
     );
   });
+
+  it("skips steps that is falsy", async () => {
+    await expect(
+      pipeline(
+        emitItems(0, 1, 2, 3, 4, 5),
+        pipeline(
+          filter(n => n % 2 === 0),
+          false && map(n => n * n)
+        ),
+        map(n => `${n} elephants`)
+      ),
+      "to yield items",
+      ["0 elephants", "2 elephants", "4 elephants"]
+    );
+  });
 });

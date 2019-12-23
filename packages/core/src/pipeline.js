@@ -8,14 +8,16 @@ const pipeline = (...steps) => (input, errors) => {
 
     try {
       for (let stepOrChannel of steps) {
-        if (!stepOrChannel.buffer && stepOrChannel.then) {
-          stepOrChannel = await stepOrChannel;
-        }
+        if (stepOrChannel) {
+          if (!stepOrChannel.buffer && stepOrChannel.then) {
+            stepOrChannel = await stepOrChannel;
+          }
 
-        channel =
-          typeof stepOrChannel === "function"
-            ? stepOrChannel(channel, errors)
-            : stepOrChannel;
+          channel =
+            typeof stepOrChannel === "function"
+              ? stepOrChannel(channel, errors)
+              : stepOrChannel;
+        }
       }
 
       while (true) {
