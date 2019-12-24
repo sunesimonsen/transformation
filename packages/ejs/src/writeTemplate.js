@@ -22,12 +22,11 @@ const writeTemplate = async (
     filename: templatePath
   });
 
-  return map(
-    async value =>
-      await writeFile(
-        outputPathFunction(value),
-        template(Array.isArray(value) ? { items: value } : value)
-      )
+  return map(value =>
+    writeFile(
+      outputPathFunction(value),
+      template(Array.isArray(value) ? { items: value } : value)
+    )
   );
 };
 
