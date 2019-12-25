@@ -1,7 +1,7 @@
 const step = require("./step");
 
 const filter = predicate =>
-  step(async (take, put, CLOSED) => {
+  step(async ({ take, put, CLOSED }) => {
     while (true) {
       const value = await take();
       if (value === CLOSED) break;

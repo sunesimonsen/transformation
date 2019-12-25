@@ -1,7 +1,7 @@
 const step = require("./step");
 
 const map = (mapper, initialValue) =>
-  step(async (take, put, CLOSED) => {
+  step(async ({ take, put, CLOSED }) => {
     let lastResult = initialValue;
     while (true) {
       const value = await take();

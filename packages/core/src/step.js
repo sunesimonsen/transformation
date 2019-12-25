@@ -8,7 +8,7 @@ const step = body => (input, errors) => {
 
   go(async () => {
     try {
-      await body(takeWrapper, putWrapper, CLOSED);
+      await body({ take: takeWrapper, put: putWrapper, CLOSED });
     } catch (err) {
       await put(errors, err);
     } finally {

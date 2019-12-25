@@ -7,7 +7,7 @@ const groupBy = fieldOrSelector => {
       ? value => value[fieldOrSelector]
       : fieldOrSelector;
 
-  return step(async (take, put, CLOSED) => {
+  return step(async ({ take, put, CLOSED }) => {
     const grouping = {};
     const items = [];
     while (true) {

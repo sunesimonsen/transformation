@@ -4,7 +4,7 @@ const fs = require("fs");
 const { Writable } = require("stream");
 
 const readCSV = (path, options) =>
-  step(async (take, put) => {
+  step(async ({ take, put }) => {
     await new Promise((resolve, reject) => {
       fs.createReadStream(path)
         .on("error", reject)

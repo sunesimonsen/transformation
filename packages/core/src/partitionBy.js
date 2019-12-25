@@ -2,7 +2,7 @@ const step = require("./step");
 const Group = require("./Group");
 
 const partitionBy = fieldOrSelector =>
-  step(async (take, put, CLOSED) => {
+  step(async ({ take, put, CLOSED }) => {
     const selector =
       typeof fieldOrSelector === "string"
         ? value => value[fieldOrSelector]

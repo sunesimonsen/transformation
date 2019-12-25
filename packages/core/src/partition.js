@@ -2,7 +2,7 @@ const step = require("./step");
 const Group = require("./Group");
 
 const partition = size =>
-  step(async (take, put, CLOSED) => {
+  step(async ({ take, put, CLOSED }) => {
     let partitionNumber = 0;
     while (true) {
       let value;

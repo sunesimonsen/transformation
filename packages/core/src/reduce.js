@@ -1,7 +1,7 @@
 const step = require("./step");
 
 const reduce = (accumulator, initialValue) =>
-  step(async (take, put, CLOSED) => {
+  step(async ({ take, put, CLOSED }) => {
     let accumulation = initialValue;
 
     while (true) {
