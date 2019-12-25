@@ -7,7 +7,7 @@ const fork = (...steps) =>
   channelStep((input, errors) => {
     const output = chan();
     const forkedInput = chan();
-    const forkedOutput = pipeline(...steps)(forkedInput, errors);
+    const forkedOutput = pipeline(...steps).body(forkedInput, errors);
     let readInput = false;
     let readForkedOutput = false;
 

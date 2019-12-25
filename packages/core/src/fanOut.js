@@ -6,10 +6,10 @@ const fanOut = (step, count) =>
   channelStep((input, errors) => {
     const outputs = [];
     for (var i = 0; i < count; i += 1) {
-      outputs.push(step(input, errors));
+      outputs.push(step.body(input, errors));
     }
 
-    return buffer(count)(merge(...outputs));
+    return buffer(count).body(merge(...outputs));
   });
 
 module.exports = fanOut;

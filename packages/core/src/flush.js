@@ -4,8 +4,8 @@ const flush = async stepOrChannel => {
   const input = chan();
   const errors = chan();
   const output =
-    typeof stepOrChannel === "function"
-      ? stepOrChannel(input, errors)
+    stepOrChannel.type === "step"
+      ? stepOrChannel.body(input, errors)
       : stepOrChannel;
 
   let error = null;

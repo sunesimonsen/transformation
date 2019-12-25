@@ -16,8 +16,8 @@ const pipeline = (...steps) =>
             }
 
             channel =
-              typeof stepOrChannel === "function"
-                ? stepOrChannel(channel, errors)
+              stepOrChannel.type === "step"
+                ? stepOrChannel.body(channel, errors)
                 : stepOrChannel;
           }
         }

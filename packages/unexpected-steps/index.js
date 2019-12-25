@@ -3,7 +3,7 @@ const { chan, take, CLOSED } = require("medium");
 const takeAll = async step => {
   const result = [];
   const errors = chan();
-  const output = step(chan(), errors);
+  const output = step.body(chan(), errors);
 
   let error = null;
   take(errors).then(e => {
@@ -21,8 +21,13 @@ const takeAll = async step => {
 };
 
 module.exports = expect => {
+  expect.addType({
+    base: "object",
+    name: "step",
+    identify: value => value && value.type === "step"
+  });
   expect.addAssertion(
-    "<function> to yield items <array>",
+    "<step> to yield items <array>",
     async (expect, step, expected) => {
       const result = await takeAll(step);
       expect.subjectOutput = output => {
@@ -37,7 +42,7 @@ module.exports = expect => {
   );
 
   expect.addAssertion(
-    "<function> to yield items satisfying <assertion>",
+    "<step> to yield items satisfying <assertion>",
     async (expect, step) => {
       const result = await takeAll(step);
       expect.subjectOutput = output => {
