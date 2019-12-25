@@ -21,6 +21,7 @@ const step = require("./step");
 const takeAll = require("./takeAll");
 const tap = require("./tap");
 const toArray = require("./toArray");
+const withField = require("./withField");
 
 // TODO forkJoin: fork out and return array
 
@@ -47,5 +48,6 @@ module.exports = {
   step,
   takeAll,
   tap,
-  toArray
+  toArray,
+  withField
 };
