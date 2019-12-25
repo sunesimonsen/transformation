@@ -1,16 +1,18 @@
 const { go, close, chan, put } = require("medium");
+const channelStep = require("./channelStep");
 
-const emitItems = (...items) => {
-  const output = chan(items.length);
+const emitItems = (...items) =>
+  channelStep((input, errors) => {
+    const output = chan(items.length);
 
-  go(async () => {
-    for (let item of items) {
-      await put(output, item);
-    }
-    close(output);
+    go(async () => {
+      for (let item of items) {
+        await put(output, item);
+      }
+      close(output);
+    });
+
+    return output;
   });
-
-  return output;
-};
 
 module.exports = emitItems;

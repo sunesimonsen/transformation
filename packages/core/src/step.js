@@ -1,22 +1,24 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
+const channelStep = require("./channelStep");
 
-const step = body => (input, errors) => {
-  const output = chan();
+const step = body =>
+  channelStep((input, errors) => {
+    const output = chan();
 
-  const takeWrapper = () => take(input);
-  const putWrapper = value => put(output, value);
+    const takeWrapper = () => take(input);
+    const putWrapper = value => put(output, value);
 
-  go(async () => {
-    try {
-      await body({ take: takeWrapper, put: putWrapper, CLOSED });
-    } catch (err) {
-      await put(errors, err);
-    } finally {
-      close(output);
-    }
+    go(async () => {
+      try {
+        await body({ take: takeWrapper, put: putWrapper, CLOSED });
+      } catch (err) {
+        await put(errors, err);
+      } finally {
+        close(output);
+      }
+    });
+
+    return output;
   });
-
-  return output;
-};
 
 module.exports = step;

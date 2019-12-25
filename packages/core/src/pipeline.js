@@ -1,38 +1,40 @@
 const { chan, go, take, put, close, CLOSED } = require("medium");
+const channelStep = require("./channelStep");
 
-const pipeline = (...steps) => (input, errors) => {
-  const output = chan();
+const pipeline = (...steps) =>
+  channelStep((input, errors) => {
+    const output = chan();
 
-  go(async () => {
-    let channel = input || chan();
+    go(async () => {
+      let channel = input || chan();
 
-    try {
-      for (let stepOrChannel of steps) {
-        if (stepOrChannel) {
-          if (!stepOrChannel.buffer && stepOrChannel.then) {
-            stepOrChannel = await stepOrChannel;
+      try {
+        for (let stepOrChannel of steps) {
+          if (stepOrChannel) {
+            if (!stepOrChannel.buffer && stepOrChannel.then) {
+              stepOrChannel = await stepOrChannel;
+            }
+
+            channel =
+              typeof stepOrChannel === "function"
+                ? stepOrChannel(channel, errors)
+                : stepOrChannel;
           }
-
-          channel =
-            typeof stepOrChannel === "function"
-              ? stepOrChannel(channel, errors)
-              : stepOrChannel;
         }
-      }
 
-      while (true) {
-        const value = await take(channel);
-        if (value === CLOSED) break;
-        await put(output, value);
+        while (true) {
+          const value = await take(channel);
+          if (value === CLOSED) break;
+          await put(output, value);
+        }
+      } catch (err) {
+        await put(errors, err);
+      } finally {
+        close(output);
       }
-    } catch (err) {
-      await put(errors, err);
-    } finally {
-      close(output);
-    }
+    });
+
+    return output;
   });
-
-  return output;
-};
 
 module.exports = pipeline;
