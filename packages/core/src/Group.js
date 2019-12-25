@@ -1,15 +1,16 @@
-const groupSymbol = Symbol("group");
-
 const create = ({ key, items, ...other }) => {
   return {
-    [groupSymbol]: true,
     key,
     items,
     ...other
   };
 };
 
-const isGroup = value => value && groupSymbol in value;
+const isGroup = group =>
+  group &&
+  typeof group === "object" &&
+  "key" in group &&
+  Array.isArray(group.items);
 
 module.exports = {
   create,
