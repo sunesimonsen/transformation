@@ -3,6 +3,7 @@ const accumulate = require("./accumulate");
 const buffer = require("./buffer");
 const delay = require("./delay");
 const emitItems = require("./emitItems");
+const extend = require("./extend");
 const fanOut = require("./fanOut");
 const filter = require("./filter");
 const flush = require("./flush");
@@ -33,6 +34,7 @@ module.exports = {
   buffer,
   delay,
   emitItems,
+  extend,
   fanOut,
   filter,
   flush,
