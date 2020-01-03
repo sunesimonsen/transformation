@@ -22,6 +22,10 @@ const pipeline = (...steps) =>
           }
         }
 
+        if (!input) {
+          close(channel);
+        }
+
         while (true) {
           const value = await take(channel);
           if (value === CLOSED) break;
