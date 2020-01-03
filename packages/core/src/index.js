@@ -6,6 +6,7 @@ const emitItems = require("./emitItems");
 const extend = require("./extend");
 const fanOut = require("./fanOut");
 const filter = require("./filter");
+const flatMap = require("./flatMap");
 const flush = require("./flush");
 const forEach = require("./forEach");
 const fork = require("./fork");
@@ -29,19 +30,20 @@ const transform = require("./transform");
 module.exports = {
   Group,
   accumulate,
-  partition,
-  partitionBy,
   buffer,
   delay,
   emitItems,
   extend,
   fanOut,
   filter,
+  flatMap,
   flush,
   forEach,
   fork,
   groupBy,
   map,
+  partition,
+  partitionBy,
   pipeline,
   program,
   reduce,
