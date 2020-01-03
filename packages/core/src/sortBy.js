@@ -2,6 +2,7 @@ const pipeline = require("./pipeline");
 const toArray = require("./toArray");
 const splitArray = require("./splitArray");
 const map = require("./map");
+const sort = require("./sort");
 
 const sortBy = (...ordering) => {
   const comparisons = ordering.map(order => {
@@ -24,21 +25,15 @@ const sortBy = (...ordering) => {
     };
   });
 
-  return pipeline(
-    toArray(),
-    map(arr =>
-      arr.sort((a, b) => {
-        for (var i = 0; i < comparisons.length; i += 1) {
-          const comparison = comparisons[i];
-          const result = comparison(a, b);
-          if (result !== 0) {
-            return result;
-          }
-        }
-      })
-    ),
-    splitArray()
-  );
+  return sort((a, b) => {
+    for (var i = 0; i < comparisons.length; i += 1) {
+      const comparison = comparisons[i];
+      const result = comparison(a, b);
+      if (result !== 0) {
+        return result;
+      }
+    }
+  });
 };
 
 module.exports = sortBy;
