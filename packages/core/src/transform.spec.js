@@ -22,7 +22,7 @@ describe("transform", () => {
         ),
         transform({
           symbol: map(symbol => symbol.toUpperCase()),
-          price: map(price => `\$${price}`)
+          price: map(price => `$${price}`)
         })
       ),
       "to yield items",
