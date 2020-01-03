@@ -1,0 +1,24 @@
+{
+  "name": "@transformation/glob",
+  "version": "1.8.0",
+  "description": "Expand glob patterns in a transformation pipeline",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": "transformation,automation,pipeline,glob",
+  "author": "Sune Simonsen",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@transformation/core": "^1.8.0",
+    "globby": "10.0.1"
+  },
+  "devDependencies": {
+    "mocha": "6.2.2",
+    "unexpected": "11.8.1",
+    "unexpected-steps": "^1.6.0"
+  }
+}
