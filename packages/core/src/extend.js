@@ -6,7 +6,9 @@ const takeAll = require("./takeAll");
 const executeExtend = async (extension, value, input) => {
   if (typeof extension === "undefined") {
     return value;
-  } else if (extension.type === "step") {
+  }
+
+  if (extension.type === "step") {
     const result = await takeAll(pipeline(emitItems(input), extension));
 
     if (result.length !== 1) {
@@ -14,6 +16,10 @@ const executeExtend = async (extension, value, input) => {
     }
 
     return result[0];
+  }
+
+  if (typeof extension === "function") {
+    return extension(input);
   }
 
   if (Array.isArray(extension)) {
@@ -39,7 +45,7 @@ const executeExtend = async (extension, value, input) => {
     return transformedObject;
   }
 
-  return value;
+  return extension;
 };
 
 const extend = extension =>
