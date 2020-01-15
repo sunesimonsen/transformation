@@ -1,6 +1,7 @@
 const Group = require("./Group");
 const accumulate = require("./accumulate");
 const buffer = require("./buffer");
+const chose = require("./chose");
 const delay = require("./delay");
 const emitItems = require("./emitItems");
 const extend = require("./extend");
@@ -32,6 +33,7 @@ module.exports = {
   Group,
   accumulate,
   buffer,
+  chose,
   delay,
   emitItems,
   extend,
