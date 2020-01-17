@@ -1,4 +1,4 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
+const { go, close, CLOSED, chan, put, take, merge } = require("medium");
 const channelStep = require("./channelStep");
 
 const chose = (caseOrSelector, cases) => {
@@ -8,9 +8,11 @@ const chose = (caseOrSelector, cases) => {
   return channelStep((input, errors) => {
     const caseChannels = {};
     const output = chan();
+    const outputs = [output];
     for (const [key, step] of Object.entries(cases)) {
       const caseInput = chan();
-      caseChannels[key] = [caseInput, step.body(caseInput, errors)];
+      caseChannels[key] = caseInput;
+      outputs.push(step.body(caseInput, errors));
     }
 
     go(async () => {
@@ -18,10 +20,9 @@ const chose = (caseOrSelector, cases) => {
         while (true) {
           const value = await take(input);
           if (value === CLOSED) break;
-          const [caseInput, caseOutput] = caseChannels[selector(value)] || [];
+          const caseInput = caseChannels[selector(value)];
           if (caseInput) {
-            put(caseInput, value);
-            await put(output, await take(caseOutput));
+            await put(caseInput, value);
           } else {
             await put(output, value);
           }
@@ -29,7 +30,7 @@ const chose = (caseOrSelector, cases) => {
       } catch (err) {
         await put(errors, err);
       } finally {
-        for (const [caseInput] of Object.values(caseChannels)) {
+        for (const caseInput of Object.values(caseChannels)) {
           close(caseInput);
         }
 
@@ -37,7 +38,7 @@ const chose = (caseOrSelector, cases) => {
       }
     });
 
-    return output;
+    return merge(...outputs);
   });
 };
 
