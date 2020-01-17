@@ -1,9 +1,17 @@
 const chose = require("./chose");
 const pipeline = require("./pipeline");
 
-const when = (predicate, ...steps) =>
-  chose(value => (predicate(value) ? "true" : "false"), {
-    true: pipeline(...steps)
-  });
+const when = (predicateOrBool, ...steps) => {
+  if (typeof predicateOrBool === "function") {
+    const selector = value => (predicateOrBool(value) ? "true" : "false");
+    return chose(selector, { true: pipeline(...steps) });
+  }
+
+  if (predicateOrBool) {
+    return pipeline(...steps);
+  }
+
+  return null;
+};
 
 module.exports = when;

@@ -32,6 +32,33 @@ describe("unless", () => {
     );
   });
 
+  it("supports a hardcoded boolean as the predicate", async () => {
+    await expect(
+      pipeline(
+        emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+        unless(
+          true,
+          map(n => n * n)
+        ),
+        unless(
+          false,
+          map(n => `${n} transformed`)
+        )
+      ),
+      "to yield items satisfying to contain",
+      "0 transformed",
+      "1 transformed",
+      "2 transformed",
+      "3 transformed",
+      "4 transformed",
+      "5 transformed",
+      "6 transformed",
+      "7 transformed",
+      "8 transformed",
+      "9 transformed"
+    );
+  });
+
   it("supports async pipelines", async () => {
     await expect(
       pipeline(

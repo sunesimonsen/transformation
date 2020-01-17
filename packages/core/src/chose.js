@@ -1,13 +1,11 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
 const channelStep = require("./channelStep");
 
-const chose = (caseOrSelector, cases) =>
-  channelStep((input, errors) => {
-    const selector =
-      typeof caseOrSelector === "string"
-        ? () => caseOrSelector
-        : caseOrSelector;
+const chose = (caseOrSelector, cases) => {
+  const selector =
+    typeof caseOrSelector === "string" ? () => caseOrSelector : caseOrSelector;
 
+  return channelStep((input, errors) => {
     const caseChannels = {};
     const output = chan();
     for (const [key, step] of Object.entries(cases)) {
@@ -41,5 +39,6 @@ const chose = (caseOrSelector, cases) =>
 
     return output;
   });
+};
 
 module.exports = chose;

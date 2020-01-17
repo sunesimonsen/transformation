@@ -32,6 +32,33 @@ describe("when", () => {
     );
   });
 
+  it("supports a hardcoded boolean as the predicate", async () => {
+    await expect(
+      pipeline(
+        emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+        when(
+          true,
+          map(n => n * n)
+        ),
+        when(
+          false,
+          map(n => `${n} transformed`)
+        )
+      ),
+      "to yield items satisfying to contain",
+      0,
+      1,
+      4,
+      9,
+      16,
+      25,
+      36,
+      49,
+      64,
+      81
+    );
+  });
+
   it("supports async pipelines", async () => {
     await expect(
       pipeline(
