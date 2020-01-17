@@ -10,8 +10,6 @@ const when = (predicateOrBool, ...steps) => {
   if (predicateOrBool) {
     return pipeline(...steps);
   }
-
-  return null;
 };
 
 module.exports = when;
