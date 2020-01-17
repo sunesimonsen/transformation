@@ -26,6 +26,7 @@ const takeAll = require("./takeAll");
 const tap = require("./tap");
 const toArray = require("./toArray");
 const transform = require("./transform");
+const when = require("./when");
 
 // TODO forkJoin: fork out and return array
 
@@ -57,5 +58,6 @@ module.exports = {
   takeAll,
   tap,
   toArray,
-  transform
+  transform,
+  when
 };
