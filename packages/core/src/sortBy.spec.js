@@ -57,6 +57,7 @@ describe("sortBy", () => {
       await expect(
         pipeline(
           emitItems(
+            { name: "twat", price: 100 },
             { name: "hat", price: 10 },
             { name: "cat", price: 100 },
             { name: "chat", price: 0 },
@@ -69,6 +70,7 @@ describe("sortBy", () => {
           { name: "chat", price: 0 },
           { name: "hat", price: 10 },
           { name: "cat", price: 100 },
+          { name: "twat", price: 100 },
           { name: "wat", price: 100 }
         ]
       );

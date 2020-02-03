@@ -5,6 +5,9 @@ const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const transform = require("./transform");
 const map = require("./map");
+const sort = require("./sort");
+const splitArray = require("./splitArray");
+const toArray = require("./toArray");
 
 describe("transform", () => {
   it("transforms the each item, by running all of the returned pipelines", async () => {
@@ -35,6 +38,61 @@ describe("transform", () => {
         { symbol: "AAPL", price: "$275", currency: "USD" },
         { symbol: "GOOG", price: "$1351", currency: "USD" },
         { symbol: "AAPL", price: "$279" }
+      ]
+    );
+  });
+
+  it("supports transforming with complex pipelines", async () => {
+    await expect(
+      pipeline(
+        emitItems(
+          {
+            dependencies: [
+              "@zendesk/knowledge-context",
+              "@zendesk/guide-client-chrome",
+              "@zendesk/guide-client-webpack-config",
+              "@zendesk/knowledge-utils",
+              "@zendesk/knowledge-components",
+              "@zendesk/knowledge-http-client"
+            ]
+          },
+          {
+            dependencies: [
+              "@zendesk/guide-client-analytics",
+              "@zendesk/knowledge-components",
+              "@zendesk/guide-client-chrome",
+              "@zendesk/knowledge-context",
+              "@zendesk/guide-client-webpack-config",
+              "@zendesk/knowledge-utils"
+            ]
+          }
+        ),
+        transform({
+          dependencies: pipeline(splitArray(), sort(), toArray())
+        })
+      ),
+      "to yield items",
+      [
+        {
+          dependencies: [
+            "@zendesk/guide-client-chrome",
+            "@zendesk/guide-client-webpack-config",
+            "@zendesk/knowledge-components",
+            "@zendesk/knowledge-context",
+            "@zendesk/knowledge-http-client",
+            "@zendesk/knowledge-utils"
+          ]
+        },
+        {
+          dependencies: [
+            "@zendesk/guide-client-analytics",
+            "@zendesk/guide-client-chrome",
+            "@zendesk/guide-client-webpack-config",
+            "@zendesk/knowledge-components",
+            "@zendesk/knowledge-context",
+            "@zendesk/knowledge-utils"
+          ]
+        }
       ]
     );
   });

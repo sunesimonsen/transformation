@@ -1,7 +1,3 @@
-const pipeline = require("./pipeline");
-const toArray = require("./toArray");
-const splitArray = require("./splitArray");
-const map = require("./map");
 const sort = require("./sort");
 
 const sortBy = (...ordering) => {
@@ -33,6 +29,7 @@ const sortBy = (...ordering) => {
         return result;
       }
     }
+    return 0;
   });
 };
 
