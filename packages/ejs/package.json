@@ -1,6 +1,6 @@
 {
   "name": "@transformation/ejs",
-  "version": "1.12.2",
+  "version": "1.12.3",
   "description": "Writing pipeline to files with EJS",
   "main": "./src/index.js",
   "scripts": {
@@ -13,7 +13,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@transformation/core": "^1.12.2",
+    "@transformation/core": "^1.12.3",
     "ejs": "3.0.1"
   },
   "devDependencies": {
