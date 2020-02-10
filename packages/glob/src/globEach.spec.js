@@ -37,7 +37,11 @@ describe("globEach", () => {
   describe("when given a string", () => {
     it("uses that as the pattern", async () => {
       await expect(
-        pipeline(emitItems({ cwd: testDir }), globEach("20*/report.txt")),
+        pipeline(
+          emitItems({ cwd: testDir }),
+          globEach("20*/report.txt"),
+          sort()
+        ),
         "to yield items",
         ["2020/report.txt", "2021/report.txt", "2022/report.txt"]
       );

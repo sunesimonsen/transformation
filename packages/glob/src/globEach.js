@@ -2,7 +2,7 @@ const globby = require("globby");
 const path = require("path");
 const { step } = require("@transformation/core");
 
-const glob = (options = {}) =>
+const globEach = (options = {}) =>
   step(async ({ take, put, CLOSED }) => {
     options =
       typeof options === "string" || Array.isArray(options)
@@ -13,12 +13,12 @@ const glob = (options = {}) =>
       const value = await take();
       if (value === CLOSED) break;
 
-      const { cwd = options.cwd, pattern } =
+      const { cwd = options.cwd, pattern = options.pattern } =
         typeof value === "string" || Array.isArray(value)
           ? { pattern: value }
           : value;
 
-      for await (const pathName of globby.stream(pattern || options.pattern, {
+      for await (const pathName of globby.stream(pattern, {
         ...options,
         absolute: false,
         cwd
@@ -32,4 +32,4 @@ const glob = (options = {}) =>
     }
   });
 
-module.exports = glob;
+module.exports = globEach;
