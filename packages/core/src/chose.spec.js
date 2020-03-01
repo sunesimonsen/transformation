@@ -18,17 +18,8 @@ describe("chose", () => {
           odd: map(n => n * -2)
         })
       ),
-      "to yield items satisfying to contain",
-      0,
-      -2,
-      4,
-      -6,
-      8,
-      -10,
-      12,
-      -14,
-      16,
-      -18
+      "to yield items",
+      [0, -2, 4, -6, 8, -10, 12, -14, 16, -18]
     );
   });
 
@@ -41,17 +32,8 @@ describe("chose", () => {
           odd: map(n => n * -2)
         })
       ),
-      "to yield items satisfying to contain",
-      0,
-      2,
-      4,
-      6,
-      8,
-      10,
-      12,
-      14,
-      16,
-      18
+      "to yield items",
+      [0, 2, 4, 6, 8, 10, 12, 14, 16, 18]
     );
   });
 
@@ -64,17 +46,8 @@ describe("chose", () => {
             even: map(n => n * 2)
           })
         ),
-        "to yield items satisfying to contain",
-        0,
-        1,
-        4,
-        3,
-        8,
-        5,
-        12,
-        7,
-        16,
-        9
+        "to yield items",
+        [0, 1, 4, 3, 8, 5, 12, 7, 16, 9]
       );
     });
   });
@@ -104,12 +77,8 @@ describe("chose", () => {
           odd: filter(n => false)
         })
       ),
-      "to yield items satisfying to contain",
-      0,
-      4,
-      8,
-      12,
-      16
+      "to yield items",
+      [0, 4, 8, 12, 16]
     );
   });
 });

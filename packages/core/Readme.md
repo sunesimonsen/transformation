@@ -1,0 +1,621 @@
+# @transformation/core
+
+## accumulate
+
+Produces the next item based on the current and the previous item:
+
+```js
+import { accumulate } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5),
+    accumulate((n, previous) => ({ n, total: previous.total + n }), {
+      total: 0
+    })
+  ),
+  "to yield items",
+  [
+    { n: 0, total: 0 },
+    { n: 1, total: 1 },
+    { n: 2, total: 3 },
+    { n: 3, total: 6 },
+    { n: 4, total: 10 },
+    { n: 5, total: 15 }
+  ]
+);
+```
+
+## buffer
+
+Adds a buffer of a given size into the pipeline.
+  
+```js
+import { buffer } from "@translation/core";
+```
+
+### fixed buffer (default)
+
+A fixed size buffer of n slots. It will wait when there is no more space
+awailable.
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), buffer(3), delay(1)),
+  "to yield items",
+  [0, 1, 2, 3, 4, 5]
+);
+```
+
+### dropping buffer
+
+A fixed size buffer of n slots. It will drop incoming items when there is no
+more space awailable.
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), buffer(3, "sliding"), delay(1)),
+  "to yield items",
+  [3, 4, 5]
+);
+```
+
+### sliding buffer
+
+A fixed size buffer of n slots. It will drop outgoing items when there is no
+more space awailable.
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), buffer(3, "dropping"), delay(1)),
+  "to yield items",
+  [0, 1, 2]
+);
+```
+
+## chose
+
+Choses a pipeline based on a given selector.
+
+The selector is a function that returns a string deciding the pipeline to use.
+
+If the selector is just a string, that pipeline will always be chosen.
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
+    chose(n => (n % 2 === 0 ? "even" : "odd"), {
+      even: map(n => n * 2),
+      odd: map(n => n * -2)
+    })
+  ),
+  "to yield items",
+  [0, -2, 4, -6, 8, -10, 12, -14, 16, -18]
+);
+```
+  
+## delay
+
+Waits the given amount of miliseconds before emitting each item.
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), delay(1)),
+  "to yield items",
+  [0, 1, 2, 3, 4, 5]
+);
+```
+    
+## emitItems
+
+Emit the given items in to the pipeline.
+
+Notice this step wont take any input, it only outputs the given items.
+
+```js
+import { emitItems } from "@translation/core";
+```
+
+```js
+await expect(pipeline(emitItems(0, 1, 2, 3, 4, 5)), "to yield items", [
+  0, 1, 2, 3, 4, 5
+]);
+```
+
+## extend
+
+It extends all items that are objects with the given description.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { firstName: "Jane", lastName: "Doe" },
+      { firstName: "John", lastName: "Doe" }
+    ),
+    extend({
+      type: "person",
+      fullName: map(({ firstName, lastName }) => `${firstName} ${lastName}`)
+    })
+  ),
+  "to yield items",
+  [
+    { 
+      type: "person", 
+      firstName: "Jane", 
+      lastName: "Doe", 
+      fullName: "Jane Doe" 
+    },
+    { 
+      type: "person",
+      firstName: "John",
+      lastName: "Doe", 
+      fullName: "John Doe"
+    }
+  ]
+);
+```
+## fanOut
+
+Run the given step with the specified concurrency count.
+
+```js
+import { fanOut } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(5, 4, 3, 2, 1, 0),
+    fanOut(
+      map(async n => {
+        await sleep(n);
+        return n + 1;
+      }),
+      4
+    )
+  ),
+  "to yield items satisfying to contain",
+  1, 2, 3, 4, 5, 6
+);
+```
+
+## filter
+
+Filter items with the given predicate.
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5),
+    filter(n => n % 2 === 0)
+  ),
+  "to yield items",
+  [0, 2, 4]
+);
+```
+
+## flatMap
+
+Maps each item with the given mapper, if a returned item is an array it emits
+the items individualy.
+
+
+```js
+import { flatMap } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5),
+    flatMap(n => (n % 2 === 0 ? [n, n] : n))
+  ),
+  "to yield items",
+  [0, 0, 1, 2, 2, 3, 4, 4, 5]
+);
+```
+
+## forEach
+
+Performs a side-effect for each item.
+
+```js
+const items = [];
+
+await program(
+  emitItems(0, 1, 2, 3, 4, 5),
+  forEach(item => items.push(item))
+);
+
+expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
+```
+
+## fork
+
+Forks the pipeline into two.
+
+```js
+import { fork } from "@translation/core";
+```
+
+```js
+const forkedOutput = [];
+
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5),
+    fork(
+      map(n => n * n),
+      delay(10),
+      forEach(n => {
+        forkedOutput.push(n);
+      })
+    ),
+    filter(n => n % 2 === 0)
+  ),
+  "to yield items",
+  [0, 2, 4]
+);
+
+expect(forkedOutput, "to equal", [0, 1, 4, 9, 16, 25]);
+```
+
+## groupBy
+
+Groups all the items in the pipeline by a key.
+
+Notice that this step will consume all items in the pipeline before emiting the
+groups.
+
+```js
+import { groupBy } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5, 6),
+    groupBy(value => (value % 2 === 0 ? "even" : "odd"))
+  ),
+  "to yield items",
+  [
+    Group.create({ key: "even", items: [0, 2, 4, 6] }),
+    Group.create({ key: "odd", items: [1, 3, 5] })
+  ]
+);
+```
+
+You can also give the `groupBy` a field to group objects by.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { symbol: "GOOG", price: 1349 },
+      { symbol: "AAPL", price: 274 },
+      { symbol: "AAPL", price: 275 },
+      { symbol: "GOOG", price: 1351 },
+      { symbol: "AAPL", price: 279 }
+    ),
+    groupBy("symbol")
+  ),
+  "to yield items",
+  [
+    Group.create({
+      key: "GOOG",
+      items: [
+        { symbol: "GOOG", price: 1349 },
+        { symbol: "GOOG", price: 1351 }
+      ]
+    }),
+    Group.create({
+      key: "AAPL",
+      items: [
+        { symbol: "AAPL", price: 274 },
+        { symbol: "AAPL", price: 275 },
+        { symbol: "AAPL", price: 279 }
+      ]
+    })
+  ]
+);
+```
+
+You can transform the items of a group with [withGroup](#withGroup).
+
+## map
+
+Maps each item with the given mapper.
+
+```js
+import { map } from "@translation/core";
+```
+
+``` js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5),
+    map(n => n * n)
+  ),
+  "to yield items",
+  [0, 1, 4, 9, 16, 25]
+);
+```
+
+## partition
+
+Partition items into groups of the given size.
+
+```js
+import { partition } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5, 6), partition(2)),
+  "to yield items",
+  [
+    Group.create({ key: "[0;1]", items: [0, 1] }),
+    Group.create({ key: "[2;3]", items: [2, 3] }),
+    Group.create({ key: "[4;5]", items: [4, 5] }),
+    Group.create({ key: "[6;7]", items: [6] })
+  ]
+);
+```
+
+## partitionBy
+
+Partition items into groups by the given selector.
+
+``` js
+import { partitionBy } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { symbol: "GOOG", price: 1349 },
+      { symbol: "AAPL", price: 274 },
+      { symbol: "AAPL", price: 275 },
+      { symbol: "GOOG", price: 1351 },
+      { symbol: "AAPL", price: 279 }
+    ),
+    partitionBy(({ symbol }) => symbol)
+  ),
+  "to yield items",
+  [
+    Group.create({
+      key: "GOOG",
+      items: [{ symbol: "GOOG", price: 1349 }]
+    }),
+    Group.create({
+      key: "AAPL",
+      items: [
+        { symbol: "AAPL", price: 274 },
+        { symbol: "AAPL", price: 275 }
+      ]
+    }),
+    Group.create({
+      key: "GOOG",
+      items: [{ symbol: "GOOG", price: 1351 }]
+    }),
+    Group.create({
+      key: "AAPL",
+      items: [{ symbol: "AAPL", price: 279 }]
+    })
+  ]
+);
+```
+
+## pipeline
+
+Turns multiple steps into a single step.
+
+```js
+import { pipeline } from "@translation/core";
+```
+
+``` js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5),
+    pipeline(
+      filter(n => n % 2 === 0),
+      false && map(n => n * n)
+    ),
+    map(n => `${n} elephants`)
+  ),
+  "to yield items",
+  ["0 elephants", "2 elephants", "4 elephants"]
+);
+```
+
+## program
+
+Runs all of the given steps until the output closes.
+
+```js
+import { program } from "@translation/core";
+```
+
+```js
+const items = [];
+
+await program(
+  emitItems(0, 1, 2, 3, 4, 5),
+  forEach(item => items.push(item))
+);
+
+expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
+```
+
+## reduce
+
+Reduces the given pipeline down to a single item using the given accumulator
+function and an initial value. 
+
+```js
+import { reduce } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5),
+    reduce((sum, n) => sum + n, 0)
+  ),
+  "to yield items",
+  [15]
+);
+```
+
+## sort
+
+Sorts all of the items in the pipeline and re-emits them one by one.
+
+Notice that this step will consume all of the items in the pipeline.
+
+```js
+import { sort } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 5, 7, 8, 2, 3, 4, 5), sort()),
+  "to yield items",
+  [0, 1, 2, 2, 3, 3, 4, 5, 5, 7, 8]
+);
+```
+
+If you give it a comparison function, it will use that to decide the sorting
+order.
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 5, 7, 8, 2, 3, 4, 5),
+    sort((a, b) => b - a)
+  ),
+  "to yield items",
+  [8, 7, 5, 5, 4, 3, 3, 2, 2, 1, 0]
+);
+```
+
+## sortBy
+
+Sorts all of the items in the pipeline by the specified criteria and re-emits
+them one by one.
+
+Notice that this step will consume all of the items in the pipeline.
+
+```js
+import { sortBy } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { name: "hat", price: 10 },
+      { name: "cat", price: 100 },
+      { name: "chat", price: 0 }
+    ),
+    sortBy("price")
+  ),
+  "to yield items",
+  [
+    { name: "chat", price: 0 },
+    { name: "hat", price: 10 },
+    { name: "cat", price: 100 }
+  ]
+);
+```
+
+You can sort by multiple fields and control the direction of the sorted fields.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { name: "wat", price: 100 },
+      { name: "hat", price: 10 },
+      { name: "cat", price: 100 },
+      { name: "chat", price: 0 },
+      { name: "wat", price: 100 }
+    ),
+    sortBy("price:desc", "name:asc")
+  ),
+  "to yield items",
+  [
+    { name: "cat", price: 100 },
+    { name: "wat", price: 100 },
+    { name: "wat", price: 100 },
+    { name: "hat", price: 10 },
+    { name: "chat", price: 0 }
+  ]
+);
+```
+
+You can even use a comparison for full control.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { name: "twat", price: 100 },
+      { name: "hat", price: 10 },
+      { name: "cat", price: 100 },
+      { name: "chat", price: 0 },
+      { name: "wat", price: 100 }
+    ),
+    sortBy((a, b) => a.price - b.price, "name:asc")
+  ),
+  "to yield items",
+  [
+    { name: "chat", price: 0 },
+    { name: "hat", price: 10 },
+    { name: "cat", price: 100 },
+    { name: "twat", price: 100 },
+    { name: "wat", price: 100 }
+  ]
+);
+```
+
+## splitArray
+
+Re-emits any array as individual items.
+
+```js
+import { accumulate } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(emitItems(0, [1, 2], [3, 4, 5]), splitArray()),
+  "to yield items",
+  [0, 1, 2, 3, 4, 5]
+);
+```
+
+## tap
+## toArray
+## transform
+## unless
+## when
+## withGroup
+
+## Utilities
+
+### takeAll
+
+## Building new steps
+
+### channelStep
+
+### step
+
+### flush
