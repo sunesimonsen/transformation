@@ -1,4 +1,7 @@
 const { go, close, CLOSED, chan, put, take, merge } = require("medium");
+const pipeline = require("./pipeline");
+const emitItems = require("./emitItems");
+const takeAll = require("./takeAll");
 const channelStep = require("./channelStep");
 
 const chose = (caseOrSelector, cases) => {
@@ -6,23 +9,24 @@ const chose = (caseOrSelector, cases) => {
     typeof caseOrSelector === "string" ? () => caseOrSelector : caseOrSelector;
 
   return channelStep((input, errors) => {
-    const caseChannels = {};
     const output = chan();
-    const outputs = [output];
-    for (const [key, step] of Object.entries(cases)) {
-      const caseInput = chan();
-      caseChannels[key] = caseInput;
-      outputs.push(step.body(caseInput, errors));
-    }
 
     go(async () => {
       try {
         while (true) {
           const value = await take(input);
           if (value === CLOSED) break;
-          const caseInput = caseChannels[selector(value)];
-          if (caseInput) {
-            await put(caseInput, value);
+
+          const chosen = cases[selector(value)];
+
+          if (chosen) {
+            const result = await takeAll(pipeline(emitItems(value), chosen));
+
+            if (result.length > 1) {
+              throw new Error("Cases must produce at most one value");
+            } else if (result.length === 1) {
+              await put(output, result[0]);
+            }
           } else {
             await put(output, value);
           }
@@ -30,15 +34,11 @@ const chose = (caseOrSelector, cases) => {
       } catch (err) {
         await put(errors, err);
       } finally {
-        for (const caseInput of Object.values(caseChannels)) {
-          close(caseInput);
-        }
-
         close(output);
       }
     });
 
-    return merge(...outputs);
+    return output;
   });
 };
 

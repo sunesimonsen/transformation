@@ -18,17 +18,19 @@ describe("when", () => {
           map(n => `${n} transformed`)
         )
       ),
-      "to yield items satisfying to contain",
-      "0 transformed",
-      1,
-      "4 transformed",
-      3,
-      "8 transformed",
-      5,
-      "12 transformed",
-      7,
-      "16 transformed",
-      9
+      "to yield items",
+      [
+        "0 transformed",
+        1,
+        "4 transformed",
+        3,
+        "8 transformed",
+        5,
+        "12 transformed",
+        7,
+        "16 transformed",
+        9
+      ]
     );
   });
 
@@ -45,17 +47,8 @@ describe("when", () => {
           map(n => `${n} transformed`)
         )
       ),
-      "to yield items satisfying to contain",
-      0,
-      1,
-      4,
-      9,
-      16,
-      25,
-      36,
-      49,
-      64,
-      81
+      "to yield items",
+      [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
     );
   });
 
@@ -69,17 +62,8 @@ describe("when", () => {
           map(n => `slow ${n}`)
         )
       ),
-      "to yield items satisfying to contain",
-      "slow 0",
-      1,
-      "slow 2",
-      3,
-      "slow 4",
-      5,
-      "slow 6",
-      7,
-      "slow 8",
-      9
+      "to yield items",
+      ["slow 0", 1, "slow 2", 3, "slow 4", 5, "slow 6", 7, "slow 8", 9]
     );
   });
 });

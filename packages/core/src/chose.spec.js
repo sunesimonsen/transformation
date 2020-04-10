@@ -90,17 +90,8 @@ describe("chose", () => {
           )
         })
       ),
-      "to yield items satisfying to contain",
-      "slow 0",
-      1,
-      "slow 2",
-      3,
-      "slow 4",
-      5,
-      "slow 6",
-      7,
-      "slow 8",
-      9
+      "to yield items",
+      ["slow 0", 1, "slow 2", 3, "slow 4", 5, "slow 6", 7, "slow 8", 9]
     );
   });
 

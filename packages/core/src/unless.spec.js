@@ -18,17 +18,19 @@ describe("unless", () => {
           map(n => `${n} transformed`)
         )
       ),
-      "to yield items satisfying to contain",
-      0,
-      "2 transformed",
-      2,
-      "6 transformed",
-      4,
-      "10 transformed",
-      6,
-      "14 transformed",
-      8,
-      "18 transformed"
+      "to yield items",
+      [
+        0,
+        "2 transformed",
+        2,
+        "6 transformed",
+        4,
+        "10 transformed",
+        6,
+        "14 transformed",
+        8,
+        "18 transformed"
+      ]
     );
   });
 
@@ -45,17 +47,19 @@ describe("unless", () => {
           map(n => `${n} transformed`)
         )
       ),
-      "to yield items satisfying to contain",
-      "0 transformed",
-      "1 transformed",
-      "2 transformed",
-      "3 transformed",
-      "4 transformed",
-      "5 transformed",
-      "6 transformed",
-      "7 transformed",
-      "8 transformed",
-      "9 transformed"
+      "to yield items",
+      [
+        "0 transformed",
+        "1 transformed",
+        "2 transformed",
+        "3 transformed",
+        "4 transformed",
+        "5 transformed",
+        "6 transformed",
+        "7 transformed",
+        "8 transformed",
+        "9 transformed"
+      ]
     );
   });
 
@@ -69,17 +73,8 @@ describe("unless", () => {
           map(n => `slow ${n}`)
         )
       ),
-      "to yield items satisfying to contain",
-      0,
-      "slow 1",
-      2,
-      "slow 3",
-      4,
-      "slow 5",
-      6,
-      "slow 7",
-      8,
-      "slow 9"
+      "to yield items",
+      [0, "slow 1", 2, "slow 3", 4, "slow 5", 6, "slow 7", 8, "slow 9"]
     );
   });
 });
