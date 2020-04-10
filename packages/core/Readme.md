@@ -637,7 +637,7 @@ await expect(
 [3, 4, 5]
 ```
 
-When given a field selector, prints that field to the console:
+When given a field selector, prints that field to the console.
 
 ```js
 await expect(
@@ -647,7 +647,7 @@ await expect(
       { name: "cat", price: 100 },
       { name: "chat", price: 0 }
     ),
-    tap('name'),
+    tap("name"),
     sortBy("price")
   ),
   "to yield items",
@@ -665,7 +665,7 @@ cat
 chat
 ```
 
-When given a function selector, prints the selected output to the console:
+When given a function selector, prints the selected output to the console.
 
 ```js
 await expect(
@@ -694,6 +694,21 @@ chat: 0
 ```
 
 ## toArray
+
+Accumulates all items into an array.
+
+```js
+import { toArray } from "@transformation/core"
+```
+
+``` js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), toArray()),
+  "to yield items",
+  [[0, 1, 2, 3, 4, 5]]
+);
+```
+
 ## transform
 ## unless
 ## when
