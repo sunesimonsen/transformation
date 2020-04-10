@@ -710,8 +710,67 @@ await expect(
 ```
 
 ## transform
+
 ## unless
+
 ## when
+
+Conditionally executes a sub pipeline.
+
+```js
+import { when } from "@transformation/core"
+```
+
+When given a predicate function, it executes the sub pipeline when the predicate
+is true.
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5, 6),
+    when(
+      n => n % 2 === 0,
+      map(n => n * 2),
+      map(n => `${n} transformed`)
+    )
+  ),
+  "to yield items satisfying to contain",
+  "0 transformed",
+  1,
+  "4 transformed",
+  3,
+  "8 transformed",
+  5,
+  "12 transformed"
+);
+```
+
+When given a boolean that is used to decide if the sub pipeline should be executed.
+
+``` js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5, 6),
+    when(
+      true,
+      map(n => n * n)
+    ),
+    when(
+      false,
+      map(n => `${n} transformed`)
+    )
+  ),
+  "to yield items satisfying to contain",
+  0,
+  1,
+  4,
+  9,
+  16,
+  25,
+  36
+);
+```
+
 ## withGroup
 
 ## Utilities
