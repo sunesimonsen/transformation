@@ -713,9 +713,72 @@ await expect(
 
 ## unless
 
+Executes a sub pipeline when a given condition is not meet.
+
+See [when](#when) for the opposite computation.
+
+```js
+import { unless } from "@transformation/core"
+```
+
+When given a predicate function, it executes the sub pipeline when the predicate
+is false.
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5, 6),
+    unless(
+      n => n % 2 === 0,
+      map(n => n * 2),
+      map(n => `${n} transformed`)
+    )
+  ),
+  "to yield items",
+  [
+    0,
+    "2 transformed",
+    2,
+    "6 transformed",
+    4,
+    "10 transformed"
+  ]
+);
+```
+
+When given a boolean that is used to decide if the sub pipeline should be executed.
+
+``` js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5, 6),
+    unless(
+      true,
+      map(n => n * n)
+    ),
+    unless(
+      false,
+      map(n => `${n} transformed`)
+    )
+  ),
+  "to yield items",
+  [
+    "0 transformed",
+    "1 transformed",
+    "2 transformed",
+    "3 transformed",
+    "4 transformed",
+    "5 transformed",
+    "6 transformed"
+  ]
+);
+```
+
 ## when
 
 Conditionally executes a sub pipeline.
+
+See [unless](#unless) for the opposite computation.
 
 ```js
 import { when } from "@transformation/core"
