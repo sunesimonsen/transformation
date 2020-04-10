@@ -602,6 +602,97 @@ await expect(
 ```
 
 ## tap
+
+Print items to the console.
+
+```js
+import { tap } from "@translation/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { name: "twat", price: 100 },
+      { name: "hat", price: 10 },
+      { name: "cat", price: 100 },
+      { name: "chat", price: 0 },
+      { name: "wat", price: 100 }
+    ),
+  ), tap(({ name, price }) => `${name}: ${price}`), sortBy("price"),
+  "to yield items",
+  [
+    { name: "twat", price: 100 },
+    { name: "hat", price: 10 },
+    { name: "cat", price: 100 },
+    { name: "chat", price: 0 },
+    { name: "wat", price: 100 }
+  ]
+);
+```
+
+```
+0
+[1, 2]
+[3, 4, 5]
+```
+
+When given a field selector, prints that field to the console:
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { name: "hat", price: 10 },
+      { name: "cat", price: 100 },
+      { name: "chat", price: 0 }
+    ),
+    tap('name'),
+    sortBy("price")
+  ),
+  "to yield items",
+  [
+    { name: "chat", price: 0 },
+    { name: "hat", price: 10 },
+    { name: "cat", price: 100 }
+  ]
+);
+```
+
+```
+hat
+cat
+chat
+```
+
+When given a function selector, prints the selected output to the console:
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { name: "hat", price: 10 },
+      { name: "cat", price: 100 },
+      { name: "chat", price: 0 }
+    ),
+    tap(({ name, price }) => `${name}: ${price}`),
+    sortBy("price")
+  ),
+  "to yield items",
+  [
+    { name: "chat", price: 0 },
+    { name: "hat", price: 10 },
+    { name: "cat", price: 100 }
+  ]
+);
+```
+
+```
+hat: 10
+cat: 100
+chat: 0
+```
+
 ## toArray
 ## transform
 ## unless
