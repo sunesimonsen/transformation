@@ -4,7 +4,7 @@ const expect = require("unexpected")
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const groupBy = require("./groupBy");
-const map = require("./map");
+const extend = require("./extend");
 const withGroup = require("./withGroup");
 const Group = require("./Group");
 
@@ -21,10 +21,7 @@ describe("withGroup", () => {
         ),
         groupBy("symbol"),
         withGroup(
-          map(row => ({
-            ...row,
-            label: `${row.symbol}: ${row.price}`
-          }))
+          extend({ label: ({ symbol, price }) => `${symbol}: ${price}` })
         )
       ),
       "to yield items",

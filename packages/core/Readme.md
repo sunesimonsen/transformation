@@ -836,6 +836,52 @@ await expect(
 
 ## withGroup
 
+Transform items in groups created by [groupBy](#groupBy).
+
+Notice that you can provide one or more transformation steps to `withGroup`.
+
+```js
+import { withGroup } from "@transformation/core"
+```
+
+Here we attach labels to rows in stock groups.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { symbol: "GOOG", price: 1349 },
+      { symbol: "AAPL", price: 274 },
+      { symbol: "AAPL", price: 275 },
+      { symbol: "GOOG", price: 1351 },
+      { symbol: "AAPL", price: 279 }
+    ),
+    groupBy("symbol"),
+    withGroup(
+      extend({ label: ({ symbol, price }) => `${symbol}: ${price}` })
+    )
+  ),
+  "to yield items",
+  [
+    Group.create({
+      key: "GOOG",
+      items: [
+        { symbol: "GOOG", price: 1349, label: "GOOG: 1349" },
+        { symbol: "GOOG", price: 1351, label: "GOOG: 1351" }
+      ]
+    }),
+    Group.create({
+      key: "AAPL",
+      items: [
+        { symbol: "AAPL", price: 274, label: "AAPL: 274" },
+        { symbol: "AAPL", price: 275, label: "AAPL: 275" },
+        { symbol: "AAPL", price: 279, label: "AAPL: 279" }
+      ]
+    })
+  ]
+);
+```
+
 ## Utilities
 
 ### takeAll
