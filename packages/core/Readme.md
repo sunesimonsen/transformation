@@ -886,10 +886,65 @@ await expect(
 
 ### takeAll
 
+This function drains all items from a pipeline and returns them as an array.
+
+```js
+import { takeAll } from "@transformation/core"
+```
+
+```js
+const items = await takeAll(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4, 5),
+    map(x => x * x)
+  )
+);
+
+expect(items, "to equal", [0, 1, 4, 9, 16, 25]);
+```
+
 ## Building new steps
 
-### channelStep
+Let's say we want to build a custom step that can't easily be built by composing the existing step. Then you can use the `step` function to create a custom step.
 
-### step
+```js
+import { step } from "@transformation/core"
+```
 
-### flush
+The step we will use for this example is one that duplicates all items. 
+
+```js
+const duplicate = () =>
+  step(async ({ take, put, CLOSED }) => {
+    while (true) {
+      const value = await take();
+      if (value === CLOSED) break;
+      await put(value);
+      await put(value);
+    }
+  });
+
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), duplicate()),
+  "to yield items",
+  [0, 0, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5]
+);
+```
+
+Notice that most custom steps can just be a composition of existing steps.
+
+As an example let's make a step that averages numbers.
+
+```js
+const average = () =>
+  pipeline(
+    toArray(),
+    map(items => items.reduce((sum, n) => sum + n, 0) / items.length)
+  );
+
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9), average()),
+  "to yield items",
+  [4]
+);
+```
