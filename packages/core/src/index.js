@@ -8,7 +8,6 @@ const extend = require("./extend");
 const fanOut = require("./fanOut");
 const filter = require("./filter");
 const flatMap = require("./flatMap");
-const flush = require("./flush");
 const forEach = require("./forEach");
 const fork = require("./fork");
 const groupBy = require("./groupBy");
@@ -42,7 +41,6 @@ module.exports = {
   fanOut,
   filter,
   flatMap,
-  flush,
   forEach,
   fork,
   groupBy,
