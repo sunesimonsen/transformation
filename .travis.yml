@@ -1,0 +1,13 @@
+language: node_js
+
+node_js:
+  - 10
+  - 12
+
+matrix:
+  include:
+    - name: Lint
+      node_js: 12
+      script: yarn lint
+
+script: yarn test
