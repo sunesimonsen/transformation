@@ -31,7 +31,7 @@ await expect(
 ## buffer
 
 Adds a buffer of a given size into the pipeline.
-  
+
 ```js
 import { buffer } from "@translation/core";
 ```
@@ -96,7 +96,7 @@ await expect(
   [0, -2, 4, -6, 8, -10, 12, -14, 16, -18]
 );
 ```
-  
+
 ## delay
 
 Waits the given amount of miliseconds before emitting each item.
@@ -108,7 +108,7 @@ await expect(
   [0, 1, 2, 3, 4, 5]
 );
 ```
-    
+
 ## emitItems
 
 Emit the given items in to the pipeline.
@@ -121,7 +121,12 @@ import { emitItems } from "@translation/core";
 
 ```js
 await expect(pipeline(emitItems(0, 1, 2, 3, 4, 5)), "to yield items", [
-  0, 1, 2, 3, 4, 5
+  0,
+  1,
+  2,
+  3,
+  4,
+  5
 ]);
 ```
 
@@ -143,21 +148,22 @@ await expect(
   ),
   "to yield items",
   [
-    { 
-      type: "person", 
-      firstName: "Jane", 
-      lastName: "Doe", 
-      fullName: "Jane Doe" 
+    {
+      type: "person",
+      firstName: "Jane",
+      lastName: "Doe",
+      fullName: "Jane Doe"
     },
-    { 
+    {
       type: "person",
       firstName: "John",
-      lastName: "Doe", 
+      lastName: "Doe",
       fullName: "John Doe"
     }
   ]
 );
 ```
+
 ## fanOut
 
 Run the given step with the specified concurrency count.
@@ -179,7 +185,12 @@ await expect(
     )
   ),
   "to yield items satisfying to contain",
-  1, 2, 3, 4, 5, 6
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
 );
 ```
 
@@ -202,7 +213,6 @@ await expect(
 
 Maps each item with the given mapper, if a returned item is an array it emits
 the items individualy.
-
 
 ```js
 import { flatMap } from "@translation/core";
@@ -334,7 +344,7 @@ Maps each item with the given mapper.
 import { map } from "@translation/core";
 ```
 
-``` js
+```js
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5),
@@ -370,7 +380,7 @@ await expect(
 
 Partition items into groups by the given selector.
 
-``` js
+```js
 import { partitionBy } from "@translation/core";
 ```
 
@@ -419,7 +429,7 @@ Turns multiple steps into a single step.
 import { pipeline } from "@translation/core";
 ```
 
-``` js
+```js
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5),
@@ -456,7 +466,7 @@ expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
 ## reduce
 
 Reduces the given pipeline down to a single item using the given accumulator
-function and an initial value. 
+function and an initial value.
 
 ```js
 import { reduce } from "@translation/core";
@@ -618,8 +628,10 @@ await expect(
       { name: "cat", price: 100 },
       { name: "chat", price: 0 },
       { name: "wat", price: 100 }
-    ),
-  ), tap(({ name, price }) => `${name}: ${price}`), sortBy("price"),
+    )
+  ),
+  tap(({ name, price }) => `${name}: ${price}`),
+  sortBy("price"),
   "to yield items",
   [
     { name: "twat", price: 100 },
@@ -698,10 +710,10 @@ chat: 0
 Accumulates all items into an array.
 
 ```js
-import { toArray } from "@transformation/core"
+import { toArray } from "@transformation/core";
 ```
 
-``` js
+```js
 await expect(
   pipeline(emitItems(0, 1, 2, 3, 4, 5), toArray()),
   "to yield items",
@@ -718,7 +730,7 @@ Executes a sub pipeline when a given condition is not meet.
 See [when](#when) for the opposite computation.
 
 ```js
-import { unless } from "@transformation/core"
+import { unless } from "@transformation/core";
 ```
 
 When given a predicate function, it executes the sub pipeline when the predicate
@@ -735,20 +747,13 @@ await expect(
     )
   ),
   "to yield items",
-  [
-    0,
-    "2 transformed",
-    2,
-    "6 transformed",
-    4,
-    "10 transformed"
-  ]
+  [0, "2 transformed", 2, "6 transformed", 4, "10 transformed"]
 );
 ```
 
 When given a boolean that is used to decide if the sub pipeline should be executed.
 
-``` js
+```js
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5, 6),
@@ -781,7 +786,7 @@ Conditionally executes a sub pipeline.
 See [unless](#unless) for the opposite computation.
 
 ```js
-import { when } from "@transformation/core"
+import { when } from "@transformation/core";
 ```
 
 When given a predicate function, it executes the sub pipeline when the predicate
@@ -810,7 +815,7 @@ await expect(
 
 When given a boolean that is used to decide if the sub pipeline should be executed.
 
-``` js
+```js
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5, 6),
@@ -841,7 +846,7 @@ Transform items in groups created by [groupBy](#groupBy).
 Notice that you can provide one or more transformation steps to `withGroup`.
 
 ```js
-import { withGroup } from "@transformation/core"
+import { withGroup } from "@transformation/core";
 ```
 
 Here we attach labels to rows in stock groups.
@@ -857,9 +862,7 @@ await expect(
       { symbol: "AAPL", price: 279 }
     ),
     groupBy("symbol"),
-    withGroup(
-      extend({ label: ({ symbol, price }) => `${symbol}: ${price}` })
-    )
+    withGroup(extend({ label: ({ symbol, price }) => `${symbol}: ${price}` }))
   ),
   "to yield items",
   [
@@ -889,7 +892,7 @@ await expect(
 This function drains all items from a pipeline and returns them as an array.
 
 ```js
-import { takeAll } from "@transformation/core"
+import { takeAll } from "@transformation/core";
 ```
 
 ```js
@@ -908,10 +911,10 @@ expect(items, "to equal", [0, 1, 4, 9, 16, 25]);
 Let's say we want to build a custom step that can't easily be built by composing the existing step. Then you can use the `step` function to create a custom step.
 
 ```js
-import { step } from "@transformation/core"
+import { step } from "@transformation/core";
 ```
 
-The step we will use for this example is one that duplicates all items. 
+The step we will use for this example is one that duplicates all items.
 
 ```js
 const duplicate = () =>

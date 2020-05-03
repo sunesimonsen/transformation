@@ -1,4 +1,4 @@
-const { go, close, CLOSED, chan, put, take, merge } = require("medium");
+const { go, close, CLOSED, chan, put, take } = require("medium");
 const pipeline = require("./pipeline");
 const emitItems = require("./emitItems");
 const takeAll = require("./takeAll");

@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "test": "mocha",
-    "lint": "eslint ."
+    "test": "lerna run test",
+    "format": "prettier --write '**/*.{js,md}'",
+    "lint": "eslint . && prettier --check '**/*.{js,md}'"
   },
   "author": "Sune Simonsen",
   "license": "MIT",
