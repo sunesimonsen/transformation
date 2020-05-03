@@ -1,6 +1,6 @@
 const step = require("./step");
 
-const map = (mapper, initialValue) =>
+const accululate = (mapper, initialValue) =>
   step(async ({ take, put, CLOSED }) => {
     let lastResult = initialValue;
     while (true) {
@@ -11,4 +11,4 @@ const map = (mapper, initialValue) =>
     }
   });
 
-module.exports = map;
+module.exports = accululate;

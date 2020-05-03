@@ -1,13 +1,13 @@
 const step = require("./step");
 const Group = require("./Group");
 
-const partitionBy = fieldOrSelector =>
-  step(async ({ take, put, CLOSED }) => {
-    const selector =
-      typeof fieldOrSelector === "string"
-        ? value => value[fieldOrSelector]
-        : fieldOrSelector;
+const partitionBy = fieldOrSelector => {
+  const selector =
+    typeof fieldOrSelector === "string"
+      ? value => value[fieldOrSelector]
+      : fieldOrSelector;
 
+  return step(async ({ take, put, CLOSED }) => {
     let partitionKey = null;
     let nextBatch = [];
     while (true) {
@@ -39,5 +39,6 @@ const partitionBy = fieldOrSelector =>
       }
     }
   });
+};
 
 module.exports = partitionBy;
