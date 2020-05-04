@@ -1,5 +1,4 @@
 const map = require("./map");
-const pipeline = require("./pipeline");
 const emitItems = require("./emitItems");
 const takeAll = require("./takeAll");
 
@@ -9,7 +8,7 @@ const executeExtend = async (extension, value, input) => {
   }
 
   if (extension.type === "step") {
-    const result = await takeAll(pipeline(emitItems(input), extension));
+    const result = await takeAll(emitItems(input), extension);
 
     if (result.length !== 1) {
       throw new Error("Field extensions must produce only one value");

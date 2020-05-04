@@ -1,5 +1,4 @@
 const map = require("./map");
-const pipeline = require("./pipeline");
 const emitItems = require("./emitItems");
 const takeAll = require("./takeAll");
 
@@ -17,7 +16,7 @@ const executeTransformation = async (transformation, value) => {
       return value;
     }
 
-    const result = await takeAll(pipeline(emitItems(value), transformation));
+    const result = await takeAll(emitItems(value), transformation);
 
     if (result.length !== 1) {
       throw new Error("Field transformations must produce only one value");
