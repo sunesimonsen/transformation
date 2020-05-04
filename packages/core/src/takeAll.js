@@ -1,11 +1,11 @@
 const forEach = require("./forEach");
 const program = require("./program");
 
-const takeAll = async stepOrChannel => {
+const takeAll = async (...stepsOrChannels) => {
   const result = [];
 
   await program(
-    stepOrChannel,
+    ...stepsOrChannels,
     forEach(item => {
       result.push(item);
     })

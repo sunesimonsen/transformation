@@ -897,10 +897,8 @@ import { takeAll } from "@transformation/core";
 
 ```js
 const items = await takeAll(
-  pipeline(
-    emitItems(0, 1, 2, 3, 4, 5),
-    map(x => x * x)
-  )
+  emitItems(0, 1, 2, 3, 4, 5),
+  map(x => x * x)
 );
 
 expect(items, "to equal", [0, 1, 4, 9, 16, 25]);

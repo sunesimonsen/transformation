@@ -1,5 +1,4 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
-const pipeline = require("./pipeline");
 const emitItems = require("./emitItems");
 const takeAll = require("./takeAll");
 const channelStep = require("./channelStep");
@@ -20,7 +19,7 @@ const chose = (caseOrSelector, cases) => {
           const chosen = cases[selector(value)];
 
           if (chosen) {
-            const result = await takeAll(pipeline(emitItems(value), chosen));
+            const result = await takeAll(emitItems(value), chosen);
 
             if (result.length > 1) {
               throw new Error("Cases must produce at most one value");
