@@ -1,6 +1,6 @@
 const map = require("./map");
 const takeAll = require("./takeAll");
-const emitItems = require("./emitItems");
+const emitAll = require("./emitAll");
 const Group = require("./Group");
 
 const withGroup = (...steps) =>
@@ -8,7 +8,7 @@ const withGroup = (...steps) =>
     Group.isGroup(group)
       ? {
           ...group,
-          items: await takeAll(emitItems(...group.items), ...steps)
+          items: await takeAll(emitAll(group.items), ...steps)
         }
       : group
   );

@@ -5,6 +5,7 @@ const expect = require("unexpected")
 const path = require("path");
 
 const {
+  emitAll,
   emitItems,
   groupBy,
   program,
@@ -21,7 +22,7 @@ const outputFilePath = path.join(testPath, "testOutput.csv");
 describe("writeCSV", () => {
   it("writes all the items into a CSV file", async () => {
     const items = await takeAll(readCSV(inputFilePath));
-    await program(emitItems(...items), writeCSV(outputFilePath));
+    await program(emitAll(items), writeCSV(outputFilePath));
     const writtenItems = await takeAll(readCSV(outputFilePath));
 
     expect(writtenItems, "to equal", items);
@@ -31,7 +32,7 @@ describe("writeCSV", () => {
     it("calculates the output file path based on the records", async () => {
       const items = await takeAll(readCSV(inputFilePath));
       await program(
-        emitItems(...items),
+        emitAll(items),
         writeCSV(({ type }) => path.join(testPath, `${type}.csv`))
       );
 
