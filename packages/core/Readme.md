@@ -109,9 +109,50 @@ await expect(
 );
 ```
 
+## emitAll
+
+Emit all the items in the given iterator into the pipeline.
+
+Notice this step wont take any input, it only outputs the given items.
+
+```js
+import { emitItems } from "@translation/core";
+```
+
+Emitting items from an array.
+
+```js
+await expect(emitAll([0, 1, 2, 3, 4, 5]), "to yield items", [0, 1, 2, 3, 4, 5]);
+```
+
+Emitting items from an iterable.
+
+```js
+function* iterable() {
+  for (let i = 0; i < 6; i++) {
+    yield i;
+  }
+}
+
+await expect(emitAll(iterable()), "to yield items", [0, 1, 2, 3, 4, 5]);
+```
+
+Emitting items from an async iterable.
+
+```js
+async function* asyncIterable() {
+  for (let i = 0; i < 6; i++) {
+    await sleep(1);
+    yield i;
+  }
+}
+
+await expect(emitAll(asyncIterable()), "to yield items", [0, 1, 2, 3, 4, 5]);
+```
+
 ## emitItems
 
-Emit the given items in to the pipeline.
+Emit the given items into the pipeline.
 
 Notice this step wont take any input, it only outputs the given items.
 
