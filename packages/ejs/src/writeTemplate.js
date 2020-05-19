@@ -1,8 +1,5 @@
 const ejs = require("ejs");
-const fs = require("fs");
-const util = require("util");
-const readFile = util.promisify(fs.readFile);
-const writeFile = util.promisify(fs.writeFile);
+const fs = require("fs").promises;
 const { map } = require("@transformation/core");
 
 const writeTemplate = async (
@@ -15,7 +12,7 @@ const writeTemplate = async (
       ? outputPathOrFunction
       : () => outputPathOrFunction;
 
-  const templateSource = await readFile(templatePath, "utf-8");
+  const templateSource = await fs.readFile(templatePath, "utf-8");
 
   const template = ejs.compile(templateSource, {
     ...options,
@@ -23,7 +20,7 @@ const writeTemplate = async (
   });
 
   return map(value =>
-    writeFile(
+    fs.writeFile(
       outputPathFunction(value),
       template(Array.isArray(value) ? { items: value } : value)
     )
