@@ -205,19 +205,19 @@ await expect(
 );
 ```
 
-## fanOut
+## parallel
 
 Run the given step with the specified concurrency count.
 
 ```js
-import { fanOut } from "@translation/core";
+import { parallel } from "@translation/core";
 ```
 
 ```js
 await expect(
   pipeline(
     emitItems(5, 4, 3, 2, 1, 0),
-    fanOut(
+    parallel(
       map(async n => {
         await sleep(n);
         return n + 1;
