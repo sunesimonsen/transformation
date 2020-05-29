@@ -6,7 +6,7 @@ const delay = require("./delay");
 const emitAll = require("./emitAll");
 const emitItems = require("./emitItems");
 const extend = require("./extend");
-const fanOut = require("./fanOut");
+const parallel = require("./parallel");
 const filter = require("./filter");
 const flatMap = require("./flatMap");
 const forEach = require("./forEach");
@@ -40,13 +40,14 @@ module.exports = {
   emitAll,
   emitItems,
   extend,
-  fanOut,
+  fanOut: parallel,
   filter,
   flatMap,
   forEach,
   fork,
   groupBy,
   map,
+  parallel,
   partition,
   partitionBy,
   pipeline,

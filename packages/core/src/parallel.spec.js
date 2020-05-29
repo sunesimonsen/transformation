@@ -3,16 +3,16 @@ const expect = require("unexpected")
   .use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
-const fanOut = require("./fanOut");
+const parallel = require("./parallel");
 const map = require("./map");
 const { sleep } = require("medium");
 
-describe("fanOut", () => {
+describe("parallel", () => {
   it("runs the given step in parallel", async () => {
     await expect(
       pipeline(
         emitItems(5, 4, 3, 2, 1, 0),
-        fanOut(
+        parallel(
           map(async n => {
             await sleep(n);
             return n + 1;

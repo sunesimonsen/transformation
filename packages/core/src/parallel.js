@@ -2,14 +2,14 @@ const { merge } = require("medium");
 const buffer = require("./buffer");
 const channelStep = require("./channelStep");
 
-const fanOut = (step, count) =>
+const parallel = (step, concurrency) =>
   channelStep((input, errors) => {
     const outputs = [];
-    for (var i = 0; i < count; i += 1) {
+    for (var i = 0; i < concurrency; i += 1) {
       outputs.push(step.body(input, errors));
     }
 
-    return buffer(count).body(merge(...outputs));
+    return buffer(concurrency).body(merge(...outputs));
   });
 
-module.exports = fanOut;
+module.exports = parallel;
