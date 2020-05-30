@@ -1,8 +1,10 @@
 const { merge } = require("medium");
 const buffer = require("./buffer");
 const channelStep = require("./channelStep");
+const os = require("os");
+const cpus = os.cpus().length;
 
-const parallel = (step, concurrency) =>
+const parallel = (step, concurrency = 2 * cpus) =>
   channelStep((input, errors) => {
     const outputs = [];
     for (var i = 0; i < concurrency; i += 1) {
