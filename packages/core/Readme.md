@@ -207,7 +207,8 @@ await expect(
 
 ## parallel
 
-Run the given step with the specified concurrency count.
+Run the given step with the specified concurrency. If no concurrency is
+specified, it will default to 2 times the number of CPU's available.
 
 ```js
 import { parallel } from "@translation/core";
