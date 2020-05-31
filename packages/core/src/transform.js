@@ -3,11 +3,7 @@ const emitItems = require("./emitItems");
 const takeAll = require("./takeAll");
 
 const executeTransformation = async (transformation, value) => {
-  if (!value) {
-    return value;
-  }
-
-  if (typeof transformation === "undefined") {
+  if (typeof value === "undefined" || typeof transformation === "undefined") {
     return value;
   }
 

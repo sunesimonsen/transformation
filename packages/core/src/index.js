@@ -13,6 +13,7 @@ const forEach = require("./forEach");
 const fork = require("./fork");
 const groupBy = require("./groupBy");
 const map = require("./map");
+const memorize = require("./memorize");
 const partition = require("./partition");
 const partitionBy = require("./partitionBy");
 const pipeline = require("./pipeline");
@@ -47,6 +48,7 @@ module.exports = {
   fork,
   groupBy,
   map,
+  memorize,
   parallel,
   partition,
   partitionBy,
