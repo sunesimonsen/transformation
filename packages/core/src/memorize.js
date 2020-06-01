@@ -6,7 +6,7 @@ const forEach = require("./forEach");
 const tap = require("./tap");
 const QuickLRU = require("quick-lru");
 
-const memorize = async (step, { maxSize = 1000, key = v => v } = {}) => {
+const memorize = (step, { maxSize = 1000, key = v => v } = {}) => {
   const keySelector = typeof key === "string" ? value => value[key] : key;
 
   const lru = new QuickLRU({ maxSize });
