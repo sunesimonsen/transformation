@@ -463,6 +463,83 @@ await expect(
 );
 ```
 
+## memorize
+
+Memorizes the given step.
+
+```js
+import { partition } from "@translation/core";
+```
+
+```js
+let i = 0;
+
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
+    memorize(map(v => `${v}: ${i++}`))
+  ),
+  "to yield items",
+  ["0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2"]
+);
+```
+
+You can specify the size of the LRU cache, by default it is unbounded.
+
+```js
+let i = 0;
+
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
+    memorize(
+      map(v => `${v}: ${i++}`),
+      { maxSize: 2 }
+    )
+  ),
+  "to yield items",
+  ["0: 0", "1: 1", "2: 2", "0: 0", "1: 3", "2: 2", "0: 4", "1: 3", "2: 5"]
+);
+```
+
+You can specify a field to use for caching. By default it uses the identity function for computing the cache key.
+
+```js
+let i = 0;
+
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
+    map(key => ({ key, time: i++ })),
+    memorize(
+      map(({ key, time }) => `${key}: ${time}`),
+      { key: "key" }
+    )
+  ),
+  "to yield items",
+  ["0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2"]
+);
+```
+
+Finally you can specify a function to compute the cache key.
+
+```js
+let i = 0;
+
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
+    map(key => ({ key, time: i++ })),
+    memorize(
+      map(({ key, time }) => `${key}: ${time}`),
+      { key: v => v.key }
+    )
+  ),
+  "to yield items",
+  ["0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2"]
+);
+```
+
 ## pipeline
 
 Turns multiple steps into a single step.
