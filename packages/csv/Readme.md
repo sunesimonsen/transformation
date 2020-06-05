@@ -45,7 +45,6 @@ await expect(readCSV(csvFilePath), "to yield items", [
 
 You can provide options to the parser the following way. It just forwards the options to [csv-parser](https://www.npmjs.com/package/csv-parser#options).
 
-
 ```js
 readCSV(csvFilePath, {
   maxRowBytes: 10

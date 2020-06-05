@@ -20,5 +20,8 @@
     "mocha": "6.2.2",
     "unexpected": "11.8.1",
     "unexpected-steps": "^1.9.0"
+  },
+  "engines": {
+    "node": ">=10"
   }
 }
