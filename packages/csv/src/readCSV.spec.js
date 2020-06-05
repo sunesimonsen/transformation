@@ -3,14 +3,14 @@ const expect = require("unexpected")
   .use(require("unexpected-steps"));
 
 const path = require("path");
-const { program, pipeline } = require("@transformation/core");
+const { program } = require("@transformation/core");
 const readCSV = require("./readCSV");
 
 const csvFilePath = path.join(__dirname, "..", "test", "test.csv");
 
 describe("readCSV", () => {
   it("emits all rows from the CSV file at the given path", async () => {
-    await expect(pipeline(readCSV(csvFilePath)), "to yield items", [
+    await expect(readCSV(csvFilePath), "to yield items", [
       {
         time: "2015-12-22T18:45:11.000Z",
         latitude: "59.9988",
