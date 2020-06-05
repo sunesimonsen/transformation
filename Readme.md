@@ -1,5 +1,7 @@
 # @transformation
 
+[![Build Status](https://travis-ci.org/sunesimonsen/transformation.svg?branch=master)](https://travis-ci.org/sunesimonsen/transformation)
+
 [Communicating Sequential
 Processes](https://dl.acm.org/doi/pdf/10.1145/359576.359585) introduced by [Tony
 Hoare](https://en.wikipedia.org/wiki/Tony_Hoare) is great way of thinking about
@@ -33,6 +35,8 @@ steps, that can be composed into processing pipelines.
 - [@transformation/csv](./packages/csv/Readme.md) - read and write CSV files.
 - [@transformation/ejs](./packages/ejs/Readme.md) - write files with EJS templates.
 - [@transformation/glob](./packages/glob/Readme.md) - find files using glob patterns.
+
+[Changelog](./CHANGELOG.md)
 
 ## Example
 
