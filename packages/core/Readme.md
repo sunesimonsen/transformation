@@ -739,7 +739,7 @@ import { startProcess, childProcess } from "@translation/core";
 ```
 
 Notice this is only useful for cases where your pipeline is more CPU intensive
-then the overhead of communicating with the child process.
+than the overhead of communicating with the child process.
 
 As an example let's try to square numbers in a child process.
 
