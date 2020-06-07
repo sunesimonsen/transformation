@@ -1,3 +1,9 @@
+### v1.20.2 (2020-06-07)
+
+- [v1.20.2](https://github.com/sunesimonsen/transformation/commit/576f78ab6cf7b9bd1f9d5bb998581c1595622a79) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fix problem when a child process is restarted multiple times](https://github.com/sunesimonsen/transformation/commit/389cb678c4faa087cd55a9e7499c7310525ccd00) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/f5aa346a8ce340d77355322d800e1302c668ca04) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.20.1 (2020-06-07)
 
 - [v1.20.1](https://github.com/sunesimonsen/transformation/commit/93331856a33b8d61952e122bfd860a7d4b276a64) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
