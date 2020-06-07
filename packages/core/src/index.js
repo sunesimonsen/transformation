@@ -22,6 +22,7 @@ const reduce = require("./reduce");
 const sort = require("./sort");
 const sortBy = require("./sortBy");
 const splitArray = require("./splitArray");
+const { startProcess, childProcess } = require("./process");
 const step = require("./step");
 const takeAll = require("./takeAll");
 const tap = require("./tap");
@@ -36,6 +37,7 @@ module.exports = {
   Group,
   accumulate,
   buffer,
+  childProcess,
   chose,
   delay,
   emitAll,
@@ -58,6 +60,7 @@ module.exports = {
   sort,
   sortBy,
   splitArray,
+  startProcess,
   step,
   takeAll,
   tap,
