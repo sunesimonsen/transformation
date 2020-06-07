@@ -1,3 +1,11 @@
+### v1.20.1 (2020-06-07)
+
+- [v1.20.1](https://github.com/sunesimonsen/transformation/commit/93331856a33b8d61952e122bfd860a7d4b276a64) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Export startProcess and childProcess](https://github.com/sunesimonsen/transformation/commit/ce6b5594e1c1100aa5f803bd1d1906c0e5d6993f) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Add import to documentation](https://github.com/sunesimonsen/transformation/commit/25c93b4fd0846c4fe5e7508267023ce3d91683f1) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Move process documentation to right place](https://github.com/sunesimonsen/transformation/commit/60ad08839991426e9a8f0e21f8f37dcc891c899d) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/6934c87b9e5326a5ce72937a9b196cfe8ec5e38c) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.20.0 (2020-06-07)
 
 #### Pull requests
