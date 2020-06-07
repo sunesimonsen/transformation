@@ -734,6 +734,10 @@ await expect(
 
 Starts a child process pipeline in a new Node instance.
 
+```js
+import { startProcess, childProcess } from "@translation/core";
+```
+
 Notice this is only useful for cases where your pipeline is more CPU intensive
 then the overhead of communicating with the child process.
 
