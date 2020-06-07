@@ -3,7 +3,7 @@ const channelStep = require("./channelStep");
 const cp = require("child_process");
 const pipeline = require("./pipeline");
 
-const forkProcess = childProcessPath => {
+const startProcess = childProcessPath => {
   const childProcess = cp.fork(childProcessPath);
 
   return channelStep((input, errors) => {
@@ -118,6 +118,6 @@ const childProcess = (...steps) => {
 };
 
 module.exports = {
-  forkProcess,
+  startProcess,
   childProcess
 };
