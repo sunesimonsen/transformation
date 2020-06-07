@@ -1,3 +1,15 @@
+### v1.20.0 (2020-06-07)
+
+#### Pull requests
+
+- [#15](https://github.com/sunesimonsen/transformation/pull/15) Allow users to run a process pipeline on a child process ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.20.0](https://github.com/sunesimonsen/transformation/commit/0ad10a3f4fe58c9d44c83b0c842fec5f0674aaf7) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Adding changelog and build status to readme](https://github.com/sunesimonsen/transformation/commit/53b2ecdea4d6c02366045bc7e2dda0fc4830f21a) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/5930f050d019d6e5eb0a76da1c1ce5aa6444e30f) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.19.0 (2020-06-05)
 
 #### Pull requests
