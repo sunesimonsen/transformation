@@ -943,7 +943,7 @@ await expect(
         currency: "USD",
         nesting: { supported: "yes" }
       },
-      { symbol: "aapl", price: 275, currency: "USD" },
+      { symbol: "aapl", price: 275, currency: "USD" }
     ),
     transform({
       symbol: map(symbol => symbol.toUpperCase()),
@@ -965,7 +965,7 @@ await expect(
       currency: "USD",
       nesting: { supported: "YES" }
     },
-    { symbol: "AAPL", price: "$275", currency: "USD" },
+    { symbol: "AAPL", price: "$275", currency: "USD" }
   ]
 );
 ```
