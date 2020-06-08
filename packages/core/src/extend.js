@@ -27,13 +27,17 @@ const executeExtend = async (extension, value, input) => {
     );
   }
 
-  if (typeof extension === "object" && extension.constructor === Object) {
+  if (
+    typeof extension === "object" &&
+    extension.constructor === Object &&
+    (typeof value === "object" || typeof value === "undefined")
+  ) {
     const transformedObject = { ...value };
 
     const entries = await Promise.all(
       Object.keys(extension).map(async key => [
         key,
-        await executeExtend(extension[key], value[key], input)
+        await executeExtend(extension[key], value && value[key], input)
       ])
     );
 

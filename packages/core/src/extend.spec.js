@@ -75,4 +75,29 @@ describe("extend", () => {
       ]
     );
   });
+
+  it("supports nesting", async () => {
+    await expect(
+      pipeline(
+        emitItems(
+          { firstName: "Jane", lastName: "Doe" },
+          "Something else",
+          null,
+          { firstName: "John", lastName: "Doe", nesting: {} },
+          { firstName: "Jonas", lastName: "Edo", nesting: "will be overriden" }
+        ),
+        extend({
+          nesting: { supported: "YES" }
+        })
+      ),
+      "to yield items",
+      [
+        { firstName: "Jane", lastName: "Doe", nesting: { supported: "YES" } },
+        "Something else",
+        null,
+        { firstName: "John", lastName: "Doe", nesting: { supported: "YES" } },
+        { firstName: "Jonas", lastName: "Edo", nesting: { supported: "YES" } }
+      ]
+    );
+  });
 });
