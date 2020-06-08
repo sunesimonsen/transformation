@@ -79,6 +79,10 @@ await expect(
 
 Choses a pipeline based on a given selector.
 
+```js
+import { chose } from "@translation/core";
+```
+
 The selector is a function that returns a string deciding the pipeline to use.
 
 If the selector is just a string, that pipeline will always be chosen.
@@ -100,6 +104,10 @@ await expect(
 ## delay
 
 Waits the given amount of miliseconds before emitting each item.
+
+```js
+import { delay } from "@translation/core";
+```
 
 ```js
 await expect(
@@ -154,7 +162,8 @@ await expect(emitAll(asyncIterable()), "to yield items", [0, 1, 2, 3, 4, 5]);
 
 Emit the given items into the pipeline.
 
-Notice this step wont take any input, it only outputs the given items.
+Notice this step wont take any input from the pipeline, it only outputs the
+given items.
 
 ```js
 import { emitItems } from "@translation/core";
@@ -174,6 +183,10 @@ await expect(pipeline(emitItems(0, 1, 2, 3, 4, 5)), "to yield items", [
 ## extend
 
 It extends all items that are objects with the given description.
+
+```js
+import { extend } from "@translation/core";
+```
 
 ```js
 await expect(
@@ -241,6 +254,10 @@ await expect(
 Filter items with the given predicate.
 
 ```js
+import { filter } from "@translation/core";
+```
+
+```js
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5),
@@ -274,6 +291,10 @@ await expect(
 ## forEach
 
 Performs a side-effect for each item.
+
+```js
+import { forEach } from "@translation/core";
+```
 
 ```js
 const items = [];
@@ -468,7 +489,7 @@ await expect(
 Memorizes the given step.
 
 ```js
-import { partition } from "@translation/core";
+import { memorize } from "@translation/core";
 ```
 
 ```js
@@ -719,7 +740,7 @@ await expect(
 Re-emits any array as individual items.
 
 ```js
-import { accumulate } from "@translation/core";
+import { splitArray } from "@translation/core";
 ```
 
 ```js
@@ -877,6 +898,77 @@ await expect(
 ```
 
 ## transform
+
+Transforms object trees by running part of the tree though transformations.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { symbol: "goog", price: { value: 1349, currency: "USD" } },
+      { symbol: "aapl", price: { value: 274, currency: "USD" } },
+      { symbol: "aapl", price: { value: 275, currency: "USD" } },
+      { symbol: "goog", price: { value: 1351, currency: "USD" } },
+      { symbol: "aapl", price: { value: 279, currency: "USD" } }
+    ),
+    transform({
+      symbol: map(symbol => symbol.toUpperCase()),
+      price: { value: map(price => price * 2) }
+    })
+  ),
+  "to yield items",
+  [
+    { symbol: "GOOG", price: { value: 2698, currency: "USD" } },
+    { symbol: "AAPL", price: { value: 548, currency: "USD" } },
+    { symbol: "AAPL", price: { value: 550, currency: "USD" } },
+    { symbol: "GOOG", price: { value: 2702, currency: "USD" } },
+    { symbol: "AAPL", price: { value: 558, currency: "USD" } }
+  ]
+);
+```
+
+Only matching parts of an object it transformed.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { symbol: "goog", currency: "USD" },
+      { symbol: "aapl", price: 274, currency: "USD" },
+      "this is not an object",
+      null,
+      {
+        name: "no symbol",
+        price: 666,
+        currency: "USD",
+        nesting: { supported: "yes" }
+      },
+      { symbol: "aapl", price: 275, currency: "USD" },
+    ),
+    transform({
+      symbol: map(symbol => symbol.toUpperCase()),
+      price: map(price => `$${price}`),
+      nesting: {
+        supported: map(symbol => symbol.toUpperCase())
+      }
+    })
+  ),
+  "to yield items",
+  [
+    { symbol: "GOOG", currency: "USD" },
+    { symbol: "AAPL", price: "$274", currency: "USD" },
+    "this is not an object",
+    null,
+    {
+      name: "no symbol",
+      price: "$666",
+      currency: "USD",
+      nesting: { supported: "YES" }
+    },
+    { symbol: "AAPL", price: "$275", currency: "USD" },
+  ]
+);
+```
 
 ## unless
 

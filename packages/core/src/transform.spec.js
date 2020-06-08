@@ -18,14 +18,22 @@ describe("transform", () => {
           { symbol: "aapl", price: 274, currency: "USD" },
           "this is not an object",
           null,
-          { name: "no symbol", currency: "USD" },
+          {
+            name: "no symbol",
+            price: 666,
+            currency: "USD",
+            nesting: { supported: "yes" }
+          },
           { symbol: "aapl", price: 275, currency: "USD" },
           { symbol: "goog", price: 1351, currency: "USD" },
           { symbol: "aapl", price: 279 }
         ),
         transform({
           symbol: map(symbol => symbol.toUpperCase()),
-          price: map(price => `$${price}`)
+          price: map(price => `$${price}`),
+          nesting: {
+            supported: map(symbol => symbol.toUpperCase())
+          }
         })
       ),
       "to yield items",
@@ -34,7 +42,12 @@ describe("transform", () => {
         { symbol: "AAPL", price: "$274", currency: "USD" },
         "this is not an object",
         null,
-        { name: "no symbol", currency: "USD" },
+        {
+          name: "no symbol",
+          price: "$666",
+          currency: "USD",
+          nesting: { supported: "YES" }
+        },
         { symbol: "AAPL", price: "$275", currency: "USD" },
         { symbol: "GOOG", price: "$1351", currency: "USD" },
         { symbol: "AAPL", price: "$279" }
