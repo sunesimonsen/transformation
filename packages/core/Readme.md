@@ -197,7 +197,11 @@ await expect(
     ),
     extend({
       type: "person",
-      fullName: map(({ firstName, lastName }) => `${firstName} ${lastName}`)
+      fullName: map(({ firstName, lastName }) => `${firstName} ${lastName}`),
+      details: {
+        nationality: "Danish",
+        initials: ({ firstName, lastName }) => `${firstName[0]}${lastName[0]}`
+      }
     })
   ),
   "to yield items",
@@ -206,13 +210,15 @@ await expect(
       type: "person",
       firstName: "Jane",
       lastName: "Doe",
-      fullName: "Jane Doe"
+      fullName: "Jane Doe",
+      details: { nationality: "Danish", initials: "JD" }
     },
     {
       type: "person",
       firstName: "John",
       lastName: "Doe",
-      fullName: "John Doe"
+      fullName: "John Doe",
+      details: { nationality: "Danish", initials: "JD" }
     }
   ]
 );
