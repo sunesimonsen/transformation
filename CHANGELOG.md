@@ -1,3 +1,17 @@
+### v1.21.0 (2020-06-08)
+
+#### Pull requests
+
+- [#16](https://github.com/sunesimonsen/transformation/pull/16) Better support nesting when extending objects ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.21.0](https://github.com/sunesimonsen/transformation/commit/274172eee485254a2809dfdb25645de90e36b617) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fixed formatting issue](https://github.com/sunesimonsen/transformation/commit/7b3e70bab26228d1218725a8b092e92718a59aab) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fixed some missing and wrong documentation](https://github.com/sunesimonsen/transformation/commit/160cb9c41358e6da4d905dce4901afb071cc0343) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fixed typo](https://github.com/sunesimonsen/transformation/commit/b82d0ec5f4037d254b6eec180c48401d4dbd86ed) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/e7ed2a756667b8e313372b666e82c84bcf3155fd) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.20.2 (2020-06-07)
 
 - [v1.20.2](https://github.com/sunesimonsen/transformation/commit/576f78ab6cf7b9bd1f9d5bb998581c1595622a79) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
