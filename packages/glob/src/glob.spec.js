@@ -18,9 +18,10 @@ describe("glob", () => {
   });
 
   it("supports just giving a pattern", async () => {
-    await expect(pipeline(glob("test/2020/*.txt"), sort()), "to yield items", [
-      "test/2020/report.txt",
-      "test/2020/transactions.txt"
-    ]);
+    await expect(
+      pipeline(glob("test/20*/report.txt"), sort()),
+      "to yield items",
+      ["test/2020/report.txt", "test/2021/report.txt", "test/2022/report.txt"]
+    );
   });
 });

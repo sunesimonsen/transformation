@@ -54,15 +54,15 @@ describe("globEach", () => {
         emitItems("2020", "2021"),
         map(year => ({ cwd: path.join(testDir, year) })),
         globEach({ pattern: "*.txt", absolute: true }),
-        map(path => path.replace(/.*test\//, "")),
+        map(path => path.replace(/.*\/transformation\//, "")),
         sort()
       ),
       "to yield items",
       [
-        "2020/report.txt",
-        "2020/transactions.txt",
-        "2021/report.txt",
-        "2021/transactions.txt"
+        "packages/glob/test/2020/report.txt",
+        "packages/glob/test/2020/transactions.txt",
+        "packages/glob/test/2021/report.txt",
+        "packages/glob/test/2021/transactions.txt"
       ]
     );
   });
