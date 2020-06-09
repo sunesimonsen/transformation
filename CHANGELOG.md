@@ -1,3 +1,9 @@
+### v1.22.0 (2020-06-09)
+
+- [v1.22.0](https://github.com/sunesimonsen/transformation/commit/a52bcb655232cb23571b2d7e06ebc58a26ae38cf) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Use require syntax instead of imports in the documentation](https://github.com/sunesimonsen/transformation/commit/af1ae12c0f5a8871d3669d4f74416df2d139946c) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/0b040e4644edbc3458dcb3377421faa7d53e7c6a) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.21.0 (2020-06-08)
 
 #### Pull requests
