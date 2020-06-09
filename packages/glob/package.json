@@ -1,6 +1,6 @@
 {
   "name": "@transformation/glob",
-  "version": "1.22.0",
+  "version": "1.23.0",
   "description": "Expand glob patterns in a transformation pipeline",
   "main": "./src/index.js",
   "scripts": {
