@@ -5,7 +5,7 @@
 Streams the rows of a CSV file using [csv-parser](https://www.npmjs.com/package/csv-parser) and emits objects.
 
 ```js
-import { readCSV } from "@translation/csv";
+const { readCSV } = require("transformation/csv");
 ```
 
 ```js
@@ -56,7 +56,7 @@ readCSV(csvFilePath, {
 Writes objects to one or more CSV files using [csv-writer](https://www.npmjs.com/package/csv-writer).
 
 ```js
-import { writeCSV } from "@translation/csv";
+const { writeCSV } = require("transformation/csv");
 ```
 
 Simplest case is just to write objects into a single file.

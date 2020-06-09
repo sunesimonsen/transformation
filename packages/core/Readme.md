@@ -5,7 +5,7 @@
 Produces the next item based on the current and the previous item:
 
 ```js
-import { accumulate } from "@translation/core";
+const { accumulate } from "@translation/core";
 ```
 
 ```js
@@ -33,7 +33,7 @@ await expect(
 Adds a buffer of a given size into the pipeline.
 
 ```js
-import { buffer } from "@translation/core";
+const { buffer } from "@translation/core";
 ```
 
 ### fixed buffer (default)
@@ -80,7 +80,7 @@ await expect(
 Choses a pipeline based on a given selector.
 
 ```js
-import { chose } from "@translation/core";
+const { chose } from "@translation/core";
 ```
 
 The selector is a function that returns a string deciding the pipeline to use.
@@ -106,7 +106,7 @@ await expect(
 Waits the given amount of miliseconds before emitting each item.
 
 ```js
-import { delay } from "@translation/core";
+const { delay } from "@translation/core";
 ```
 
 ```js
@@ -124,7 +124,7 @@ Emit all the items in the given iterator into the pipeline.
 Notice this step wont take any input, it only outputs the given items.
 
 ```js
-import { emitItems } from "@translation/core";
+const { emitItems } from "@translation/core";
 ```
 
 Emitting items from an array.
@@ -166,7 +166,7 @@ Notice this step wont take any input from the pipeline, it only outputs the
 given items.
 
 ```js
-import { emitItems } from "@translation/core";
+const { emitItems } from "@translation/core";
 ```
 
 ```js
@@ -185,7 +185,7 @@ await expect(pipeline(emitItems(0, 1, 2, 3, 4, 5)), "to yield items", [
 It extends all items that are objects with the given description.
 
 ```js
-import { extend } from "@translation/core";
+const { extend } from "@translation/core";
 ```
 
 ```js
@@ -230,7 +230,7 @@ Run the given step with the specified concurrency. If no concurrency is
 specified, it will default to 2 times the number of CPU's available.
 
 ```js
-import { parallel } from "@translation/core";
+const { parallel } from "@translation/core";
 ```
 
 ```js
@@ -260,7 +260,7 @@ await expect(
 Filter items with the given predicate.
 
 ```js
-import { filter } from "@translation/core";
+const { filter } from "@translation/core";
 ```
 
 ```js
@@ -280,7 +280,7 @@ Maps each item with the given mapper, if a returned item is an array it emits
 the items individualy.
 
 ```js
-import { flatMap } from "@translation/core";
+const { flatMap } from "@translation/core";
 ```
 
 ```js
@@ -299,7 +299,7 @@ await expect(
 Performs a side-effect for each item.
 
 ```js
-import { forEach } from "@translation/core";
+const { forEach } from "@translation/core";
 ```
 
 ```js
@@ -318,7 +318,7 @@ expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
 Forks the pipeline into two.
 
 ```js
-import { fork } from "@translation/core";
+const { fork } from "@translation/core";
 ```
 
 ```js
@@ -351,7 +351,7 @@ Notice that this step will consume all items in the pipeline before emiting the
 groups.
 
 ```js
-import { groupBy } from "@translation/core";
+const { groupBy } from "@translation/core";
 ```
 
 ```js
@@ -410,7 +410,7 @@ You can transform the items of a group with [withGroup](#withGroup).
 Maps each item with the given mapper.
 
 ```js
-import { map } from "@translation/core";
+const { map } from "@translation/core";
 ```
 
 ```js
@@ -429,7 +429,7 @@ await expect(
 Partition items into groups of the given size.
 
 ```js
-import { partition } from "@translation/core";
+const { partition } from "@translation/core";
 ```
 
 ```js
@@ -450,7 +450,7 @@ await expect(
 Partition items into groups by the given selector.
 
 ```js
-import { partitionBy } from "@translation/core";
+const { partitionBy } from "@translation/core";
 ```
 
 ```js
@@ -495,7 +495,7 @@ await expect(
 Memorizes the given step.
 
 ```js
-import { memorize } from "@translation/core";
+const { memorize } from "@translation/core";
 ```
 
 ```js
@@ -572,7 +572,7 @@ await expect(
 Turns multiple steps into a single step.
 
 ```js
-import { pipeline } from "@translation/core";
+const { pipeline } from "@translation/core";
 ```
 
 ```js
@@ -595,7 +595,7 @@ await expect(
 Runs all of the given steps until the output closes.
 
 ```js
-import { program } from "@translation/core";
+const { program } from "@translation/core";
 ```
 
 ```js
@@ -615,7 +615,7 @@ Reduces the given pipeline down to a single item using the given accumulator
 function and an initial value.
 
 ```js
-import { reduce } from "@translation/core";
+const { reduce } from "@translation/core";
 ```
 
 ```js
@@ -636,7 +636,7 @@ Sorts all of the items in the pipeline and re-emits them one by one.
 Notice that this step will consume all of the items in the pipeline.
 
 ```js
-import { sort } from "@translation/core";
+const { sort } from "@translation/core";
 ```
 
 ```js
@@ -669,7 +669,7 @@ them one by one.
 Notice that this step will consume all of the items in the pipeline.
 
 ```js
-import { sortBy } from "@translation/core";
+const { sortBy } from "@translation/core";
 ```
 
 ```js
@@ -746,7 +746,7 @@ await expect(
 Re-emits any array as individual items.
 
 ```js
-import { splitArray } from "@translation/core";
+const { splitArray } from "@translation/core";
 ```
 
 ```js
@@ -762,7 +762,7 @@ await expect(
 Starts a child process pipeline in a new Node instance.
 
 ```js
-import { startProcess, childProcess } from "@translation/core";
+const { startProcess, childProcess } from "@translation/core";
 ```
 
 Notice this is only useful for cases where your pipeline is more CPU intensive
@@ -798,7 +798,7 @@ serialized and passed back to the main pipeline.
 Print items to the console.
 
 ```js
-import { tap } from "@translation/core";
+const { tap } from "@translation/core";
 ```
 
 ```js
@@ -892,7 +892,7 @@ chat: 0
 Accumulates all items into an array.
 
 ```js
-import { toArray } from "@transformation/core";
+const { toArray } = require("transformation/core");
 ```
 
 ```js
@@ -983,7 +983,7 @@ Executes a sub pipeline when a given condition is not meet.
 See [when](#when) for the opposite computation.
 
 ```js
-import { unless } from "@transformation/core";
+const { unless } = require("transformation/core");
 ```
 
 When given a predicate function, it executes the sub pipeline when the predicate
@@ -1039,7 +1039,7 @@ Conditionally executes a sub pipeline.
 See [unless](#unless) for the opposite computation.
 
 ```js
-import { when } from "@transformation/core";
+const { when } = require("transformation/core");
 ```
 
 When given a predicate function, it executes the sub pipeline when the predicate
@@ -1099,7 +1099,7 @@ Transform items in groups created by [groupBy](#groupBy).
 Notice that you can provide one or more transformation steps to `withGroup`.
 
 ```js
-import { withGroup } from "@transformation/core";
+const { withGroup } = require("transformation/core");
 ```
 
 Here we attach labels to rows in stock groups.
@@ -1145,7 +1145,7 @@ await expect(
 This function drains all items from a pipeline and returns them as an array.
 
 ```js
-import { takeAll } from "@transformation/core";
+const { takeAll } = require("transformation/core");
 ```
 
 ```js
@@ -1162,7 +1162,7 @@ expect(items, "to equal", [0, 1, 4, 9, 16, 25]);
 Let's say we want to build a custom step that can't easily be built by composing the existing step. Then you can use the `step` function to create a custom step.
 
 ```js
-import { step } from "@transformation/core";
+const { step } = require("transformation/core");
 ```
 
 The step we will use for this example is one that duplicates all items.
