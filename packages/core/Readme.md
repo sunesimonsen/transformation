@@ -405,6 +405,64 @@ await expect(
 
 You can transform the items of a group with [withGroup](#withGroup).
 
+## keyBy
+
+Indexes each item into to an object by the selected keys.
+
+```js
+const { keyBy } = require("@transformation/core");
+```
+
+When given a field, it indexes the items in the pipeline keyed by the given field.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { id: 0, name: "foo" },
+      { id: 1, name: "bar" },
+      { id: 2, name: "baz" },
+      { id: 3, name: "qux" }
+    ),
+    keyBy("id")
+  ),
+  "to yield items",
+  [
+    {
+      0: { id: 0, name: "foo" },
+      1: { id: 1, name: "bar" },
+      2: { id: 2, name: "baz" },
+      3: { id: 3, name: "qux" }
+    }
+  ]
+);
+```
+
+You can also provide a function the will be used to select the key to index by.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { id: 0, name: "foo" },
+      { id: 1, name: "bar" },
+      { id: 2, name: "baz" },
+      { id: 3, name: "qux" }
+    ),
+    keyBy(({ name }) => name)
+  ),
+  "to yield items",
+  [
+    {
+      foo: { id: 0, name: "foo" },
+      bar: { id: 1, name: "bar" },
+      baz: { id: 2, name: "baz" },
+      qux: { id: 3, name: "qux" }
+    }
+  ]
+);
+```
+
 ## map
 
 Maps each item with the given mapper.
