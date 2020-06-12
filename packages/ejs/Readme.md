@@ -86,7 +86,7 @@ AAPL: 279
 
 ```
 GOOG: 1349
-GOOG: 1351"
+GOOG: 1351
 ```
 
 You can of cause also just write items to one file, you just needs to make sure to aggregate the pipeline into one item first.
