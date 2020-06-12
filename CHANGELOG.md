@@ -1,3 +1,20 @@
+### v1.24.0 (2020-06-12)
+
+#### Pull requests
+
+- [#22](https://github.com/sunesimonsen/transformation/pull/22) Added tocs to the readme's ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#21](https://github.com/sunesimonsen/transformation/pull/21) Added a keyBy transformation ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#20](https://github.com/sunesimonsen/transformation/pull/20) Document the ejs package ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.24.0](https://github.com/sunesimonsen/transformation/commit/5ec25dcfa4734d5ea324f0e404372a47cf863725) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fixed stupid typo](https://github.com/sunesimonsen/transformation/commit/4ca863aa21f77ae23241a62c556ca5d3529267a3) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fixed linting problem](https://github.com/sunesimonsen/transformation/commit/5c4ae28e88c0541dca07d1eb737ce3c9a5fd0d92) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fixed a few typos](https://github.com/sunesimonsen/transformation/commit/f964f3929cd6707087d58b8d35c1374b94e406ab) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Removed typo](https://github.com/sunesimonsen/transformation/commit/11039329d70c34d37d56b14962d7d004d405ce4b) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [+1 more](https://github.com/sunesimonsen/transformation/compare/v1.23.0...v1.24.0)
+
 ### v1.23.0 (2020-06-10)
 
 #### Pull requests
