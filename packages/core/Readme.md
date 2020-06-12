@@ -1,5 +1,47 @@
 # @transformation/core
 
+<!-- toc -->
+
+- [accumulate](#accumulate)
+- [buffer](#buffer)
+  - [fixed buffer (default)](#fixed-buffer-default)
+  - [dropping buffer](#dropping-buffer)
+  - [sliding buffer](#sliding-buffer)
+- [chose](#chose)
+- [delay](#delay)
+- [emitAll](#emitall)
+- [emitItems](#emititems)
+- [extend](#extend)
+- [parallel](#parallel)
+- [filter](#filter)
+- [flatMap](#flatmap)
+- [forEach](#foreach)
+- [fork](#fork)
+- [groupBy](#groupby)
+- [keyBy](#keyby)
+- [map](#map)
+- [partition](#partition)
+- [partitionBy](#partitionby)
+- [memorize](#memorize)
+- [pipeline](#pipeline)
+- [program](#program)
+- [reduce](#reduce)
+- [sort](#sort)
+- [sortBy](#sortby)
+- [splitArray](#splitarray)
+- [startProcess/childProcess](#startprocesschildprocess)
+- [tap](#tap)
+- [toArray](#toarray)
+- [transform](#transform)
+- [unless](#unless)
+- [when](#when)
+- [withGroup](#withgroup)
+- [Utilities](#utilities)
+  - [takeAll](#takeall)
+- [Building new steps](#building-new-steps)
+
+<!-- tocstop -->
+
 ## accumulate
 
 Produces the next item based on the current and the previous item:

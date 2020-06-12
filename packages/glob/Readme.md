@@ -2,6 +2,13 @@
 
 A package used to find paths matching glob patterns.
 
+<!-- toc -->
+
+- [glob](#glob)
+- [globEach](#globeach)
+
+<!-- tocstop -->
+
 ## glob
 
 Glob for file paths using [globby](https://www.npmjs.com/package/globby) and
