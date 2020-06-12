@@ -12,6 +12,7 @@ const flatMap = require("./flatMap");
 const forEach = require("./forEach");
 const fork = require("./fork");
 const groupBy = require("./groupBy");
+const keyBy = require("./keyBy");
 const map = require("./map");
 const memorize = require("./memorize");
 const partition = require("./partition");
@@ -49,6 +50,7 @@ module.exports = {
   forEach,
   fork,
   groupBy,
+  keyBy,
   map,
   memorize,
   parallel,
