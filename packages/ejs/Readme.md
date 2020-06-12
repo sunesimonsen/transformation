@@ -68,7 +68,7 @@ await program(
     { symbol: "AAPL", price: 279 }
   ),
   groupBy("symbol"),
-  writeTemplate('stocks.ejs', ({ key }) => `stocks-${key}.txt`)
+  writeTemplate("stocks.ejs", ({ key }) => `stocks-${key}.txt`)
 );
 ```
 
@@ -110,7 +110,7 @@ await program(
   ),
   sortBy("symbol"),
   toArray(),
-  writeTemplate('stocksArray.ejs', "stocks.txt")
+  writeTemplate("stocksArray.ejs", "stocks.txt")
 );
 ```
 
