@@ -19,7 +19,7 @@ Let say we want to render stock items with a custom template. Let's start out by
 <% } -%>
 ```
 
-No we can render items with the template by using the `renderTemplate` transform.
+Now we can render items with the template by using the `renderTemplate` transform.
 
 ```js
 await expect(
@@ -44,7 +44,7 @@ await expect(
 Renders an EJS template for each item in the pipeline to a file.
 
 ```js
-const { renderTemplate } = require("@transformation/ejs");
+const { writeTemplate } = require("@transformation/ejs");
 ```
 
 Let say we want to render stock items with a custom template. Let's start out by defining the template in a file called `stocks.ejs`.
@@ -56,7 +56,7 @@ Let say we want to render stock items with a custom template. Let's start out by
 <% } -%>
 ```
 
-No we can render items with the template by using the `renderTemplate` transform.
+No we can render items with the template by using the `writeTemplate` transform.
 
 ```js
 await program(
@@ -68,7 +68,7 @@ await program(
     { symbol: "AAPL", price: 279 }
   ),
   groupBy("symbol"),
-  renderTemplate(stocksTemplatePath, ({ key }) => `stocks-${key}.txt`)
+  writeTemplate('stocks.ejs', ({ key }) => `stocks-${key}.txt`)
 );
 ```
 
@@ -110,7 +110,7 @@ await program(
   ),
   sortBy("symbol"),
   toArray(),
-  writeTemplate(stockArrayTemplatePath, "stocks.txt")
+  writeTemplate('stocksArray.ejs', "stocks.txt")
 );
 ```
 
