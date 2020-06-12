@@ -1,5 +1,7 @@
 # @transformation/glob
 
+A package used to find paths matching glob patterns.
+
 ## glob
 
 Glob for file paths using [globby](https://www.npmjs.com/package/globby) and

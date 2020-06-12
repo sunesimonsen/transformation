@@ -1,5 +1,7 @@
 # @transformation/csv
 
+A package for reading and writing CSV files.
+
 ## readCSV
 
 Streams the rows of a CSV file using [csv-parser](https://www.npmjs.com/package/csv-parser) and emits objects.
