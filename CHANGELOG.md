@@ -1,3 +1,14 @@
+### v1.25.0 (2020-06-13)
+
+#### Pull requests
+
+- [#23](https://github.com/sunesimonsen/transformation/pull/23) Added uniq and uniqBy transformations ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.25.0](https://github.com/sunesimonsen/transformation/commit/6e8f26370b0b2a85215a8a07f36549e9c27715ba) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/eacefef7a179ba087144b439725a055e7269511b) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.24.0 (2020-06-12)
 
 #### Pull requests
