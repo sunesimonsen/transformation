@@ -29,6 +29,8 @@ const takeAll = require("./takeAll");
 const tap = require("./tap");
 const toArray = require("./toArray");
 const transform = require("./transform");
+const uniq = require("./uniq");
+const uniqBy = require("./uniqBy");
 const unless = require("./unless");
 const when = require("./when");
 
@@ -68,6 +70,8 @@ module.exports = {
   tap,
   toArray,
   transform,
+  uniq,
+  uniqBy,
   unless,
   when
 };
