@@ -6,8 +6,8 @@ const pipeline = require("./pipeline");
 const keyBy = require("./keyBy");
 
 describe("keyBy", () => {
-  describe("when given a string", () => {
-    it("indexes each item into to an object by the given key", async () => {
+  describe("when given a field", () => {
+    it("indexes each item into to an object by the given field", async () => {
       await expect(
         pipeline(
           emitItems(
@@ -49,6 +49,32 @@ describe("keyBy", () => {
             foo: { id: 0, name: "foo" },
             bar: { id: 1, name: "bar" },
             baz: { id: 2, name: "baz" },
+            qux: { id: 3, name: "qux" }
+          }
+        ]
+      );
+    });
+  });
+
+  describe("when there are duplicate keys", () => {
+    it("uses the last item with that key", async () => {
+      await expect(
+        pipeline(
+          emitItems(
+            { id: 0, name: "foo" },
+            { id: 1, name: "bar" },
+            { id: 2, name: "baz" },
+            { id: 3, name: "qux" },
+            { id: 4, name: "baz" }
+          ),
+          keyBy("name")
+        ),
+        "to yield items",
+        [
+          {
+            foo: { id: 0, name: "foo" },
+            bar: { id: 1, name: "bar" },
+            baz: { id: 4, name: "baz" },
             qux: { id: 3, name: "qux" }
           }
         ]

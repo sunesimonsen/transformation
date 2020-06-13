@@ -33,6 +33,8 @@
 - [tap](#tap)
 - [toArray](#toarray)
 - [transform](#transform)
+- [uniq](#uniq)
+- [uniqBy](#uniqby)
 - [unless](#unless)
 - [when](#when)
 - [withGroup](#withgroup)
@@ -1072,6 +1074,82 @@ await expect(
       nesting: { supported: "YES" }
     },
     { symbol: "AAPL", price: "$275", currency: "USD" }
+  ]
+);
+```
+
+## uniq
+
+Filters out items that is not unique.
+
+```js
+const { uniq } = require("transformations/core");
+```
+
+It records items that is already seen and filters out the items that has already been emitted.
+
+```js
+await expect(
+  pipeline(emitItems(0, 4, 1, 2, 3, 0, 4, 5, 7, 6, 7, 8, 9, 9), uniq()),
+  "to yield items",
+  [0, 4, 1, 2, 3, 5, 7, 6, 8, 9]
+);
+```
+
+## uniqBy
+
+Filters out items that is not unique by a selected value.
+
+```js
+const { uniqBy } = require("transformations/core");
+```
+
+It records items that is already seen and filters out the items that has already been emitted.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { id: 0, name: "foo", count: 0 },
+      { id: 1, name: "bar", count: 1 },
+      { id: 2, name: "baz", count: 2 },
+      { id: 0, name: "foo", count: 3 },
+      { id: 3, name: "qux", count: 4 },
+      { id: 2, name: "baz", count: 5 }
+    ),
+    uniqBy("id")
+  ),
+  "to yield items",
+  [
+    { id: 0, name: "foo", count: 0 },
+    { id: 1, name: "bar", count: 1 },
+    { id: 2, name: "baz", count: 2 },
+    { id: 3, name: "qux", count: 4 }
+  ]
+);
+```
+
+You can also use a function to select the discriminating value.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { id: 0, name: "foo", count: 0 },
+      { id: 1, name: "bar", count: 1 },
+      { id: 2, name: "baz", count: 2 },
+      { id: 0, name: "foo", count: 3 },
+      { id: 3, name: "qux", count: 4 },
+      { id: 2, name: "baz", count: 5 }
+    ),
+    uniqBy(({ name }) => name)
+  ),
+  "to yield items",
+  [
+    { id: 0, name: "foo", count: 0 },
+    { id: 1, name: "bar", count: 1 },
+    { id: 2, name: "baz", count: 2 },
+    { id: 3, name: "qux", count: 4 }
   ]
 );
 ```
