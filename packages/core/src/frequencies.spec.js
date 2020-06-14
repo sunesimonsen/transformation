@@ -10,11 +10,11 @@ describe("frequencies", () => {
     it("counts items", async () => {
       await expect(
         pipeline(
-          emitItems(1, 2, 4, 1, 2, 5, 6, 2, 1, 3, 4, 5, 2, 2),
+          emitItems("foo", "bar", "baz", "qux", "qux", "baz", "qux", "foo"),
           frequencies()
         ),
         "to yield items",
-        [{ 1: 3, 2: 5, 3: 1, 4: 2, 5: 2, 6: 1 }]
+        [{ foo: 2, bar: 1, baz: 2, qux: 3 }]
       );
     });
   });
