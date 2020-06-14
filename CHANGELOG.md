@@ -1,3 +1,15 @@
+### v1.26.0 (2020-06-14)
+
+#### Pull requests
+
+- [#24](https://github.com/sunesimonsen/transformation/pull/24) Added a frequencies transform. ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.26.0](https://github.com/sunesimonsen/transformation/commit/192256e0c9ec1c8ec514f2fa0b17b882fc525c23) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Updated the TOC](https://github.com/sunesimonsen/transformation/commit/f2a3b1b332207f240fc3cdf84d51cc09794586e5) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/71669db000ae0684f7b245b7f7e07d23bb6515c8) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.25.0 (2020-06-13)
 
 #### Pull requests
