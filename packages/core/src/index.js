@@ -6,6 +6,7 @@ const delay = require("./delay");
 const emitAll = require("./emitAll");
 const emitItems = require("./emitItems");
 const extend = require("./extend");
+const frequencies = require("./frequencies");
 const parallel = require("./parallel");
 const filter = require("./filter");
 const flatMap = require("./flatMap");
@@ -46,6 +47,7 @@ module.exports = {
   emitAll,
   emitItems,
   extend,
+  frequencies,
   fanOut: parallel,
   filter,
   flatMap,
