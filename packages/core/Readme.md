@@ -268,6 +268,68 @@ await expect(
 );
 ```
 
+## frequencies
+
+Counts frequencies of items in the pipeline.
+
+```js
+const { frequencies } from '@transformation/core'
+```
+
+When given no arguments, it counts the items by identity.
+
+```js
+await expect(
+  pipeline(emitItems(1, 2, 4, 1, 2, 5, 6, 2, 1, 3, 4, 5, 2, 2), frequencies()),
+  "to yield items",
+  [{ 1: 3, 2: 5, 3: 1, 4: 2, 5: 2, 6: 1 }]
+);
+```
+
+When given a field, it counts items by that field.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { id: 0, name: "foo" },
+      { id: 1, name: "bar" },
+      { id: 2, name: "baz" },
+      { id: 3, name: "qux" },
+      { id: 4, name: "qux" },
+      { id: 5, name: "baz" },
+      { id: 6, name: "qux" },
+      { id: 7, name: "foo" }
+    ),
+    frequencies("name")
+  ),
+  "to yield items",
+  [{ foo: 2, bar: 1, baz: 2, qux: 3 }]
+);
+```
+
+When given a function, it counts items by the returned value.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { id: 0, name: "foo" },
+      { id: 1, name: "bar" },
+      { id: 2, name: "baz" },
+      { id: 3, name: "qux" },
+      { id: 4, name: "qux" },
+      { id: 5, name: "baz" },
+      { id: 6, name: "qux" },
+      { id: 7, name: "foo" }
+    ),
+    frequencies(({ name }) => name[0])
+  ),
+  "to yield items",
+  [{ f: 2, b: 3, q: 3 }]
+);
+```
+
 ## parallel
 
 Run the given step with the specified concurrency. If no concurrency is
