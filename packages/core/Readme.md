@@ -12,6 +12,7 @@
 - [emitAll](#emitall)
 - [emitItems](#emititems)
 - [extend](#extend)
+- [frequencies](#frequencies)
 - [parallel](#parallel)
 - [filter](#filter)
 - [flatMap](#flatmap)
