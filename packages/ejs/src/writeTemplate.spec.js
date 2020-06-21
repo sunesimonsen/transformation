@@ -40,7 +40,7 @@ describe("writeTemplate", () => {
       writeTemplate(stockArrayTemplatePath, stocksOutputPath)
     );
 
-    const output = await fs.readFile(stocksOutputPath, "utf-8");
+    const output = await fs.readFile(stocksOutputPath, "utf8");
 
     expect(
       output,
@@ -67,7 +67,7 @@ describe("writeTemplate", () => {
 
       const output = await fs.readFile(
         path.join(testPath, `stocks-GOOG.txt`),
-        "utf-8"
+        "utf8"
       );
 
       expect(output, "to equal", "GOOG\n  1349\n  1351\n");

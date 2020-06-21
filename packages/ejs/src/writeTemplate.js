@@ -12,7 +12,7 @@ const writeTemplate = async (
       ? outputPathOrFunction
       : () => outputPathOrFunction;
 
-  const templateSource = await fs.readFile(templatePath, "utf-8");
+  const templateSource = await fs.readFile(templatePath, "utf8");
 
   const template = ejs.compile(templateSource, {
     ...options,
