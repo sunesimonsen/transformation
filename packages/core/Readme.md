@@ -19,6 +19,7 @@
 - [forEach](#foreach)
 - [fork](#fork)
 - [groupBy](#groupby)
+- [interleave](#interleave)
 - [keyBy](#keyby)
 - [map](#map)
 - [partition](#partition)
@@ -514,6 +515,32 @@ await expect(
 ```
 
 You can transform the items of a group with [withGroup](#withGroup).
+
+## interleave
+
+Interleaves the given separators between the items in the pipeline.
+
+```js
+const { interleave } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(emitItems("0", "1", "2", "3", "4", "5"), interleave(",")),
+  "to yield items",
+  ["0", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5"]
+);
+```
+
+When given multiple separators, they are cycled.
+
+```js
+await expect(
+  pipeline(emitItems("0", "1", "2", "3", "4", "5"), interleave(",", "-", "|")),
+  "to yield items",
+  ["0", ",", "1", "-", "2", "|", "3", ",", "4", "-", "5"]
+);
+```
 
 ## keyBy
 
