@@ -18,7 +18,7 @@ Emits all chunks or values of a given Node readable stream.
 Notice this step won't take any input, it only outputs the given items.
 
 ```js
-const { fromStream } from "@transformation/stream";
+const { fromStream } = require("@transformation/stream");
 ```
 
 When given an encoded stream the data in the chunks is strings.
@@ -71,7 +71,7 @@ await expect(
 Emits all of the lines of the incoming strings or chunks.
 
 ```js
-const { lines } from "@transformation/stream";
+const { lines } = require("@transformation/stream");
 ```
 
 ```js
