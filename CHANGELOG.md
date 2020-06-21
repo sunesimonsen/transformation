@@ -1,3 +1,15 @@
+### v1.27.0 (2020-06-21)
+
+#### Pull requests
+
+- [#26](https://github.com/sunesimonsen/transformation/pull/26) Adding a stream package for interoperating with Node streams ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.27.0](https://github.com/sunesimonsen/transformation/commit/6b5b1f6ed60d302f5f0b1c4282bb658ef4bf8006) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Improve frequencies example a bit](https://github.com/sunesimonsen/transformation/commit/946397fda27bec306fb2a7fb13b4de3deac83919) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/5381cb9dd4a42c3a723d003c55c2fed4f9e1984d) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.26.0 (2020-06-14)
 
 #### Pull requests
