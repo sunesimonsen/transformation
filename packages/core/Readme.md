@@ -30,7 +30,7 @@
 - [reduce](#reduce)
 - [sort](#sort)
 - [sortBy](#sortby)
-- [splitArray](#splitarray)
+- [splitIterable](#splitIterable)
 - [startProcess/childProcess](#startprocesschildprocess)
 - [tap](#tap)
 - [toArray](#toarray)
@@ -936,17 +936,17 @@ await expect(
 );
 ```
 
-## splitArray
+## splitIterable
 
 Re-emits any array as individual items.
 
 ```js
-const { splitArray } from "@transformation/core";
+const { splitIterable } from "@transformation/core";
 ```
 
 ```js
 await expect(
-  pipeline(emitItems(0, [1, 2], [3, 4, 5]), splitArray()),
+  pipeline(emitItems(0, [1, 2], [3, 4, 5]), splitIterable()),
   "to yield items",
   [0, 1, 2, 3, 4, 5]
 );

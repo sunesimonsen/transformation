@@ -24,7 +24,7 @@ const program = require("./program");
 const reduce = require("./reduce");
 const sort = require("./sort");
 const sortBy = require("./sortBy");
-const splitArray = require("./splitArray");
+const splitIterable = require("./splitIterable");
 const { startProcess, childProcess } = require("./process");
 const step = require("./step");
 const takeAll = require("./takeAll");
@@ -67,7 +67,8 @@ module.exports = {
   reduce,
   sort,
   sortBy,
-  splitArray,
+  splitArray: splitIterable,
+  splitIterable,
   startProcess,
   step,
   takeAll,
