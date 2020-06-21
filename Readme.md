@@ -35,6 +35,7 @@ steps, that can be composed into processing pipelines.
 - [@transformation/csv](./packages/csv/Readme.md) - read and write CSV files.
 - [@transformation/ejs](./packages/ejs/Readme.md) - write files with EJS templates.
 - [@transformation/glob](./packages/glob/Readme.md) - find files using glob patterns.
+- [@transformation/stream](./packages/stream/Readme.md) - integrate with Node streams.
 
 [Changelog](./CHANGELOG.md)
 
