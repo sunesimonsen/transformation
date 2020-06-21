@@ -51,7 +51,7 @@
 Produces the next item based on the current and the previous item:
 
 ```js
-const { accumulate } from "@transformation/core";
+const { accumulate } = require("@transformation/core");
 ```
 
 ```js
@@ -79,7 +79,7 @@ await expect(
 Adds a buffer of a given size into the pipeline.
 
 ```js
-const { buffer } from "@transformation/core";
+const { buffer } = require("@transformation/core");
 ```
 
 ### fixed buffer (default)
@@ -126,7 +126,7 @@ await expect(
 Choses a pipeline based on a given selector.
 
 ```js
-const { chose } from "@transformation/core";
+const { chose } = require("@transformation/core");
 ```
 
 The selector is a function that returns a string deciding the pipeline to use.
@@ -152,7 +152,7 @@ await expect(
 Waits the given amount of miliseconds before emitting each item.
 
 ```js
-const { delay } from "@transformation/core";
+const { delay } = require("@transformation/core");
 ```
 
 ```js
@@ -170,7 +170,7 @@ Emit all the items in the given iterator into the pipeline.
 Notice this step won't take any input, it only outputs the given items.
 
 ```js
-const { emitItems } from "@transformation/core";
+const { emitItems } = require("@transformation/core");
 ```
 
 Emitting items from an array.
@@ -212,7 +212,7 @@ Notice this step wont take any input from the pipeline, it only outputs the
 given items.
 
 ```js
-const { emitItems } from "@transformation/core";
+const { emitItems } = require("@transformation/core");
 ```
 
 ```js
@@ -231,7 +231,7 @@ await expect(pipeline(emitItems(0, 1, 2, 3, 4, 5)), "to yield items", [
 It extends all items that are objects with the given description.
 
 ```js
-const { extend } from "@transformation/core";
+const { extend } = require("@transformation/core");
 ```
 
 ```js
@@ -341,7 +341,7 @@ Run the given step with the specified concurrency. If no concurrency is
 specified, it will default to 2 times the number of CPU's available.
 
 ```js
-const { parallel } from "@transformation/core";
+const { parallel } = require("@transformation/core");
 ```
 
 ```js
@@ -371,7 +371,7 @@ await expect(
 Filter items with the given predicate.
 
 ```js
-const { filter } from "@transformation/core";
+const { filter } = require("@transformation/core");
 ```
 
 ```js
@@ -391,7 +391,7 @@ Maps each item with the given mapper, if a returned item is an array it emits
 the items individualy.
 
 ```js
-const { flatMap } from "@transformation/core";
+const { flatMap } = require("@transformation/core");
 ```
 
 ```js
@@ -410,7 +410,7 @@ await expect(
 Performs a side-effect for each item.
 
 ```js
-const { forEach } from "@transformation/core";
+const { forEach } = require("@transformation/core");
 ```
 
 ```js
@@ -429,7 +429,7 @@ expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
 Forks the pipeline into two.
 
 ```js
-const { fork } from "@transformation/core";
+const { fork } = require("@transformation/core");
 ```
 
 ```js
@@ -462,7 +462,7 @@ Notice that this step will consume all items in the pipeline before emiting the
 groups.
 
 ```js
-const { groupBy } from "@transformation/core";
+const { groupBy } = require("@transformation/core");
 ```
 
 ```js
@@ -605,7 +605,7 @@ await expect(
 Maps each item with the given mapper.
 
 ```js
-const { map } from "@transformation/core";
+const { map } = require("@transformation/core");
 ```
 
 ```js
@@ -624,7 +624,7 @@ await expect(
 Partition items into groups of the given size.
 
 ```js
-const { partition } from "@transformation/core";
+const { partition } = require("@transformation/core");
 ```
 
 ```js
@@ -645,7 +645,7 @@ await expect(
 Partition items into groups by the given selector.
 
 ```js
-const { partitionBy } from "@transformation/core";
+const { partitionBy } = require("@transformation/core");
 ```
 
 ```js
@@ -690,7 +690,7 @@ await expect(
 Memorizes the given step.
 
 ```js
-const { memorize } from "@transformation/core";
+const { memorize } = require("@transformation/core");
 ```
 
 ```js
@@ -767,7 +767,7 @@ await expect(
 Turns multiple steps into a single step.
 
 ```js
-const { pipeline } from "@transformation/core";
+const { pipeline } = require("@transformation/core");
 ```
 
 ```js
@@ -790,7 +790,7 @@ await expect(
 Runs all of the given steps until the output closes.
 
 ```js
-const { program } from "@transformation/core";
+const { program } = require("@transformation/core");
 ```
 
 ```js
@@ -810,7 +810,7 @@ Reduces the given pipeline down to a single item using the given accumulator
 function and an initial value.
 
 ```js
-const { reduce } from "@transformation/core";
+const { reduce } = require("@transformation/core");
 ```
 
 ```js
@@ -831,7 +831,7 @@ Sorts all of the items in the pipeline and re-emits them one by one.
 Notice that this step will consume all of the items in the pipeline.
 
 ```js
-const { sort } from "@transformation/core";
+const { sort } = require("@transformation/core");
 ```
 
 ```js
@@ -864,7 +864,7 @@ them one by one.
 Notice that this step will consume all of the items in the pipeline.
 
 ```js
-const { sortBy } from "@transformation/core";
+const { sortBy } = require("@transformation/core");
 ```
 
 ```js
@@ -941,7 +941,7 @@ await expect(
 Re-emits any array as individual items.
 
 ```js
-const { splitIterable } from "@transformation/core";
+const { splitIterable } = require("@transformation/core");
 ```
 
 ```js
@@ -957,7 +957,7 @@ await expect(
 Starts a child process pipeline in a new Node instance.
 
 ```js
-const { startProcess, childProcess } from "@transformation/core";
+const { startProcess, childProcess } = require("@transformation/core");
 ```
 
 Notice this is only useful for cases where your pipeline is more CPU intensive
@@ -993,7 +993,7 @@ serialized and passed back to the main pipeline.
 Print items to the console.
 
 ```js
-const { tap } from "@transformation/core";
+const { tap } = require("@transformation/core");
 ```
 
 ```js
