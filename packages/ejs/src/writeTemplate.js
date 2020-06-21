@@ -1,6 +1,6 @@
 const ejs = require("ejs");
 const fs = require("fs").promises;
-const { map } = require("@transformation/core");
+const { forEach } = require("@transformation/core");
 
 const writeTemplate = async (
   templatePath,
@@ -19,7 +19,7 @@ const writeTemplate = async (
     filename: templatePath
   });
 
-  return map(value =>
+  return forEach(value =>
     fs.writeFile(
       outputPathFunction(value),
       template(Array.isArray(value) ? { items: value } : value)
