@@ -24,7 +24,11 @@ const toStream = writableStream =>
       if (isChunk) {
         await write(writableStream, value.data, value.encoding);
       } else {
-        await write(writableStream, value);
+        await write(
+          writableStream,
+          value,
+          typeof value === "string" ? "utf8" : null
+        );
       }
 
       await put(value);

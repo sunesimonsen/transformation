@@ -34,8 +34,12 @@ const pipe = transformStream =>
         if (!stream) {
           stream = new PassThrough();
 
-          if (isChunk && value.encoding) {
-            stream.setEncoding(value.encoding);
+          if (isChunk) {
+            if (value.encoding) {
+              stream.setEncoding(value.encoding);
+            }
+          } else if (typeof value === "string") {
+            stream.setEncoding("utf8");
           }
 
           stream._readableState.objectMode = !isChunk;
@@ -63,7 +67,7 @@ const pipe = transformStream =>
         if (isChunk) {
           await write(stream, value.data, value.encoding);
         } else {
-          await write(value);
+          await write(stream, value);
         }
       }
     });

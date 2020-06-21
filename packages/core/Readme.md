@@ -30,7 +30,7 @@
 - [reduce](#reduce)
 - [sort](#sort)
 - [sortBy](#sortby)
-- [splitIterable](#splitIterable)
+- [splitIterable](#splititerable)
 - [startProcess/childProcess](#startprocesschildprocess)
 - [tap](#tap)
 - [toArray](#toarray)
@@ -167,7 +167,7 @@ await expect(
 
 Emit all the items in the given iterator into the pipeline.
 
-Notice this step wont take any input, it only outputs the given items.
+Notice this step won't take any input, it only outputs the given items.
 
 ```js
 const { emitItems } from "@transformation/core";

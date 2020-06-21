@@ -3,7 +3,7 @@ const expect = require("unexpected")
   .use(require("unexpected-steps"));
 const path = require("path");
 const fs = require("fs");
-const { pipeline } = require("@transformation/core");
+const { emitItems, pipeline } = require("@transformation/core");
 const fromStream = require("./fromStream");
 const pipe = require("./pipe");
 const { LineStream } = require("byline");
@@ -52,6 +52,17 @@ describe("pipe", () => {
         ["Æble", "og", "blåbær", "grød", "er", "lækkert!"]
       );
     });
+  });
+
+  it("pipes all chunks through a transform stream using with the given encoding", async () => {
+    await expect(
+      pipeline(
+        emitItems("one\ntwo\n", "three", "\nfour\nfive"),
+        pipe(new LineStream())
+      ),
+      "to yield items",
+      ["one", "two", "three", "four", "five"]
+    );
   });
 
   for (const file of files) {

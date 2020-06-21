@@ -40,4 +40,14 @@ describe("fromStream", () => {
       );
     });
   });
+
+  describe("when the encoding of the given stream isn't defined", () => {
+    it("emits all of the chunks on the stream as buffers", async () => {
+      await expect(
+        fromStream(fs.createReadStream(testFile)),
+        "to yield items",
+        [new Chunk(fs.readFileSync(testFile), null)]
+      );
+    });
+  });
 });
