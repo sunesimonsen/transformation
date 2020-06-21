@@ -25,6 +25,7 @@ When given an encoded stream the data in the chunks is strings.
 
 ```js
 const { Chunk } = require("@transformation/stream");
+
 await expect(
   fromStream(fs.createReadStream(testFile, { encoding: "utf8" })),
   "to yield items",
@@ -36,6 +37,7 @@ If no encoding is given the data is buffers.
 
 ```js
 const { Chunk } = require("@transformation/stream");
+
 await expect(fromStream(fs.createReadStream(testFile)), "to yield items", [
   new Chunk(fs.readFileSync(testFile), null)
 ]);
