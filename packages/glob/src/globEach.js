@@ -1,35 +1,35 @@
 const globby = require("globby");
 const path = require("path");
-const { step } = require("@transformation/core");
+const { pipeline, flatMap } = require("@transformation/core");
 
-const globEach = (options = {}) =>
-  step(async ({ take, put, CLOSED }) => {
-    options =
-      typeof options === "string" || Array.isArray(options)
-        ? { pattern: options }
-        : options;
+const globEach = (options = {}) => {
+  options =
+    typeof options === "string" || Array.isArray(options)
+      ? { pattern: options }
+      : options;
 
-    while (true) {
-      const value = await take();
-      if (value === CLOSED) break;
-
+  return pipeline(
+    flatMap(async function*(value) {
       const { cwd = options.cwd, pattern = options.pattern } =
         typeof value === "string" || Array.isArray(value)
           ? { pattern: value }
           : value;
 
-      for await (const pathName of globby.stream(pattern, {
+      const pathNames = globby.stream(pattern, {
         ...options,
         absolute: false,
         cwd
-      })) {
+      });
+
+      for await (const pathName of pathNames) {
         if (options.absolute) {
-          await put(path.resolve(cwd, pathName));
+          yield path.resolve(cwd, pathName);
         } else {
-          await put(pathName);
+          yield pathName;
         }
       }
-    }
-  });
+    })
+  );
+};
 
 module.exports = globEach;
