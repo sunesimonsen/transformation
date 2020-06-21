@@ -1,3 +1,12 @@
+### v1.27.1 (2020-06-21)
+
+- [v1.27.1](https://github.com/sunesimonsen/transformation/commit/361746db25e4ac8717440a0be954bee07de6e476) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fix requires in the core package readme](https://github.com/sunesimonsen/transformation/commit/3b7d18de0d83cfd76b0450cac3e6546ae7f4db89) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fix imports in the readme examples](https://github.com/sunesimonsen/transformation/commit/a2984675ce5302ce2f8c097afe8764f0bb370638) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Add some empty lines to the readme examples.](https://github.com/sunesimonsen/transformation/commit/2f5eaa9ffbc6d93c68edfbb7b1d0faed6909ecba) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Add streams to the main readme.](https://github.com/sunesimonsen/transformation/commit/63d3012163d8ce6fd0be8aca082f72b26b10c166) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [+1 more](https://github.com/sunesimonsen/transformation/compare/v1.27.0...v1.27.1)
+
 ### v1.27.0 (2020-06-21)
 
 #### Pull requests
