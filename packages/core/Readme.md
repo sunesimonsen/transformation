@@ -19,6 +19,7 @@
 - [forEach](#foreach)
 - [fork](#fork)
 - [groupBy](#groupby)
+- [interleave](#interleave)
 - [keyBy](#keyby)
 - [map](#map)
 - [partition](#partition)
@@ -29,7 +30,7 @@
 - [reduce](#reduce)
 - [sort](#sort)
 - [sortBy](#sortby)
-- [splitArray](#splitarray)
+- [splitIterable](#splititerable)
 - [startProcess/childProcess](#startprocesschildprocess)
 - [tap](#tap)
 - [toArray](#toarray)
@@ -166,7 +167,7 @@ await expect(
 
 Emit all the items in the given iterator into the pipeline.
 
-Notice this step wont take any input, it only outputs the given items.
+Notice this step won't take any input, it only outputs the given items.
 
 ```js
 const { emitItems } from "@transformation/core";
@@ -514,6 +515,32 @@ await expect(
 ```
 
 You can transform the items of a group with [withGroup](#withGroup).
+
+## interleave
+
+Interleaves the given separators between the items in the pipeline.
+
+```js
+const { interleave } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(emitItems("0", "1", "2", "3", "4", "5"), interleave(",")),
+  "to yield items",
+  ["0", ",", "1", ",", "2", ",", "3", ",", "4", ",", "5"]
+);
+```
+
+When given multiple separators, they are cycled.
+
+```js
+await expect(
+  pipeline(emitItems("0", "1", "2", "3", "4", "5"), interleave(",", "-", "|")),
+  "to yield items",
+  ["0", ",", "1", "-", "2", "|", "3", ",", "4", "-", "5"]
+);
+```
 
 ## keyBy
 
@@ -909,17 +936,17 @@ await expect(
 );
 ```
 
-## splitArray
+## splitIterable
 
 Re-emits any array as individual items.
 
 ```js
-const { splitArray } from "@transformation/core";
+const { splitIterable } from "@transformation/core";
 ```
 
 ```js
 await expect(
-  pipeline(emitItems(0, [1, 2], [3, 4, 5]), splitArray()),
+  pipeline(emitItems(0, [1, 2], [3, 4, 5]), splitIterable()),
   "to yield items",
   [0, 1, 2, 3, 4, 5]
 );

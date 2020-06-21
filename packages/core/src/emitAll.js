@@ -5,7 +5,6 @@ const emitAll = iterable =>
     for await (let item of iterable) {
       await put(item);
     }
-    await put(CLOSED);
   });
 
 module.exports = emitAll;

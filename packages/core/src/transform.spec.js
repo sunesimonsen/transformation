@@ -6,7 +6,7 @@ const pipeline = require("./pipeline");
 const transform = require("./transform");
 const map = require("./map");
 const sort = require("./sort");
-const splitArray = require("./splitArray");
+const splitIterable = require("./splitIterable");
 const toArray = require("./toArray");
 
 describe("transform", () => {
@@ -81,7 +81,7 @@ describe("transform", () => {
           }
         ),
         transform({
-          dependencies: pipeline(splitArray(), sort(), toArray())
+          dependencies: pipeline(splitIterable(), sort(), toArray())
         })
       ),
       "to yield items",

@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@transformation/core": "^1.26.0",
+    "@transformation/stream": "^1.26.0",
     "csv-parser": "2.3.2",
     "csv-writer": "1.5.0"
   },

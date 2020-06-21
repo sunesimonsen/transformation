@@ -1,6 +1,6 @@
 const ejs = require("ejs");
 const fs = require("fs").promises;
-const { map } = require("@transformation/core");
+const { forEach } = require("@transformation/core");
 
 const writeTemplate = async (
   templatePath,
@@ -12,14 +12,14 @@ const writeTemplate = async (
       ? outputPathOrFunction
       : () => outputPathOrFunction;
 
-  const templateSource = await fs.readFile(templatePath, "utf-8");
+  const templateSource = await fs.readFile(templatePath, "utf8");
 
   const template = ejs.compile(templateSource, {
     ...options,
     filename: templatePath
   });
 
-  return map(value =>
+  return forEach(value =>
     fs.writeFile(
       outputPathFunction(value),
       template(Array.isArray(value) ? { items: value } : value)

@@ -1,0 +1,27 @@
+{
+  "name": "@transformation/stream",
+  "version": "1.26.0",
+  "description": "Transformations for working with Node streams",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": "transformation,automation,pipeline,stream,io",
+  "author": "Sune Simonsen",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@transformation/core": "^1.26.0"
+  },
+  "devDependencies": {
+    "mocha": "6.2.2",
+    "unexpected": "11.8.1",
+    "unexpected-steps": "^1.9.0",
+    "byline": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}

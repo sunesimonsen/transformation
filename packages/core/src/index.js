@@ -13,6 +13,7 @@ const flatMap = require("./flatMap");
 const forEach = require("./forEach");
 const fork = require("./fork");
 const groupBy = require("./groupBy");
+const interleave = require("./interleave");
 const keyBy = require("./keyBy");
 const map = require("./map");
 const memorize = require("./memorize");
@@ -23,7 +24,7 @@ const program = require("./program");
 const reduce = require("./reduce");
 const sort = require("./sort");
 const sortBy = require("./sortBy");
-const splitArray = require("./splitArray");
+const splitIterable = require("./splitIterable");
 const { startProcess, childProcess } = require("./process");
 const step = require("./step");
 const takeAll = require("./takeAll");
@@ -54,6 +55,7 @@ module.exports = {
   forEach,
   fork,
   groupBy,
+  interleave,
   keyBy,
   map,
   memorize,
@@ -65,7 +67,8 @@ module.exports = {
   reduce,
   sort,
   sortBy,
-  splitArray,
+  splitArray: splitIterable,
+  splitIterable,
   startProcess,
   step,
   takeAll,
