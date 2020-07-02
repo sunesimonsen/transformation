@@ -1,3 +1,9 @@
+### v1.29.1 (2020-07-02)
+
+- [v1.29.1](https://github.com/sunesimonsen/transformation/commit/0c416411488c2b50adba84d58578e5826db4e202) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Forgot to export withGroup](https://github.com/sunesimonsen/transformation/commit/889c0c30703c21f1ed186af7accba435f19f0b01) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/a99c0561ae934d8ae30d290769443233a7a13de8) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.29.0 (2020-07-02)
 
 #### Pull requests
