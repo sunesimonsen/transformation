@@ -5,8 +5,11 @@ const forEach = require("./forEach");
 const channelStep = require("./channelStep");
 
 const chose = (caseOrSelector, cases) => {
-  const selector =
-    typeof caseOrSelector === "string" ? () => caseOrSelector : caseOrSelector;
+  if (typeof caseOrSelector === "string") {
+    return cases[caseOrSelector];
+  }
+
+  const selector = caseOrSelector;
 
   return channelStep((input, errors) => {
     const output = chan();
