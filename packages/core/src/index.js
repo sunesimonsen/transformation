@@ -35,6 +35,7 @@ const uniq = require("./uniq");
 const uniqBy = require("./uniqBy");
 const unless = require("./unless");
 const when = require("./when");
+const withGroup = require("./withGroup");
 
 // TODO forkJoin: fork out and return array
 
@@ -78,5 +79,6 @@ module.exports = {
   uniq,
   uniqBy,
   unless,
-  when
+  when,
+  withGroup
 };
