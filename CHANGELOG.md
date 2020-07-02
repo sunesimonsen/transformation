@@ -1,3 +1,14 @@
+### v1.29.0 (2020-07-02)
+
+#### Pull requests
+
+- [#29](https://github.com/sunesimonsen/transformation/pull/29) Simplify chose for hard-coded choices ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.29.0](https://github.com/sunesimonsen/transformation/commit/a2b81fecca810078305fcaa92a673f45d664c8e2) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/73cd5ecfb30bf0a8a462af13a0e74201df003a95) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.28.0 (2020-07-02)
 
 #### Pull requests
