@@ -149,6 +149,7 @@ await expect(
 
 Notice: because we need to keep the ordering, the pipeline in the individual cases will only
 process one item a time, so if you call [toArray](#toArray) you will get an array of that item.
+But if you hard-code the choice as a string, it doesn't have this limitation.
 
 ## delay
 
