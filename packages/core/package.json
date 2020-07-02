@@ -1,6 +1,6 @@
 {
   "name": "@transformation/core",
-  "version": "1.29.0",
+  "version": "1.29.1",
   "description": "Create transformation pipelines",
   "main": "./src/index.js",
   "scripts": {
