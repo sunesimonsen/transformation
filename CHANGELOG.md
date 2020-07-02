@@ -1,3 +1,16 @@
+### v1.28.0 (2020-07-02)
+
+#### Pull requests
+
+- [#28](https://github.com/sunesimonsen/transformation/pull/28) Allow chose to have pipelines that emit multiple items ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.28.0](https://github.com/sunesimonsen/transformation/commit/c7e3b111e306811c893332e0d1c5291aaa90919f) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fixed formatting](https://github.com/sunesimonsen/transformation/commit/adc590926ef8445548335af49d6e2b9973d5bfbf) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Added a warning to the chose command](https://github.com/sunesimonsen/transformation/commit/7ce2f3bf9c514b843ad5eb27804615fd0ae80442) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/f7465a1233ce9fbba7ed1c1a3845b42c77c7fc35) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.27.1 (2020-06-21)
 
 - [v1.27.1](https://github.com/sunesimonsen/transformation/commit/361746db25e4ac8717440a0be954bee07de6e476) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
