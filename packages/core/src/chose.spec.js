@@ -7,6 +7,7 @@ const chose = require("./chose");
 const map = require("./map");
 const filter = require("./filter");
 const delay = require("./delay");
+const splitIterable = require("./splitIterable");
 
 describe("chose", () => {
   it("choses the given pipeline based on the selection", async () => {
@@ -79,6 +80,19 @@ describe("chose", () => {
       ),
       "to yield items",
       [0, 4, 8, 12, 16]
+    );
+  });
+
+  it("handles multiple emitted items", async () => {
+    await expect(
+      pipeline(
+        emitItems([0, 1, 2], 3, 4, [5, 6, 7], 8, 9),
+        chose(Array.isArray, {
+          true: splitIterable()
+        })
+      ),
+      "to yield items",
+      [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     );
   });
 });

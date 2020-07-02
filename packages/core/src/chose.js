@@ -1,6 +1,7 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
 const emitItems = require("./emitItems");
-const takeAll = require("./takeAll");
+const program = require("./program");
+const forEach = require("./forEach");
 const channelStep = require("./channelStep");
 
 const chose = (caseOrSelector, cases) => {
@@ -19,13 +20,11 @@ const chose = (caseOrSelector, cases) => {
           const chosen = cases[selector(value)];
 
           if (chosen) {
-            const result = await takeAll(emitItems(value), chosen);
-
-            if (result.length > 1) {
-              throw new Error("Cases must produce at most one value");
-            } else if (result.length === 1) {
-              await put(output, result[0]);
-            }
+            await program(
+              emitItems(value),
+              chosen,
+              forEach(value => put(output, value))
+            );
           } else {
             await put(output, value);
           }
