@@ -13,7 +13,7 @@ A package for integrating with Node streams.
 
 ## fromStream
 
-Emits all chunks or values of a given Node readable stream.
+Emits all chunks or values of one or more Node readable streams.
 
 Notice this step won't take any input, it only outputs the given items.
 
@@ -62,6 +62,22 @@ await expect(
     "Eight little turtles",
     "Nine little lions",
     "Ten chickens"
+  ]
+);
+```
+
+When given multiple streams each stream will be fully flushed before continuing
+to the next.
+
+```js
+const { Chunk } = require("@transformation/stream");
+
+await expect(
+  fromStream(fs.createReadStream(testFile), fs.createReadStream(testFile)),
+  "to yield items",
+  [
+    new Chunk(fs.readFileSync(testFile), null),
+    new Chunk(fs.readFileSync(testFile), null)
   ]
 );
 ```
