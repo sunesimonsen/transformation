@@ -50,4 +50,20 @@ describe("fromStream", () => {
       );
     });
   });
+
+  describe("when given multiple streams", () => {
+    it("emits the items from all of the streams", async () => {
+      await expect(
+        fromStream(
+          fs.createReadStream(testFile),
+          fs.createReadStream(testFile)
+        ),
+        "to yield items",
+        [
+          new Chunk(fs.readFileSync(testFile), null),
+          new Chunk(fs.readFileSync(testFile), null)
+        ]
+      );
+    });
+  });
 });
