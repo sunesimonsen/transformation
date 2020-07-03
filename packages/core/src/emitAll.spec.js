@@ -43,4 +43,22 @@ describe("emitAll", () => {
       5
     ]);
   });
+
+  it("supports emitting items from multiple generators", async () => {
+    async function* asyncIterable() {
+      for (let i = 0; i < 3; i++) {
+        await sleep(1);
+        yield i;
+      }
+    }
+
+    await expect(emitAll(asyncIterable(), [3, 4, 5]), "to yield items", [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]);
+  });
 });

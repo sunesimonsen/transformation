@@ -208,6 +208,26 @@ async function* asyncIterable() {
 await expect(emitAll(asyncIterable()), "to yield items", [0, 1, 2, 3, 4, 5]);
 ```
 
+You can emit items from multiple iterable in the order they are given.
+
+```js
+async function* asyncIterable() {
+  for (let i = 0; i < 3; i++) {
+    await sleep(1);
+    yield i;
+  }
+}
+
+await expect(emitAll(asyncIterable(), [3, 4, 5]), "to yield items", [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5
+]);
+```
+
 ## emitItems
 
 Emit the given items into the pipeline.
