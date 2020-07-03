@@ -1,3 +1,15 @@
+### v1.30.0 (2020-07-03)
+
+#### Pull requests
+
+- [#31](https://github.com/sunesimonsen/transformation/pull/31) Allow emitting items from multiple streams in turn ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#30](https://github.com/sunesimonsen/transformation/pull/30) Allow emitting multiple iterables ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.30.0](https://github.com/sunesimonsen/transformation/commit/b865b6ef38f8e99c09cff842f1e29cbd851b7b61) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/9c73c08d2450aa974149994926f867063ccd2709) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.29.1 (2020-07-02)
 
 - [v1.29.1](https://github.com/sunesimonsen/transformation/commit/0c416411488c2b50adba84d58578e5826db4e202) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
