@@ -1,9 +1,11 @@
 const step = require("./step");
 
-const emitAll = iterable =>
+const emitAll = (...iterables) =>
   step(async ({ take, put, CLOSED }) => {
-    for await (let item of iterable) {
-      await put(item);
+    for (const iterable of iterables) {
+      for await (const item of iterable) {
+        await put(item);
+      }
     }
   });
 
