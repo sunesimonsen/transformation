@@ -8,6 +8,7 @@ const splitIterable = () =>
 
       const isIterable =
         value &&
+        typeof value !== "string" &&
         (typeof value[Symbol.iterator] === "function" ||
           typeof value[Symbol.asyncIterator] === "function");
 
