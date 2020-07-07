@@ -1,3 +1,14 @@
+### v1.30.1 (2020-07-08)
+
+#### Pull requests
+
+- [#32](https://github.com/sunesimonsen/transformation/pull/32) Don't split strings ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.30.1](https://github.com/sunesimonsen/transformation/commit/702049cd7a6e50456f6a6cc731dc9a7065d623aa) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/6d507e29e9ba5e0090a852d8da085249fca114e0) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.30.0 (2020-07-03)
 
 #### Pull requests
