@@ -12,7 +12,11 @@ const fork = (...steps) =>
     let readForkedOutput = false;
 
     go(async () => {
-      await flush(forkedOutput);
+      try {
+        await flush(forkedOutput);
+      } catch (e) {
+        await put(errors, e);
+      }
 
       if (readInput) {
         close(output);
@@ -27,7 +31,8 @@ const fork = (...steps) =>
         const value = await take(input);
         await put(forkedInput, value);
         if (value === CLOSED) break;
-        await put(output, value);
+        const open = await put(output, value);
+        if (!open) break;
       }
 
       if (readForkedOutput) {

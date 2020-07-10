@@ -3,8 +3,10 @@ const expect = require("unexpected")
   .use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
+const program = require("./program");
 const parallel = require("./parallel");
 const map = require("./map");
+const forEach = require("./forEach");
 const { sleep } = require("medium");
 
 describe("parallel", () => {
@@ -52,6 +54,35 @@ describe("parallel", () => {
         5,
         6
       );
+    });
+  });
+
+  describe("when the step fails", () => {
+    it("closes the pipeline", async () => {
+      let processed = [];
+      await expect(
+        () =>
+          program(
+            emitItems(0, 1, 2, "bomb", 3, 4, 5),
+            parallel(
+              pipeline(
+                forEach(async n => {
+                  if (n === "bomb") {
+                    throw new Error("Boom!");
+                  }
+                  await sleep(n * 10);
+                })
+              )
+            ),
+            forEach(n => {
+              processed.push(n);
+            })
+          ),
+        "to error",
+        "Boom!"
+      );
+
+      expect(processed, "to contain", 0, 1, 2);
     });
   });
 });

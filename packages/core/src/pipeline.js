@@ -29,11 +29,13 @@ const pipeline = (...steps) =>
         while (true) {
           const value = await take(channel);
           if (value === CLOSED) break;
-          await put(output, value);
+          const open = await put(output, value);
+          if (!open) break;
         }
       } catch (err) {
         await put(errors, err);
       } finally {
+        close(input);
         close(output);
       }
     });

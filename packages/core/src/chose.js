@@ -18,7 +18,7 @@ const chose = (caseOrSelector, cases) => {
       try {
         while (true) {
           const value = await take(input);
-          if (value === CLOSED) break;
+          if (value === CLOSED || output.isClosed) break;
 
           const chosen = cases[selector(value)];
 
@@ -35,6 +35,7 @@ const chose = (caseOrSelector, cases) => {
       } catch (err) {
         await put(errors, err);
       } finally {
+        close(input);
         close(output);
       }
     });
