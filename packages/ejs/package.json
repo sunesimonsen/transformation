@@ -4,7 +4,7 @@
   "description": "Writing pipeline to files with EJS",
   "main": "./src/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha **/*.spec.js"
   },
   "keywords": "transformation,automation,pipeline,ejs",
   "author": "Sune Simonsen",
