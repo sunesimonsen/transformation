@@ -4,7 +4,7 @@
   "description": "Transformations for working with Node streams",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha **/*.spec.js"
   },
   "keywords": "transformation,automation,pipeline,stream,io",
   "author": "Sune Simonsen",

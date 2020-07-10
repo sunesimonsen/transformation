@@ -6,12 +6,17 @@ const step = body =>
     const output = chan();
 
     const takeWrapper = () => take(input);
-    const putWrapper = value => put(output, value);
+    const putWrapper = async value => {
+      const open = await put(output, value);
+      if (!open) close(input);
+      return open;
+    };
 
     go(async () => {
       try {
         await body({ take: takeWrapper, put: putWrapper, CLOSED });
       } catch (err) {
+        close(input);
         await put(errors, err);
       } finally {
         close(output);

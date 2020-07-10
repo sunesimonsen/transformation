@@ -1,4 +1,4 @@
-const { chan, CLOSED, take } = require("medium");
+const { go, chan, close, CLOSED, take } = require("medium");
 
 const flush = async stepOrChannel => {
   const input = chan();
@@ -10,15 +10,22 @@ const flush = async stepOrChannel => {
 
   let error = null;
 
-  take(errors).then(e => {
-    error = e;
+  go(async () => {
+    while (true) {
+      const value = await take(errors);
+      if (value === CLOSED) break;
+      close(input);
+      error = value;
+    }
   });
 
   while (true) {
     const value = await take(output);
-    if (error) throw error;
     if (value === CLOSED) break;
   }
+
+  close(errors);
+  if (error) throw error;
 };
 
 module.exports = flush;
