@@ -1,3 +1,14 @@
+### v1.30.2 (2020-07-10)
+
+#### Pull requests
+
+- [#33](https://github.com/sunesimonsen/transformation/pull/33) Fix issues with handling errors in parallel ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.30.2](https://github.com/sunesimonsen/transformation/commit/1015c4adc78f71dedb056984c149e94343bff227) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/29d618dbc2647b681e0f81609622914bca245d71) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.30.1 (2020-07-08)
 
 #### Pull requests
