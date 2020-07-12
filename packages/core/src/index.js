@@ -22,6 +22,7 @@ const partitionBy = require("./partitionBy");
 const pipeline = require("./pipeline");
 const program = require("./program");
 const reduce = require("./reduce");
+const reverse = require("./reverse");
 const sort = require("./sort");
 const sortBy = require("./sortBy");
 const splitIterable = require("./splitIterable");
@@ -66,6 +67,7 @@ module.exports = {
   pipeline,
   program,
   reduce,
+  reverse,
   sort,
   sortBy,
   splitArray: splitIterable,
