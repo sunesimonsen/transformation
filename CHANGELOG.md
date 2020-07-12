@@ -1,3 +1,14 @@
+### v1.31.0 (2020-07-12)
+
+#### Pull requests
+
+- [#34](https://github.com/sunesimonsen/transformation/pull/34) Added a reverse transformation ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.31.0](https://github.com/sunesimonsen/transformation/commit/e3d643a6d6c202ce139b571a28f9e0a27cad264c) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/4008af41f4ffda195fac5264a2f44738e7c602e0) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.30.2 (2020-07-10)
 
 #### Pull requests
