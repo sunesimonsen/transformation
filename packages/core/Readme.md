@@ -28,6 +28,7 @@
 - [pipeline](#pipeline)
 - [program](#program)
 - [reduce](#reduce)
+- [reverse](#reverse)
 - [sort](#sort)
 - [sortBy](#sortby)
 - [splitIterable](#splititerable)
@@ -845,6 +846,24 @@ await expect(
   ),
   "to yield items",
   [15]
+);
+```
+
+## reverse
+
+Reverses all of the items in the pipeline and re-emits them one by one.
+
+Notice that this step will consume all of the items in the pipeline.
+
+```js
+const { reduce } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), reverse()),
+  "to yield items",
+  [5, 4, 3, 2, 1, 0]
 );
 ```
 
