@@ -5,7 +5,7 @@ const forEach = require("./forEach");
 const channelStep = require("./channelStep");
 
 const chose = (caseOrSelector, cases) => {
-  if (typeof caseOrSelector === "string") {
+  if (typeof caseOrSelector !== "function") {
     return cases[caseOrSelector];
   }
 
