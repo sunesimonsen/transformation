@@ -1,3 +1,14 @@
+### v1.32.0 (2020-08-11)
+
+#### Pull requests
+
+- [#36](https://github.com/sunesimonsen/transformation/pull/36) Allow any hardcoded value in chose ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.32.0](https://github.com/sunesimonsen/transformation/commit/d21f2192908c6cdedc5eb0648c606550729c25a4) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/567c4ceb3040b5be0501ca90390f935d31ad8811) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.31.0 (2020-07-12)
 
 #### Pull requests
