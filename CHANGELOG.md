@@ -1,3 +1,9 @@
+### v1.33.0 (2020-09-11)
+
+- [v1.33.0](https://github.com/sunesimonsen/transformation/commit/fd639688e0de88fb126580d5a8eb46b926f8aafb) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Added repository URLs to the packages](https://github.com/sunesimonsen/transformation/commit/d732dbf34388635649daca8394c23957edae8e22) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/4ad310c9004a5795bc46ac6e51502db66d0c4db9) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.32.0 (2020-08-11)
 
 #### Pull requests
