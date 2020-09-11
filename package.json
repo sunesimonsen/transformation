@@ -4,14 +4,19 @@
   "private": true,
   "scripts": {
     "test": "lerna run test",
-    "format": "prettier --write '**/*.{js,md}'",
-    "lint": "eslint . && prettier --check '**/*.{js,md}'",
+    "format": "prettier --write '**/*.{js,md,json}'",
+    "lint": "eslint . && prettier --check '**/*.{js,md,json}'",
     "update-toc": "for f in `ls packages/*/Readme.md`; do yarn markdown-toc -i $f; done; yarn format",
     "ci": "yarn lint && yarn test",
     "release": "node-publisher release"
   },
   "author": "Sune Simonsen",
   "license": "MIT",
+  "bugs": "https://github.com/sunesimonsen/transformation/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunesimonsen/transformation"
+  },
   "devDependencies": {
     "eslint": "6.7.2",
     "eslint-config-prettier": "^6.0.0",
