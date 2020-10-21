@@ -22,9 +22,9 @@
 - [interleave](#interleave)
 - [keyBy](#keyby)
 - [map](#map)
-- [partition](#partition)
-- [partitionBy](#partitionby)
 - [memorize](#memorize)
+- [partitionBy](#partitionby)
+- [partition](#partition)
 - [pipeline](#pipeline)
 - [program](#program)
 - [reduce](#reduce)
@@ -413,7 +413,7 @@ await expect(
 ## flatMap
 
 Maps each item with the given mapper, if a returned item is an array it emits
-the items individualy.
+the items individually.
 
 ```js
 const { flatMap } = require("@transformation/core");
@@ -644,71 +644,7 @@ await expect(
 );
 ```
 
-## partition
 
-Partition items into groups of the given size.
-
-```js
-const { partition } = require("@transformation/core");
-```
-
-```js
-await expect(
-  pipeline(emitItems(0, 1, 2, 3, 4, 5, 6), partition(2)),
-  "to yield items",
-  [
-    Group.create({ key: "[0;1]", items: [0, 1] }),
-    Group.create({ key: "[2;3]", items: [2, 3] }),
-    Group.create({ key: "[4;5]", items: [4, 5] }),
-    Group.create({ key: "[6;7]", items: [6] })
-  ]
-);
-```
-
-## partitionBy
-
-Partition items into groups by the given selector.
-
-```js
-const { partitionBy } = require("@transformation/core");
-```
-
-```js
-await expect(
-  pipeline(
-    emitItems(
-      { symbol: "GOOG", price: 1349 },
-      { symbol: "AAPL", price: 274 },
-      { symbol: "AAPL", price: 275 },
-      { symbol: "GOOG", price: 1351 },
-      { symbol: "AAPL", price: 279 }
-    ),
-    partitionBy(({ symbol }) => symbol)
-  ),
-  "to yield items",
-  [
-    Group.create({
-      key: "GOOG",
-      items: [{ symbol: "GOOG", price: 1349 }]
-    }),
-    Group.create({
-      key: "AAPL",
-      items: [
-        { symbol: "AAPL", price: 274 },
-        { symbol: "AAPL", price: 275 }
-      ]
-    }),
-    Group.create({
-      key: "GOOG",
-      items: [{ symbol: "GOOG", price: 1351 }]
-    }),
-    Group.create({
-      key: "AAPL",
-      items: [{ symbol: "AAPL", price: 279 }]
-    })
-  ]
-);
-```
 
 ## memorize
 
@@ -784,6 +720,72 @@ await expect(
   ),
   "to yield items",
   ["0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2"]
+);
+```
+
+## partition
+
+Partition items into groups of the given size.
+
+```js
+const { partition } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5, 6), partition(2)),
+  "to yield items",
+  [
+    Group.create({ key: "[0;1]", items: [0, 1] }),
+    Group.create({ key: "[2;3]", items: [2, 3] }),
+    Group.create({ key: "[4;5]", items: [4, 5] }),
+    Group.create({ key: "[6;7]", items: [6] })
+  ]
+);
+```
+
+## partitionBy
+
+Partition items into groups by the given selector.
+
+```js
+const { partitionBy } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { symbol: "GOOG", price: 1349 },
+      { symbol: "AAPL", price: 274 },
+      { symbol: "AAPL", price: 275 },
+      { symbol: "GOOG", price: 1351 },
+      { symbol: "AAPL", price: 279 }
+    ),
+    partitionBy(({ symbol }) => symbol)
+  ),
+  "to yield items",
+  [
+    Group.create({
+      key: "GOOG",
+      items: [{ symbol: "GOOG", price: 1349 }]
+    }),
+    Group.create({
+      key: "AAPL",
+      items: [
+        { symbol: "AAPL", price: 274 },
+        { symbol: "AAPL", price: 275 }
+      ]
+    }),
+    Group.create({
+      key: "GOOG",
+      items: [{ symbol: "GOOG", price: 1351 }]
+    }),
+    Group.create({
+      key: "AAPL",
+      items: [{ symbol: "AAPL", price: 279 }]
+    })
+  ]
 );
 ```
 
