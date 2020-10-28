@@ -1,8 +1,11 @@
 const { go, take, close, chan, merge, put, CLOSED } = require("medium");
 const buffer = require("./buffer");
 const channelStep = require("./channelStep");
-const os = require("os");
-const cpus = os.cpus().length;
+
+const cpus =
+  typeof module !== "undefined" && module.exports
+    ? require("os").cpus().length
+    : 4;
 
 const parallel = (step, concurrency = 2 * cpus) =>
   channelStep((input, errors) => {
