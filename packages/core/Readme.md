@@ -11,6 +11,7 @@
 - [delay](#delay)
 - [emitAll](#emitall)
 - [emitItems](#emititems)
+- [emitRange](#emitrange)
 - [extend](#extend)
 - [frequencies](#frequencies)
 - [parallel](#parallel)
@@ -22,9 +23,9 @@
 - [interleave](#interleave)
 - [keyBy](#keyby)
 - [map](#map)
-- [partition](#partition)
-- [partitionBy](#partitionby)
 - [memorize](#memorize)
+- [partitionBy](#partitionby)
+- [partition](#partition)
 - [pipeline](#pipeline)
 - [program](#program)
 - [reduce](#reduce)
@@ -170,7 +171,7 @@ await expect(
 
 ## emitAll
 
-Emit all the items in the given iterator into the pipeline.
+Emits all the items in the given iterator into the pipeline.
 
 Notice this step won't take any input, it only outputs the given items.
 
@@ -231,7 +232,7 @@ await expect(emitAll(asyncIterable(), [3, 4, 5]), "to yield items", [
 
 ## emitItems
 
-Emit the given items into the pipeline.
+Emits the given items into the pipeline.
 
 Notice this step wont take any input from the pipeline, it only outputs the
 given items.
@@ -249,6 +250,56 @@ await expect(pipeline(emitItems(0, 1, 2, 3, 4, 5)), "to yield items", [
   4,
   5
 ]);
+```
+
+## emitRange
+
+Emits the given range into the pipeline.
+
+The range goes from `start` up to but not including `end`. You can specify a `step` that will decide delta between the values.
+
+Notice this step wont take any input from the pipeline, it only outputs the
+given range.
+
+When only given a positive number, it emits values from zero up to, but not including, that number.
+
+```js
+const { emitRange } = require("@transformation/core");
+```
+
+```js
+await expect(pipeline(emitRange(5)), "to yield items", [0, 1, 2, 3, 4]);
+```
+
+When given a negative number, it emits values from zero down to, but not including, that number.
+numbers.
+
+```js
+await expect(pipeline(emitRange(-5)), "to yield items", [0, -1, -2, -3, -4]);
+```
+
+When given a `start` and an `end`, where `start` is less than or equal to `end`, it emits values from `start` up to, but not including, `end`.
+
+```js
+await expect(pipeline(emitRange(2, 7)), "to yield items", [2, 3, 4, 5, 6]);
+```
+
+When given a `start` and an `end`, where `start` is greater than `end`, it emits values from `start` down to, but not including, `end`.
+
+```js
+await expect(pipeline(emitRange(2, 7)), "to yield items", [7, 6, 5, 4, 3]);
+```
+
+Finally you can also provide the `step` value.
+
+```js
+await expect(pipeline(emitRange(-5, 5, 3)), "to yield items", [-5, -2, 1, 4]);
+```
+
+You can also provide a negative step.
+
+```js
+await expect(pipeline(emitRange(5, -5, -3)), "to yield items", [5, 2, -1, -4]);
 ```
 
 ## extend
@@ -413,7 +464,7 @@ await expect(
 ## flatMap
 
 Maps each item with the given mapper, if a returned item is an array it emits
-the items individualy.
+the items individually.
 
 ```js
 const { flatMap } = require("@transformation/core");
@@ -644,72 +695,6 @@ await expect(
 );
 ```
 
-## partition
-
-Partition items into groups of the given size.
-
-```js
-const { partition } = require("@transformation/core");
-```
-
-```js
-await expect(
-  pipeline(emitItems(0, 1, 2, 3, 4, 5, 6), partition(2)),
-  "to yield items",
-  [
-    Group.create({ key: "[0;1]", items: [0, 1] }),
-    Group.create({ key: "[2;3]", items: [2, 3] }),
-    Group.create({ key: "[4;5]", items: [4, 5] }),
-    Group.create({ key: "[6;7]", items: [6] })
-  ]
-);
-```
-
-## partitionBy
-
-Partition items into groups by the given selector.
-
-```js
-const { partitionBy } = require("@transformation/core");
-```
-
-```js
-await expect(
-  pipeline(
-    emitItems(
-      { symbol: "GOOG", price: 1349 },
-      { symbol: "AAPL", price: 274 },
-      { symbol: "AAPL", price: 275 },
-      { symbol: "GOOG", price: 1351 },
-      { symbol: "AAPL", price: 279 }
-    ),
-    partitionBy(({ symbol }) => symbol)
-  ),
-  "to yield items",
-  [
-    Group.create({
-      key: "GOOG",
-      items: [{ symbol: "GOOG", price: 1349 }]
-    }),
-    Group.create({
-      key: "AAPL",
-      items: [
-        { symbol: "AAPL", price: 274 },
-        { symbol: "AAPL", price: 275 }
-      ]
-    }),
-    Group.create({
-      key: "GOOG",
-      items: [{ symbol: "GOOG", price: 1351 }]
-    }),
-    Group.create({
-      key: "AAPL",
-      items: [{ symbol: "AAPL", price: 279 }]
-    })
-  ]
-);
-```
-
 ## memorize
 
 Memorizes the given step.
@@ -784,6 +769,72 @@ await expect(
   ),
   "to yield items",
   ["0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2"]
+);
+```
+
+## partition
+
+Partition items into groups of the given size.
+
+```js
+const { partition } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5, 6), partition(2)),
+  "to yield items",
+  [
+    Group.create({ key: "[0;1]", items: [0, 1] }),
+    Group.create({ key: "[2;3]", items: [2, 3] }),
+    Group.create({ key: "[4;5]", items: [4, 5] }),
+    Group.create({ key: "[6;7]", items: [6] })
+  ]
+);
+```
+
+## partitionBy
+
+Partition items into groups by the given selector.
+
+```js
+const { partitionBy } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { symbol: "GOOG", price: 1349 },
+      { symbol: "AAPL", price: 274 },
+      { symbol: "AAPL", price: 275 },
+      { symbol: "GOOG", price: 1351 },
+      { symbol: "AAPL", price: 279 }
+    ),
+    partitionBy(({ symbol }) => symbol)
+  ),
+  "to yield items",
+  [
+    Group.create({
+      key: "GOOG",
+      items: [{ symbol: "GOOG", price: 1349 }]
+    }),
+    Group.create({
+      key: "AAPL",
+      items: [
+        { symbol: "AAPL", price: 274 },
+        { symbol: "AAPL", price: 275 }
+      ]
+    }),
+    Group.create({
+      key: "GOOG",
+      items: [{ symbol: "GOOG", price: 1351 }]
+    }),
+    Group.create({
+      key: "AAPL",
+      items: [{ symbol: "AAPL", price: 279 }]
+    })
+  ]
 );
 ```
 

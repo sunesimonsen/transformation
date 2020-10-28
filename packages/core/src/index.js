@@ -5,6 +5,7 @@ const chose = require("./chose");
 const delay = require("./delay");
 const emitAll = require("./emitAll");
 const emitItems = require("./emitItems");
+const emitRange = require("./emitRange");
 const extend = require("./extend");
 const frequencies = require("./frequencies");
 const parallel = require("./parallel");
@@ -49,6 +50,7 @@ module.exports = {
   delay,
   emitAll,
   emitItems,
+  emitRange,
   extend,
   frequencies,
   fanOut: parallel,
