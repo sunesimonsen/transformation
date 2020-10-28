@@ -1,3 +1,15 @@
+### v1.34.0 (2020-10-28)
+
+#### Pull requests
+
+- [#40](https://github.com/sunesimonsen/transformation/pull/40) Add emitRepeat, skip and take steps ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#38](https://github.com/sunesimonsen/transformation/pull/38) Add a new emitRange step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v1.34.0](https://github.com/sunesimonsen/transformation/commit/9a7938f544380bb28fdf28d0ba31d4c31272b4d9) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/54a7395d91d8ec03bc174ea58c7d4f4875dbeab9) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.33.0 (2020-09-11)
 
 - [v1.33.0](https://github.com/sunesimonsen/transformation/commit/fd639688e0de88fb126580d5a8eb46b926f8aafb) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
