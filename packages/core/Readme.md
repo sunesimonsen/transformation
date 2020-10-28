@@ -12,6 +12,7 @@
 - [emitAll](#emitall)
 - [emitItems](#emititems)
 - [emitRange](#emitrange)
+- [emitRepeat](#emitrepeat)
 - [extend](#extend)
 - [frequencies](#frequencies)
 - [parallel](#parallel)
@@ -24,16 +25,18 @@
 - [keyBy](#keyby)
 - [map](#map)
 - [memorize](#memorize)
-- [partitionBy](#partitionby)
 - [partition](#partition)
+- [partitionBy](#partitionby)
 - [pipeline](#pipeline)
 - [program](#program)
 - [reduce](#reduce)
 - [reverse](#reverse)
+- [skip](#skip)
 - [sort](#sort)
 - [sortBy](#sortby)
 - [splitIterable](#splititerable)
 - [startProcess/childProcess](#startprocesschildprocess)
+- [take](#take)
 - [tap](#tap)
 - [toArray](#toarray)
 - [transform](#transform)
@@ -242,14 +245,7 @@ const { emitItems } = require("@transformation/core");
 ```
 
 ```js
-await expect(pipeline(emitItems(0, 1, 2, 3, 4, 5)), "to yield items", [
-  0,
-  1,
-  2,
-  3,
-  4,
-  5
-]);
+await expect(emitItems(0, 1, 2, 3, 4, 5), "to yield items", [0, 1, 2, 3, 4, 5]);
 ```
 
 ## emitRange
@@ -268,38 +264,78 @@ const { emitRange } = require("@transformation/core");
 ```
 
 ```js
-await expect(pipeline(emitRange(5)), "to yield items", [0, 1, 2, 3, 4]);
+await expect(emitRange(5), "to yield items", [0, 1, 2, 3, 4]);
 ```
 
 When given a negative number, it emits values from zero down to, but not including, that number.
 numbers.
 
 ```js
-await expect(pipeline(emitRange(-5)), "to yield items", [0, -1, -2, -3, -4]);
+await expect(emitRange(-5), "to yield items", [0, -1, -2, -3, -4]);
 ```
 
 When given a `start` and an `end`, where `start` is less than or equal to `end`, it emits values from `start` up to, but not including, `end`.
 
 ```js
-await expect(pipeline(emitRange(2, 7)), "to yield items", [2, 3, 4, 5, 6]);
+await expect(emitRange(2, 7), "to yield items", [2, 3, 4, 5, 6]);
 ```
 
 When given a `start` and an `end`, where `start` is greater than `end`, it emits values from `start` down to, but not including, `end`.
 
 ```js
-await expect(pipeline(emitRange(2, 7)), "to yield items", [7, 6, 5, 4, 3]);
+await expect(emitRange(2, 7), "to yield items", [7, 6, 5, 4, 3]);
 ```
 
 Finally you can also provide the `step` value.
 
 ```js
-await expect(pipeline(emitRange(-5, 5, 3)), "to yield items", [-5, -2, 1, 4]);
+await expect(emitRange(-5, 5, 3), "to yield items", [-5, -2, 1, 4]);
 ```
 
 You can also provide a negative step.
 
 ```js
-await expect(pipeline(emitRange(5, -5, -3)), "to yield items", [5, 2, -1, -4]);
+await expect(emitRange(5, -5, -3), "to yield items", [5, 2, -1, -4]);
+```
+
+## emitRepeat
+
+Cycles the items the specified number of times.
+
+```js
+import { emitRepeat } from "@transformation/core";
+```
+
+```js
+await expect(emitRepeat(["hi", "hey", "hello"], 5), "to yield items", [
+  "hi",
+  "hey",
+  "hello",
+  "hi",
+  "hey"
+]);
+```
+
+When only given a single item, it will be repeated the specified number of times.
+
+```js
+await expect(emitRepeat("hi", 5), "to yield items", [
+  "hi",
+  "hi",
+  "hi",
+  "hi",
+  "hi"
+]);
+```
+
+If you don't specify the number items you want, it will keep emitting the forever. This can be useful together with [delay](#delay) to build polling as an example.
+
+```js
+await expect(
+  pipeline(emitRepeat(["hi", "hey", "hello"]), take(5)),
+  "to yield items",
+  ["hi", "hey", "hello", "hi", "hey"]
+);
 ```
 
 ## extend
@@ -918,6 +954,22 @@ await expect(
 );
 ```
 
+## skip
+
+Skips the given number of items before it starts to emitting.
+
+```js
+import { skip } from "@transformation/core";
+```
+
+```js
+await expect(
+  pipeline(emitItems([0, 1, 2, 3, 4, 5]), skip(2)),
+  "to yield items",
+  [2, 3, 4, 5]
+);
+```
+
 ## sort
 
 Sorts all of the items in the pipeline and re-emits them one by one.
@@ -1081,6 +1133,22 @@ await expect(
 What is happening here, is that every item is serialized and send into the child
 process for processing. When the child process emits new items, they are
 serialized and passed back to the main pipeline.
+
+## take
+
+Emits the given number of items from the pipeline.
+
+```js
+import { take } from "@transformation/core";
+```
+
+```js
+await expect(
+  pipeline(emitItems([0, 1, 2, 3, 4, 5]), take(3)),
+  "to yield items",
+  [0, 1, 2]
+);
+```
 
 ## tap
 
