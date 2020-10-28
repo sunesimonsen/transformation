@@ -6,6 +6,7 @@ const delay = require("./delay");
 const emitAll = require("./emitAll");
 const emitItems = require("./emitItems");
 const emitRange = require("./emitRange");
+const emitRepeat = require("./emitRepeat");
 const extend = require("./extend");
 const frequencies = require("./frequencies");
 const parallel = require("./parallel");
@@ -24,11 +25,13 @@ const pipeline = require("./pipeline");
 const program = require("./program");
 const reduce = require("./reduce");
 const reverse = require("./reverse");
+const skip = require("./skip");
 const sort = require("./sort");
 const sortBy = require("./sortBy");
 const splitIterable = require("./splitIterable");
 const { startProcess, childProcess } = require("./process");
 const step = require("./step");
+const take = require("./take");
 const takeAll = require("./takeAll");
 const tap = require("./tap");
 const toArray = require("./toArray");
@@ -51,6 +54,7 @@ module.exports = {
   emitAll,
   emitItems,
   emitRange,
+  emitRepeat,
   extend,
   frequencies,
   fanOut: parallel,
@@ -70,12 +74,14 @@ module.exports = {
   program,
   reduce,
   reverse,
+  skip,
   sort,
   sortBy,
   splitArray: splitIterable,
   splitIterable,
   startProcess,
   step,
+  take,
   takeAll,
   tap,
   toArray,
