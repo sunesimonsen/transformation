@@ -1,0 +1,32 @@
+{
+  "name": "@transformation/process",
+  "version": "1.33.0",
+  "description": "Transformations for working with processes",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha **/*.spec.js"
+  },
+  "keywords": "transformation,automation,pipeline,process,io",
+  "author": "Sune Simonsen",
+  "license": "MIT",
+  "bugs": "https://github.com/sunesimonsen/transformation/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunesimonsen/transformation"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@transformation/core": "^1.33.0",
+    "medium": "1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "6.2.2",
+    "unexpected": "11.8.1",
+    "unexpected-steps": "^1.33.0"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}

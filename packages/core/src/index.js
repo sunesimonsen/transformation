@@ -1,6 +1,7 @@
 const Group = require("./Group");
 const accumulate = require("./accumulate");
 const buffer = require("./buffer");
+const channelStep = require("./channelStep");
 const chose = require("./chose");
 const delay = require("./delay");
 const emitAll = require("./emitAll");
@@ -29,7 +30,6 @@ const skip = require("./skip");
 const sort = require("./sort");
 const sortBy = require("./sortBy");
 const splitIterable = require("./splitIterable");
-const { startProcess, childProcess } = require("./process");
 const step = require("./step");
 const take = require("./take");
 const takeAll = require("./takeAll");
@@ -48,7 +48,7 @@ module.exports = {
   Group,
   accumulate,
   buffer,
-  childProcess,
+  channelStep,
   chose,
   delay,
   emitAll,
@@ -79,7 +79,6 @@ module.exports = {
   sortBy,
   splitArray: splitIterable,
   splitIterable,
-  startProcess,
   step,
   take,
   takeAll,

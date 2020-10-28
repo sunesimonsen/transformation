@@ -1,11 +1,9 @@
 const expect = require("unexpected")
   .clone()
   .use(require("unexpected-steps"));
+
 const path = require("path");
-const emitItems = require("./emitItems");
-const pipeline = require("./pipeline");
-const program = require("./program");
-const delay = require("./delay");
+const { emitItems, pipeline, program, delay } = require("@transformation/core");
 const { startProcess } = require("./process");
 
 describe("process", () => {

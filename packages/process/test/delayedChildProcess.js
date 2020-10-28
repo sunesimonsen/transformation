@@ -1,6 +1,5 @@
 const { childProcess } = require("../src/process");
-const map = require("../src/map");
-const delay = require("../src/delay");
+const { delay, map } = require("@transformation/core");
 
 module.exports = childProcess(
   delay(5),
