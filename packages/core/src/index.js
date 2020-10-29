@@ -27,6 +27,7 @@ const program = require("./program");
 const reduce = require("./reduce");
 const reverse = require("./reverse");
 const skip = require("./skip");
+const skipLast = require("./skipLast");
 const sort = require("./sort");
 const sortBy = require("./sortBy");
 const splitIterable = require("./splitIterable");
@@ -75,6 +76,7 @@ module.exports = {
   reduce,
   reverse,
   skip,
+  skipLast,
   sort,
   sortBy,
   splitArray: splitIterable,

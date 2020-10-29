@@ -32,6 +32,7 @@
 - [reduce](#reduce)
 - [reverse](#reverse)
 - [skip](#skip)
+- [skipLast](#skiplast)
 - [sort](#sort)
 - [sortBy](#sortby)
 - [splitIterable](#splititerable)
@@ -966,6 +967,32 @@ await expect(
   pipeline(emitItems([0, 1, 2, 3, 4, 5]), skip(2)),
   "to yield items",
   [2, 3, 4, 5]
+);
+```
+
+## skipLast
+
+Given a number n, it skips the last n items.
+
+```js
+import { skipLast } from "@transformation/core";
+```
+
+```js
+await expect(
+  pipeline(emitItems([0, 1, 2, 3, 4, 5]), skipLast(2)),
+  "to yield items",
+  [0, 1, 2, 3]
+);
+```
+
+When given no argument, it skips the last item.
+
+```js
+await expect(
+  pipeline(emitItems([0, 1, 2, 3, 4, 5]), skipLast()),
+  "to yield items",
+  [0, 1, 2, 3, 4]
 );
 ```
 
