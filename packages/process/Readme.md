@@ -4,10 +4,50 @@ A package for using child processes.
 
 <!-- toc -->
 
+- [exec](#exec)
 - [spawn](#spawn)
 - [startProcess/childProcess](#startprocesschildprocess)
 
 <!-- tocstop -->
+
+## exec
+
+Spawns a shell and executes the given commands.
+See [Node child_process.spawn](https://nodejs.org/docs/latest/api/child_process.html#child_process_child_process_spawn_command_args_options)
+for more information.
+
+```js
+import { exec } from "@transform/process";
+import { lines } from "@transform/stream";
+import { emitItems, interleave, skipLast } from "@transform/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems("Hello", "beautiful", "world!"),
+    interleave("\n"),
+    exec(`sed 's/^/> /g' | grep -v beautiful`),
+    lines()
+  ),
+  "to yield items",
+  ["> Hello", "> world!", ""]
+);
+```
+
+You can also pipe data into a sub-process.
+
+```js
+await expect(
+  pipeline(
+    emitItems("Hello\nfantastic\nworld"),
+    exec("grep -v fantastic"),
+    lines()
+  ),
+  "to yield items",
+  ["Hello", "world", ""]
+);
+```
 
 ## spawn
 
@@ -18,7 +58,7 @@ for more information.
 ```js
 import { spawn } from "@transform/process";
 import { lines } from "@transform/stream";
-import { skipLast } from "@transform/core";
+import { pipeline, skipLast } from "@transform/core";
 ```
 
 You can use it to emit items into the pipeline.
@@ -31,7 +71,7 @@ await expect(
 );
 ```
 
-But you can also pipe data into a sub-process.
+You can also pipe data into a sub-process.
 
 ```js
 await expect(
@@ -62,6 +102,7 @@ Starts a child process pipeline in a new Node instance.
 
 ```js
 const { startProcess, childProcess } = require("@transformation/process");
+import { pipeline } from "@transform/core";
 ```
 
 Notice this is only useful for cases where your pipeline is more CPU intensive
