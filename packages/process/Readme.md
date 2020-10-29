@@ -4,9 +4,57 @@ A package for using child processes.
 
 <!-- toc -->
 
+- [spawn](#spawn)
 - [startProcess/childProcess](#startprocesschildprocess)
 
 <!-- tocstop -->
+
+## spawn
+
+Spawns a new sub-process.
+See [Node child_process.spawn](https://nodejs.org/docs/latest/api/child_process.html#child_process_child_process_spawn_command_args_options)
+for more information.
+
+```js
+import { spawn } from "@transform/process";
+import { lines } from "@transform/stream";
+import { skipLast } from "@transform/core";
+```
+
+You can use it to emit items into the pipeline.
+
+```js
+await expect(
+  pipeline(spawn("ls", [testDir]), lines(), skipLast()),
+  "to yield items",
+  ["0.txt", "1.txt", "2.txt"]
+);
+```
+
+But you can also pipe data into a sub-process.
+
+```js
+await expect(
+  pipeline(
+    emitItems("Hello\nfantastic\nworld"),
+    spawn("grep", ["-v", "fantastic"]),
+    lines(),
+    skipLast()
+  ),
+  "to yield items",
+  ["Hello", "world"]
+);
+```
+
+Multiple sub-processes can be combined.
+
+```js
+await expect(
+  pipeline(spawn("ls", [testDir]), spawn("grep", ["0"]), lines(), skipLast()),
+  "to yield items",
+  ["0.txt"]
+);
+```
 
 ## startProcess/childProcess
 

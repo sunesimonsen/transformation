@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@transformation/core": "^1.33.0",
+    "@transformation/stream": "^1.34.0",
     "medium": "1.0.2"
   },
   "devDependencies": {
