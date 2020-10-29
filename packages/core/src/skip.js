@@ -1,6 +1,10 @@
 const step = require("./step");
 
 const skip = count => {
+  if (count <= 0) {
+    return false;
+  }
+
   return step(async ({ take, put, CLOSED }) => {
     let i = 0;
     while (true) {
