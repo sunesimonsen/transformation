@@ -109,6 +109,21 @@ await expect(
 );
 ```
 
+You can also specify the separator that is used to split lines, it can be a
+string, a regex or a byte.
+
+```js
+await expect(
+  pipeline(
+    spawn("find", [".", "-name", "*.txt", "-print0"], { cwd: testDir }),
+    lines(0),
+    skipLast()
+  ),
+  "to yield items",
+  ["./2.txt", "./0.txt", "./1.txt"]
+);
+```
+
 ## pipe
 
 Pipes all items of the pipeline through a Node transform stream.

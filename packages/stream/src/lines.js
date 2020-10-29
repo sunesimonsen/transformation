@@ -2,7 +2,7 @@ const { step } = require("@transformation/core");
 const Chunk = require("./Chunk");
 const lineBoundaryRegex = require("./lineBoundaryRegex.js");
 
-const lines = () =>
+const lines = (separator = lineBoundaryRegex) =>
   step(async ({ take, put, CLOSED }) => {
     let buffered = "";
     while (true) {
@@ -27,7 +27,11 @@ const lines = () =>
         text = Buffer.isBuffer(data) ? data.toString(encoding || "utf8") : data;
       }
 
-      const lines = `${buffered}${text}`.split(lineBoundaryRegex);
+      const lines = `${buffered}${text}`.split(
+        typeof separator === "number"
+          ? Buffer.from([separator]).toString()
+          : separator
+      );
 
       for (const line of lines.slice(0, -1)) {
         await put(line);
