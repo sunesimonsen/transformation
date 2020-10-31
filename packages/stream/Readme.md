@@ -24,7 +24,7 @@ const { concat } = require("@transformation/stream");
 
 ```js
 await expect(
-  pipeline(fromStream(fs.createReadStream(testFile)), concat()),
+  pipeline(toFileStream(testFile), concat()),
   "to yield items",
   [fs.readFileSync(testFile, "utf8")]
 );
