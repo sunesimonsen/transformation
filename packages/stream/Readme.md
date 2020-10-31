@@ -17,6 +17,10 @@ A package for integrating with Node streams.
 Concatenates all of output of a stream into a string.
 
 ```js
+const { concat } = require("@transformation/stream");
+```
+
+```js
 await expect(
   pipeline(fromStream(fs.createReadStream(testFile)), concat()),
   "to yield items",

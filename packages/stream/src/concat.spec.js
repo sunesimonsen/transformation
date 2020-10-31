@@ -19,8 +19,8 @@ const files = [
   "song.txt"
 ];
 
-describe("lines", () => {
-  it("emits all lines from the incoming chunks", async () => {
+describe("concat", () => {
+  it("concatenes the incoming chunks into a string", async () => {
     await expect(
       pipeline(fromStream(fs.createReadStream(song)), concat()),
       "to yield items",
