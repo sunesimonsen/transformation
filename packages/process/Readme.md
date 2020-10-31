@@ -18,7 +18,7 @@ for more information.
 
 ```js
 import { exec } from "@transform/process";
-import { lines } from "@transform/stream";
+import { concat, lines } from "@transform/stream";
 import { emitItems, interleave, skipLast } from "@transform/core";
 ```
 
@@ -28,10 +28,10 @@ await expect(
     emitItems("Hello", "beautiful", "world!"),
     interleave("\n"),
     exec(`sed 's/^/> /g' | grep -v beautiful`),
-    lines()
+    concat()
   ),
   "to yield items",
-  ["> Hello", "> world!", ""]
+  ["> Hello\n> world!\n"]
 );
 ```
 
