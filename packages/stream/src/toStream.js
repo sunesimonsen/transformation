@@ -10,12 +10,18 @@ const write = (stream, data, encoding) =>
     }
   });
 
+const onFinish = stream =>
+  new Promise(resolve => {
+    stream.once("finish", resolve);
+  });
+
 const toStream = writableStream =>
   step(async ({ take, put, CLOSED }) => {
     while (true) {
       const value = await take();
       if (value === CLOSED) {
         writableStream.end();
+        await onFinish(writableStream);
         break;
       }
 
