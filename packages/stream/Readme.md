@@ -5,9 +5,11 @@ A package for integrating with Node streams.
 <!-- toc -->
 
 - [concat](#concat)
+- [fromFileStream](#fromfilestream)
 - [fromStream](#fromstream)
 - [lines](#lines)
 - [pipe](#pipe)
+- [toFileStream](#tofilestream)
 - [toStream](#tostream)
 
 <!-- tocstop -->
@@ -17,11 +19,33 @@ A package for integrating with Node streams.
 Concatenates all of output of a stream into a string.
 
 ```js
+const { concat } = require("@transformation/stream");
+```
+
+```js
 await expect(
   pipeline(fromStream(fs.createReadStream(testFile)), concat()),
   "to yield items",
   [fs.readFileSync(testFile, "utf8")]
 );
+```
+
+## fromFileStream
+
+Emits all chunks from a Node readable file stream.
+
+Notice this step won't take any input, it only outputs the given items.
+
+```js
+const { fromFileStream } = require("@transformation/stream");
+```
+
+```js
+const { Chunk } = require("@transformation/stream");
+
+await expect(fromFileStream(testFile, { encoding: "utf8" }), "to yield items", [
+  new Chunk(fs.readFileSync(testFile, "utf8"), "utf8")
+]);
 ```
 
 ## fromStream
@@ -173,6 +197,28 @@ await expect(
   "to yield items",
   ["one", "two", "three", "four", "five"]
 );
+```
+
+## toFileStream
+
+Writes all items to a Node writable file stream as a side-effect.
+
+Notice that the items will continue through the rest of the pipeline.
+
+```js
+const { toFileStream } = require("transformation/stream");
+```
+
+Let's write some lines to an output file.
+
+```js
+await program(
+  emitItems("one", "two", "three"),
+  interleave("\n"),
+  toFileStream(outputFile)
+);
+
+expect(await readFile(outputFile, "utf8"), "to equal", "one\ntwo\nthree");
 ```
 
 ## toStream
