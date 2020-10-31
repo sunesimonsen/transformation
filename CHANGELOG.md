@@ -1,3 +1,14 @@
+### v2.1.0 (2020-10-31)
+
+#### Pull requests
+
+- [#42](https://github.com/sunesimonsen/transformation/pull/42) Added a concat step to @transformation\/stream ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v2.1.0](https://github.com/sunesimonsen/transformation/commit/25baa2e2b309544e06c9534ed2c72730f86de460) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/21794744d2ef9ce7253c5742c155efea6c57bc2b) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v2.0.0 (2020-10-31)
 
 #### Pull requests
