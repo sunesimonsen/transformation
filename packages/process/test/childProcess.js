@@ -1,5 +1,5 @@
 const { childProcess } = require("../src/process");
-const map = require("../src/map");
+const { map } = require("@transformation/core");
 
 module.exports = childProcess(
   map(n => {

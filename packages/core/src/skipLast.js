@@ -1,23 +1,23 @@
 const step = require("./step");
 
-const skip = count => {
+const skipLast = (count = 1) => {
   if (count <= 0) {
     return false;
   }
 
   return step(async ({ take, put, CLOSED }) => {
-    let i = 0;
+    const buffer = [];
+
     while (true) {
       const value = await take();
       if (value === CLOSED) break;
 
-      if (count <= i) {
-        await put(value);
+      if (buffer.length === count) {
+        await put(buffer.pop());
       }
-
-      i++;
+      buffer.unshift(value);
     }
   });
 };
 
-module.exports = skip;
+module.exports = skipLast;

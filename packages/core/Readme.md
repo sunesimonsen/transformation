@@ -32,10 +32,10 @@
 - [reduce](#reduce)
 - [reverse](#reverse)
 - [skip](#skip)
+- [skipLast](#skiplast)
 - [sort](#sort)
 - [sortBy](#sortby)
 - [splitIterable](#splititerable)
-- [startProcess/childProcess](#startprocesschildprocess)
 - [take](#take)
 - [tap](#tap)
 - [toArray](#toarray)
@@ -970,6 +970,32 @@ await expect(
 );
 ```
 
+## skipLast
+
+Given a number n, it skips the last n items.
+
+```js
+import { skipLast } from "@transformation/core";
+```
+
+```js
+await expect(
+  pipeline(emitItems([0, 1, 2, 3, 4, 5]), skipLast(2)),
+  "to yield items",
+  [0, 1, 2, 3]
+);
+```
+
+When given no argument, it skips the last item.
+
+```js
+await expect(
+  pipeline(emitItems([0, 1, 2, 3, 4, 5]), skipLast()),
+  "to yield items",
+  [0, 1, 2, 3, 4]
+);
+```
+
 ## sort
 
 Sorts all of the items in the pipeline and re-emits them one by one.
@@ -1097,42 +1123,6 @@ await expect(
   [0, 1, 2, 3, 4, 5]
 );
 ```
-
-## startProcess/childProcess
-
-Starts a child process pipeline in a new Node instance.
-
-```js
-const { startProcess, childProcess } = require("@transformation/core");
-```
-
-Notice this is only useful for cases where your pipeline is more CPU intensive
-than the overhead of communicating with the child process.
-
-As an example let's try to square numbers in a child process.
-
-We start by defining the child process pipeline (square.js).
-
-```js
-module.exports = childProcess(map(n => n * n));
-```
-
-Now we can load start the process as part of our pipeline.
-
-```js
-await expect(
-  pipeline(
-    emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
-    startProcess("square.js"))
-  ),
-  "to yield items",
-  [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
-);
-```
-
-What is happening here, is that every item is serialized and send into the child
-process for processing. When the child process emits new items, they are
-serialized and passed back to the main pipeline.
 
 ## take
 

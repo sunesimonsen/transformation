@@ -2,7 +2,8 @@ const expect = require("unexpected")
   .clone()
   .use(require("unexpected-steps"));
 const fs = require("fs");
-const { unlink, readFile } = fs.promises;
+const os = require("os");
+const { mkdtemp, readFile } = fs.promises;
 const path = require("path");
 const fromStream = require("./fromStream");
 const toStream = require("./toStream");
@@ -16,14 +17,14 @@ const {
 } = require("@transformation/core");
 
 const inputFile = path.join(__dirname, "..", "test", "song.txt");
-const outputFile = path.join(__dirname, "..", "test", "song_output.txt");
+
+const createOutputFile = async () =>
+  path.join(await mkdtemp(path.join(os.tmpdir(), "output-")), "output.txt");
 
 describe("toStream", () => {
-  beforeEach(async () => {
-    await unlink(outputFile);
-  });
-
   it("write data to the given stream as a side-effect", async () => {
+    const outputFile = await createOutputFile();
+
     await expect(
       pipeline(
         fromStream(fs.createReadStream(inputFile)),
@@ -54,6 +55,8 @@ describe("toStream", () => {
   });
 
   it("it allows you to write strings to the stream", async () => {
+    const outputFile = await createOutputFile();
+
     await expect(
       pipeline(
         emitItems("one", "two", "three"),

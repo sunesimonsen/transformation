@@ -2,7 +2,10 @@ const expect = require("unexpected")
   .clone()
   .use(require("unexpected-steps"));
 
+const fs = require("fs");
 const path = require("path");
+const os = require("os");
+const { mkdtemp } = fs.promises;
 
 const {
   emitAll,
@@ -17,13 +20,16 @@ const writeCSV = require("./writeCSV");
 
 const testPath = path.join(__dirname, "..", "test");
 const inputFilePath = path.join(testPath, "test.csv");
-const outputFilePath = path.join(testPath, "testOutput.csv");
+
+const createOutputFile = async () =>
+  path.join(await mkdtemp(path.join(os.tmpdir(), "output-")), "output.txt");
 
 describe("writeCSV", () => {
   it("writes all the items into a CSV file", async () => {
+    const outputFile = await createOutputFile();
     const items = await takeAll(readCSV(inputFilePath));
-    await program(emitAll(items), writeCSV(outputFilePath));
-    const writtenItems = await takeAll(readCSV(outputFilePath));
+    await program(emitAll(items), writeCSV(outputFile));
+    const writtenItems = await takeAll(readCSV(outputFile));
 
     expect(writtenItems, "to equal", items);
   });

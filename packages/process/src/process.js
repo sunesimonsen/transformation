@@ -1,7 +1,6 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
-const channelStep = require("./channelStep");
+const { channelStep, pipeline } = require("@transformation/core");
 const cp = require("child_process");
-const pipeline = require("./pipeline");
 
 const startProcess = childProcessPath =>
   channelStep((input, errors) => {
