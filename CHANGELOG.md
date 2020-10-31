@@ -1,3 +1,14 @@
+### v2.0.0 (2020-10-31)
+
+#### Pull requests
+
+- [#41](https://github.com/sunesimonsen/transformation/pull/41) Added a new process package \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v2.0.0](https://github.com/sunesimonsen/transformation/commit/f1ddfce90ef976216c037e445510a52040742e19) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/758bbe26e2b2af9289f03a2df6ebbe953dae5066) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v1.34.0 (2020-10-28)
 
 #### Pull requests
