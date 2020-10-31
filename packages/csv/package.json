@@ -1,6 +1,6 @@
 {
   "name": "@transformation/csv",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Reading and writing CSV files from a transformation pipeline",
   "main": "./src/index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@transformation/core": "^2.0.0",
-    "@transformation/stream": "^2.1.0",
+    "@transformation/stream": "^2.2.0",
     "csv-parser": "2.3.2",
     "csv-writer": "1.5.0"
   },
