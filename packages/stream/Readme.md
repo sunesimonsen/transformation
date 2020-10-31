@@ -4,12 +4,25 @@ A package for integrating with Node streams.
 
 <!-- toc -->
 
+- [concat](#concat)
 - [fromStream](#fromstream)
 - [lines](#lines)
 - [pipe](#pipe)
 - [toStream](#tostream)
 
 <!-- tocstop -->
+
+## concat
+
+Concatenates all of output of a stream into a string.
+
+```js
+await expect(
+  pipeline(fromStream(fs.createReadStream(testFile)), concat()),
+  "to yield items",
+  [fs.readFileSync(testFile, "utf8")]
+);
+```
 
 ## fromStream
 
