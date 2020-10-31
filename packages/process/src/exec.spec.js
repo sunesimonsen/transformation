@@ -8,7 +8,7 @@ const {
   pipeline,
   program
 } = require("@transformation/core");
-const { lines } = require("@transformation/stream");
+const { concat, lines } = require("@transformation/stream");
 const exec = require("./exec");
 
 describe("exec", () => {
@@ -30,10 +30,10 @@ describe("exec", () => {
       pipeline(
         emitItems("Hello\nfantastic\nworld"),
         exec("grep -v fantastic"),
-        lines()
+        concat()
       ),
       "to yield items",
-      ["Hello", "world", ""]
+      ["Hello\nworld\n"]
     );
   });
 
