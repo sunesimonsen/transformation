@@ -1,3 +1,14 @@
+### v2.2.0 (2020-10-31)
+
+#### Pull requests
+
+- [#43](https://github.com/sunesimonsen/transformation/pull/43) Added fromFileStream and toFileStream to @transformation\/stream ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v2.2.0](https://github.com/sunesimonsen/transformation/commit/449315853067383822d398a61f447c486200b7de) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/d63ebe0625e71e91d76224287988ea975dcabeff) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v2.1.0 (2020-10-31)
 
 #### Pull requests
