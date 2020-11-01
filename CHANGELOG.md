@@ -1,3 +1,14 @@
+### v3.0.0 (2020-11-01)
+
+#### Pull requests
+
+- [#47](https://github.com/sunesimonsen/transformation/pull/47) Default to map instead of flatMap for plain functions in a pipeline \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v3.0.0](https://github.com/sunesimonsen/transformation/commit/2a9f934e639711bff670030eae3ae34a2133a345) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/f85de51e91c011568f0b8774bf2c2a5ed440640d) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v2.3.0 (2020-11-01)
 
 #### Pull requests
