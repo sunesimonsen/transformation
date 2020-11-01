@@ -22,6 +22,7 @@
 - [fork](#fork)
 - [groupBy](#groupby)
 - [interleave](#interleave)
+- [join](#join)
 - [keyBy](#keyby)
 - [map](#map)
 - [memorize](#memorize)
