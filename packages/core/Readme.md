@@ -654,6 +654,30 @@ await expect(
 );
 ```
 
+## join
+
+Joins all the items in the pipeline into a string with a given separator.
+
+```js
+const { join } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), join(" - ")),
+  "to yield items",
+  ["0 - 1 - 2 - 3 - 4 - 5"]
+);
+```
+
+If you don't specify the separator it defaults to comma.
+
+```js
+await expect(pipeline(emitItems(0, 1, 2, 3, 4, 5), join()), "to yield items", [
+  "0,1,2,3,4,5"
+]);
+```
+
 ## keyBy
 
 Indexes each item into to an object by the selected keys.

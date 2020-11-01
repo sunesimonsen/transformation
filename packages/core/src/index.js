@@ -17,6 +17,7 @@ const forEach = require("./forEach");
 const fork = require("./fork");
 const groupBy = require("./groupBy");
 const interleave = require("./interleave");
+const join = require("./join");
 const keyBy = require("./keyBy");
 const map = require("./map");
 const memorize = require("./memorize");
@@ -65,6 +66,7 @@ module.exports = {
   fork,
   groupBy,
   interleave,
+  join,
   keyBy,
   map,
   memorize,
