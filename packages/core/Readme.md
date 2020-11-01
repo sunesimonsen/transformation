@@ -897,6 +897,22 @@ await expect(
 );
 ```
 
+Plain functions will be interpreted as [flatMap](#flatmap).
+
+```js
+await expect(
+  pipeline(
+    emitItems("  \nHere is some text\n  with multiple lines\n   "),
+    s => s.trim(),
+    s => s.split(/\n/),
+    s => s.trim(),
+    (s, i) => s.replace(/^/, `${i + 1}) `)
+  ),
+  "to yield items",
+  ["1) Here is some text", "2) with multiple lines"]
+);
+```
+
 ## program
 
 Runs all of the given steps until the output closes.

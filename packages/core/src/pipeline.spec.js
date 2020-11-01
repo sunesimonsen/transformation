@@ -34,6 +34,36 @@ describe("pipeline", () => {
     );
   });
 
+  it("allows steps to be resolved async", async () => {
+    await expect(
+      pipeline(
+        emitItems(0, 1, 2, 3, 4, 5),
+        new Promise(resolve =>
+          setTimeout(() => {
+            resolve(filter(n => n % 2 === 0));
+          }, 0)
+        ),
+        map(n => n * n)
+      ),
+      "to yield items",
+      [0, 4, 16]
+    );
+  });
+
+  it("considers functions as flatMap", async () => {
+    await expect(
+      pipeline(
+        emitItems("  \nHere is some text\n  with multiple lines\n   "),
+        s => s.trim(),
+        s => s.split(/\n/),
+        s => s.trim(),
+        (s, i) => s.replace(/^/, `${i + 1}) `)
+      ),
+      "to yield items",
+      ["1) Here is some text", "2) with multiple lines"]
+    );
+  });
+
   it("skips steps that is falsy", async () => {
     await expect(
       pipeline(

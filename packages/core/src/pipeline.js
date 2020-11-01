@@ -1,5 +1,6 @@
 const { chan, go, take, put, close, CLOSED } = require("medium");
 const channelStep = require("./channelStep");
+const flatMap = require("./flatMap");
 
 const pipeline = (...steps) =>
   channelStep((input, errors) => {
@@ -13,6 +14,10 @@ const pipeline = (...steps) =>
           if (stepOrChannel) {
             if (!stepOrChannel.buffer && stepOrChannel.then) {
               stepOrChannel = await stepOrChannel;
+            }
+
+            if (typeof stepOrChannel === "function") {
+              stepOrChannel = flatMap(stepOrChannel);
             }
 
             channel =
