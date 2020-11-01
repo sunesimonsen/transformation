@@ -1,3 +1,19 @@
+### v2.3.0 (2020-11-01)
+
+#### Pull requests
+
+- [#46](https://github.com/sunesimonsen/transformation/pull/46) Let functions in a pipeline be flat map ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#35](https://github.com/sunesimonsen/transformation/pull/35) Bump lodash from 4.17.15 to 4.17.19 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v2.3.0](https://github.com/sunesimonsen/transformation/commit/7791d91925db4667e20653eb6d424b96b0648c9b) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fix formatting](https://github.com/sunesimonsen/transformation/commit/281b540710a88fcb2cd4ab8f9fa86740867db689) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Use concat in process documentation](https://github.com/sunesimonsen/transformation/commit/7fcc12794855dd34210fe5096eb0573af6982c31) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Simplify concat example](https://github.com/sunesimonsen/transformation/commit/6a259b8d18c63b63a35d57aa3e76b8b342f73e2d) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Added the process package to the top-level readme](https://github.com/sunesimonsen/transformation/commit/e9ce155b8d27f251ff21e1d030daf25e35f3e080) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [+1 more](https://github.com/sunesimonsen/transformation/compare/v2.2.0...v2.3.0)
+
 ### v2.2.0 (2020-10-31)
 
 #### Pull requests
