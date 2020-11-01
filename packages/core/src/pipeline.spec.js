@@ -3,6 +3,7 @@ const expect = require("unexpected")
   .use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
+const splitIterable = require("./splitIterable");
 const map = require("./map");
 const filter = require("./filter");
 
@@ -56,6 +57,7 @@ describe("pipeline", () => {
         emitItems("  \nHere is some text\n  with multiple lines\n   "),
         s => s.trim(),
         s => s.split(/\n/),
+        splitIterable(),
         s => s.trim(),
         (s, i) => s.replace(/^/, `${i + 1}) `)
       ),
