@@ -1658,7 +1658,11 @@ As an example let's make a step that averages numbers.
 const average = () =>
   pipeline(
     toArray(),
-    map(items => items.reduce((sum, n) => sum + n, 0) / items.length)
+    map(items =>
+      items.length === 0
+        ? NaN
+        : items.reduce((sum, n) => sum + n, 0) / items.length
+    )
   );
 
 await expect(
