@@ -897,7 +897,7 @@ await expect(
 );
 ```
 
-Plain functions will be interpreted as [flatMap](#flatmap).
+Plain functions will be interpreted as [map](#map).
 
 ```js
 await expect(
@@ -905,6 +905,7 @@ await expect(
     emitItems("  \nHere is some text\n  with multiple lines\n   "),
     s => s.trim(),
     s => s.split(/\n/),
+    splitIterable(),
     s => s.trim(),
     (s, i) => s.replace(/^/, `${i + 1}) `)
   ),
