@@ -1,3 +1,14 @@
+### v3.1.0 (2020-11-01)
+
+#### Pull requests
+
+- [#48](https://github.com/sunesimonsen/transformation/pull/48) Added a join step to @transformation\/core ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v3.1.0](https://github.com/sunesimonsen/transformation/commit/42ef76c4f3d05223db163ebaa807c3b8ccfcec96) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/5c35596ef2b8bc521d79b1d34254c189eba2e200) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.0.0 (2020-11-01)
 
 #### Pull requests
