@@ -121,7 +121,7 @@ await expect(
 await expect(fs.readFileSync("./output.txt", "utf8"), "to equal", "world");
 ```
 
-## writeEach
+## writeEachFile
 
 Write each item to a file.
 
