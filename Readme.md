@@ -9,7 +9,7 @@ structuring concurrent problems. If you are curious [Rob
 Pike](https://en.wikipedia.org/wiki/Rob_Pike) explains the concept very well in
 this video:
 
-[![Rob Pike - Concurrency Is Not Parallelism](https://i.ytimg.com/vi/cN_DpYBzKso/hqdefault.jpg)](https://www.youtube.com/watch?v=cN_DpYBzKso)
+[![Rob Pike - Concurrency Is Not Parallelism](https://i.ytimg.com/vi/oV9rvDllKEg/hqdefault.jpg)](https://www.youtube.com/watch?v=oV9rvDllKEg)
 
 While Communicating Sequence Processes (CSP) is a very powerful paradigm, it is
 also a bit daunting and verbose for simple programs. Especially there is a very
