@@ -93,7 +93,8 @@ main();
 
 ## Acknowledgment
 
-The library is build on top of a very nice CSP called [medium](https://www.npmjs.com/package/medium).
+The library is build on top of a very nice CSP library called
+[medium](https://www.npmjs.com/package/medium).
 
 ## MIT License
 
