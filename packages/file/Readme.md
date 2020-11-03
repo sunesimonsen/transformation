@@ -45,6 +45,23 @@ await expect(
 );
 ```
 
+If we want to read the name of a package, we can combine `readFile` with
+`fromJSON`.
+
+```js
+const { pipeline, fromJSON, map } = require("@transformation/core");
+
+await expect(
+  pipeline(
+    readFile("package.json", "utf8"),
+    fromJSON(),
+    map(({ name }) => name)
+  ),
+  "to yield items",
+  ["@transformation/file"]
+);
+```
+
 ## readEachFile
 
 Read incoming paths into a file entry that contains the path and the content.
