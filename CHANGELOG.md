@@ -1,3 +1,18 @@
+### v3.2.0 (2020-11-03)
+
+#### Pull requests
+
+- [#49](https://github.com/sunesimonsen/transformation/pull/49) Added a new @transformation\/file package for manipulating files ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#37](https://github.com/sunesimonsen/transformation/pull/37) Bump node-fetch from 2.6.0 to 2.6.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v3.2.0](https://github.com/sunesimonsen/transformation/commit/c8a5195abaf9ac00d113d4b98b8b4ddd82bf3451) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Think about division by zero in example](https://github.com/sunesimonsen/transformation/commit/e2e457f866b03b2926a3aed7bc8f5f96ba1da84a) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Added join to toc](https://github.com/sunesimonsen/transformation/commit/a7892e5b6d9f830674e37ab4bb808f618e057966) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/97c9b84b70a82d62beea43484e62492a366cd356) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/35e0b806d8b31bcecf5a0aebcb9a3f99bf33658c) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.1.0 (2020-11-01)
 
 #### Pull requests
