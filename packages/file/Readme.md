@@ -157,8 +157,8 @@ import { emitItems, program } from "@transformation/core";
 await program(
   emitItems(
     { path: "1.txt", data: "one", options: { encoding: "utf8" } },
-    { name: "2.txt", data: "two", options: "utf8" },
-    { name: "3.txt", data: "three" }
+    { path: "2.txt", data: "two", options: "utf8" },
+    { path: "3.txt", data: "three" }
   ),
   writeEachFile()
 );
