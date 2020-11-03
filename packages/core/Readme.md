@@ -41,6 +41,7 @@
 - [take](#take)
 - [tap](#tap)
 - [toArray](#toarray)
+- [toJSON](#tojson)
 - [transform](#transform)
 - [uniq](#uniq)
 - [uniqBy](#uniqby)
@@ -1309,6 +1310,32 @@ await expect(
   pipeline(emitItems(0, 1, 2, 3, 4, 5), toArray()),
   "to yield items",
   [[0, 1, 2, 3, 4, 5]]
+);
+```
+
+## toJSON
+
+JSON stringify every item in the pipeline.
+
+```js
+import { toJSON } from "@transformation/core";
+```
+
+```js
+await expect(
+  pipeline(emitItems({ foo: "bar", year: 2000 }, 1, {}, true), toJSON()),
+  "to yield items",
+  ['{"foo":"bar","year":2000}', "1", "{}", "true"]
+);
+```
+
+All arguments will be forwarded to JSON.stringify.
+
+```js
+await expect(
+  pipeline(emitItems({ foo: "bar", year: 2000 }, 1, {}, true), toJSON(null, 2)),
+  "to yield items",
+  ['{\n  "foo": "bar",\n  "year": 2000\n}', "1", "{}", "true"]
 );
 ```
 

@@ -38,6 +38,7 @@ const take = require("./take");
 const takeAll = require("./takeAll");
 const tap = require("./tap");
 const toArray = require("./toArray");
+const toJSON = require("./toJSON");
 const transform = require("./transform");
 const uniq = require("./uniq");
 const uniqBy = require("./uniqBy");
@@ -90,6 +91,7 @@ module.exports = {
   takeAll,
   tap,
   toArray,
+  toJSON,
   transform,
   uniq,
   uniqBy,
