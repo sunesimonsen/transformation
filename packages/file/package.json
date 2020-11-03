@@ -1,0 +1,32 @@
+{
+  "name": "@transformation/file",
+  "version": "3.1.0",
+  "description": "Transformations for working with files",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha **/*.spec.js"
+  },
+  "keywords": "transformation,automation,pipeline,file,io",
+  "author": "Sune Simonsen",
+  "license": "MIT",
+  "bugs": "https://github.com/sunesimonsen/transformation/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunesimonsen/transformation"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@transformation/core": "^3.1.0",
+    "medium": "1.0.2"
+  },
+  "devDependencies": {
+    "mocha": "6.2.2",
+    "unexpected": "11.8.1",
+    "unexpected-steps": "^3.0.0"
+  },
+  "engines": {
+    "node": ">=10"
+  }
+}

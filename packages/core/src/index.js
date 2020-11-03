@@ -15,6 +15,7 @@ const filter = require("./filter");
 const flatMap = require("./flatMap");
 const forEach = require("./forEach");
 const fork = require("./fork");
+const fromJSON = require("./fromJSON");
 const groupBy = require("./groupBy");
 const interleave = require("./interleave");
 const join = require("./join");
@@ -37,6 +38,7 @@ const take = require("./take");
 const takeAll = require("./takeAll");
 const tap = require("./tap");
 const toArray = require("./toArray");
+const toJSON = require("./toJSON");
 const transform = require("./transform");
 const uniq = require("./uniq");
 const uniqBy = require("./uniqBy");
@@ -64,6 +66,7 @@ module.exports = {
   flatMap,
   forEach,
   fork,
+  fromJSON,
   groupBy,
   interleave,
   join,
@@ -88,6 +91,7 @@ module.exports = {
   takeAll,
   tap,
   toArray,
+  toJSON,
   transform,
   uniq,
   uniqBy,

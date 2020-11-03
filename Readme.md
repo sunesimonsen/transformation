@@ -34,6 +34,7 @@ steps, that can be composed into processing pipelines.
 - [@transformation/core](./packages/core/Readme.md) - the core API that everything builds on top of.
 - [@transformation/csv](./packages/csv/Readme.md) - read and write CSV files.
 - [@transformation/ejs](./packages/ejs/Readme.md) - write files with EJS templates.
+- [@transformation/file](./packages/file/Readme.md) - read and write files.
 - [@transformation/glob](./packages/glob/Readme.md) - find files using glob patterns.
 - [@transformation/process](./packages/process/Readme.md) - work with child processes.
 - [@transformation/stream](./packages/stream/Readme.md) - integrate with Node streams.
