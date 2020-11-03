@@ -7,7 +7,7 @@ A package for using child processes.
 - [readFile](#readfile)
 - [readEachFile](#readeachfile)
 - [writeFile](#writefile)
-- [writeEach](#writeeach)
+- [writeEachFile](#writeeachfile)
 
 <!-- tocstop -->
 
