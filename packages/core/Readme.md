@@ -20,6 +20,7 @@
 - [flatMap](#flatmap)
 - [forEach](#foreach)
 - [fork](#fork)
+- [fromJSON](#fromjson)
 - [groupBy](#groupby)
 - [interleave](#interleave)
 - [join](#join)
@@ -565,6 +566,25 @@ await expect(
 );
 
 expect(forkedOutput, "to equal", [0, 1, 4, 9, 16, 25]);
+```
+
+## fromJSON
+
+Parses every items in the pipeline as JSON.
+
+```js
+import { fromJSON } from "@transformation/core";
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems('{ "foo": "bar", "year": 2000 }', "1", "{}", "true"),
+    fromJSON()
+  ),
+  "to yield items",
+  [{ foo: "bar", year: 2000 }, 1, {}, true]
+);
 ```
 
 ## groupBy

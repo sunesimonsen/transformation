@@ -15,6 +15,7 @@ const filter = require("./filter");
 const flatMap = require("./flatMap");
 const forEach = require("./forEach");
 const fork = require("./fork");
+const fromJSON = require("./fromJSON");
 const groupBy = require("./groupBy");
 const interleave = require("./interleave");
 const join = require("./join");
@@ -64,6 +65,7 @@ module.exports = {
   flatMap,
   forEach,
   fork,
+  fromJSON,
   groupBy,
   interleave,
   join,

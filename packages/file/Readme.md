@@ -4,6 +4,11 @@ A package for using child processes.
 
 <!-- toc -->
 
+- [readFile](#readfile)
+- [readEachFile](#readeachfile)
+- [writeFile](#writefile)
+- [writeEach](#writeeach)
+
 <!-- tocstop -->
 
 ## readFile
