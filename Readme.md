@@ -1,6 +1,6 @@
 # @transformation
 
-[![Build Status](https://travis-ci.org/sunesimonsen/transformation.svg?branch=master)](https://travis-ci.org/sunesimonsen/transformation)
+[![Actions Status: test](https://github.com/sunesimonsen/transformation/workflows/test/badge.svg)](https://github.com/sunesimonsen/transformation/actions?query=workflow%3A"test")
 
 [Communicating Sequential
 Processes](https://dl.acm.org/doi/pdf/10.1145/359576.359585) introduced by [Tony
