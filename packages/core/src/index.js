@@ -1,5 +1,6 @@
 const Group = require("./Group");
 const accumulate = require("./accumulate");
+const appendItems = require("./appendItems");
 const buffer = require("./buffer");
 const channelStep = require("./channelStep");
 const chose = require("./chose");
@@ -9,12 +10,11 @@ const emitItems = require("./emitItems");
 const emitRange = require("./emitRange");
 const emitRepeat = require("./emitRepeat");
 const extend = require("./extend");
-const frequencies = require("./frequencies");
-const parallel = require("./parallel");
 const filter = require("./filter");
 const flatMap = require("./flatMap");
 const forEach = require("./forEach");
 const fork = require("./fork");
+const frequencies = require("./frequencies");
 const fromJSON = require("./fromJSON");
 const groupBy = require("./groupBy");
 const interleave = require("./interleave");
@@ -22,9 +22,11 @@ const join = require("./join");
 const keyBy = require("./keyBy");
 const map = require("./map");
 const memorize = require("./memorize");
+const parallel = require("./parallel");
 const partition = require("./partition");
 const partitionBy = require("./partitionBy");
 const pipeline = require("./pipeline");
+const prependItems = require("./prependItems");
 const program = require("./program");
 const reduce = require("./reduce");
 const reverse = require("./reverse");
@@ -51,6 +53,7 @@ const withGroup = require("./withGroup");
 module.exports = {
   Group,
   accumulate,
+  appendItems,
   buffer,
   channelStep,
   chose,
@@ -60,12 +63,12 @@ module.exports = {
   emitRange,
   emitRepeat,
   extend,
-  frequencies,
   fanOut: parallel,
   filter,
   flatMap,
   forEach,
   fork,
+  frequencies,
   fromJSON,
   groupBy,
   interleave,
@@ -77,6 +80,7 @@ module.exports = {
   partition,
   partitionBy,
   pipeline,
+  prependItems,
   program,
   reduce,
   reverse,
