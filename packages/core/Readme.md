@@ -3,6 +3,7 @@
 <!-- toc -->
 
 - [accumulate](#accumulate)
+- [appendItems](#appenditems)
 - [buffer](#buffer)
   - [fixed buffer (default)](#fixed-buffer-default)
   - [dropping buffer](#dropping-buffer)
@@ -16,6 +17,7 @@
 - [extend](#extend)
 - [frequencies](#frequencies)
 - [parallel](#parallel)
+- [prependItems](#prependitems)
 - [filter](#filter)
 - [flatMap](#flatmap)
 - [forEach](#foreach)
@@ -79,6 +81,22 @@ await expect(
     { n: 4, total: 10 },
     { n: 5, total: 15 }
   ]
+);
+```
+
+## appendItems
+
+Appends the given items after all items in the pipeline.
+
+```js
+const { appendItems } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(emitItems(0, 1, 2), appendItems(3, 4, 5), appendItems(6, 7, 8)),
+  "to yield items",
+  [0, 1, 2, 3, 4, 5, 6, 7, 8]
 );
 ```
 
@@ -478,6 +496,22 @@ await expect(
   4,
   5,
   6
+);
+```
+
+## prependItems
+
+Prepend the given items before all items in the pipeline.
+
+```js
+const { prependItems } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(emitItems(6, 7, 8), prependItems(3, 4, 5), prependItems(0, 1, 2)),
+  "to yield items",
+  [0, 1, 2, 3, 4, 5, 6, 7, 8]
 );
 ```
 
