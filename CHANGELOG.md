@@ -1,3 +1,19 @@
+### v3.3.0 (2020-11-04)
+
+#### Pull requests
+
+- [#50](https://github.com/sunesimonsen/transformation/pull/50) Added appendItems and prependItems to @transformation\/core ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#51](https://github.com/sunesimonsen/transformation/pull/51) Switch to Github Actions ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v3.3.0](https://github.com/sunesimonsen/transformation/commit/3698c03f81d75e2b900bb344cc83053749dfe023) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fix typo in readme](https://github.com/sunesimonsen/transformation/commit/a7adc1ea82b172c9728c396b1fb4141dbfaf9c02) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fix writeEachFile example](https://github.com/sunesimonsen/transformation/commit/3bddc4253193b0a82f41e94e507152c6b3b3f776) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update toc](https://github.com/sunesimonsen/transformation/commit/7f56abffd5c82ab92409883cc58781e49288ca08) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fix heading in @transformation\/file](https://github.com/sunesimonsen/transformation/commit/b4a1f651bd3256bf0ec798c3a824659533c4addd) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [+2 more](https://github.com/sunesimonsen/transformation/compare/v3.2.0...v3.3.0)
+
 ### v3.2.0 (2020-11-03)
 
 #### Pull requests
