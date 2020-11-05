@@ -1,3 +1,14 @@
+### v3.4.0 (2020-11-05)
+
+#### Pull requests
+
+- [#52](https://github.com/sunesimonsen/transformation/pull/52) Allow steps to be returned from the map step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v3.4.0](https://github.com/sunesimonsen/transformation/commit/2283e785cd0d071622cbffee3cbf4ccc06e01741) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/d2879bf38bc02b85794a124dd787815895ced383) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.3.0 (2020-11-04)
 
 #### Pull requests
