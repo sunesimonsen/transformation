@@ -811,6 +811,36 @@ await expect(
 );
 ```
 
+You can also get the index of the item being mapped.
+
+```js
+await expect(
+  pipeline(
+    emitItems("zero", "one", "two", "three"),
+    map((n, i) => `${i}: ${n}`)
+  ),
+  "to yield items",
+  ["0: zero", "1: one", "2: two", "3: three"]
+);
+```
+
+Finally in some situations it can be useful to map items into a step that emits
+new items.
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 3, 4),
+    map(n => pipeline(emitRange(n), toArray()))
+  ),
+  "to yield items",
+  [[], [0], [0, 1], [0, 1, 2], [0, 1, 2, 3]]
+);
+```
+
+Notice that when you return a step from the mapper function, it will get no
+input, so it is only useful to emit new items into the pipeline.
+
 ## memorize
 
 Memorizes the given step.
