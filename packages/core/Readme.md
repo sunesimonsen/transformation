@@ -9,6 +9,7 @@
   - [dropping buffer](#dropping-buffer)
   - [sliding buffer](#sliding-buffer)
 - [chose](#chose)
+- [cleanup](#cleanup)
 - [delay](#delay)
 - [emitAll](#emitall)
 - [emitItems](#emititems)
@@ -35,10 +36,11 @@
 - [program](#program)
 - [reduce](#reduce)
 - [reverse](#reverse)
-- [skip](#skip)
+- [setup](#setup)
 - [skipLast](#skiplast)
-- [sort](#sort)
+- [skip](#skip)
 - [sortBy](#sortby)
+- [sort](#sort)
 - [splitIterable](#splititerable)
 - [take](#take)
 - [tap](#tap)
@@ -176,6 +178,33 @@ await expect(
 Notice: because we need to keep the ordering, the pipeline in the individual cases will only
 process one item a time, so if you call [toArray](#toArray) you will get an array of that item.
 But if you hard-code the choice as a string, it doesn't have this limitation.
+
+## cleanup
+
+Executes a side-effect when the step is closing down.
+
+```js
+import { cleanup } from "@transformation/core";
+```
+
+Notice that this step will run even when an exception happens in the pipeline.
+
+This is useful for cleaning up resources after a pipeline it completed.
+
+The below code snippet shows the execution order.
+
+```js
+const items = [];
+
+await program(
+  emitItems(0, 1, 2, 3),
+  forEach(item => items.push(item)),
+  cleanup(() => items.push(4)),
+  cleanup(() => items.push(5))
+);
+
+expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
+```
 
 ## delay
 
@@ -1095,6 +1124,31 @@ await expect(
   "to yield items",
   [2, 3, 4, 5]
 );
+```
+
+## setup
+
+Executes a side-effect when the step is initialize.
+
+```js
+import { setup } from "@transformation/core";
+```
+
+This is useful for cases where you have a pipeline that will be initialized more than ones, but it needs some storage. Then you can initialize it in the setup step.
+
+The below code snippet shows the execution order.
+
+```js
+const items = [];
+
+await program(
+  setup(() => items.push(0)),
+  setup(() => items.push(1))
+  emitItems(2, 3, 4, 5),
+  forEach(item => items.push(item)),
+);
+
+expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
 ```
 
 ## skipLast

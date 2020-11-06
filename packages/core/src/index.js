@@ -4,6 +4,7 @@ const appendItems = require("./appendItems");
 const buffer = require("./buffer");
 const channelStep = require("./channelStep");
 const chose = require("./chose");
+const cleanup = require("./cleanup");
 const delay = require("./delay");
 const emitAll = require("./emitAll");
 const emitItems = require("./emitItems");
@@ -30,6 +31,7 @@ const prependItems = require("./prependItems");
 const program = require("./program");
 const reduce = require("./reduce");
 const reverse = require("./reverse");
+const setup = require("./setup");
 const skip = require("./skip");
 const skipLast = require("./skipLast");
 const sort = require("./sort");
@@ -57,6 +59,7 @@ module.exports = {
   buffer,
   channelStep,
   chose,
+  cleanup,
   delay,
   emitAll,
   emitItems,
@@ -84,6 +87,7 @@ module.exports = {
   program,
   reduce,
   reverse,
+  setup,
   skip,
   skipLast,
   sort,
