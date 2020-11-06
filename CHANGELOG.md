@@ -1,3 +1,14 @@
+### v3.5.0 (2020-11-06)
+
+#### Pull requests
+
+- [#53](https://github.com/sunesimonsen/transformation/pull/53) Added setup and cleanup steps ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v3.5.0](https://github.com/sunesimonsen/transformation/commit/2d6917e9e5b3f850695a452c4aceb4538cbbfb6d) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/6747ff16de7a3acd019a1d009fcebad255129f6e) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.4.0 (2020-11-05)
 
 #### Pull requests
