@@ -1,3 +1,14 @@
+### v3.5.1 (2020-11-06)
+
+#### Pull requests
+
+- [#54](https://github.com/sunesimonsen/transformation/pull/54) Make sure we reset the state for uniqBy ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v3.5.1](https://github.com/sunesimonsen/transformation/commit/71e8b46b43763b4dc38d131c3de14d3bcae359a9) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/755c311e3271924aa76292ab55d73583cc3b1d21) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.5.0 (2020-11-06)
 
 #### Pull requests
