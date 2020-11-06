@@ -1,4 +1,4 @@
-const filter = require("./filter");
+const step = require("./step");
 
 const uniqBy = fieldOrSelector => {
   const selector =
@@ -6,16 +6,19 @@ const uniqBy = fieldOrSelector => {
       ? value => value[fieldOrSelector]
       : fieldOrSelector;
 
-  const seen = new Set();
+  return step(async ({ take, put, CLOSED }) => {
+    const seen = new Set();
 
-  return filter(item => {
-    const selected = selector(item);
-    const newItem = !seen.has(selected);
-    if (newItem) {
-      seen.add(selected);
+    while (true) {
+      const value = await take();
+      if (value === CLOSED) break;
+
+      const selected = selector(value);
+      if (!seen.has(selected)) {
+        seen.add(selected);
+        await put(value);
+      }
     }
-
-    return newItem;
   });
 };
 
