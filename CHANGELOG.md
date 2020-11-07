@@ -1,3 +1,9 @@
+### v3.5.3 (2020-11-08)
+
+- [v3.5.3](https://github.com/sunesimonsen/transformation/commit/364c323eb3149b59419bdd63145ceef3e34cd436) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fixed missing error channel when returning a step from map](https://github.com/sunesimonsen/transformation/commit/1c1e1ccfa8b93b67d9fe215458194163ebf96f24) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/d991a577f902de94ec08f4bc596cc9c321dcc78c) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.5.2 (2020-11-07)
 
 #### Pull requests
