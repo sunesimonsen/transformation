@@ -1,6 +1,6 @@
 {
   "name": "@transformation/file",
-  "version": "3.5.2",
+  "version": "3.5.3",
   "description": "Transformations for working with files",
   "main": "src/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@transformation/core": "^3.5.1",
+    "@transformation/core": "^3.5.3",
     "medium": "1.0.2"
   },
   "devDependencies": {
