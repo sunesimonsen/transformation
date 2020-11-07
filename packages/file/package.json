@@ -1,6 +1,6 @@
 {
   "name": "@transformation/file",
-  "version": "3.5.1",
+  "version": "3.5.2",
   "description": "Transformations for working with files",
   "main": "src/index.js",
   "scripts": {
