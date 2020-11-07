@@ -1,3 +1,14 @@
+### v3.5.2 (2020-11-07)
+
+#### Pull requests
+
+- [#55](https://github.com/sunesimonsen/transformation/pull/55) Fixed a missing promise and a bit of refactoring ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v3.5.2](https://github.com/sunesimonsen/transformation/commit/0796e239c66666965c3cf4c706631a2bc248bf72) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/b3a4bdef7f148addde222e2725da385216490622) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.5.1 (2020-11-06)
 
 #### Pull requests
