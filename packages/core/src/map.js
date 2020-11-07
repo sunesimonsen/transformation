@@ -19,7 +19,7 @@ const map = mapper =>
             mappedValue.type === "step" &&
             typeof mappedValue.body === "function"
           ) {
-            const valueOutput = mappedValue.body(chan());
+            const valueOutput = mappedValue.body(chan(), errors);
             while (true) {
               const item = await take(valueOutput);
               if (item === CLOSED) break;
