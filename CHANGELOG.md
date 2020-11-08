@@ -1,3 +1,14 @@
+### v3.6.0 (2020-11-08)
+
+#### Pull requests
+
+- [#56](https://github.com/sunesimonsen/transformation/pull/56) Change parallel to preserve output order ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v3.6.0](https://github.com/sunesimonsen/transformation/commit/dfc3ee52a4c88072b77c82c4b3d120af32c21b81) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/29c13cbc156495af1163e5fee7d11887eec8a0f7) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.5.3 (2020-11-08)
 
 - [v3.5.3](https://github.com/sunesimonsen/transformation/commit/364c323eb3149b59419bdd63145ceef3e34cd436) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
