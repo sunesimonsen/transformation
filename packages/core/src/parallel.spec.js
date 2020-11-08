@@ -58,8 +58,7 @@ describe("parallel", () => {
             forEach(async n => {
               await sleep(Math.round(Math.random() * 30));
             })
-          ),
-          2
+          )
         )
       ),
       "to yield items",
