@@ -31,7 +31,7 @@ const worker = childStep =>
 const parallel = (step, concurrency = 2 * cpus) =>
   channelStep((input, errors) => {
     const outputs = [];
-    const output = chan();
+    const output = chan(concurrency);
     const parallelInput = chan();
 
     for (var i = 0; i < concurrency; i += 1) {
