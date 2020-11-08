@@ -502,6 +502,8 @@ await expect(
 Run the given step with the specified concurrency. If no concurrency is
 specified, it will default to 2 times the number of CPU's available.
 
+Notice that we make sure to preserve the output order, so you can count on the output not changing order by using this step.
+
 ```js
 const { parallel } = require("@transformation/core");
 ```
@@ -518,13 +520,8 @@ await expect(
       4
     )
   ),
-  "to yield items satisfying to contain",
-  1,
-  2,
-  3,
-  4,
-  5,
-  6
+  "to yield items",
+  [6, 5, 4, 3, 2, 1]
 );
 ```
 
@@ -1685,14 +1682,8 @@ await expect(
       map(n => `${n} transformed`)
     )
   ),
-  "to yield items satisfying to contain",
-  "0 transformed",
-  1,
-  "4 transformed",
-  3,
-  "8 transformed",
-  5,
-  "12 transformed"
+  "to yield items",
+  ["0 transformed", 1, "4 transformed", 3, "8 transformed", 5, "12 transformed"]
 );
 ```
 
@@ -1711,14 +1702,8 @@ await expect(
       map(n => `${n} transformed`)
     )
   ),
-  "to yield items satisfying to contain",
-  0,
-  1,
-  4,
-  9,
-  16,
-  25,
-  36
+  "to yield items",
+  [0, 1, 4, 9, 16, 25, 36]
 );
 ```
 

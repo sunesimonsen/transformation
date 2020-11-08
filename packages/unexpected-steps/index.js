@@ -42,19 +42,4 @@ module.exports = expect => {
       return expect(result, "to equal", expected);
     }
   );
-
-  expect.addAssertion(
-    "<step> to yield items satisfying <assertion>",
-    async (expect, step) => {
-      const result = await takeAll(step);
-      expect.subjectOutput = output => {
-        output
-          .jsKeyword("channel")
-          .text("(")
-          .appendInspected(result)
-          .text(")");
-      };
-      return expect.shift(result);
-    }
-  );
 };

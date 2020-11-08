@@ -2,6 +2,7 @@ const expect = require("unexpected")
   .clone()
   .use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
+const emitRepeat = require("./emitRepeat");
 const pipeline = require("./pipeline");
 const program = require("./program");
 const parallel = require("./parallel");
@@ -22,13 +23,8 @@ describe("parallel", () => {
             })
           )
         ),
-        "to yield items satisfying to contain",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
+        "to yield items",
+        [6, 5, 4, 3, 2, 1]
       );
     });
   });
@@ -46,15 +42,29 @@ describe("parallel", () => {
             2
           )
         ),
-        "to yield items satisfying to contain",
-        1,
-        2,
-        3,
-        4,
-        5,
-        6
+        "to yield items",
+        [6, 5, 4, 3, 2, 1]
       );
     });
+  });
+
+  it("preserves the input order", async () => {
+    await expect(
+      pipeline(
+        emitItems(6, 5, 4, 3, 2, 1),
+        parallel(
+          pipeline(
+            n => emitRepeat(n, n),
+            forEach(async n => {
+              await sleep(Math.round(Math.random() * 30));
+            })
+          ),
+          2
+        )
+      ),
+      "to yield items",
+      [6, 6, 6, 6, 6, 6, 5, 5, 5, 5, 5, 4, 4, 4, 4, 3, 3, 3, 2, 2, 1]
+    );
   });
 
   describe("when the step fails", () => {
@@ -82,7 +92,7 @@ describe("parallel", () => {
         "Boom!"
       );
 
-      expect(processed, "to contain", 0, 1, 2);
+      expect(processed, "to equal", [0, 1, 2]);
     });
   });
 });
