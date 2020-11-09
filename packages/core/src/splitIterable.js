@@ -13,7 +13,7 @@ const splitIterable = () =>
           typeof value[Symbol.asyncIterator] === "function");
 
       if (isIterable) {
-        for await (let item of value) {
+        for await (const item of value) {
           await put(item);
         }
       } else {

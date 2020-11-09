@@ -30,6 +30,7 @@ describe("join", () => {
         constructor(name) {
           this.name = name;
         }
+
         toString() {
           return `Person(${this.name})`;
         }

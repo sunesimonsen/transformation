@@ -68,7 +68,7 @@ describe("parallel", () => {
 
   describe("when the step fails", () => {
     it("closes the pipeline", async () => {
-      let processed = [];
+      const processed = [];
       await expect(
         () =>
           program(
