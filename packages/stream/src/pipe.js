@@ -3,7 +3,7 @@ const Chunk = require("./Chunk");
 const { PassThrough, Writable } = require("stream");
 
 const write = (stream, data, encoding) =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     if (!stream.write(data, encoding)) {
       stream.once("drain", resolve);
     } else {
@@ -11,7 +11,7 @@ const write = (stream, data, encoding) =>
     }
   });
 
-const pipe = transformStream =>
+const pipe = (transformStream) =>
   step(async ({ take, put, CLOSED }) => {
     await new Promise((resolve, reject) => {
       const run = async () => {
@@ -58,7 +58,7 @@ const pipe = transformStream =>
                     : (data, encoding, callback) => {
                         put(new Chunk(data, encoding)).then(() => callback());
                       },
-                  objectMode: true
+                  objectMode: true,
                 })
               )
               .on("error", reject)

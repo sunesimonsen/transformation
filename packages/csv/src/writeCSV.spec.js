@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 
 const fs = require("fs");
 const path = require("path");
@@ -12,7 +10,7 @@ const {
   emitItems,
   groupBy,
   program,
-  takeAll
+  takeAll,
 } = require("@transformation/core");
 
 const readCSV = require("./readCSV");
@@ -70,7 +68,7 @@ describe("writeCSV", () => {
 
       expect(writtenItems, "to equal", [
         { symbol: "GOOG", price: "1349" },
-        { symbol: "GOOG", price: "1351" }
+        { symbol: "GOOG", price: "1351" },
       ]);
     });
   });

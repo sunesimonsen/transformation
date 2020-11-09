@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const path = require("path");
 const { emitItems, pipeline, map, sort } = require("@transformation/core");
 
@@ -15,7 +13,7 @@ describe("globEach", () => {
         pipeline(
           emitItems("20*/report.txt", "2020/*.txt", [
             "2020/report.txt",
-            "2021/report.txt"
+            "2021/report.txt",
           ]),
           globEach({ cwd: testDir }),
           sort()
@@ -28,7 +26,7 @@ describe("globEach", () => {
           "2020/transactions.txt",
           "2021/report.txt",
           "2021/report.txt",
-          "2022/report.txt"
+          "2022/report.txt",
         ]
       );
     });
@@ -52,9 +50,9 @@ describe("globEach", () => {
     await expect(
       pipeline(
         emitItems("2020", "2021"),
-        map(year => ({ cwd: path.join(testDir, year) })),
+        map((year) => ({ cwd: path.join(testDir, year) })),
         globEach({ pattern: "*.txt", absolute: true }),
-        map(path => path.replace(/.*\/transformation\//, "")),
+        map((path) => path.replace(/.*\/transformation\//, "")),
         sort()
       ),
       "to yield items",
@@ -62,7 +60,7 @@ describe("globEach", () => {
         "packages/glob/test/2020/report.txt",
         "packages/glob/test/2020/transactions.txt",
         "packages/glob/test/2021/report.txt",
-        "packages/glob/test/2021/transactions.txt"
+        "packages/glob/test/2021/transactions.txt",
       ]
     );
   });

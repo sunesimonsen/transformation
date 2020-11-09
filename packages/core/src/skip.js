@@ -1,6 +1,6 @@
 const step = require("./step");
 
-const skip = count => {
+const skip = (count) => {
   if (count <= 0) {
     return false;
   }

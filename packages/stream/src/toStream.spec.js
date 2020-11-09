@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const fs = require("fs");
 const os = require("os");
 const { mkdtemp, readFile } = fs.promises;
@@ -13,7 +11,7 @@ const {
   emitItems,
   pipeline,
   map,
-  interleave
+  interleave,
 } = require("@transformation/core");
 
 const inputFile = path.join(__dirname, "..", "test", "song.txt");
@@ -43,7 +41,7 @@ describe("toStream", () => {
         "Eight little turtles",
         "Nine little lions",
         "Ten chickens",
-        ""
+        "",
       ]
     );
 

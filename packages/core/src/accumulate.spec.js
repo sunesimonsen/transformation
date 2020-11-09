@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const accumulate = require("./accumulate");
@@ -11,7 +9,7 @@ describe("accumulate", () => {
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5),
         accumulate((n, previous) => ({ n, total: previous.total + n }), {
-          total: 0
+          total: 0,
         })
       ),
       "to yield items",
@@ -21,7 +19,7 @@ describe("accumulate", () => {
         { n: 2, total: 3 },
         { n: 3, total: 6 },
         { n: 4, total: 10 },
-        { n: 5, total: 15 }
+        { n: 5, total: 15 },
       ]
     );
   });

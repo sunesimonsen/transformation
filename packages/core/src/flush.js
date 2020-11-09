@@ -1,6 +1,6 @@
 const { go, chan, close, CLOSED, take } = require("medium");
 
-const flush = async stepOrChannel => {
+const flush = async (stepOrChannel) => {
   const input = chan();
   const errors = chan();
   const output =

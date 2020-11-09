@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 
 const path = require("path");
 const { program } = require("@transformation/core");
@@ -26,7 +24,7 @@ describe("readCSV", () => {
         id: "ak12293661",
         updated: "2015-12-22T19:09:29.736Z",
         place: "54km S of Redoubt Volcano, Alaska",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T18:38:34.000Z",
@@ -43,7 +41,7 @@ describe("readCSV", () => {
         id: "ak12293651",
         updated: "2015-12-22T18:47:23.287Z",
         place: "48km SSE of Cantwell, Alaska",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T18:38:01.820Z",
@@ -60,7 +58,7 @@ describe("readCSV", () => {
         id: "hv61132446",
         updated: "2015-12-22T18:44:13.729Z",
         place: "6km E of Pahala, Hawaii",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T18:38:00.000Z",
@@ -77,7 +75,7 @@ describe("readCSV", () => {
         id: "ak12293653",
         updated: "2015-12-22T18:54:45.265Z",
         place: "75km WSW of Delta Junction, Alaska",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T18:28:57.000Z",
@@ -94,7 +92,7 @@ describe("readCSV", () => {
         id: "ak12293626",
         updated: "2015-12-22T18:40:06.324Z",
         place: "25km NNE of Healy, Alaska",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T18:25:40.000Z",
@@ -111,7 +109,7 @@ describe("readCSV", () => {
         id: "ak12293627",
         updated: "2015-12-22T18:40:07.276Z",
         place: "43km W of Big Lake, Alaska",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T18:13:01.786Z",
@@ -128,7 +126,7 @@ describe("readCSV", () => {
         id: "nn00523604",
         updated: "2015-12-22T18:26:07.654Z",
         place: "18km N of Hawthorne, Nevada",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T18:08:44.630Z",
@@ -145,7 +143,7 @@ describe("readCSV", () => {
         id: "hv61132431",
         updated: "2015-12-22T18:11:59.980Z",
         place: "17km SE of Volcano, Hawaii",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T18:04:36.240Z",
@@ -162,7 +160,7 @@ describe("readCSV", () => {
         id: "hv61132421",
         updated: "2015-12-22T18:10:19.220Z",
         place: "9km W of Volcano, Hawaii",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T17:47:04.720Z",
@@ -179,7 +177,7 @@ describe("readCSV", () => {
         id: "nc72570651",
         updated: "2015-12-22T17:48:42.120Z",
         place: "23km SW of Coalinga, California",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T17:45:24.450Z",
@@ -196,7 +194,7 @@ describe("readCSV", () => {
         id: "nc72570646",
         updated: "2015-12-22T18:20:19.730Z",
         place: "23km SW of Coalinga, California",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T17:36:29.000Z",
@@ -213,7 +211,7 @@ describe("readCSV", () => {
         id: "ak12293479",
         updated: "2015-12-22T17:48:59.977Z",
         place: "113km W of Cantwell, Alaska",
-        type: "earthquake"
+        type: "earthquake",
       },
       {
         time: "2015-12-22T17:15:18.000Z",
@@ -230,8 +228,8 @@ describe("readCSV", () => {
         id: "ak12293473",
         updated: "2015-12-22T17:31:12.369Z",
         place: "51km SSE of Whittier, Alaska",
-        type: "earthquake"
-      }
+        type: "earthquake",
+      },
     ]);
   });
 
@@ -247,7 +245,7 @@ describe("readCSV", () => {
     await expect(
       program(
         readCSV(csvFilePath, {
-          maxRowBytes: 10
+          maxRowBytes: 10,
         })
       ),
       "to be rejected with",

@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitAll = require("./emitAll");
 const { sleep } = require("medium");
 
@@ -12,7 +10,7 @@ describe("emitAll", () => {
       2,
       3,
       4,
-      5
+      5,
     ]);
   });
 
@@ -40,7 +38,7 @@ describe("emitAll", () => {
       2,
       3,
       4,
-      5
+      5,
     ]);
   });
 
@@ -58,7 +56,7 @@ describe("emitAll", () => {
       2,
       3,
       4,
-      5
+      5,
     ]);
   });
 });

@@ -8,7 +8,7 @@ const {
   map,
   parallel,
   program,
-  tap
+  tap,
 } = require("./packages/core");
 
 const main = async () => {
@@ -18,10 +18,10 @@ const main = async () => {
     map(JSON.parse),
     extend({
       localDependencies: map(({ dependencies }) =>
-        Object.keys(dependencies).filter(dependency =>
+        Object.keys(dependencies).filter((dependency) =>
           dependency.startsWith("@transformation/")
         )
-      )
+      ),
     }),
     filter(({ localDependencies }) => localDependencies.length > 0),
     tap(

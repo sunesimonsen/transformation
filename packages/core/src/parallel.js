@@ -11,7 +11,7 @@ const cpus =
     ? require("os").cpus().length
     : 4;
 
-const worker = childStep =>
+const worker = (childStep) =>
   step(async ({ take, put, CLOSED }) => {
     while (true) {
       const value = await take();
@@ -21,7 +21,7 @@ const worker = childStep =>
       await program(
         emitItems(data),
         childStep,
-        forEach(v => put({ index, data: v }))
+        forEach((v) => put({ index, data: v }))
       );
 
       await put({ index, data: CLOSED });

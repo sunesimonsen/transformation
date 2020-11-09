@@ -3,5 +3,5 @@ const writeCSV = require("./writeCSV");
 
 module.exports = {
   readCSV,
-  writeCSV
+  writeCSV,
 };

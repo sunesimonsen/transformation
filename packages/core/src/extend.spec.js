@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const map = require("./map");
@@ -17,7 +15,9 @@ describe("extend", () => {
           { firstName: "John", lastName: "Doe" }
         ),
         extend({
-          fullName: map(({ firstName, lastName }) => `${firstName} ${lastName}`)
+          fullName: map(
+            ({ firstName, lastName }) => `${firstName} ${lastName}`
+          ),
         })
       ),
       "to yield items",
@@ -25,7 +25,7 @@ describe("extend", () => {
         { firstName: "Jane", lastName: "Doe", fullName: "Jane Doe" },
         "Something else",
         null,
-        { firstName: "John", lastName: "Doe", fullName: "John Doe" }
+        { firstName: "John", lastName: "Doe", fullName: "John Doe" },
       ]
     );
   });
@@ -40,7 +40,7 @@ describe("extend", () => {
           { firstName: "John", lastName: "Doe" }
         ),
         extend({
-          fullName: ({ firstName, lastName }) => `${firstName} ${lastName}`
+          fullName: ({ firstName, lastName }) => `${firstName} ${lastName}`,
         })
       ),
       "to yield items",
@@ -48,7 +48,7 @@ describe("extend", () => {
         { firstName: "Jane", lastName: "Doe", fullName: "Jane Doe" },
         "Something else",
         null,
-        { firstName: "John", lastName: "Doe", fullName: "John Doe" }
+        { firstName: "John", lastName: "Doe", fullName: "John Doe" },
       ]
     );
   });
@@ -63,7 +63,7 @@ describe("extend", () => {
           { firstName: "John", lastName: "Doe", role: "nobody" }
         ),
         extend({
-          role: "admin"
+          role: "admin",
         })
       ),
       "to yield items",
@@ -71,7 +71,7 @@ describe("extend", () => {
         { firstName: "Jane", lastName: "Doe", role: "admin" },
         "Something else",
         null,
-        { firstName: "John", lastName: "Doe", role: "admin" }
+        { firstName: "John", lastName: "Doe", role: "admin" },
       ]
     );
   });
@@ -87,7 +87,7 @@ describe("extend", () => {
           { firstName: "Jonas", lastName: "Edo", nesting: "will be overriden" }
         ),
         extend({
-          nesting: { supported: "YES" }
+          nesting: { supported: "YES" },
         })
       ),
       "to yield items",
@@ -96,7 +96,7 @@ describe("extend", () => {
         "Something else",
         null,
         { firstName: "John", lastName: "Doe", nesting: { supported: "YES" } },
-        { firstName: "Jonas", lastName: "Edo", nesting: { supported: "YES" } }
+        { firstName: "Jonas", lastName: "Edo", nesting: { supported: "YES" } },
       ]
     );
   });

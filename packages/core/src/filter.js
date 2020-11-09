@@ -1,6 +1,6 @@
 const step = require("./step");
 
-const filter = predicate =>
+const filter = (predicate) =>
   step(async ({ take, put, CLOSED }) => {
     let i = 0;
     while (true) {

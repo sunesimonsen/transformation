@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const uniqBy = require("./uniqBy");
@@ -25,7 +23,7 @@ describe("uniq", () => {
           { id: 0, name: "foo", count: 0 },
           { id: 1, name: "bar", count: 1 },
           { id: 2, name: "baz", count: 2 },
-          { id: 3, name: "qux", count: 4 }
+          { id: 3, name: "qux", count: 4 },
         ]
       );
     });
@@ -50,7 +48,7 @@ describe("uniq", () => {
           { id: 0, name: "foo", count: 0 },
           { id: 1, name: "bar", count: 1 },
           { id: 2, name: "baz", count: 2 },
-          { id: 3, name: "qux", count: 4 }
+          { id: 3, name: "qux", count: 4 },
         ]
       );
     });
@@ -76,7 +74,7 @@ describe("uniq", () => {
         { id: 0, name: "foo", count: 0 },
         { id: 1, name: "bar", count: 1 },
         { id: 2, name: "baz", count: 2 },
-        { id: 3, name: "qux", count: 4 }
+        { id: 3, name: "qux", count: 4 },
       ]
     );
 
@@ -91,7 +89,7 @@ describe("uniq", () => {
       "to yield items",
       [
         { id: 0, name: "foo", count: 0 },
-        { id: 1, name: "bar", count: 1 }
+        { id: 1, name: "bar", count: 1 },
       ]
     );
   });

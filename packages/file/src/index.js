@@ -7,5 +7,5 @@ module.exports = {
   readFile,
   readEachFile,
   writeFile,
-  writeEachFile
+  writeEachFile,
 };

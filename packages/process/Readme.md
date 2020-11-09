@@ -113,7 +113,7 @@ As an example let's try to square numbers in a child process.
 We start by defining the child process pipeline (square.js).
 
 ```js
-module.exports = childProcess(map(n => n * n));
+module.exports = childProcess(map((n) => n * n));
 ```
 
 Now we can load start the process as part of our pipeline.

@@ -2,7 +2,7 @@ const { go, close, CLOSED, chan, put, take } = require("medium");
 const { channelStep, pipeline } = require("@transformation/core");
 const cp = require("child_process");
 
-const createError = data => {
+const createError = (data) => {
   const ErrorType = global[data.type] || Error;
   const err = new ErrorType(data.properties.message);
   for (const [key, value] of Object.entries(data.properties)) {
@@ -11,7 +11,7 @@ const createError = data => {
   return err;
 };
 
-const startProcess = childProcessPath =>
+const startProcess = (childProcessPath) =>
   channelStep((input, errors) => {
     const childProcess = cp.fork(childProcessPath);
     const output = chan();
@@ -37,7 +37,7 @@ const startProcess = childProcessPath =>
       }
     });
 
-    childProcess.on("error", async err => {
+    childProcess.on("error", async (err) => {
       await put(errors, err);
       close(output);
     });
@@ -81,7 +81,7 @@ const childProcess = (...steps) => {
     }
   });
 
-  process.on("uncaughtException", err => {
+  process.on("uncaughtException", (err) => {
     process.send({ type: "error", data: err.message });
   });
 
@@ -112,7 +112,7 @@ const childProcess = (...steps) => {
 
       process.send({
         type: "error",
-        data: { type: value.constructor.name, properties }
+        data: { type: value.constructor.name, properties },
       });
     }
   });
@@ -120,5 +120,5 @@ const childProcess = (...steps) => {
 
 module.exports = {
   startProcess,
-  childProcess
+  childProcess,
 };

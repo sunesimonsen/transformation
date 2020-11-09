@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const splitIterable = require("./splitIterable");
@@ -12,8 +10,8 @@ describe("pipeline", () => {
     await expect(
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5),
-        filter(n => n % 2 === 0),
-        map(n => n * n)
+        filter((n) => n % 2 === 0),
+        map((n) => n * n)
       ),
       "to yield items",
       [0, 4, 16]
@@ -25,10 +23,10 @@ describe("pipeline", () => {
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5),
         pipeline(
-          filter(n => n % 2 === 0),
-          map(n => n * n)
+          filter((n) => n % 2 === 0),
+          map((n) => n * n)
         ),
-        map(n => `${n} elephants`)
+        map((n) => `${n} elephants`)
       ),
       "to yield items",
       ["0 elephants", "4 elephants", "16 elephants"]
@@ -39,12 +37,12 @@ describe("pipeline", () => {
     await expect(
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5),
-        new Promise(resolve =>
+        new Promise((resolve) =>
           setTimeout(() => {
-            resolve(filter(n => n % 2 === 0));
+            resolve(filter((n) => n % 2 === 0));
           }, 0)
         ),
-        map(n => n * n)
+        map((n) => n * n)
       ),
       "to yield items",
       [0, 4, 16]
@@ -55,10 +53,10 @@ describe("pipeline", () => {
     await expect(
       pipeline(
         emitItems("  \nHere is some text\n  with multiple lines\n   "),
-        s => s.trim(),
-        s => s.split(/\n/),
+        (s) => s.trim(),
+        (s) => s.split(/\n/),
         splitIterable(),
-        s => s.trim(),
+        (s) => s.trim(),
         (s, i) => s.replace(/^/, `${i + 1}) `)
       ),
       "to yield items",
@@ -71,10 +69,10 @@ describe("pipeline", () => {
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5),
         pipeline(
-          filter(n => n % 2 === 0),
-          false && map(n => n * n)
+          filter((n) => n % 2 === 0),
+          false && map((n) => n * n)
         ),
-        map(n => `${n} elephants`)
+        map((n) => `${n} elephants`)
       ),
       "to yield items",
       ["0 elephants", "2 elephants", "4 elephants"]

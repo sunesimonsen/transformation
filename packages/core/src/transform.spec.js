@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const transform = require("./transform");
@@ -22,18 +20,18 @@ describe("transform", () => {
             name: "no symbol",
             price: 666,
             currency: "USD",
-            nesting: { supported: "yes" }
+            nesting: { supported: "yes" },
           },
           { symbol: "aapl", price: 275, currency: "USD" },
           { symbol: "goog", price: 1351, currency: "USD" },
           { symbol: "aapl", price: 279 }
         ),
         transform({
-          symbol: map(symbol => symbol.toUpperCase()),
-          price: map(price => `$${price}`),
+          symbol: map((symbol) => symbol.toUpperCase()),
+          price: map((price) => `$${price}`),
           nesting: {
-            supported: map(symbol => symbol.toUpperCase())
-          }
+            supported: map((symbol) => symbol.toUpperCase()),
+          },
         })
       ),
       "to yield items",
@@ -46,11 +44,11 @@ describe("transform", () => {
           name: "no symbol",
           price: "$666",
           currency: "USD",
-          nesting: { supported: "YES" }
+          nesting: { supported: "YES" },
         },
         { symbol: "AAPL", price: "$275", currency: "USD" },
         { symbol: "GOOG", price: "$1351", currency: "USD" },
-        { symbol: "AAPL", price: "$279" }
+        { symbol: "AAPL", price: "$279" },
       ]
     );
   });
@@ -66,8 +64,8 @@ describe("transform", () => {
               "@zendesk/guide-client-webpack-config",
               "@zendesk/knowledge-utils",
               "@zendesk/knowledge-components",
-              "@zendesk/knowledge-http-client"
-            ]
+              "@zendesk/knowledge-http-client",
+            ],
           },
           {
             dependencies: [
@@ -76,12 +74,12 @@ describe("transform", () => {
               "@zendesk/guide-client-chrome",
               "@zendesk/knowledge-context",
               "@zendesk/guide-client-webpack-config",
-              "@zendesk/knowledge-utils"
-            ]
+              "@zendesk/knowledge-utils",
+            ],
           }
         ),
         transform({
-          dependencies: pipeline(splitIterable(), sort(), toArray())
+          dependencies: pipeline(splitIterable(), sort(), toArray()),
         })
       ),
       "to yield items",
@@ -93,8 +91,8 @@ describe("transform", () => {
             "@zendesk/knowledge-components",
             "@zendesk/knowledge-context",
             "@zendesk/knowledge-http-client",
-            "@zendesk/knowledge-utils"
-          ]
+            "@zendesk/knowledge-utils",
+          ],
         },
         {
           dependencies: [
@@ -103,9 +101,9 @@ describe("transform", () => {
             "@zendesk/guide-client-webpack-config",
             "@zendesk/knowledge-components",
             "@zendesk/knowledge-context",
-            "@zendesk/knowledge-utils"
-          ]
-        }
+            "@zendesk/knowledge-utils",
+          ],
+        },
       ]
     );
   });
@@ -121,8 +119,8 @@ describe("transform", () => {
           { symbol: "aapl", price: { value: 279, currency: "USD" } }
         ),
         transform({
-          symbol: map(symbol => symbol.toUpperCase()),
-          price: { value: map(price => price * 2) }
+          symbol: map((symbol) => symbol.toUpperCase()),
+          price: { value: map((price) => price * 2) },
         })
       ),
       "to yield items",
@@ -131,7 +129,7 @@ describe("transform", () => {
         { symbol: "AAPL", price: { value: 548, currency: "USD" } },
         { symbol: "AAPL", price: { value: 550, currency: "USD" } },
         { symbol: "GOOG", price: { value: 2702, currency: "USD" } },
-        { symbol: "AAPL", price: { value: 558, currency: "USD" } }
+        { symbol: "AAPL", price: { value: 558, currency: "USD" } },
       ]
     );
   });

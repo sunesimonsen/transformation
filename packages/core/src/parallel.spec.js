@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const emitRepeat = require("./emitRepeat");
 const pipeline = require("./pipeline");
@@ -17,7 +15,7 @@ describe("parallel", () => {
         pipeline(
           emitItems(5, 4, 3, 2, 1, 0),
           parallel(
-            map(async n => {
+            map(async (n) => {
               await sleep(n);
               return n + 1;
             })
@@ -35,7 +33,7 @@ describe("parallel", () => {
         pipeline(
           emitItems(5, 4, 3, 2, 1, 0),
           parallel(
-            map(async n => {
+            map(async (n) => {
               await sleep(n);
               return n + 1;
             }),
@@ -54,8 +52,8 @@ describe("parallel", () => {
         emitItems(6, 5, 4, 3, 2, 1),
         parallel(
           pipeline(
-            n => emitRepeat(n, n),
-            forEach(async n => {
+            (n) => emitRepeat(n, n),
+            forEach(async (n) => {
               await sleep(Math.round(Math.random() * 30));
             })
           )
@@ -75,7 +73,7 @@ describe("parallel", () => {
             emitItems(0, 1, 2, "bomb", 3, 4, 5),
             parallel(
               pipeline(
-                forEach(async n => {
+                forEach(async (n) => {
                   if (n === "bomb") {
                     throw new Error("Boom!");
                   }
@@ -83,7 +81,7 @@ describe("parallel", () => {
                 })
               )
             ),
-            forEach(n => {
+            forEach((n) => {
               processed.push(n);
             })
           ),

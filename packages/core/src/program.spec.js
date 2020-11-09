@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const program = require("./program");
 const forEach = require("./forEach");
@@ -13,7 +11,7 @@ describe("program", () => {
 
     await program(
       emitItems(0, 1, 2, 3, 4, 5),
-      forEach(item => items.push(item))
+      forEach((item) => items.push(item))
     );
 
     expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
@@ -23,13 +21,13 @@ describe("program", () => {
     await expect(
       program(
         emitItems(0, 1, 2, 3, 4, 5),
-        forEach(x => {
+        forEach((x) => {
           if (x === 3) {
             throw new Error("wat");
           }
         }),
-        pipeline(map(x => x + 1)),
-        map(x => x * x)
+        pipeline(map((x) => x + 1)),
+        map((x) => x * x)
       ),
       "to be rejected with",
       new Error("wat")

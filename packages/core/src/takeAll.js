@@ -6,7 +6,7 @@ const takeAll = async (...stepsOrChannels) => {
 
   await program(
     ...stepsOrChannels,
-    forEach(item => {
+    forEach((item) => {
       result.push(item);
     })
   );

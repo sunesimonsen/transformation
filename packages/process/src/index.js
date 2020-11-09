@@ -6,5 +6,5 @@ module.exports = {
   exec,
   spawn,
   startProcess,
-  childProcess
+  childProcess,
 };

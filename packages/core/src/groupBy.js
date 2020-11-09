@@ -1,10 +1,10 @@
 const step = require("./step");
 const Group = require("./Group");
 
-const groupBy = fieldOrSelector => {
+const groupBy = (fieldOrSelector) => {
   const selector =
     typeof fieldOrSelector === "string"
-      ? value => value[fieldOrSelector]
+      ? (value) => value[fieldOrSelector]
       : fieldOrSelector;
 
   return step(async ({ take, put, CLOSED }) => {
@@ -16,7 +16,7 @@ const groupBy = fieldOrSelector => {
       items.push(value);
     }
 
-    items.forEach(item => {
+    items.forEach((item) => {
       const key = selector(item);
       const group = grouping[key];
       if (group) {

@@ -9,7 +9,7 @@ const globEach = (options = {}) => {
       : options;
 
   return pipeline(
-    flatMap(async function*(value) {
+    flatMap(async function* (value) {
       const { cwd = options.cwd, pattern = options.pattern } =
         typeof value === "string" || Array.isArray(value)
           ? { pattern: value }
@@ -18,7 +18,7 @@ const globEach = (options = {}) => {
       const pathNames = globby.stream(pattern, {
         ...options,
         absolute: false,
-        cwd
+        cwd,
       });
 
       for await (const pathName of pathNames) {

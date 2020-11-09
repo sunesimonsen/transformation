@@ -26,7 +26,7 @@ const chose = (caseOrSelector, cases) => {
             await program(
               emitItems(value),
               chosen,
-              forEach(value => put(output, value))
+              forEach((value) => put(output, value))
             );
           } else {
             await put(output, value);

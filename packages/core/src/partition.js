@@ -1,7 +1,7 @@
 const step = require("./step");
 const Group = require("./Group");
 
-const partition = size =>
+const partition = (size) =>
   step(async ({ take, put, CLOSED }) => {
     let partitionNumber = 0;
     while (true) {
@@ -20,7 +20,7 @@ const partition = size =>
       await put(
         Group.create({
           key: `[${start};${end}]`,
-          items: nextBatch
+          items: nextBatch,
         })
       );
 

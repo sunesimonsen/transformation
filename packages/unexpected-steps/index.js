@@ -1,6 +1,6 @@
 const { chan, take, close, CLOSED } = require("medium");
 
-const takeAll = async step => {
+const takeAll = async (step) => {
   const result = [];
   const errors = chan();
   const input = chan();
@@ -8,7 +8,7 @@ const takeAll = async step => {
   close(input);
 
   let error = null;
-  take(errors).then(e => {
+  take(errors).then((e) => {
     error = e;
   });
 
@@ -22,22 +22,18 @@ const takeAll = async step => {
   return result;
 };
 
-module.exports = expect => {
+module.exports = (expect) => {
   expect.addType({
     base: "object",
     name: "step",
-    identify: value => value && value.type === "step"
+    identify: (value) => value && value.type === "step",
   });
   expect.addAssertion(
     "<step> to yield items <array>",
     async (expect, step, expected) => {
       const result = await takeAll(step);
-      expect.subjectOutput = output => {
-        output
-          .jsKeyword("channel")
-          .text("(")
-          .appendInspected(result)
-          .text(")");
+      expect.subjectOutput = (output) => {
+        output.jsKeyword("channel").text("(").appendInspected(result).text(")");
       };
       return expect(result, "to equal", expected);
     }

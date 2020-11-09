@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const program = require("./program");
 const forEach = require("./forEach");
@@ -12,7 +10,7 @@ describe("cleanup", () => {
 
     await program(
       emitItems(0, 1, 2, 3),
-      forEach(item => items.push(item)),
+      forEach((item) => items.push(item)),
       cleanup(() => items.push(4)),
       cleanup(() => items.push(5))
     );
@@ -31,7 +29,7 @@ describe("cleanup", () => {
             throw new Error("wat");
           }
         }),
-        forEach(item => items.push(item)),
+        forEach((item) => items.push(item)),
         cleanup(() => items.push(4)),
         cleanup(() => items.push(5))
       );

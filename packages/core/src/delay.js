@@ -1,7 +1,7 @@
 const { sleep } = require("medium");
 const step = require("./step");
 
-const delay = ms =>
+const delay = (ms) =>
   step(async ({ take, put, CLOSED }) => {
     while (true) {
       await sleep(ms);

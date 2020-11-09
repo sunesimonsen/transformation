@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const program = require("./program");
 const forEach = require("./forEach");
@@ -13,7 +11,7 @@ describe("setup", () => {
     await program(
       emitItems(2, 3, 4, 5),
       setup(() => items.push(0)),
-      forEach(item => items.push(item)),
+      forEach((item) => items.push(item)),
       setup(() => items.push(1))
     );
 

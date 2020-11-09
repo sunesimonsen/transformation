@@ -1,7 +1,7 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
 const channelStep = require("./channelStep");
 
-const map = mapper =>
+const map = (mapper) =>
   channelStep((input, errors) => {
     const output = chan();
 

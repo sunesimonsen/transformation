@@ -11,5 +11,5 @@ module.exports = {
   fromStream,
   lines,
   pipe,
-  toStream
+  toStream,
 };

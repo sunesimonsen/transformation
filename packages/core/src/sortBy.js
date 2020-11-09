@@ -1,7 +1,7 @@
 const sort = require("./sort");
 
 const sortBy = (...ordering) => {
-  const comparisons = ordering.map(order => {
+  const comparisons = ordering.map((order) => {
     if (typeof order === "function") {
       return order;
     }

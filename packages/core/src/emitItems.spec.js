@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 
 describe("emitItems", () => {
@@ -11,7 +9,7 @@ describe("emitItems", () => {
       2,
       3,
       4,
-      5
+      5,
     ]);
   });
 });

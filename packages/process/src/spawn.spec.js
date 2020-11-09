@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 
 const path = require("path");
 const {
@@ -8,7 +6,7 @@ const {
   pipeline,
   program,
   skipLast,
-  sort
+  sort,
 } = require("@transformation/core");
 const { lines } = require("@transformation/stream");
 const spawn = require("./spawn");

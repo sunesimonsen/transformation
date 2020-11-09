@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const sortBy = require("./sortBy");
@@ -21,7 +19,7 @@ describe("sortBy", () => {
         [
           { name: "chat", price: 0 },
           { name: "hat", price: 10 },
-          { name: "cat", price: 100 }
+          { name: "cat", price: 100 },
         ]
       );
     });
@@ -46,7 +44,7 @@ describe("sortBy", () => {
           { name: "wat", price: 100 },
           { name: "wat", price: 100 },
           { name: "hat", price: 10 },
-          { name: "chat", price: 0 }
+          { name: "chat", price: 0 },
         ]
       );
     });
@@ -71,7 +69,7 @@ describe("sortBy", () => {
           { name: "hat", price: 10 },
           { name: "cat", price: 100 },
           { name: "twat", price: 100 },
-          { name: "wat", price: 100 }
+          { name: "wat", price: 100 },
         ]
       );
     });

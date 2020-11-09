@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitRepeat = require("./emitRepeat");
 const pipeline = require("./pipeline");
 const take = require("./take");
@@ -22,7 +20,7 @@ describe("emitRepeat(items, limit)", () => {
     await expect(emitRepeat("hello", 3), "to yield items", [
       "hello",
       "hello",
-      "hello"
+      "hello",
     ]);
   });
 
@@ -34,7 +32,7 @@ describe("emitRepeat(items, limit)", () => {
       "foo",
       "bar",
       "baz",
-      "foo"
+      "foo",
     ]);
   });
 

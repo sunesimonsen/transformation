@@ -2,7 +2,7 @@ const { go, close, CLOSED, chan, put, take, buffers } = require("medium");
 const channelStep = require("./channelStep");
 
 const buffer = (size, strategy = "fixed") =>
-  channelStep(input => {
+  channelStep((input) => {
     const output = chan(buffers[strategy](size));
 
     go(async () => {

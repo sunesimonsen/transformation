@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const path = require("path");
 const fs = require("fs");
 const fromStream = require("./fromStream");
@@ -25,7 +23,7 @@ describe("fromStream", () => {
           "Seven little worms",
           "Eight little turtles",
           "Nine little lions",
-          "Ten chickens"
+          "Ten chickens",
         ]
       );
     });
@@ -61,7 +59,7 @@ describe("fromStream", () => {
         "to yield items",
         [
           new Chunk(fs.readFileSync(testFile), null),
-          new Chunk(fs.readFileSync(testFile), null)
+          new Chunk(fs.readFileSync(testFile), null),
         ]
       );
     });

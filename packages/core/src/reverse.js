@@ -3,10 +3,10 @@ const toArray = require("./toArray");
 const splitIterable = require("./splitIterable");
 const map = require("./map");
 
-const reverse = comparison => {
+const reverse = (comparison) => {
   return pipeline(
     toArray(),
-    map(arr => arr.reverse()),
+    map((arr) => arr.reverse()),
     splitIterable()
   );
 };

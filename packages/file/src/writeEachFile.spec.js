@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 
 const fs = require("fs");
 const path = require("path");
@@ -22,7 +20,7 @@ describe("writeEachFile", () => {
       await expect(
         pipeline(
           emitItems("Hello", "world"),
-          writeEachFile(value => path.join(outputDir, `${value}.txt`))
+          writeEachFile((value) => path.join(outputDir, `${value}.txt`))
         ),
         "to yield items",
         ["Hello", "world"]
@@ -55,7 +53,7 @@ describe("writeEachFile", () => {
           ),
           map(({ name, ...other }) => ({
             ...other,
-            path: path.join(outputDir, `${name}.txt`)
+            path: path.join(outputDir, `${name}.txt`),
           })),
           writeEachFile()
         ),
@@ -64,10 +62,10 @@ describe("writeEachFile", () => {
           {
             path: path.join(outputDir, "1.txt"),
             data: "one",
-            options: { encoding: "utf8" }
+            options: { encoding: "utf8" },
           },
           { path: path.join(outputDir, "2.txt"), data: "two", options: "utf8" },
-          { path: path.join(outputDir, "3.txt"), data: "three" }
+          { path: path.join(outputDir, "3.txt"), data: "three" },
         ]
       );
 

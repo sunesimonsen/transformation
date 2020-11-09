@@ -1,13 +1,11 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 
 const {
   emitItems,
   pipeline,
   groupBy,
   toArray,
-  sortBy
+  sortBy,
 } = require("@transformation/core");
 
 const path = require("path");

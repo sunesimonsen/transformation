@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const chose = require("./chose");
@@ -14,9 +12,9 @@ describe("chose", () => {
     await expect(
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
-        chose(n => (n % 2 === 0 ? "even" : "odd"), {
-          even: map(n => n * 2),
-          odd: map(n => n * -2)
+        chose((n) => (n % 2 === 0 ? "even" : "odd"), {
+          even: map((n) => n * 2),
+          odd: map((n) => n * -2),
         })
       ),
       "to yield items",
@@ -29,8 +27,8 @@ describe("chose", () => {
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
         chose("even", {
-          even: map(n => n * 2),
-          odd: map(n => n * -2)
+          even: map((n) => n * 2),
+          odd: map((n) => n * -2),
         })
       ),
       "to yield items",
@@ -43,8 +41,8 @@ describe("chose", () => {
       await expect(
         pipeline(
           emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
-          chose(n => (n % 2 === 0 ? "even" : "odd"), {
-            even: map(n => n * 2)
+          chose((n) => (n % 2 === 0 ? "even" : "odd"), {
+            even: map((n) => n * 2),
           })
         ),
         "to yield items",
@@ -57,11 +55,11 @@ describe("chose", () => {
     await expect(
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
-        chose(n => (n % 2 === 0 ? "slow" : "fast"), {
+        chose((n) => (n % 2 === 0 ? "slow" : "fast"), {
           slow: pipeline(
             delay(10),
-            map(n => `slow ${n}`)
-          )
+            map((n) => `slow ${n}`)
+          ),
         })
       ),
       "to yield items",
@@ -73,9 +71,9 @@ describe("chose", () => {
     await expect(
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
-        chose(n => (n % 2 === 0 ? "even" : "odd"), {
-          even: map(n => n * 2),
-          odd: filter(n => false)
+        chose((n) => (n % 2 === 0 ? "even" : "odd"), {
+          even: map((n) => n * 2),
+          odd: filter((n) => false),
         })
       ),
       "to yield items",
@@ -88,7 +86,7 @@ describe("chose", () => {
       pipeline(
         emitItems([0, 1, 2], 3, 4, [5, 6, 7], 8, 9),
         chose(Array.isArray, {
-          true: splitIterable()
+          true: splitIterable(),
         })
       ),
       "to yield items",

@@ -3,13 +3,13 @@ const {
   map,
   partitionBy,
   pipeline,
-  toArray
+  toArray,
 } = require("@transformation/core");
 const Chunk = require("./Chunk");
 
 const concat = () =>
   pipeline(
-    partitionBy(v => (v instanceof Chunk ? `chunk-${v.encoding}` : "other")),
+    partitionBy((v) => (v instanceof Chunk ? `chunk-${v.encoding}` : "other")),
     chose(({ key }) => (key === "other" ? "other" : "chunks"), {
       other: map(({ items }) => items.join("")),
       chunks: map(({ items: chunks }) => {
@@ -25,10 +25,10 @@ const concat = () =>
         } else {
           return chunks.map(({ data }) => data).join("");
         }
-      })
+      }),
     }),
     toArray(),
-    map(items => items.join(""))
+    map((items) => items.join(""))
   );
 
 module.exports = concat;

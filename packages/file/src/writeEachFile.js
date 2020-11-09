@@ -2,7 +2,7 @@ const fs = require("fs").promises;
 const { forEach } = require("@transformation/core");
 
 const writeEachFile = (pathFunction, options) =>
-  forEach(async value => {
+  forEach(async (value) => {
     if (pathFunction) {
       const path = pathFunction(value);
 

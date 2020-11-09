@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 
 const { sleep } = require("medium");
 const emitItems = require("./emitItems");
@@ -51,7 +49,7 @@ describe("splitIterable", () => {
         12,
         13,
         14,
-        "It doesn't split strings"
+        "It doesn't split strings",
       ]
     );
   });

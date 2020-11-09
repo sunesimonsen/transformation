@@ -2,11 +2,11 @@ const create = ({ key, items, ...other }) => {
   return {
     key,
     items,
-    ...other
+    ...other,
   };
 };
 
-const isGroup = group =>
+const isGroup = (group) =>
   group &&
   typeof group === "object" &&
   "key" in group &&
@@ -14,5 +14,5 @@ const isGroup = group =>
 
 module.exports = {
   create,
-  isGroup
+  isGroup,
 };
