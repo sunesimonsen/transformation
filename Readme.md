@@ -91,6 +91,11 @@ const main = async () => {
 main();
 ```
 
+You can also take a look at these tools that uses this library:
+
+- [workspace-cache](https://github.com/sunesimonsen/workspace-cache)
+- [offline-github-changelog](https://github.com/sunesimonsen/offline-github-changelog)
+
 ## Acknowledgment
 
 The library is build on top of a very nice CSP library called
