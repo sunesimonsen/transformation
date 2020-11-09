@@ -1,12 +1,12 @@
 const forEach = require("./forEach");
 
-const tap = fieldOrSelector => {
+const tap = (fieldOrSelector) => {
   const selector =
     typeof fieldOrSelector === "string"
-      ? value => value[fieldOrSelector]
+      ? (value) => value[fieldOrSelector]
       : fieldOrSelector;
 
-  return forEach(value => {
+  return forEach((value) => {
     if (selector) {
       console.log(selector(value));
     } else {

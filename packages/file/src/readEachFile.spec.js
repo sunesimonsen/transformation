@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const path = require("path");
 const fs = require("fs");
 const readEachFile = require("./readEachFile");
@@ -17,12 +15,12 @@ describe("readEachFile", () => {
       [
         {
           path: songPath,
-          data: fs.readFileSync(songPath, "utf8")
+          data: fs.readFileSync(songPath, "utf8"),
         },
         {
           path: æøåPath,
-          data: fs.readFileSync(æøåPath, "utf8")
-        }
+          data: fs.readFileSync(æøåPath, "utf8"),
+        },
       ]
     );
   });

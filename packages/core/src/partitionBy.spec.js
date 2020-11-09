@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const partitionBy = require("./partitionBy");
@@ -24,23 +22,23 @@ describe("partitionBy", () => {
         [
           Group.create({
             key: "GOOG",
-            items: [{ symbol: "GOOG", price: 1349 }]
+            items: [{ symbol: "GOOG", price: 1349 }],
           }),
           Group.create({
             key: "AAPL",
             items: [
               { symbol: "AAPL", price: 274 },
-              { symbol: "AAPL", price: 275 }
-            ]
+              { symbol: "AAPL", price: 275 },
+            ],
           }),
           Group.create({
             key: "GOOG",
-            items: [{ symbol: "GOOG", price: 1351 }]
+            items: [{ symbol: "GOOG", price: 1351 }],
           }),
           Group.create({
             key: "AAPL",
-            items: [{ symbol: "AAPL", price: 279 }]
-          })
+            items: [{ symbol: "AAPL", price: 279 }],
+          }),
         ]
       );
     });
@@ -63,23 +61,23 @@ describe("partitionBy", () => {
         [
           Group.create({
             key: "GOOG",
-            items: [{ symbol: "GOOG", price: 1349 }]
+            items: [{ symbol: "GOOG", price: 1349 }],
           }),
           Group.create({
             key: "AAPL",
             items: [
               { symbol: "AAPL", price: 274 },
-              { symbol: "AAPL", price: 275 }
-            ]
+              { symbol: "AAPL", price: 275 },
+            ],
           }),
           Group.create({
             key: "GOOG",
-            items: [{ symbol: "GOOG", price: 1351 }]
+            items: [{ symbol: "GOOG", price: 1351 }],
           }),
           Group.create({
             key: "AAPL",
-            items: [{ symbol: "AAPL", price: 279 }]
-          })
+            items: [{ symbol: "AAPL", price: 279 }],
+          }),
         ]
       );
     });

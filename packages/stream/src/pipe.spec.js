@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const path = require("path");
 const fs = require("fs");
 const { emitItems, pipeline } = require("@transformation/core");
@@ -17,7 +15,7 @@ const files = [
   "empty.txt",
   "rfc.txt",
   "rfc_huge.txt",
-  "song.txt"
+  "song.txt",
 ];
 
 describe("pipe", () => {
@@ -35,7 +33,7 @@ describe("pipe", () => {
           Buffer.from([0x62, 0x6c, 0xc3, 0xa5, 0x62, 0xc3, 0xa6, 0x72]),
           Buffer.from([0x67, 0x72, 0xc3, 0xb8, 0x64]),
           Buffer.from([0x65, 0x72]),
-          Buffer.from([0x6c, 0xc3, 0xa6, 0x6b, 0x6b, 0x65, 0x72, 0x74, 0x21])
+          Buffer.from([0x6c, 0xc3, 0xa6, 0x6b, 0x6b, 0x65, 0x72, 0x74, 0x21]),
         ]
       );
     });

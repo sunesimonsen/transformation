@@ -1,9 +1,9 @@
 const step = require("./step");
 
-const uniqBy = fieldOrSelector => {
+const uniqBy = (fieldOrSelector) => {
   const selector =
     typeof fieldOrSelector === "string"
-      ? value => value[fieldOrSelector]
+      ? (value) => value[fieldOrSelector]
       : fieldOrSelector;
 
   return step(async ({ take, put, CLOSED }) => {

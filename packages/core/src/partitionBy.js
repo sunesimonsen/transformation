@@ -1,10 +1,10 @@
 const step = require("./step");
 const Group = require("./Group");
 
-const partitionBy = fieldOrSelector => {
+const partitionBy = (fieldOrSelector) => {
   const selector =
     typeof fieldOrSelector === "string"
-      ? value => value[fieldOrSelector]
+      ? (value) => value[fieldOrSelector]
       : fieldOrSelector;
 
   return step(async ({ take, put, CLOSED }) => {
@@ -16,7 +16,7 @@ const partitionBy = fieldOrSelector => {
         await put(
           Group.create({
             key: partitionKey,
-            items: nextBatch
+            items: nextBatch,
           })
         );
         break;
@@ -30,7 +30,7 @@ const partitionBy = fieldOrSelector => {
         await put(
           Group.create({
             key: partitionKey,
-            items: nextBatch
+            items: nextBatch,
           })
         );
 

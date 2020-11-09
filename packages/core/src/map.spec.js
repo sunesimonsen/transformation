@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const emitRange = require("./emitRange");
@@ -12,7 +10,7 @@ describe("map", () => {
     await expect(
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5),
-        map(n => n * n)
+        map((n) => n * n)
       ),
       "to yield items",
       [0, 1, 4, 9, 16, 25]
@@ -35,7 +33,7 @@ describe("map", () => {
       await expect(
         pipeline(
           emitItems(0, 1, 2, 3, 4),
-          map(n => pipeline(emitRange(n), toArray()))
+          map((n) => pipeline(emitRange(n), toArray()))
         ),
         "to yield items",
         [[], [0], [0, 1], [0, 1, 2], [0, 1, 2, 3]]

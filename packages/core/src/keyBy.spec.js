@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const keyBy = require("./keyBy");
@@ -24,8 +22,8 @@ describe("keyBy", () => {
             0: { id: 0, name: "foo" },
             1: { id: 1, name: "bar" },
             2: { id: 2, name: "baz" },
-            3: { id: 3, name: "qux" }
-          }
+            3: { id: 3, name: "qux" },
+          },
         ]
       );
     });
@@ -49,8 +47,8 @@ describe("keyBy", () => {
             foo: { id: 0, name: "foo" },
             bar: { id: 1, name: "bar" },
             baz: { id: 2, name: "baz" },
-            qux: { id: 3, name: "qux" }
-          }
+            qux: { id: 3, name: "qux" },
+          },
         ]
       );
     });
@@ -75,8 +73,8 @@ describe("keyBy", () => {
             foo: { id: 0, name: "foo" },
             bar: { id: 1, name: "bar" },
             baz: { id: 4, name: "baz" },
-            qux: { id: 3, name: "qux" }
-          }
+            qux: { id: 3, name: "qux" },
+          },
         ]
       );
     });

@@ -37,7 +37,7 @@ import { splitIterable } from "@transformation/core";
 await expect(
   pipeline(
     readFile("count.txt", "utf8"),
-    data => data.trim().split("\n"),
+    (data) => data.trim().split("\n"),
     splitIterable()
   ),
   "to yield items",
@@ -87,16 +87,16 @@ await expect(
   [
     {
       path: "1.txt",
-      data: "one"
+      data: "one",
     },
     {
       path: "2.txt",
-      data: "two"
+      data: "two",
     },
     {
       path: "3.txt",
-      data: "three"
-    }
+      data: "three",
+    },
   ]
 );
 ```
@@ -138,7 +138,7 @@ import { emitItems, pipeline } from "@transformation/core";
 await expect(
   pipeline(
     emitItems("hello", "world"),
-    writeEachFile(value => path.join(outputDir, `${value}.txt`))
+    writeEachFile((value) => path.join(outputDir, `${value}.txt`))
   ),
   "to yield items",
   ["hello", "world"]
@@ -180,7 +180,7 @@ await program(
   glob("./test/*.txt"),
   readEachFile("utf8"),
   transform({
-    data: map(data => data.toUpperCase())
+    data: map((data) => data.toUpperCase()),
   }),
   writeEachFile()
 );

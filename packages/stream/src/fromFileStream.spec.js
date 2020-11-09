@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const path = require("path");
 const fs = require("fs");
 const fromFileStream = require("./fromFileStream");
@@ -22,7 +20,7 @@ describe("fromFileStream", () => {
   describe("when the encoding of the given stream isn't defined", () => {
     it("emits all of the chunks on the stream as buffers", async () => {
       await expect(fromFileStream(testFile), "to yield items", [
-        new Chunk(fs.readFileSync(testFile), null)
+        new Chunk(fs.readFileSync(testFile), null),
       ]);
     });
   });

@@ -1,6 +1,6 @@
 const step = require("./step");
 
-const setup = callback =>
+const setup = (callback) =>
   step(async ({ take, put, CLOSED }) => {
     await callback();
     while (true) {

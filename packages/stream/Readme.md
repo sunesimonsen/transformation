@@ -24,7 +24,7 @@ const { concat } = require("@transformation/stream");
 
 ```js
 await expect(pipeline(toFileStream(testFile), concat()), "to yield items", [
-  fs.readFileSync(testFile, "utf8")
+  fs.readFileSync(testFile, "utf8"),
 ]);
 ```
 
@@ -42,7 +42,7 @@ const { fromFileStream } = require("@transformation/stream");
 const { Chunk } = require("@transformation/stream");
 
 await expect(fromFileStream(testFile, { encoding: "utf8" }), "to yield items", [
-  new Chunk(fs.readFileSync(testFile, "utf8"), "utf8")
+  new Chunk(fs.readFileSync(testFile, "utf8"), "utf8"),
 ]);
 ```
 
@@ -74,7 +74,7 @@ If no encoding is given the data is buffers.
 const { Chunk } = require("@transformation/stream");
 
 await expect(fromStream(fs.createReadStream(testFile)), "to yield items", [
-  new Chunk(fs.readFileSync(testFile), null)
+  new Chunk(fs.readFileSync(testFile), null),
 ]);
 ```
 
@@ -96,7 +96,7 @@ await expect(
     "Seven little worms",
     "Eight little turtles",
     "Nine little lions",
-    "Ten chickens"
+    "Ten chickens",
   ]
 );
 ```
@@ -112,7 +112,7 @@ await expect(
   "to yield items",
   [
     new Chunk(fs.readFileSync(testFile), null),
-    new Chunk(fs.readFileSync(testFile), null)
+    new Chunk(fs.readFileSync(testFile), null),
   ]
 );
 ```
@@ -139,7 +139,7 @@ await expect(
     "Seven little worms",
     "Eight little turtles",
     "Nine little lions",
-    "Ten chickens"
+    "Ten chickens",
   ]
 );
 ```

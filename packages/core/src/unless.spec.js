@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const unless = require("./unless");
@@ -13,9 +11,9 @@ describe("unless", () => {
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
         unless(
-          n => n % 2 === 0,
-          map(n => n * 2),
-          map(n => `${n} transformed`)
+          (n) => n % 2 === 0,
+          map((n) => n * 2),
+          map((n) => `${n} transformed`)
         )
       ),
       "to yield items",
@@ -29,7 +27,7 @@ describe("unless", () => {
         6,
         "14 transformed",
         8,
-        "18 transformed"
+        "18 transformed",
       ]
     );
   });
@@ -40,11 +38,11 @@ describe("unless", () => {
         emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
         unless(
           true,
-          map(n => n * n)
+          map((n) => n * n)
         ),
         unless(
           false,
-          map(n => `${n} transformed`)
+          map((n) => `${n} transformed`)
         )
       ),
       "to yield items",
@@ -58,7 +56,7 @@ describe("unless", () => {
         "6 transformed",
         "7 transformed",
         "8 transformed",
-        "9 transformed"
+        "9 transformed",
       ]
     );
   });
@@ -68,9 +66,9 @@ describe("unless", () => {
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
         unless(
-          n => n % 2 === 0,
+          (n) => n % 2 === 0,
           delay(10),
-          map(n => `slow ${n}`)
+          map((n) => `slow ${n}`)
         )
       ),
       "to yield items",

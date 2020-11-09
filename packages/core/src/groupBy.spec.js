@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const groupBy = require("./groupBy");
@@ -12,12 +10,12 @@ describe("groupBy", () => {
       await expect(
         pipeline(
           emitItems(0, 1, 2, 3, 4, 5, 6),
-          groupBy(value => (value % 2 === 0 ? "even" : "odd"))
+          groupBy((value) => (value % 2 === 0 ? "even" : "odd"))
         ),
         "to yield items",
         [
           Group.create({ key: "even", items: [0, 2, 4, 6] }),
-          Group.create({ key: "odd", items: [1, 3, 5] })
+          Group.create({ key: "odd", items: [1, 3, 5] }),
         ]
       );
     });
@@ -42,17 +40,17 @@ describe("groupBy", () => {
             key: "GOOG",
             items: [
               { symbol: "GOOG", price: 1349 },
-              { symbol: "GOOG", price: 1351 }
-            ]
+              { symbol: "GOOG", price: 1351 },
+            ],
           }),
           Group.create({
             key: "AAPL",
             items: [
               { symbol: "AAPL", price: 274 },
               { symbol: "AAPL", price: 275 },
-              { symbol: "AAPL", price: 279 }
-            ]
-          })
+              { symbol: "AAPL", price: 279 },
+            ],
+          }),
         ]
       );
     });

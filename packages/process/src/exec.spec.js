@@ -1,12 +1,10 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 
 const {
   emitItems,
   interleave,
   pipeline,
-  program
+  program,
 } = require("@transformation/core");
 const { concat, lines } = require("@transformation/stream");
 const exec = require("./exec");

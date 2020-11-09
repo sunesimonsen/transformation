@@ -28,7 +28,7 @@ await expect(
   [
     "reports/2020/report.txt",
     "reports/2021/report.txt",
-    "reports/2022/report.txt"
+    "reports/2022/report.txt",
   ]
 );
 ```
@@ -58,7 +58,7 @@ await expect(
   pipeline(
     emitItems("reports/20*/report.txt", "reports/2020/*.txt", [
       "reports/2020/report.txt",
-      "reports/2021/report.txt"
+      "reports/2021/report.txt",
     ]),
     globEach({ cwd: testDir }),
     sort()
@@ -71,7 +71,7 @@ await expect(
     "reports/2020/transactions.txt",
     "reports/2021/report.txt",
     "reports/2021/report.txt",
-    "reports/2022/report.txt"
+    "reports/2022/report.txt",
   ]
 );
 ```
@@ -83,9 +83,9 @@ You can also consume glob options and overlay options or patterns from the
 await expect(
   pipeline(
     emitItems("2020", "2021"),
-    map(year => ({ cwd: path.join(testDir, year) })),
+    map((year) => ({ cwd: path.join(testDir, year) })),
     globEach({ pattern: "*.txt", absolute: true }),
-    map(path => path.replace(/.*\/examples\//, "examples/")),
+    map((path) => path.replace(/.*\/examples\//, "examples/")),
     sort()
   ),
   "to yield items",
@@ -93,7 +93,7 @@ await expect(
     "examples/reports/2020/report.txt",
     "examples/reports/2020/transactions.txt",
     "examples/reports/2021/report.txt",
-    "examples/reports/2021/transactions.txt"
+    "examples/reports/2021/transactions.txt",
   ]
 );
 ```

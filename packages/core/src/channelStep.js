@@ -1,6 +1,6 @@
-const channelStep = body => ({
+const channelStep = (body) => ({
   type: "step",
-  body
+  body,
 });
 
 module.exports = channelStep;

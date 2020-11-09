@@ -35,9 +35,9 @@ const executeExtend = async (extension, value, input) => {
     const transformedObject = { ...value };
 
     const entries = await Promise.all(
-      Object.keys(extension).map(async key => [
+      Object.keys(extension).map(async (key) => [
         key,
-        await executeExtend(extension[key], value && value[key], input)
+        await executeExtend(extension[key], value && value[key], input),
       ])
     );
 
@@ -51,8 +51,8 @@ const executeExtend = async (extension, value, input) => {
   return extension;
 };
 
-const extend = extension =>
-  map(value =>
+const extend = (extension) =>
+  map((value) =>
     value && typeof value === "object"
       ? executeExtend(extension, value, value)
       : value

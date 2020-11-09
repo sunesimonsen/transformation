@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const memorize = require("./memorize");
@@ -13,7 +11,7 @@ describe("memorize", () => {
     await expect(
       pipeline(
         emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
-        memorize(map(v => `${v}: ${i++}`))
+        memorize(map((v) => `${v}: ${i++}`))
       ),
       "to yield items",
       ["0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2"]
@@ -27,7 +25,7 @@ describe("memorize", () => {
       await expect(
         pipeline(
           emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
-          memorize(map(v => `${v}: ${i++}`))
+          memorize(map((v) => `${v}: ${i++}`))
         ),
         "to yield items",
         ["0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2"]
@@ -43,7 +41,7 @@ describe("memorize", () => {
         pipeline(
           emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
           memorize(
-            map(v => `${v}: ${i++}`),
+            map((v) => `${v}: ${i++}`),
             { maxSize: 2 }
           )
         ),
@@ -60,7 +58,7 @@ describe("memorize", () => {
       await expect(
         pipeline(
           emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
-          map(key => ({ key, time: i++ })),
+          map((key) => ({ key, time: i++ })),
           memorize(
             map(({ key, time }) => `${key}: ${time}`),
             { key: "key" }
@@ -79,10 +77,10 @@ describe("memorize", () => {
       await expect(
         pipeline(
           emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
-          map(key => ({ key, time: i++ })),
+          map((key) => ({ key, time: i++ })),
           memorize(
             map(({ key, time }) => `${key}: ${time}`),
-            { key: v => v.key }
+            { key: (v) => v.key }
           )
         ),
         "to yield items",

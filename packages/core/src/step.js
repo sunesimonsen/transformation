@@ -1,12 +1,12 @@
 const { go, close, CLOSED, chan, put, take } = require("medium");
 const channelStep = require("./channelStep");
 
-const step = body =>
+const step = (body) =>
   channelStep((input, errors) => {
     const output = chan();
 
     const takeWrapper = () => take(input);
-    const putWrapper = async value => {
+    const putWrapper = async (value) => {
       const open = await put(output, value);
       if (!open) close(input);
       return open;

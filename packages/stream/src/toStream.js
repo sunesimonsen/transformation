@@ -2,7 +2,7 @@ const { step } = require("@transformation/core");
 const Chunk = require("./Chunk");
 
 const write = (stream, data, encoding) =>
-  new Promise(resolve => {
+  new Promise((resolve) => {
     if (!stream.write(data, encoding)) {
       stream.once("drain", resolve);
     } else {
@@ -10,12 +10,12 @@ const write = (stream, data, encoding) =>
     }
   });
 
-const onFinish = stream =>
-  new Promise(resolve => {
+const onFinish = (stream) =>
+  new Promise((resolve) => {
     stream.once("finish", resolve);
   });
 
-const toStream = writableStream =>
+const toStream = (writableStream) =>
   step(async ({ take, put, CLOSED }) => {
     while (true) {
       const value = await take();

@@ -16,10 +16,10 @@ const writeTemplate = async (
 
   const template = ejs.compile(templateSource, {
     ...options,
-    filename: templatePath
+    filename: templatePath,
   });
 
-  return forEach(value =>
+  return forEach((value) =>
     fs.writeFile(
       outputPathFunction(value),
       template(Array.isArray(value) ? { items: value } : value)

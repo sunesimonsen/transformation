@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const path = require("path");
 const fs = require("fs");
 const { pipeline, emitItems } = require("@transformation/core");
@@ -17,7 +15,7 @@ const files = [
   "empty.txt",
   "rfc.txt",
   "rfc_huge.txt",
-  "song.txt"
+  "song.txt",
 ];
 
 describe("lines", () => {
@@ -36,7 +34,7 @@ describe("lines", () => {
         "Eight little turtles",
         "Nine little lions",
         "Ten chickens",
-        ""
+        "",
       ]
     );
   });

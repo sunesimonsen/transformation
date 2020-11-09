@@ -7,10 +7,10 @@ const renderTemplate = async (templatePath, options = {}) => {
 
   const template = ejs.compile(templateSource, {
     ...options,
-    filename: templatePath
+    filename: templatePath,
   });
 
-  return map(value =>
+  return map((value) =>
     template(Array.isArray(value) ? { items: value } : value)
   );
 };

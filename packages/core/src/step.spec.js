@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const step = require("./step");
 const pipeline = require("./pipeline");
 const emitItems = require("./emitItems");

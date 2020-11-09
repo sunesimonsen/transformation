@@ -12,10 +12,10 @@ const glob = (options = {}) => {
     emitAll(
       globby.stream(options.pattern, {
         ...options,
-        absolute: false
+        absolute: false,
       })
     ),
-    options.absolute && map(pathName => path.resolve(options.cwd, pathName))
+    options.absolute && map((pathName) => path.resolve(options.cwd, pathName))
   );
 };
 

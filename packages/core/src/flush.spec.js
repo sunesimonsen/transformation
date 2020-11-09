@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const flush = require("./flush");
@@ -13,7 +11,7 @@ describe("flush", () => {
     await flush(
       pipeline(
         emitItems(0, 1, 2, 3, 4, 5),
-        forEach(item => items.push(item))
+        forEach((item) => items.push(item))
       )
     );
 

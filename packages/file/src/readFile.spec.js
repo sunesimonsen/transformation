@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const { pipeline, splitIterable } = require("@transformation/core");
 
 const path = require("path");
@@ -13,7 +11,7 @@ describe("readFile", () => {
     await expect(
       pipeline(
         readFile(songPath, "utf8"),
-        data => data.trim().split("\n"),
+        (data) => data.trim().split("\n"),
         splitIterable()
       ),
       "to yield items",
@@ -27,7 +25,7 @@ describe("readFile", () => {
         "Seven little worms",
         "Eight little turtles",
         "Nine little lions",
-        "Ten chickens"
+        "Ten chickens",
       ]
     );
   });

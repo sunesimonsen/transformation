@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const pipeline = require("./pipeline");
 const partition = require("./partition");
@@ -15,7 +13,7 @@ describe("partition", () => {
         Group.create({ key: "[0;1]", items: [0, 1] }),
         Group.create({ key: "[2;3]", items: [2, 3] }),
         Group.create({ key: "[4;5]", items: [4, 5] }),
-        Group.create({ key: "[6;7]", items: [6] })
+        Group.create({ key: "[6;7]", items: [6] }),
       ]
     );
   });

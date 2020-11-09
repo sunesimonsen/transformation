@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
 const program = require("./program");
 const pipeline = require("./pipeline");
@@ -54,7 +52,7 @@ describe("tap", () => {
     it("prints the selected output to the logger", async () => {
       await program(
         emitItems(0, 1, 2, 3, 4, 5),
-        tap(n => `Item: ${n}`)
+        tap((n) => `Item: ${n}`)
       );
 
       await expect(console.entries, "to equal", [
@@ -63,7 +61,7 @@ describe("tap", () => {
         "Item: 2",
         "Item: 3",
         "Item: 4",
-        "Item: 5"
+        "Item: 5",
       ]);
     });
   });
@@ -82,7 +80,7 @@ describe("tap", () => {
       [
         { name: "hat", price: 10 },
         { name: "cat", price: 100 },
-        { name: "chat", price: 0 }
+        { name: "chat", price: 0 },
       ]
     );
   });

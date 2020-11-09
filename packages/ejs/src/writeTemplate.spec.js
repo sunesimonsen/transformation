@@ -1,6 +1,4 @@
-const expect = require("unexpected")
-  .clone()
-  .use(require("unexpected-steps"));
+const expect = require("unexpected").clone().use(require("unexpected-steps"));
 
 const fs = require("fs").promises;
 
@@ -9,7 +7,7 @@ const {
   program,
   groupBy,
   toArray,
-  sortBy
+  sortBy,
 } = require("@transformation/core");
 
 const path = require("path");

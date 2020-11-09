@@ -71,7 +71,7 @@ await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5),
     accumulate((n, previous) => ({ n, total: previous.total + n }), {
-      total: 0
+      total: 0,
     })
   ),
   "to yield items",
@@ -81,7 +81,7 @@ await expect(
     { n: 2, total: 3 },
     { n: 3, total: 6 },
     { n: 4, total: 10 },
-    { n: 5, total: 15 }
+    { n: 5, total: 15 },
   ]
 );
 ```
@@ -165,9 +165,9 @@ If the selector is just a string, that pipeline will always be chosen.
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5, 6, 7, 8, 9),
-    chose(n => (n % 2 === 0 ? "even" : "odd"), {
-      even: map(n => n * 2),
-      odd: map(n => n * -2)
+    chose((n) => (n % 2 === 0 ? "even" : "odd"), {
+      even: map((n) => n * 2),
+      odd: map((n) => n * -2),
     })
   ),
   "to yield items",
@@ -198,7 +198,7 @@ const items = [];
 
 await program(
   emitItems(0, 1, 2, 3),
-  forEach(item => items.push(item)),
+  forEach((item) => items.push(item)),
   cleanup(() => items.push(4)),
   cleanup(() => items.push(5))
 );
@@ -279,7 +279,7 @@ await expect(emitAll(asyncIterable(), [3, 4, 5]), "to yield items", [
   2,
   3,
   4,
-  5
+  5,
 ]);
 ```
 
@@ -362,7 +362,7 @@ await expect(emitRepeat(["hi", "hey", "hello"], 5), "to yield items", [
   "hey",
   "hello",
   "hi",
-  "hey"
+  "hey",
 ]);
 ```
 
@@ -374,7 +374,7 @@ await expect(emitRepeat("hi", 5), "to yield items", [
   "hi",
   "hi",
   "hi",
-  "hi"
+  "hi",
 ]);
 ```
 
@@ -408,8 +408,8 @@ await expect(
       fullName: map(({ firstName, lastName }) => `${firstName} ${lastName}`),
       details: {
         nationality: "Danish",
-        initials: ({ firstName, lastName }) => `${firstName[0]}${lastName[0]}`
-      }
+        initials: ({ firstName, lastName }) => `${firstName[0]}${lastName[0]}`,
+      },
     })
   ),
   "to yield items",
@@ -419,15 +419,15 @@ await expect(
       firstName: "Jane",
       lastName: "Doe",
       fullName: "Jane Doe",
-      details: { nationality: "Danish", initials: "JD" }
+      details: { nationality: "Danish", initials: "JD" },
     },
     {
       type: "person",
       firstName: "John",
       lastName: "Doe",
       fullName: "John Doe",
-      details: { nationality: "Danish", initials: "JD" }
-    }
+      details: { nationality: "Danish", initials: "JD" },
+    },
   ]
 );
 ```
@@ -513,7 +513,7 @@ await expect(
   pipeline(
     emitItems(5, 4, 3, 2, 1, 0),
     parallel(
-      map(async n => {
+      map(async (n) => {
         await sleep(n);
         return n + 1;
       }),
@@ -553,7 +553,7 @@ const { filter } = require("@transformation/core");
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5),
-    filter(n => n % 2 === 0)
+    filter((n) => n % 2 === 0)
   ),
   "to yield items",
   [0, 2, 4]
@@ -573,7 +573,7 @@ const { flatMap } = require("@transformation/core");
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5),
-    flatMap(n => (n % 2 === 0 ? [n, n] : n))
+    flatMap((n) => (n % 2 === 0 ? [n, n] : n))
   ),
   "to yield items",
   [0, 0, 1, 2, 2, 3, 4, 4, 5]
@@ -593,7 +593,7 @@ const items = [];
 
 await program(
   emitItems(0, 1, 2, 3, 4, 5),
-  forEach(item => items.push(item))
+  forEach((item) => items.push(item))
 );
 
 expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
@@ -614,13 +614,13 @@ await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5),
     fork(
-      map(n => n * n),
+      map((n) => n * n),
       delay(10),
-      forEach(n => {
+      forEach((n) => {
         forkedOutput.push(n);
       })
     ),
-    filter(n => n % 2 === 0)
+    filter((n) => n % 2 === 0)
   ),
   "to yield items",
   [0, 2, 4]
@@ -663,12 +663,12 @@ const { groupBy } = require("@transformation/core");
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5, 6),
-    groupBy(value => (value % 2 === 0 ? "even" : "odd"))
+    groupBy((value) => (value % 2 === 0 ? "even" : "odd"))
   ),
   "to yield items",
   [
     Group.create({ key: "even", items: [0, 2, 4, 6] }),
-    Group.create({ key: "odd", items: [1, 3, 5] })
+    Group.create({ key: "odd", items: [1, 3, 5] }),
   ]
 );
 ```
@@ -693,17 +693,17 @@ await expect(
       key: "GOOG",
       items: [
         { symbol: "GOOG", price: 1349 },
-        { symbol: "GOOG", price: 1351 }
-      ]
+        { symbol: "GOOG", price: 1351 },
+      ],
     }),
     Group.create({
       key: "AAPL",
       items: [
         { symbol: "AAPL", price: 274 },
         { symbol: "AAPL", price: 275 },
-        { symbol: "AAPL", price: 279 }
-      ]
-    })
+        { symbol: "AAPL", price: 279 },
+      ],
+    }),
   ]
 );
 ```
@@ -756,7 +756,7 @@ If you don't specify the separator it defaults to comma.
 
 ```js
 await expect(pipeline(emitItems(0, 1, 2, 3, 4, 5), join()), "to yield items", [
-  "0,1,2,3,4,5"
+  "0,1,2,3,4,5",
 ]);
 ```
 
@@ -787,8 +787,8 @@ await expect(
       0: { id: 0, name: "foo" },
       1: { id: 1, name: "bar" },
       2: { id: 2, name: "baz" },
-      3: { id: 3, name: "qux" }
-    }
+      3: { id: 3, name: "qux" },
+    },
   ]
 );
 ```
@@ -812,8 +812,8 @@ await expect(
       foo: { id: 0, name: "foo" },
       bar: { id: 1, name: "bar" },
       baz: { id: 2, name: "baz" },
-      qux: { id: 3, name: "qux" }
-    }
+      qux: { id: 3, name: "qux" },
+    },
   ]
 );
 ```
@@ -830,7 +830,7 @@ const { map } = require("@transformation/core");
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5),
-    map(n => n * n)
+    map((n) => n * n)
   ),
   "to yield items",
   [0, 1, 4, 9, 16, 25]
@@ -857,7 +857,7 @@ new items.
 await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4),
-    map(n => pipeline(emitRange(n), toArray()))
+    map((n) => pipeline(emitRange(n), toArray()))
   ),
   "to yield items",
   [[], [0], [0, 1], [0, 1, 2], [0, 1, 2, 3]]
@@ -881,7 +881,7 @@ let i = 0;
 await expect(
   pipeline(
     emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
-    memorize(map(v => `${v}: ${i++}`))
+    memorize(map((v) => `${v}: ${i++}`))
   ),
   "to yield items",
   ["0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2", "0: 0", "1: 1", "2: 2"]
@@ -897,7 +897,7 @@ await expect(
   pipeline(
     emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
     memorize(
-      map(v => `${v}: ${i++}`),
+      map((v) => `${v}: ${i++}`),
       { maxSize: 2 }
     )
   ),
@@ -914,7 +914,7 @@ let i = 0;
 await expect(
   pipeline(
     emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
-    map(key => ({ key, time: i++ })),
+    map((key) => ({ key, time: i++ })),
     memorize(
       map(({ key, time }) => `${key}: ${time}`),
       { key: "key" }
@@ -933,10 +933,10 @@ let i = 0;
 await expect(
   pipeline(
     emitItems(0, 1, 2, 0, 1, 2, 0, 1, 2),
-    map(key => ({ key, time: i++ })),
+    map((key) => ({ key, time: i++ })),
     memorize(
       map(({ key, time }) => `${key}: ${time}`),
-      { key: v => v.key }
+      { key: (v) => v.key }
     )
   ),
   "to yield items",
@@ -960,7 +960,7 @@ await expect(
     Group.create({ key: "[0;1]", items: [0, 1] }),
     Group.create({ key: "[2;3]", items: [2, 3] }),
     Group.create({ key: "[4;5]", items: [4, 5] }),
-    Group.create({ key: "[6;7]", items: [6] })
+    Group.create({ key: "[6;7]", items: [6] }),
   ]
 );
 ```
@@ -989,23 +989,23 @@ await expect(
   [
     Group.create({
       key: "GOOG",
-      items: [{ symbol: "GOOG", price: 1349 }]
+      items: [{ symbol: "GOOG", price: 1349 }],
     }),
     Group.create({
       key: "AAPL",
       items: [
         { symbol: "AAPL", price: 274 },
-        { symbol: "AAPL", price: 275 }
-      ]
+        { symbol: "AAPL", price: 275 },
+      ],
     }),
     Group.create({
       key: "GOOG",
-      items: [{ symbol: "GOOG", price: 1351 }]
+      items: [{ symbol: "GOOG", price: 1351 }],
     }),
     Group.create({
       key: "AAPL",
-      items: [{ symbol: "AAPL", price: 279 }]
-    })
+      items: [{ symbol: "AAPL", price: 279 }],
+    }),
   ]
 );
 ```
@@ -1023,10 +1023,10 @@ await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5),
     pipeline(
-      filter(n => n % 2 === 0),
-      false && map(n => n * n)
+      filter((n) => n % 2 === 0),
+      false && map((n) => n * n)
     ),
-    map(n => `${n} elephants`)
+    map((n) => `${n} elephants`)
   ),
   "to yield items",
   ["0 elephants", "2 elephants", "4 elephants"]
@@ -1039,10 +1039,10 @@ Plain functions will be interpreted as [map](#map).
 await expect(
   pipeline(
     emitItems("  \nHere is some text\n  with multiple lines\n   "),
-    s => s.trim(),
-    s => s.split(/\n/),
+    (s) => s.trim(),
+    (s) => s.split(/\n/),
     splitIterable(),
-    s => s.trim(),
+    (s) => s.trim(),
     (s, i) => s.replace(/^/, `${i + 1}) `)
   ),
   "to yield items",
@@ -1063,7 +1063,7 @@ const items = [];
 
 await program(
   emitItems(0, 1, 2, 3, 4, 5),
-  forEach(item => items.push(item))
+  forEach((item) => items.push(item))
 );
 
 expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
@@ -1231,7 +1231,7 @@ await expect(
   [
     { name: "chat", price: 0 },
     { name: "hat", price: 10 },
-    { name: "cat", price: 100 }
+    { name: "cat", price: 100 },
   ]
 );
 ```
@@ -1256,7 +1256,7 @@ await expect(
     { name: "wat", price: 100 },
     { name: "wat", price: 100 },
     { name: "hat", price: 10 },
-    { name: "chat", price: 0 }
+    { name: "chat", price: 0 },
   ]
 );
 ```
@@ -1281,7 +1281,7 @@ await expect(
     { name: "hat", price: 10 },
     { name: "cat", price: 100 },
     { name: "twat", price: 100 },
-    { name: "wat", price: 100 }
+    { name: "wat", price: 100 },
   ]
 );
 ```
@@ -1345,7 +1345,7 @@ await expect(
     { name: "hat", price: 10 },
     { name: "cat", price: 100 },
     { name: "chat", price: 0 },
-    { name: "wat", price: 100 }
+    { name: "wat", price: 100 },
   ]
 );
 ```
@@ -1373,7 +1373,7 @@ await expect(
   [
     { name: "chat", price: 0 },
     { name: "hat", price: 10 },
-    { name: "cat", price: 100 }
+    { name: "cat", price: 100 },
   ]
 );
 ```
@@ -1401,7 +1401,7 @@ await expect(
   [
     { name: "chat", price: 0 },
     { name: "hat", price: 10 },
-    { name: "cat", price: 100 }
+    { name: "cat", price: 100 },
   ]
 );
 ```
@@ -1469,8 +1469,8 @@ await expect(
       { symbol: "aapl", price: { value: 279, currency: "USD" } }
     ),
     transform({
-      symbol: map(symbol => symbol.toUpperCase()),
-      price: { value: map(price => price * 2) }
+      symbol: map((symbol) => symbol.toUpperCase()),
+      price: { value: map((price) => price * 2) },
     })
   ),
   "to yield items",
@@ -1479,7 +1479,7 @@ await expect(
     { symbol: "AAPL", price: { value: 548, currency: "USD" } },
     { symbol: "AAPL", price: { value: 550, currency: "USD" } },
     { symbol: "GOOG", price: { value: 2702, currency: "USD" } },
-    { symbol: "AAPL", price: { value: 558, currency: "USD" } }
+    { symbol: "AAPL", price: { value: 558, currency: "USD" } },
   ]
 );
 ```
@@ -1498,16 +1498,16 @@ await expect(
         name: "no symbol",
         price: 666,
         currency: "USD",
-        nesting: { supported: "yes" }
+        nesting: { supported: "yes" },
       },
       { symbol: "aapl", price: 275, currency: "USD" }
     ),
     transform({
-      symbol: map(symbol => symbol.toUpperCase()),
-      price: map(price => `$${price}`),
+      symbol: map((symbol) => symbol.toUpperCase()),
+      price: map((price) => `$${price}`),
       nesting: {
-        supported: map(symbol => symbol.toUpperCase())
-      }
+        supported: map((symbol) => symbol.toUpperCase()),
+      },
     })
   ),
   "to yield items",
@@ -1520,9 +1520,9 @@ await expect(
       name: "no symbol",
       price: "$666",
       currency: "USD",
-      nesting: { supported: "YES" }
+      nesting: { supported: "YES" },
     },
-    { symbol: "AAPL", price: "$275", currency: "USD" }
+    { symbol: "AAPL", price: "$275", currency: "USD" },
   ]
 );
 ```
@@ -1573,7 +1573,7 @@ await expect(
     { id: 0, name: "foo", count: 0 },
     { id: 1, name: "bar", count: 1 },
     { id: 2, name: "baz", count: 2 },
-    { id: 3, name: "qux", count: 4 }
+    { id: 3, name: "qux", count: 4 },
   ]
 );
 ```
@@ -1598,7 +1598,7 @@ await expect(
     { id: 0, name: "foo", count: 0 },
     { id: 1, name: "bar", count: 1 },
     { id: 2, name: "baz", count: 2 },
-    { id: 3, name: "qux", count: 4 }
+    { id: 3, name: "qux", count: 4 },
   ]
 );
 ```
@@ -1621,9 +1621,9 @@ await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5, 6),
     unless(
-      n => n % 2 === 0,
-      map(n => n * 2),
-      map(n => `${n} transformed`)
+      (n) => n % 2 === 0,
+      map((n) => n * 2),
+      map((n) => `${n} transformed`)
     )
   ),
   "to yield items",
@@ -1639,11 +1639,11 @@ await expect(
     emitItems(0, 1, 2, 3, 4, 5, 6),
     unless(
       true,
-      map(n => n * n)
+      map((n) => n * n)
     ),
     unless(
       false,
-      map(n => `${n} transformed`)
+      map((n) => `${n} transformed`)
     )
   ),
   "to yield items",
@@ -1654,7 +1654,7 @@ await expect(
     "3 transformed",
     "4 transformed",
     "5 transformed",
-    "6 transformed"
+    "6 transformed",
   ]
 );
 ```
@@ -1677,9 +1677,9 @@ await expect(
   pipeline(
     emitItems(0, 1, 2, 3, 4, 5, 6),
     when(
-      n => n % 2 === 0,
-      map(n => n * 2),
-      map(n => `${n} transformed`)
+      (n) => n % 2 === 0,
+      map((n) => n * 2),
+      map((n) => `${n} transformed`)
     )
   ),
   "to yield items",
@@ -1695,11 +1695,11 @@ await expect(
     emitItems(0, 1, 2, 3, 4, 5, 6),
     when(
       true,
-      map(n => n * n)
+      map((n) => n * n)
     ),
     when(
       false,
-      map(n => `${n} transformed`)
+      map((n) => `${n} transformed`)
     )
   ),
   "to yield items",
@@ -1738,17 +1738,17 @@ await expect(
       key: "GOOG",
       items: [
         { symbol: "GOOG", price: 1349, label: "GOOG: 1349" },
-        { symbol: "GOOG", price: 1351, label: "GOOG: 1351" }
-      ]
+        { symbol: "GOOG", price: 1351, label: "GOOG: 1351" },
+      ],
     }),
     Group.create({
       key: "AAPL",
       items: [
         { symbol: "AAPL", price: 274, label: "AAPL: 274" },
         { symbol: "AAPL", price: 275, label: "AAPL: 275" },
-        { symbol: "AAPL", price: 279, label: "AAPL: 279" }
-      ]
-    })
+        { symbol: "AAPL", price: 279, label: "AAPL: 279" },
+      ],
+    }),
   ]
 );
 ```
@@ -1766,7 +1766,7 @@ const { takeAll } = require("transformation/core");
 ```js
 const items = await takeAll(
   emitItems(0, 1, 2, 3, 4, 5),
-  map(x => x * x)
+  map((x) => x * x)
 );
 
 expect(items, "to equal", [0, 1, 4, 9, 16, 25]);
@@ -1808,7 +1808,7 @@ As an example let's make a step that averages numbers.
 const average = () =>
   pipeline(
     toArray(),
-    map(items =>
+    map((items) =>
       items.length === 0
         ? NaN
         : items.reduce((sum, n) => sum + n, 0) / items.length

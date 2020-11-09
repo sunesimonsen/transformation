@@ -36,9 +36,9 @@ const executeTransformation = async (transformation, value) => {
     const transformedObject = { ...value };
 
     const entries = await Promise.all(
-      Object.keys(transformation).map(async key => [
+      Object.keys(transformation).map(async (key) => [
         key,
-        await executeTransformation(transformation[key], value[key])
+        await executeTransformation(transformation[key], value[key]),
       ])
     );
 
@@ -52,8 +52,8 @@ const executeTransformation = async (transformation, value) => {
   return value;
 };
 
-const transform = transformation =>
-  map(value =>
+const transform = (transformation) =>
+  map((value) =>
     value && typeof value === "object"
       ? executeTransformation(transformation, value)
       : value

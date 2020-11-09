@@ -1,9 +1,9 @@
 const reduce = require("./reduce");
 
-module.exports = (fieldOrSelector = v => v) => {
+module.exports = (fieldOrSelector = (v) => v) => {
   const selector =
     typeof fieldOrSelector === "string"
-      ? value => value[fieldOrSelector]
+      ? (value) => value[fieldOrSelector]
       : fieldOrSelector;
 
   return reduce((result, item) => {

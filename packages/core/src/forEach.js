@@ -1,6 +1,6 @@
 const step = require("./step");
 
-const forEach = callback =>
+const forEach = (callback) =>
   step(async ({ take, put, CLOSED }) => {
     let i = 0;
     while (true) {

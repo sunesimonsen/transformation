@@ -3,5 +3,5 @@ const globEach = require("./globEach");
 
 module.exports = {
   glob,
-  globEach
+  globEach,
 };
