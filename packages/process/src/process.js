@@ -2,6 +2,15 @@ const { go, close, CLOSED, chan, put, take } = require("medium");
 const { channelStep, pipeline } = require("@transformation/core");
 const cp = require("child_process");
 
+const createError = data => {
+  const ErrorType = global[data.type] || Error;
+  const err = new ErrorType(data.properties.message);
+  for (const [key, value] of Object.entries(data.properties)) {
+    err[key] = value;
+  }
+  return err;
+};
+
 const startProcess = childProcessPath =>
   channelStep((input, errors) => {
     const childProcess = cp.fork(childProcessPath);
@@ -18,12 +27,7 @@ const startProcess = childProcessPath =>
           put(ack, "ack");
           break;
         case "error":
-          const err = new (global[data.type] || Error)(data.properties.message);
-          for (let [key, value] of Object.entries(data.properties)) {
-            err[key] = value;
-          }
-
-          await put(errors, err);
+          await put(errors, createError(data));
           close(output);
           break;
         default:
@@ -102,7 +106,7 @@ const childProcess = (...steps) => {
       if (value === CLOSED) break;
 
       const properties = {};
-      for (let p of Object.getOwnPropertyNames(value)) {
+      for (const p of Object.getOwnPropertyNames(value)) {
         properties[p] = value[p];
       }
 

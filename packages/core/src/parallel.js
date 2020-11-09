@@ -67,7 +67,7 @@ const parallel = (step, concurrency = 2 * cpus) =>
         if (data === CLOSED) {
           readyIndexes[index] = true;
           while (readyIndexes[outputIndex]) {
-            for (let { data } of outputValues[outputIndex]) {
+            for (const { data } of outputValues[outputIndex]) {
               await put(output, data);
             }
             outputIndex++;

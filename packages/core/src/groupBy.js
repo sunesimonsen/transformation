@@ -26,7 +26,7 @@ const groupBy = fieldOrSelector => {
       }
     });
 
-    for (let [key, items] of Object.entries(grouping)) {
+    for (const [key, items] of Object.entries(grouping)) {
       await put(Group.create({ key, items }));
     }
   });

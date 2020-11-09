@@ -8,7 +8,7 @@ const appendItems = (...items) =>
       await put(value);
     }
 
-    for (let item of items) {
+    for (const item of items) {
       await put(item);
     }
   });
