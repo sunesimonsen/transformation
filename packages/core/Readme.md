@@ -10,6 +10,8 @@
   - [sliding buffer](#sliding-buffer)
 - [chose](#chose)
 - [cleanup](#cleanup)
+- [deduplicate](#deduplicate)
+- [deduplicateBy](#deduplicateby)
 - [delay](#delay)
 - [emitAll](#emitall)
 - [emitItems](#emititems)
@@ -206,9 +208,95 @@ await program(
 expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
 ```
 
+## deduplicate
+
+Filters out items that is consecutive duplicates.
+
+```js
+const { deduplicate } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 0, 4, 1, 1, 1, 1, 1, 2, 3, 0, 4, 1, 5, 7, 6, 7, 8, 9, 9),
+    deduplicate()
+  ),
+  "to yield items",
+  [0, 4, 1, 2, 3, 0, 4, 1, 5, 7, 6, 7, 8, 9]
+);
+```
+
+## deduplicateBy
+
+Filters out items that is consecutive duplicates by a selected value.
+
+```js
+const { deduplicateBy } = require("@transformation/core");
+```
+
+When given a string, it uses that field to determine if an item is different
+from the previous item.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { id: 0, name: "foo", count: 0 },
+      { id: 0, name: "foo", count: 1 },
+      { id: 1, name: "bar", count: 2 },
+      { id: 2, name: "baz", count: 3 },
+      { id: 2, name: "baz", count: 4 },
+      { id: 3, name: "qux", count: 5 },
+      { id: 2, name: "baz", count: 6 },
+      { id: 0, name: "foo", count: 7 }
+    ),
+    deduplicateBy("id")
+  ),
+  "to yield items",
+  [
+    { id: 0, name: "foo", count: 1 },
+    { id: 1, name: "bar", count: 2 },
+    { id: 2, name: "baz", count: 3 },
+    { id: 3, name: "qux", count: 5 },
+    { id: 2, name: "baz", count: 6 },
+    { id: 0, name: "foo", count: 7 },
+  ]
+);
+```
+
+You can also use a function to select the discriminating value.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { id: 0, name: "foo", count: 0 },
+      { id: 0, name: "foo", count: 1 },
+      { id: 1, name: "bar", count: 2 },
+      { id: 2, name: "baz", count: 3 },
+      { id: 2, name: "baz", count: 4 },
+      { id: 3, name: "qux", count: 5 },
+      { id: 2, name: "baz", count: 6 },
+      { id: 0, name: "foo", count: 7 }
+    ),
+    deduplicateBy(({ name }) => name)
+  ),
+  "to yield items",
+  [
+    { id: 0, name: "foo", count: 1 },
+    { id: 1, name: "bar", count: 2 },
+    { id: 2, name: "baz", count: 3 },
+    { id: 3, name: "qux", count: 5 },
+    { id: 2, name: "baz", count: 6 },
+    { id: 0, name: "foo", count: 7 },
+  ]
+);
+```
+
 ## delay
 
-Waits the given amount of miliseconds before emitting each item.
+Waits the given amount of milliseconds before emitting each item.
 
 ```js
 const { delay } = require("@transformation/core");
