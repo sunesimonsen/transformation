@@ -1,3 +1,27 @@
+### v3.7.0 (2020-11-10)
+
+#### Pull requests
+
+- [#67](https://github.com/sunesimonsen/transformation/pull/67) Added deduplicate and deduplicateBy ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#63](https://github.com/sunesimonsen/transformation/pull/63) Bump eslint-plugin-import from 2.18.2 to 2.22.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#64](https://github.com/sunesimonsen/transformation/pull/64) Bump node-publisher from 1.4.0 to 1.5.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#62](https://github.com/sunesimonsen/transformation/pull/62) Bump eslint-plugin-node from 9.2.0 to 11.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#66](https://github.com/sunesimonsen/transformation/pull/66) Bump quick-lru from 5.1.0 to 5.1.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#60](https://github.com/sunesimonsen/transformation/pull/60) Bump prettier from 1.19.1 to 2.1.2 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#59](https://github.com/sunesimonsen/transformation/pull/59) Bump eslint from 6.7.2 to 6.8.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#58](https://github.com/sunesimonsen/transformation/pull/58) Bump globby from 10.0.1 to 11.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#61](https://github.com/sunesimonsen/transformation/pull/61) Bump eslint-plugin-standard from 4.0.1 to 4.0.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#57](https://github.com/sunesimonsen/transformation/pull/57) Bump eslint-config-standard from 12.0.0 to 14.1.1 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v3.7.0](https://github.com/sunesimonsen/transformation/commit/c0062975b6254215b48b185255c13b56f82de9e4) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Create dependabot.yml](https://github.com/sunesimonsen/transformation/commit/88cc37c6bef76083ea25a5b0941586c7f834d636) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Added some example libraries to the readme](https://github.com/sunesimonsen/transformation/commit/59218e70cedfd83e282c51f1fa8cf59380babb9a) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Buffer parallel output](https://github.com/sunesimonsen/transformation/commit/58b3950083b9da66d2bf9005546255f9814df8b5) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Don't limit concurrency for the parallel ordering test](https://github.com/sunesimonsen/transformation/commit/f4dd7808ab9c045568e0aae2957e0599d095f721) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [+1 more](https://github.com/sunesimonsen/transformation/compare/v3.6.0...v3.7.0)
+
 ### v3.6.0 (2020-11-08)
 
 #### Pull requests
@@ -580,5 +604,4 @@
 - [Added partitionBy to the index file](https://github.com/sunesimonsen/transformation/commit/94132fdeed448cfa9535bbee7e5d51dca0da4c92) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [v1.0.1](https://github.com/sunesimonsen/transformation/commit/62651b763bffa2bbd9a7ffecca90ed38b23baf8f) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [Fix problem with CSV exports](https://github.com/sunesimonsen/transformation/commit/7a750374c45876018a4b3a26bef4faa982021917) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [+21 more](https://github.com/sunesimonsen/transformation/compare/e70b254acfd11df5f492fdc5d2c720b2a51a5978%5E...v1.1.0)
-
+- [+21 more](https://github.com/sunesimonsen/transformation/compare/7a750374c45876018a4b3a26bef4faa982021917...v1.1.0)
