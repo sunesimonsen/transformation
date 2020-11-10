@@ -5,6 +5,8 @@ const buffer = require("./buffer");
 const channelStep = require("./channelStep");
 const chose = require("./chose");
 const cleanup = require("./cleanup");
+const deduplicate = require("./deduplicate");
+const deduplicateBy = require("./deduplicateBy");
 const delay = require("./delay");
 const emitAll = require("./emitAll");
 const emitItems = require("./emitItems");
@@ -60,6 +62,8 @@ module.exports = {
   channelStep,
   chose,
   cleanup,
+  deduplicate,
+  deduplicateBy,
   delay,
   emitAll,
   emitItems,
