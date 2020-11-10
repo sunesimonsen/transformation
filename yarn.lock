@@ -4184,15 +4184,15 @@ node-gyp@^5.0.2:
     which "^1.3.1"
 
 node-publisher@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/node-publisher/-/node-publisher-1.4.0.tgz#e2ee5587683f311b7d4933ed10bfc92eb16fe4b8"
-  integrity sha512-659IU0kPUKJf4emjOZMmLXs2Kh+Pdx/rKD6PrWIc7GPaUKehzyxwY40Ej+c7VE2/2FIbbQp0EgybWNbOR4RDNA==
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/node-publisher/-/node-publisher-1.5.1.tgz#5d58bf367be15aa39c3e8e854f8ed669a1d19e40"
+  integrity sha512-5TQPnoor2cLQMd+lwjF1CRJ+b4r1LKEMPVoUcc1ZH+28l3HGxnGXoPmZ5KnG7sOYgDnxK5vS45X92QuFizWicw==
   dependencies:
     check-node-version "3.2.0"
     commander "2.15.1"
     inquirer "6.5.0"
     js-yaml "3.13.1"
-    offline-github-changelog "1.6.1"
+    offline-github-changelog "2.0.0"
     semver "6.2.0"
 
 nopt@^4.0.1:
@@ -4374,11 +4374,15 @@ octokit-pagination-methods@^1.1.0:
   resolved "https://registry.yarnpkg.com/octokit-pagination-methods/-/octokit-pagination-methods-1.1.0.tgz#cf472edc9d551055f9ef73f6e42b4dbb4c80bea4"
   integrity sha512-fZ4qZdQ2nxJvtcasX7Ghl+WlWS/d9IgnBIwFZXVNNZUmzpno91SX5bc5vuxiuKoCtK78XxGGNuSCrDC7xYB3OQ==
 
-offline-github-changelog@1.6.1:
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/offline-github-changelog/-/offline-github-changelog-1.6.1.tgz#cf03b13f9bcc31441116abdf3c2e9695b834561b"
-  integrity sha512-gGvK1TRT5vMioiionpvrKbzb7lSzC3T+6fNEXlbDgWP5Y3QzUUspbrsYjqweL9qlSJVfFR5Hs7uBAasrWSjh5w==
+offline-github-changelog@2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/offline-github-changelog/-/offline-github-changelog-2.0.0.tgz#ebaf5d74575962cbef4f331e95519e2e7257f374"
+  integrity sha512-STKdbXtOX7BMx3y32rWqHQfPpV0elVLtwZSVUc8ITT3RBMAhkelUbNt7apDdsBohZznzybJKt1FK8Y79hp67mA==
   dependencies:
+    "@transformation/core" "^3.6.0"
+    "@transformation/ejs" "^3.6.0"
+    "@transformation/process" "^3.6.0"
+    "@transformation/stream" "^3.6.0"
     markdown-escape "^1.0.2"
     meow "^5.0.0"
 
