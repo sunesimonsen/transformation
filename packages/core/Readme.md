@@ -132,11 +132,14 @@ more space awailable.
 
 ```js
 await expect(
-  pipeline(emitItems(0, 1, 2, 3, 4, 5), buffer(3, "sliding"), delay(1)),
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), buffer(3, "dropping"), delay(1)),
   "to yield items",
-  [3, 4, 5]
+  [0, 1, 2, 3]
 );
 ```
+
+Notice that because delay buffers one item, `0` is making it through without
+affecting the dropping.
 
 ### sliding buffer
 
@@ -145,11 +148,14 @@ more space awailable.
 
 ```js
 await expect(
-  pipeline(emitItems(0, 1, 2, 3, 4, 5), buffer(3, "dropping"), delay(1)),
+  pipeline(emitItems(0, 1, 2, 3, 4, 5), buffer(3, "sliding"), delay(1)),
   "to yield items",
-  [0, 1, 2]
+  [0, 3, 4, 5]
 );
 ```
+
+Notice that because delay buffers one item, `0` is making it through without
+affecting the sliding.
 
 ## chose
 
