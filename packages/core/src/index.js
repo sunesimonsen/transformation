@@ -42,6 +42,7 @@ const splitIterable = require("./splitIterable");
 const step = require("./step");
 const take = require("./take");
 const takeAll = require("./takeAll");
+const throttle = require("./throttle");
 const tap = require("./tap");
 const toArray = require("./toArray");
 const toJSON = require("./toJSON");
@@ -101,6 +102,7 @@ module.exports = {
   step,
   take,
   takeAll,
+  throttle,
   tap,
   toArray,
   toJSON,

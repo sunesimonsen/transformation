@@ -46,6 +46,7 @@
 - [splitIterable](#splititerable)
 - [take](#take)
 - [tap](#tap)
+- [throttle](#throttle)
 - [toArray](#toarray)
 - [toJSON](#tojson)
 - [transform](#transform)
@@ -1504,6 +1505,30 @@ await expect(
 hat: 10
 cat: 100
 chat: 0
+```
+
+## throttle
+
+Throttles the items passing this step to only emit an item at most once per
+every given milliseconds. Other items will be skipped.
+
+```js
+const { throttle } = require("transformation/core");
+```
+
+Here we generate items that is delayed by their amount. Then we throttle the
+input to only emit items every 40ms.
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 50, 3, 4, 50, 5, 6),
+    (ms) => pipeline(emitItems(ms), delay(ms)),
+    throttle(40)
+  ),
+  "to yield items",
+  [0, 50, 50]
+);
 ```
 
 ## toArray
