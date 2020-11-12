@@ -1,3 +1,19 @@
+### v3.8.0 (2020-11-12)
+
+#### Pull requests
+
+- [#73](https://github.com/sunesimonsen/transformation/pull/73) Add a debounce step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#72](https://github.com/sunesimonsen/transformation/pull/72) Add a throttle step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#68](https://github.com/sunesimonsen/transformation/pull/68) Bump eslint-config-prettier from 6.7.0 to 6.15.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#69](https://github.com/sunesimonsen/transformation/pull/69) Bump eslint-plugin-standard from 4.0.2 to 4.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#70](https://github.com/sunesimonsen/transformation/pull/70) Bump csv-parser from 2.3.2 to 2.3.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#71](https://github.com/sunesimonsen/transformation/pull/71) Bump mocha from 6.2.2 to 8.2.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v3.8.0](https://github.com/sunesimonsen/transformation/commit/3705f386005bc50fad587225531222a0a57e3375) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/74708d6b816e025c44a344c32cd5ec0b3e827c98) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.7.0 (2020-11-10)
 
 #### Pull requests
