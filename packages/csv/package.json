@@ -20,7 +20,7 @@
   "dependencies": {
     "@transformation/core": "^3.7.0",
     "@transformation/stream": "^3.7.0",
-    "csv-parser": "2.3.2",
+    "csv-parser": "2.3.3",
     "csv-writer": "1.5.0"
   },
   "devDependencies": {
