@@ -1,6 +1,6 @@
 {
   "name": "@transformation/glob",
-  "version": "3.7.0",
+  "version": "3.8.0",
   "description": "Expand glob patterns in a transformation pipeline",
   "main": "./src/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@transformation/core": "^3.7.0",
+    "@transformation/core": "^3.8.0",
     "globby": "11.0.1"
   },
   "devDependencies": {
