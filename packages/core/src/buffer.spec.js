@@ -20,7 +20,7 @@ describe("buffer", () => {
       await expect(
         pipeline(emitItems(0, 1, 2, 3, 4, 5), buffer(3, "sliding"), delay(1)),
         "to yield items",
-        [3, 4, 5]
+        [0, 3, 4, 5]
       );
     });
   });
@@ -30,7 +30,7 @@ describe("buffer", () => {
       await expect(
         pipeline(emitItems(0, 1, 2, 3, 4, 5), buffer(3, "dropping"), delay(1)),
         "to yield items",
-        [0, 1, 2]
+        [0, 1, 2, 3]
       );
     });
   });
