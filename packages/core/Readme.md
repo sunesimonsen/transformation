@@ -10,6 +10,7 @@
   - [sliding buffer](#sliding-buffer)
 - [chose](#chose)
 - [cleanup](#cleanup)
+- [debounce](#debounce)
 - [deduplicate](#deduplicate)
 - [deduplicateBy](#deduplicateby)
 - [delay](#delay)
@@ -213,6 +214,30 @@ await program(
 );
 
 expect(items, "to equal", [0, 1, 2, 3, 4, 5]);
+```
+
+## debounce
+
+Debounces the items passing this step to only emit an item when the given amount
+of milliseconds have passed. Other items will be skipped.
+
+```js
+const { debounce } = require("transformation/core");
+```
+
+Here we generate items that is delayed by their amount. Then we debounce the
+input to only emit items when no input has been received for 40ms.
+
+```js
+await expect(
+  pipeline(
+    emitItems(0, 1, 2, 50, 3, 4, 50, 5, 6),
+    (ms) => pipeline(emitItems(ms), delay(ms)),
+    debounce(40)
+  ),
+  "to yield items",
+  [2, 4, 6]
+);
 ```
 
 ## deduplicate
