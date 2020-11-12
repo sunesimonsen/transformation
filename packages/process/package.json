@@ -23,7 +23,7 @@
     "medium": "1.0.2"
   },
   "devDependencies": {
-    "mocha": "6.2.2",
+    "mocha": "8.2.1",
     "unexpected": "11.8.1",
     "unexpected-steps": "^3.7.0"
   },
