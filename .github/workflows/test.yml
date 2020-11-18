@@ -3,21 +3,6 @@ on: [push, pull_request]
 env:
   CI: true
 jobs:
-  lint:
-    name: "Lint"
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: setup Node.js 14
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14
-      - name: Install
-        run: yarn install
-      - name: Lint
-        run: yarn lint
-
   test:
     name: "Test on Node.js ${{ matrix.node-version }}"
     runs-on: ubuntu-latest
@@ -35,3 +20,6 @@ jobs:
         run: yarn install
       - name: Test
         run: yarn test
+      - name: Lint
+        if: ${{ matrix.node-version == 14 }}
+        run: yarn lint
