@@ -21,7 +21,7 @@
     "@transformation/core": "^3.8.0",
     "@transformation/stream": "^3.8.0",
     "csv-parser": "2.3.3",
-    "csv-writer": "1.5.0"
+    "csv-writer": "1.6.0"
   },
   "devDependencies": {
     "mocha": "8.2.1",
