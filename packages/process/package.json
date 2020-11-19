@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "mocha": "8.2.1",
-    "unexpected": "11.15.0",
+    "unexpected": "11.15.1",
     "unexpected-steps": "^3.7.0"
   },
   "engines": {
