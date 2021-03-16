@@ -1,3 +1,36 @@
+### v4.0.0 (2021-03-16)
+
+#### Pull requests
+
+- [#105](https://github.com/sunesimonsen/transformation/pull/105) Remove Node 10 support \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#104](https://github.com/sunesimonsen/transformation/pull/104) Bump eslint-config-prettier from 7.1.0 to 8.1.0 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#102](https://github.com/sunesimonsen/transformation/pull/102) Bump lerna from 3.22.1 to 4.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#101](https://github.com/sunesimonsen/transformation/pull/101) Bump eslint-plugin-mocha from 8.0.0 to 8.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#103](https://github.com/sunesimonsen/transformation/pull/103) Bump mocha from 8.2.1 to 8.3.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#93](https://github.com/sunesimonsen/transformation/pull/93) Bump eslint-plugin-standard from 4.1.0 to 5.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#94](https://github.com/sunesimonsen/transformation/pull/94) Bump globby from 11.0.1 to 11.0.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#99](https://github.com/sunesimonsen/transformation/pull/99) Bump eslint from 7.15.0 to 7.21.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#91](https://github.com/sunesimonsen/transformation/pull/91) Bump eslint-config-standard from 14.1.1 to 16.0.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#86](https://github.com/sunesimonsen/transformation/pull/86) Bump prettier from 2.1.2 to 2.2.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#88](https://github.com/sunesimonsen/transformation/pull/88) Bump csv-parser from 2.3.3 to 3.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#85](https://github.com/sunesimonsen/transformation/pull/85) Bump eslint-plugin-mocha from 6.3.0 to 8.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#90](https://github.com/sunesimonsen/transformation/pull/90) Bump eslint-config-prettier from 6.15.0 to 7.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#89](https://github.com/sunesimonsen/transformation/pull/89) Bump ini from 1.3.5 to 1.3.8 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#79](https://github.com/sunesimonsen/transformation/pull/79) Bump eslint-plugin-mocha from 5.3.0 to 6.3.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#84](https://github.com/sunesimonsen/transformation/pull/84) Bump eslint from 6.8.0 to 7.15.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#82](https://github.com/sunesimonsen/transformation/pull/82) Bump unexpected from 11.15.0 to 12.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#80](https://github.com/sunesimonsen/transformation/pull/80) Bump lerna from 3.19.0 to 3.22.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#75](https://github.com/sunesimonsen/transformation/pull/75) Bump ejs from 3.0.1 to 3.1.5 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#76](https://github.com/sunesimonsen/transformation/pull/76) Bump csv-writer from 1.5.0 to 1.6.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#77](https://github.com/sunesimonsen/transformation/pull/77) Bump unexpected from 11.8.1 to 11.15.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#78](https://github.com/sunesimonsen/transformation/pull/78) Lint as part of the build matrix ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v4.0.0](https://github.com/sunesimonsen/transformation/commit/dfc463c05f2f6b07113107beb1fd1f113c68891e) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fix the top-level package name](https://github.com/sunesimonsen/transformation/commit/24cafe4f3cd74de87c6a7e4e91f3b7ad56f248ae) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/e60f5fadba1447599b77e4ab0d90c86d63402f17) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v3.8.0 (2020-11-12)
 
 #### Pull requests
