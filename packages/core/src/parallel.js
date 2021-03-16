@@ -34,7 +34,7 @@ const parallel = (step, concurrency = 2 * cpus) =>
     const output = chan(concurrency);
     const parallelInput = chan();
 
-    for (var i = 0; i < concurrency; i += 1) {
+    for (let i = 0; i < concurrency; i += 1) {
       outputs.push(worker(step).body(parallelInput, errors));
     }
 

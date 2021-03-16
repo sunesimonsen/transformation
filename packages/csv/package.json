@@ -29,6 +29,6 @@
     "unexpected-steps": "^3.7.0"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   }
 }

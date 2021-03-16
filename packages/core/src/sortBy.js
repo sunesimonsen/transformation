@@ -22,7 +22,7 @@ const sortBy = (...ordering) => {
   });
 
   return sort((a, b) => {
-    for (var i = 0; i < comparisons.length; i += 1) {
+    for (let i = 0; i < comparisons.length; i += 1) {
       const comparison = comparisons[i];
       const result = comparison(a, b);
       if (result !== 0) {
