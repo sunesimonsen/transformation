@@ -3709,6 +3709,11 @@ medium@1.0.2:
   resolved "https://registry.yarnpkg.com/medium/-/medium-1.0.2.tgz#47bff95ef17913cc0e4a434862171944bbf46818"
   integrity sha512-QgPG/wAKErFC19cAlQPE72xyJ+nFGbmBabubWCUbf9UXRF8MPVJO9BLU8x0rR+YTsxspSsnOY6lMvYyHd7f7XQ==
 
+medium@1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/medium/-/medium-1.1.0.tgz#3626411ce2b47b366ee1c1e7c77e7e1dc4561dcf"
+  integrity sha512-deG/pcBD2oS31tdtfWewOOAAJVmF7Qd4QVYWJo/BecbG1Kx2IDK0GJZHr09IDgM8c8FuJG5KtZil3bnIU1iHqg==
+
 meow@^3.3.0:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/meow/-/meow-3.7.0.tgz#72cb668b425228290abbfa856892587308a801fb"
