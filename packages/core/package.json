@@ -18,7 +18,7 @@
     "access": "public"
   },
   "dependencies": {
-    "medium": "1.0.2",
+    "medium": "1.1.1",
     "quick-lru": "^5.1.0"
   },
   "devDependencies": {
