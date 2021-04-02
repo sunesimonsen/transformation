@@ -1,5 +1,12 @@
-const { go, close, CLOSED, chan, put, take, buffers } = require("medium");
+const { go, close, CLOSED, chan, put, take } = require("medium");
+const { fixed, dropping, sliding } = require("medium/lib/buffers");
 const channelStep = require("./channelStep");
+
+const buffers = {
+  fixed,
+  dropping,
+  sliding,
+};
 
 const buffer = (size, strategy = "fixed") =>
   channelStep((input) => {
