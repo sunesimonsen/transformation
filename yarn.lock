@@ -3607,10 +3607,10 @@ lru-cache@^6.0.0:
   dependencies:
     yallist "^4.0.0"
 
-magicpen@^6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/magicpen/-/magicpen-6.2.2.tgz#8069cb5d9d9b4d47350001465f30f2f541215a9d"
-  integrity sha512-B+PWeKs3OUry0S5iGR7EKVRxif6Pfy1S/C1VJ/a2pFnJbScWJHvrulhss3rIfiHMCt5HOxB2v2LX+un3Z+W5/g==
+magicpen@^6.2.3:
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/magicpen/-/magicpen-6.2.3.tgz#d5c917fffecf0770bab634fe53510820b8afabf1"
+  integrity sha512-vPBhLEghnfAYehoWch2461StvzARmTnnTfCJHxU9Er6hY+GrGuaYtCfqtVtxitD0iyB5M0W5FRYvXiP+Wpg8fw==
   dependencies:
     ansi-styles "2.0.0"
     color-diff "0.1.7"
@@ -5851,17 +5851,17 @@ unexpected-bluebird@2.9.34-longstack2:
   resolved "https://registry.yarnpkg.com/unexpected-bluebird/-/unexpected-bluebird-2.9.34-longstack2.tgz#49acac753b0556ded6025210ee96182307d2b2c9"
   integrity sha1-SaysdTsFVt7WAlIQ7pYYIwfSssk=
 
-unexpected@12.0.1:
-  version "12.0.1"
-  resolved "https://registry.yarnpkg.com/unexpected/-/unexpected-12.0.1.tgz#6d74769d8063cdcbdd6fb8561851113a26b1e428"
-  integrity sha512-JTAUzmFK0ufM3o7EHpF7eTPnWdCDiIIVg2M9q20dZ6I8e8jJKAkA/9yQy2txhsOLtmEejbuenlnleIBTHKQKhA==
+unexpected@12.0.2:
+  version "12.0.2"
+  resolved "https://registry.yarnpkg.com/unexpected/-/unexpected-12.0.2.tgz#e79abfd1b96659ee38b1680e08e3637f678a17e8"
+  integrity sha512-xeVBCQrUDYnEIQjWaBLDEJzfi3uyLW230qTp1pdQHQR0aV+c8u6DIR3dvtbupZq/9Ddqy6YMhvDWjd+sYZk3sA==
   dependencies:
     array-changes "3.0.1"
     array-changes-async "3.0.1"
     detect-indent "3.0.1"
     diff "^5.0.0"
     greedy-interval-packer "1.2.0"
-    magicpen "^6.2.2"
+    magicpen "^6.2.3"
     ukkonen "^1.4.0"
     unexpected-bluebird "2.9.34-longstack2"
 
