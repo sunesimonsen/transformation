@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "byline": "^5.0.0",
-    "mocha": "8.3.2",
+    "mocha": "9.0.1",
     "unexpected": "12.0.1",
     "unexpected-steps": "^4.0.0"
   },
