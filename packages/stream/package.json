@@ -23,7 +23,7 @@
   "devDependencies": {
     "byline": "^5.0.0",
     "mocha": "8.3.2",
-    "unexpected": "12.0.1",
+    "unexpected": "12.0.3",
     "unexpected-steps": "^4.0.0"
   },
   "engines": {
