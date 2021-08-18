@@ -1,3 +1,32 @@
+### v4.0.1 (2021-08-18)
+
+#### Pull requests
+
+- [#140](https://github.com/sunesimonsen/transformation/pull/140) Bump eslint-config-standard from 16.0.2 to 16.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#138](https://github.com/sunesimonsen/transformation/pull/138) Bump hosted-git-info from 2.8.5 to 2.8.9 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#139](https://github.com/sunesimonsen/transformation/pull/139) Bump minimist from 1.2.0 to 1.2.5 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#133](https://github.com/sunesimonsen/transformation/pull/133) Bump mocha from 8.3.2 to 9.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#137](https://github.com/sunesimonsen/transformation/pull/137) Bump path-parse from 1.0.6 to 1.0.7 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#135](https://github.com/sunesimonsen/transformation/pull/135) Bump tar from 4.4.13 to 4.4.15 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#134](https://github.com/sunesimonsen/transformation/pull/134) Bump eslint from 7.25.0 to 7.32.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#128](https://github.com/sunesimonsen/transformation/pull/128) Bump set-getter from 0.1.0 to 0.1.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#121](https://github.com/sunesimonsen/transformation/pull/121) Bump unexpected from 12.0.1 to 12.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#114](https://github.com/sunesimonsen/transformation/pull/114) Bump eslint from 7.23.0 to 7.25.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#115](https://github.com/sunesimonsen/transformation/pull/115) Bump eslint-config-prettier from 8.1.0 to 8.3.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#116](https://github.com/sunesimonsen/transformation/pull/116) Bump unexpected from 12.0.0 to 12.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#110](https://github.com/sunesimonsen/transformation/pull/110) Bump eslint from 7.22.0 to 7.23.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#109](https://github.com/sunesimonsen/transformation/pull/109) Bump globby from 11.0.2 to 11.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#111](https://github.com/sunesimonsen/transformation/pull/111) Bump medium from 1.0.2 to 1.1.1 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#107](https://github.com/sunesimonsen/transformation/pull/107) Bump ejs from 3.1.5 to 3.1.6 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#106](https://github.com/sunesimonsen/transformation/pull/106) Bump eslint from 7.21.0 to 7.22.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#108](https://github.com/sunesimonsen/transformation/pull/108) Bump eslint-plugin-promise from 4.2.1 to 4.3.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v4.0.1](https://github.com/sunesimonsen/transformation/commit/ecfc77e02c973039eeed3f6d218953ab134d2c03) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Simplify join a bit](https://github.com/sunesimonsen/transformation/commit/892e75333e3b5e2565c0f9716cc792f9b7bbb5d5) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/c0e1ad4c8a23ea2daf6b93cc333531fd6b03b09c) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v4.0.0 (2021-03-16)
 
 #### Pull requests
