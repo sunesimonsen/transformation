@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "medium": "1.1.1",
-    "quick-lru": "^5.1.0"
+    "quick-lru": "^6.0.1"
   },
   "devDependencies": {
     "mocha": "9.0.3",
