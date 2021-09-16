@@ -40,7 +40,7 @@ const parallel = (step, concurrency = 2 * cpus) => {
       outputs.push(worker(step).body(parallelInput, errors));
     }
 
-    const parallelOutput = buffer(concurrency).body(merge(...outputs));
+    const parallelOutput = buffer(concurrency).body(merge(...outputs), errors);
 
     go(async () => {
       let inputIndex = 0;
