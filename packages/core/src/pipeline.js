@@ -36,7 +36,6 @@ const pipeline = (...steps) =>
       } catch (err) {
         await put(errors, err);
       } finally {
-        close(input);
         close(output);
       }
     });

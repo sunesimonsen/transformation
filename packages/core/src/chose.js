@@ -35,7 +35,6 @@ const chose = (caseOrSelector, cases) => {
       } catch (err) {
         await put(errors, err);
       } finally {
-        close(input);
         close(output);
       }
     });
