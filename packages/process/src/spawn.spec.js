@@ -3,6 +3,7 @@ const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const path = require("path");
 const {
   emitItems,
+  forEach,
   pipeline,
   program,
   skipLast,
@@ -52,6 +53,22 @@ describe("spawn", () => {
       "to yield items",
       ["./0.txt", "./1.txt", "./2.txt"]
     );
+  });
+
+  it("can run as a program", async () => {
+    const output = [];
+
+    await program(
+      spawn("find", [".", "-name", "*.txt", "-print0"], { cwd: testDir }),
+      lines(0),
+      skipLast(),
+      sort(),
+      forEach((item) => {
+        output.push(item);
+      })
+    );
+
+    expect(output, "to equal", ["./0.txt", "./1.txt", "./2.txt"]);
   });
 
   it("fails if the command ends with a non-zero exit code", async () => {

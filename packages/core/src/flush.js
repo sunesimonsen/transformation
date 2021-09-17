@@ -26,12 +26,9 @@ const flush = async (stepOrChannel) => {
 
   close(input);
 
-  try {
-    const error = await Promise.race([take(errors), sleep(0)]);
-    if (error) throw error;
-  } finally {
-    close(errors);
-  }
+  await sleep(0);
+  close(errors);
+  close(output);
 
   if (error) throw error;
 };
