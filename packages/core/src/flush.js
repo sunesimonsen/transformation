@@ -24,7 +24,6 @@ const flush = async (stepOrChannel) => {
     if (value === CLOSED) break;
   }
 
-  close(input);
   close(errors);
   if (error) throw error;
 };

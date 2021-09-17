@@ -1,10 +1,11 @@
-const { chan, take, CLOSED } = require("medium");
+const { chan, take, close, CLOSED } = require("medium");
 
 const takeAll = async (step) => {
   const result = [];
   const errors = chan();
   const input = chan();
   const output = step.body(input, errors);
+  close(input);
 
   let error = null;
   take(errors).then((e) => {

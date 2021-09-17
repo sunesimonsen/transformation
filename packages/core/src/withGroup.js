@@ -4,13 +4,13 @@ const emitAll = require("./emitAll");
 const Group = require("./Group");
 
 const withGroup = (...steps) =>
-  map(async (group) => {
-    return Group.isGroup(group)
+  map(async (group) =>
+    Group.isGroup(group)
       ? {
           ...group,
           items: await takeAll(emitAll(group.items), ...steps),
         }
-      : group;
-  });
+      : group
+  );
 
 module.exports = withGroup;
