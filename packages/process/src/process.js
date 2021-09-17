@@ -13,22 +13,30 @@ const createError = (data) => {
 
 const startProcess = (childProcessPath) =>
   channelStep((input, errors) => {
+    let failed = false;
     const childProcess = cp.fork(childProcessPath);
     const output = chan();
     const ack = chan();
 
+    const cleanup = () => {
+      close(input);
+      close(ack);
+      close(output);
+      childProcess.kill();
+    };
+
     childProcess.on("message", async ({ type, data }) => {
       switch (type) {
         case "closed":
-          close(output);
-          childProcess.kill();
+          cleanup();
           break;
         case "ack":
-          put(ack, "ack");
+          await put(ack, "ack");
           break;
         case "error":
+          failed = true;
           await put(errors, createError(data));
-          close(output);
+          cleanup();
           break;
         default:
           await put(output, data);
@@ -38,12 +46,17 @@ const startProcess = (childProcessPath) =>
     });
 
     childProcess.on("error", async (err) => {
-      await put(errors, err);
-      close(output);
+      if (!failed) {
+        failed = true;
+        await put(errors, err);
+        cleanup();
+      }
     });
 
     go(async () => {
       while (true) {
+        if (failed) break;
+
         const value = await take(input);
 
         if (value === CLOSED) {
@@ -61,10 +74,18 @@ const startProcess = (childProcessPath) =>
   });
 
 const childProcess = (...steps) => {
+  let failed = false;
   const input = chan();
   const errors = chan();
   const output = pipeline(...steps).body(input, errors);
   const ack = chan();
+
+  const cleanup = () => {
+    close(input);
+    close(output);
+    close(errors);
+    close(ack);
+  };
 
   process.on("message", async ({ type, data }) => {
     switch (type) {
@@ -72,7 +93,7 @@ const childProcess = (...steps) => {
         close(input);
         break;
       case "ack":
-        put(ack, "ack");
+        await put(ack, "ack");
         break;
       default:
         await put(input, data);
@@ -82,14 +103,20 @@ const childProcess = (...steps) => {
   });
 
   process.on("uncaughtException", (err) => {
-    process.send({ type: "error", data: err.message });
+    if (!failed) {
+      process.send({ type: "error", data: err.message });
+      failed = true;
+
+      cleanup();
+    }
   });
 
   go(async () => {
     while (true) {
+      if (failed) break;
+
       const value = await take(output);
       if (value === CLOSED) {
-        close(errors);
         process.send({ type: "closed" });
         break;
       }
@@ -98,10 +125,14 @@ const childProcess = (...steps) => {
 
       await take(ack);
     }
+
+    cleanup();
   });
 
   go(async () => {
     while (true) {
+      if (failed) break;
+
       const value = await take(errors);
       if (value === CLOSED) break;
 
@@ -110,10 +141,13 @@ const childProcess = (...steps) => {
         properties[p] = value[p];
       }
 
+      failed = true;
       process.send({
         type: "error",
         data: { type: value.constructor.name, properties },
       });
+
+      cleanup();
     }
   });
 };

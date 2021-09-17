@@ -1,4 +1,4 @@
-const { go, chan, close, CLOSED, take } = require("medium");
+const { go, chan, close, CLOSED, take, sleep } = require("medium");
 
 const flush = async (stepOrChannel) => {
   const input = chan();
@@ -25,7 +25,14 @@ const flush = async (stepOrChannel) => {
   }
 
   close(input);
-  close(errors);
+
+  try {
+    const error = await Promise.race([take(errors), sleep(0)]);
+    if (error) throw error;
+  } finally {
+    close(errors);
+  }
+
   if (error) throw error;
 };
 
