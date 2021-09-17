@@ -1,3 +1,9 @@
+### v4.1.1 (2021-09-17)
+
+- [v4.1.1](https://github.com/sunesimonsen/transformation/commit/38cac774e2c1a352cdfbf6fd30d4c7effb319025) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Small patch on how to wait for errors](https://github.com/sunesimonsen/transformation/commit/0c845c6dd947907e4000451bc3a207b661a7b68a) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/9a546ce0f1b2c8440e373b9a1568b18c000c0a1f) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v4.1.0 (2021-09-17)
 
 #### Pull requests
