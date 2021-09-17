@@ -1,9 +1,11 @@
 const expect = require("unexpected").clone().use(require("unexpected-steps"));
 const emitItems = require("./emitItems");
-const pipeline = require("./pipeline");
 const emitRange = require("./emitRange");
-const toArray = require("./toArray");
+const forEach = require("./forEach");
 const map = require("./map");
+const pipeline = require("./pipeline");
+const program = require("./program");
+const toArray = require("./toArray");
 
 describe("map", () => {
   it("transforms each item with the given mapper", async () => {
@@ -39,5 +41,54 @@ describe("map", () => {
         [[], [0], [0, 1], [0, 1, 2], [0, 1, 2, 3]]
       );
     });
+  });
+
+  it("stops proceesing when an error occurs", async () => {
+    const processed = [];
+
+    await expect(
+      () =>
+        program(
+          emitItems(0, 1, 2, 3, 4, "bomb", 5, 6, 7, 8, 9),
+          map((n) => {
+            if (n === "bomb") {
+              throw new Error("Boom!");
+            }
+            return n;
+          }),
+          forEach((item) => processed.push(item))
+        ),
+      "to error",
+      "Boom!"
+    );
+
+    expect(processed, "to equal", [0, 1, 2, 3, 4]);
+  });
+
+  it("stops proceesing when an error occurs inside of a sub-pipeline", async () => {
+    const processed = [];
+
+    await expect(
+      () =>
+        program(
+          emitItems(0, 1, 2, 3, 4, "bomb", 5, 6, 7, 8, 9),
+          map((n) =>
+            pipeline(
+              emitItems(n),
+              map((n) => {
+                if (n === "bomb") {
+                  throw new Error("Boom!");
+                }
+                return n;
+              })
+            )
+          ),
+          forEach((item) => processed.push(item))
+        ),
+      "to error",
+      "Boom!"
+    );
+
+    expect(processed, "to equal", [0, 1, 2, 3, 4, 5]);
   });
 });
