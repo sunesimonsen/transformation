@@ -393,14 +393,11 @@ async function* asyncIterable() {
   }
 }
 
-await expect(emitAll(asyncIterable(), [3, 4, 5]), "to yield items", [
-  0,
-  1,
-  2,
-  3,
-  4,
-  5,
-]);
+await expect(
+  emitAll(asyncIterable(), [3, 4, 5]),
+  "to yield items",
+  [0, 1, 2, 3, 4, 5]
+);
 ```
 
 ## emitItems
