@@ -7,7 +7,7 @@ const pipeline = (...steps) =>
     const output = chan();
 
     go(async () => {
-      let channel = input || chan();
+      let channel = input;
 
       try {
         for (let stepOrChannel of steps) {
@@ -27,10 +27,6 @@ const pipeline = (...steps) =>
           }
         }
 
-        if (!input) {
-          close(channel);
-        }
-
         while (true) {
           const value = await take(channel);
           if (value === CLOSED) break;
@@ -40,7 +36,6 @@ const pipeline = (...steps) =>
       } catch (err) {
         await put(errors, err);
       } finally {
-        close(input);
         close(output);
       }
     });
