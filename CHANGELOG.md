@@ -1,3 +1,19 @@
+### v4.1.0 (2021-09-17)
+
+#### Pull requests
+
+- [#150](https://github.com/sunesimonsen/transformation/pull/150) Bail on errors ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#149](https://github.com/sunesimonsen/transformation/pull/149) Revert "Bail on errors" ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#145](https://github.com/sunesimonsen/transformation/pull/145) Bump tar from 4.4.15 to 4.4.19 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#142](https://github.com/sunesimonsen/transformation/pull/142) Bump eslint-plugin-mocha from 8.1.0 to 9.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#143](https://github.com/sunesimonsen/transformation/pull/143) Bump eslint-plugin-promise from 4.3.1 to 5.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#147](https://github.com/sunesimonsen/transformation/pull/147) Bail on errors ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v4.1.0](https://github.com/sunesimonsen/transformation/commit/515bd8a714852520556f12b42640257e0463eecf) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/90c6e263ce805e84485dbdd5abc426b4aa06f994) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v4.0.1 (2021-08-18)
 
 #### Pull requests
