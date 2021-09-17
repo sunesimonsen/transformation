@@ -28,10 +28,8 @@ const worker = (childStep) =>
     }
   });
 
-const parallel = (step, concurrency = 2 * cpus) => {
-  if (concurrency < 2) return step;
-
-  return channelStep((input, errors) => {
+const parallel = (step, concurrency = 2 * cpus) =>
+  channelStep((input, errors) => {
     const outputs = [];
     const output = chan(concurrency);
     const parallelInput = chan();
@@ -40,7 +38,7 @@ const parallel = (step, concurrency = 2 * cpus) => {
       outputs.push(worker(step).body(parallelInput, errors));
     }
 
-    const parallelOutput = buffer(concurrency).body(merge(...outputs), errors);
+    const parallelOutput = buffer(concurrency).body(merge(...outputs));
 
     go(async () => {
       let inputIndex = 0;
@@ -85,6 +83,5 @@ const parallel = (step, concurrency = 2 * cpus) => {
 
     return output;
   });
-};
 
 module.exports = parallel;

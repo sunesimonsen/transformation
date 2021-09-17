@@ -1,37 +1,12 @@
-const { go, close, CLOSED, chan, put, take } = require("medium");
-const channelStep = require("./channelStep");
+const step = require("./step");
 
 const emitAll = (...iterables) =>
-  channelStep((input, errors) => {
-    const output = chan();
-    let closing = false;
-
-    go(async () => {
-      while (true) {
-        const value = await take(input);
-        if (value === CLOSED) break;
+  step(async ({ take, put, CLOSED }) => {
+    for (const iterable of iterables) {
+      for await (const item of iterable) {
+        await put(item);
       }
-
-      closing = true;
-    });
-
-    go(async () => {
-      try {
-        for (const iterable of iterables) {
-          if (closing) break;
-          for await (const item of iterable) {
-            if (closing) break;
-            await put(output, item);
-          }
-        }
-      } catch (err) {
-        await put(errors, err);
-      } finally {
-        close(output);
-      }
-    });
-
-    return output;
+    }
   });
 
 module.exports = emitAll;
