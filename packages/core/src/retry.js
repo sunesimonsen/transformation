@@ -1,7 +1,6 @@
 const emitItems = require("./emitItems");
-const forEach = require("./forEach");
-const program = require("./program");
 const step = require("./step");
+const takeAll = require("./takeAll");
 
 const { sleep } = require("medium");
 
@@ -39,15 +38,14 @@ const retry = (...args) => {
     while (true) {
       const value = await take();
       if (value === CLOSED) break;
-      console.log(value);
 
-      await retryPromise(options, () =>
-        program(
-          emitItems(value),
-          ...steps,
-          forEach((outputItem) => put(outputItem))
-        )
+      const items = await retryPromise(options, () =>
+        takeAll(emitItems(value), ...steps)
       );
+
+      for (const item of items) {
+        await put(item);
+      }
     }
   });
 };
