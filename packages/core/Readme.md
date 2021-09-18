@@ -1206,51 +1206,6 @@ await expect(
 );
 ```
 
-## retry
-
-Retries a series steps according to the given retry options.
-
-Options
-
-- max (default 5) the maximum number of retries
-- delay (default 100) the delay basis for the retry
-- strategy (default exponential) can also be linear
-
-The code snippet below will fetch todos with ids from 0 to 5. It a request
-fails it will retry at most 5 times where the delay of 100 is doubled for each
-retry.
-
-```js
-const { retry } = require("@transformation/core");
-```
-
-```js
-await program(
-  emitItems(0, 1, 2, 3, 4, 5),
-  map(n => `https://jsonplaceholder.typicode.com/todos/${0}`),
-  retry(
-    map(url => fetch(url))
-    map(res => res.json())
-  ),
-  tap()
-)
-```
-
-You can override the defaults the following way:
-
-```js
-await program(
-  emitItems(0, 1, 2, 3, 4, 5),
-  map(n => `https://jsonplaceholder.typicode.com/todos/${0}`),
-  retry(
-    { max: 3, delay: 300, strategy: 'linear' },
-    map(url => fetch(url))
-    map(res => res.json())
-  ),
-  tap()
-)
-```
-
 ## reverse
 
 Reverses all of the items in the pipeline and re-emits them one by one.
