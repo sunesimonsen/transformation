@@ -3,15 +3,17 @@ const chose = require("./chose");
 const map = require("./map");
 const transform = require("./transform");
 const forEach = require("./forEach");
-const QuickLRU = require("quick-lru");
+const LRU = require("lru");
 
-const memorize = (step, { maxSize = 1000, key = (v) => v } = {}) => {
+const memorize = (step, { maxSize = Infinity, key = (v) => v } = {}) => {
   const keySelector = typeof key === "string" ? (value) => value[key] : key;
 
-  const lru = new QuickLRU({ maxSize });
+  const lru = new LRU(maxSize);
+
+  const has = (value) => typeof lru.peek(keySelector(value)) !== "undefined";
 
   return pipeline(
-    chose((value) => (lru.has(keySelector(value)) ? "cached" : "notCached"), {
+    chose((value) => (has(value) ? "cached" : "notCached"), {
       cached: map((value) => lru.get(keySelector(value))),
       notCached: pipeline(
         map((value) => ({ key: keySelector(value), output: value })),
