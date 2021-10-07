@@ -1,3 +1,19 @@
+### v4.1.2 (2021-10-07)
+
+#### Pull requests
+
+- [#160](https://github.com/sunesimonsen/transformation/pull/160) Fix empty partition when all partitions are full ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#154](https://github.com/sunesimonsen/transformation/pull/154) Switch from quick-lru to lru ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#153](https://github.com/sunesimonsen/transformation/pull/153) Retry step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#152](https://github.com/sunesimonsen/transformation/pull/152) Revert "Retry step" ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#151](https://github.com/sunesimonsen/transformation/pull/151) Retry step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#148](https://github.com/sunesimonsen/transformation/pull/148) Bump prettier from 2.2.1 to 2.4.1 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v4.1.2](https://github.com/sunesimonsen/transformation/commit/6b0749ca6bee0bf4100c98a38ceaddd5615b6da6) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/0ea405307a263f807c249c151821c4b247233aeb) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v4.1.1 (2021-09-17)
 
 - [v4.1.1](https://github.com/sunesimonsen/transformation/commit/38cac774e2c1a352cdfbf6fd30d4c7effb319025) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
