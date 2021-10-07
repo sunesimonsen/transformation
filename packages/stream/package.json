@@ -1,6 +1,6 @@
 {
   "name": "@transformation/stream",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Transformations for working with Node streams",
   "main": "src/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "access": "public"
   },
   "dependencies": {
-    "@transformation/core": "^4.1.1"
+    "@transformation/core": "^4.1.2"
   },
   "devDependencies": {
     "byline": "^5.0.0",
