@@ -13,16 +13,18 @@ const partition = (size) =>
         nextBatch.push(value);
       }
 
-      const start = partitionNumber * size;
-      const end = start + size - 1;
-      partitionNumber++;
+      if (nextBatch.length > 0) {
+        const start = partitionNumber * size;
+        const end = start + size - 1;
+        partitionNumber++;
 
-      await put(
-        Group.create({
-          key: `[${start};${end}]`,
-          items: nextBatch,
-        })
-      );
+        await put(
+          Group.create({
+            key: `[${start};${end}]`,
+            items: nextBatch,
+          })
+        );
+      }
 
       if (value === CLOSED) break;
     }
