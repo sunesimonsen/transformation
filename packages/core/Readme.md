@@ -784,8 +784,8 @@ await expect(
   ),
   "to yield items",
   [
-    Group.create({ key: "even", items: [0, 2, 4, 6] }),
-    Group.create({ key: "odd", items: [1, 3, 5] }),
+    { key: "even", items: [0, 2, 4, 6] },
+    { key: "odd", items: [1, 3, 5] },
   ]
 );
 ```
@@ -806,21 +806,21 @@ await expect(
   ),
   "to yield items",
   [
-    Group.create({
+    {
       key: "GOOG",
       items: [
         { symbol: "GOOG", price: 1349 },
         { symbol: "GOOG", price: 1351 },
       ],
-    }),
-    Group.create({
+    },
+    {
       key: "AAPL",
       items: [
         { symbol: "AAPL", price: 274 },
         { symbol: "AAPL", price: 275 },
         { symbol: "AAPL", price: 279 },
       ],
-    }),
+    },
   ]
 );
 ```
@@ -1074,10 +1074,10 @@ await expect(
   pipeline(emitItems(0, 1, 2, 3, 4, 5, 6), partition(2)),
   "to yield items",
   [
-    Group.create({ key: "[0;1]", items: [0, 1] }),
-    Group.create({ key: "[2;3]", items: [2, 3] }),
-    Group.create({ key: "[4;5]", items: [4, 5] }),
-    Group.create({ key: "[6;7]", items: [6] }),
+    { key: "[0;1]", items: [0, 1] },
+    { key: "[2;3]", items: [2, 3] },
+    { key: "[4;5]", items: [4, 5] },
+    { key: "[6;7]", items: [6] },
   ]
 );
 ```
@@ -1104,25 +1104,25 @@ await expect(
   ),
   "to yield items",
   [
-    Group.create({
+    {
       key: "GOOG",
       items: [{ symbol: "GOOG", price: 1349 }],
-    }),
-    Group.create({
+    },
+    {
       key: "AAPL",
       items: [
         { symbol: "AAPL", price: 274 },
         { symbol: "AAPL", price: 275 },
       ],
-    }),
-    Group.create({
+    },
+    {
       key: "GOOG",
       items: [{ symbol: "GOOG", price: 1351 }],
-    }),
-    Group.create({
+    },
+    {
       key: "AAPL",
       items: [{ symbol: "AAPL", price: 279 }],
-    }),
+    },
   ]
 );
 ```
@@ -1920,21 +1920,21 @@ await expect(
   ),
   "to yield items",
   [
-    Group.create({
+    {
       key: "GOOG",
       items: [
         { symbol: "GOOG", price: 1349, label: "GOOG: 1349" },
         { symbol: "GOOG", price: 1351, label: "GOOG: 1351" },
       ],
-    }),
-    Group.create({
+    },
+    {
       key: "AAPL",
       items: [
         { symbol: "AAPL", price: 274, label: "AAPL: 274" },
         { symbol: "AAPL", price: 275, label: "AAPL: 275" },
         { symbol: "AAPL", price: 279, label: "AAPL: 279" },
       ],
-    }),
+    },
   ]
 );
 ```
