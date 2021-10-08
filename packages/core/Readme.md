@@ -1100,6 +1100,45 @@ await expect(
       { symbol: "GOOG", price: 1351 },
       { symbol: "AAPL", price: 279 }
     ),
+    partitionBy('symbol')
+  ),
+  "to yield items",
+  [
+    {
+      key: "GOOG",
+      items: [{ symbol: "GOOG", price: 1349 }],
+    },
+    {
+      key: "AAPL",
+      items: [
+        { symbol: "AAPL", price: 274 },
+        { symbol: "AAPL", price: 275 },
+      ],
+    },
+    {
+      key: "GOOG",
+      items: [{ symbol: "GOOG", price: 1351 }],
+    },
+    {
+      key: "AAPL",
+      items: [{ symbol: "AAPL", price: 279 }],
+    },
+  ]
+);
+```
+
+You can also use a function to select the discriminating value.
+
+```js
+await expect(
+  pipeline(
+    emitItems(
+      { symbol: "GOOG", price: 1349 },
+      { symbol: "AAPL", price: 274 },
+      { symbol: "AAPL", price: 275 },
+      { symbol: "GOOG", price: 1351 },
+      { symbol: "AAPL", price: 279 }
+    ),
     partitionBy(({ symbol }) => symbol)
   ),
   "to yield items",
