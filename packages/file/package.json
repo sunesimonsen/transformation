@@ -1,6 +1,6 @@
 {
   "name": "@transformation/file",
-  "version": "4.1.2",
+  "version": "4.2.0",
   "description": "Transformations for working with files",
   "main": "src/index.js",
   "scripts": {
@@ -18,13 +18,13 @@
     "access": "public"
   },
   "dependencies": {
-    "@transformation/core": "^4.1.2",
+    "@transformation/core": "^4.2.0",
     "medium": "1.2.0"
   },
   "devDependencies": {
     "mocha": "9.1.4",
     "unexpected": "12.0.3",
-    "unexpected-steps": "^4.1.0"
+    "unexpected-steps": "^4.2.0"
   },
   "engines": {
     "node": ">=12"
