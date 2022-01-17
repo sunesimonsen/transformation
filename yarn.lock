@@ -3828,10 +3828,10 @@ math-random@^1.0.1:
   resolved "https://registry.yarnpkg.com/math-random/-/math-random-1.0.4.tgz#5dd6943c938548267016d4e34f057583080c514c"
   integrity sha512-rUxjysqif/BZQH2yhd5Aaq7vXMSx9NdEsQcyA07uEzIvxgI7zIr33gGsh+RU0/XjmQpCW7RsVof1vlkvQVCK5A==
 
-medium@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/medium/-/medium-1.1.1.tgz#4b857993c824d99ec6988337885d100026bb1d66"
-  integrity sha512-rLvGWrum5CL41HDK90Vuv6NrbvZ81JS744JbY0LVYRVD19F5kEvFxGceVYi7J8vP7+RyxB1K+FYDrWzkLVQDNw==
+medium@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/medium/-/medium-1.2.0.tgz#68ae127b2207f15e15a6feb4bec20bb5caeee985"
+  integrity sha512-qoL5cGyUTeRvzYTbGDoKLdCyV/QdKOKB7Cz+jLGKVMHZ1uRYd7WNIvyQxwSo4CyCShEkqsNkyeurWQHf+O1JNQ==
 
 meow@^3.3.0:
   version "3.7.0"
