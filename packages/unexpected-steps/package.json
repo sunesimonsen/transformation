@@ -12,6 +12,6 @@
     "url": "https://github.com/sunesimonsen/transformation"
   },
   "dependencies": {
-    "medium": "1.1.1"
+    "medium": "1.2.0"
   }
 }
