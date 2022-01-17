@@ -1,3 +1,25 @@
+### v4.2.0 (2022-01-17)
+
+#### Pull requests
+
+- [#174](https://github.com/sunesimonsen/transformation/pull/174) Bump prettier from 2.4.1 to 2.5.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#173](https://github.com/sunesimonsen/transformation/pull/173) Bump medium from 1.1.1 to 1.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#171](https://github.com/sunesimonsen/transformation/pull/171) Bump mocha from 9.1.2 to 9.1.4 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#168](https://github.com/sunesimonsen/transformation/pull/168) Bump eslint-plugin-import from 2.22.1 to 2.25.4 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#167](https://github.com/sunesimonsen/transformation/pull/167) Bump eslint-plugin-promise from 5.1.0 to 5.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#169](https://github.com/sunesimonsen/transformation/pull/169) Bump shelljs from 0.8.4 to 0.8.5 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#165](https://github.com/sunesimonsen/transformation/pull/165) Bump sinon from 11.1.2 to 12.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#158](https://github.com/sunesimonsen/transformation/pull/158) Bump node-publisher from 1.5.1 to 1.5.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#159](https://github.com/sunesimonsen/transformation/pull/159) Bump mocha from 9.0.3 to 9.1.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v4.2.0](https://github.com/sunesimonsen/transformation/commit/88a4660cbb267db5a8ee7eb57bb38a528519c036) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fix formatting](https://github.com/sunesimonsen/transformation/commit/c38bf31d8cbfadb6ef545f8a0f49072f45578330) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Expand the partitionBy docs](https://github.com/sunesimonsen/transformation/commit/cc50c780a775e321af89b17ce484a72bf92ddf0e) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Simplify examples](https://github.com/sunesimonsen/transformation/commit/ed5e08e86aaebfd0e89f86a149edae0c26a2685c) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/f7c7628817579183537e4b91785a9f03fec3e0ba) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v4.1.2 (2021-10-07)
 
 #### Pull requests
