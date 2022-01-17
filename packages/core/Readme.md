@@ -1100,7 +1100,7 @@ await expect(
       { symbol: "GOOG", price: 1351 },
       { symbol: "AAPL", price: 279 }
     ),
-    partitionBy('symbol')
+    partitionBy("symbol")
   ),
   "to yield items",
   [
