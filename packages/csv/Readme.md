@@ -2,13 +2,6 @@
 
 A package for reading and writing CSV files.
 
-<!-- toc -->
-
-- [readCSV](#readcsv)
-- [writeCSV](#writecsv)
-
-<!-- tocstop -->
-
 ## readCSV
 
 Streams the rows of a CSV file using [csv-parser](https://www.npmjs.com/package/csv-parser) and emits objects.

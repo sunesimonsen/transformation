@@ -2,15 +2,6 @@
 
 A package for using child processes.
 
-<!-- toc -->
-
-- [readFile](#readfile)
-- [readEachFile](#readeachfile)
-- [writeFile](#writefile)
-- [writeEachFile](#writeeachfile)
-
-<!-- tocstop -->
-
 ## readFile
 
 Reads the content of a given file into the pipeline.

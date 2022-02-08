@@ -2,13 +2,6 @@
 
 A package for rendering [EJS](https://ejs.co/) templates.
 
-<!-- toc -->
-
-- [renderTemplate](#rendertemplate)
-- [writeTemplate](#writetemplate)
-
-<!-- tocstop -->
-
 ## renderTemplate
 
 Renders an EJS template for each item in the pipeline.

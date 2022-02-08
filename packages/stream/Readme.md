@@ -2,18 +2,6 @@
 
 A package for integrating with Node streams.
 
-<!-- toc -->
-
-- [concat](#concat)
-- [fromFileStream](#fromfilestream)
-- [fromStream](#fromstream)
-- [lines](#lines)
-- [pipe](#pipe)
-- [toFileStream](#tofilestream)
-- [toStream](#tostream)
-
-<!-- tocstop -->
-
 ## concat
 
 Concatenates all of output of a stream into a string.

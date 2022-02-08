@@ -2,14 +2,6 @@
 
 A package for using child processes.
 
-<!-- toc -->
-
-- [exec](#exec)
-- [spawn](#spawn)
-- [startProcess/childProcess](#startprocesschildprocess)
-
-<!-- tocstop -->
-
 ## exec
 
 Spawns a shell and executes the given commands.
