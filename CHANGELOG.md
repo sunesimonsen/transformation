@@ -1,3 +1,19 @@
+### v4.3.0 (2022-02-08)
+
+#### Pull requests
+
+- [#182](https://github.com/sunesimonsen/transformation/pull/182) Provide a defaults transformation ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#177](https://github.com/sunesimonsen/transformation/pull/177) Bump mocha from 9.1.4 to 9.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#185](https://github.com/sunesimonsen/transformation/pull/185) Bump node-fetch from 2.6.1 to 2.6.7 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#184](https://github.com/sunesimonsen/transformation/pull/184) Bump trim-off-newlines from 1.0.1 to 1.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#183](https://github.com/sunesimonsen/transformation/pull/183) Github already provides a toc ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#180](https://github.com/sunesimonsen/transformation/pull/180) Bump sinon from 12.0.1 to 13.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v4.3.0](https://github.com/sunesimonsen/transformation/commit/cc0a5f8ae54b5643e1ea964ef1d369703d47dc4d) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/a1583e39b10d8cc3a8fccdc4e59d24e8bb6c73e0) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v4.2.0 (2022-01-17)
 
 #### Pull requests
