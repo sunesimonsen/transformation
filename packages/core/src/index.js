@@ -8,6 +8,7 @@ const cleanup = require("./cleanup");
 const debounce = require("./debounce");
 const deduplicate = require("./deduplicate");
 const deduplicateBy = require("./deduplicateBy");
+const defaults = require("./defaults");
 const delay = require("./delay");
 const emitAll = require("./emitAll");
 const emitItems = require("./emitItems");
@@ -67,6 +68,7 @@ module.exports = {
   debounce,
   deduplicate,
   deduplicateBy,
+  defaults,
   delay,
   emitAll,
   emitItems,

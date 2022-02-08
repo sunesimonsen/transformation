@@ -264,6 +264,34 @@ await expect(
 );
 ```
 
+## defaults
+
+Provide default values for any object.
+
+```js
+const { defaults } = require("@transformation/core");
+```
+
+```js
+await expect(
+  pipeline(
+    emitItems(null, { value: "one" }, 2, { stuff: "three" }, 4),
+    defaults({
+      type: "object",
+      metadata: {},
+    })
+  ),
+  "to yield items",
+  [
+    null,
+    { type: "object", metadata: {}, value: "one" },
+    2,
+    { type: "object", metadata: {}, stuff: "three" },
+    4,
+  ]
+);
+```
+
 ## delay
 
 Waits the given amount of milliseconds before emitting each item.
