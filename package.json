@@ -6,7 +6,6 @@
     "test": "lerna run test",
     "format": "prettier --write '**/*.{js,md,json}'",
     "lint": "eslint . && prettier --check '**/*.{js,md,json}'",
-    "update-toc": "for f in `ls packages/*/Readme.md`; do yarn markdown-toc -i $f; done; yarn format",
     "ci": "yarn lint && yarn test",
     "release": "node-publisher release"
   },
@@ -27,7 +26,6 @@
     "eslint-plugin-promise": "^5.1.0",
     "eslint-plugin-standard": "^5.0.0",
     "lerna": "^4.0.0",
-    "markdown-toc": "^1.2.0",
     "node-publisher": "^1.4.0",
     "prettier": "2.5.1"
   },
