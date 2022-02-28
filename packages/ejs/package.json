@@ -23,7 +23,7 @@
   },
   "devDependencies": {
     "mocha": "9.2.1",
-    "unexpected": "12.0.3",
+    "unexpected": "12.0.4",
     "unexpected-steps": "^4.2.0"
   },
   "engines": {
