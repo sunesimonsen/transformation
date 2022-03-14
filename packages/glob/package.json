@@ -22,7 +22,7 @@
     "globby": "11.0.3"
   },
   "devDependencies": {
-    "mocha": "9.2.1",
+    "mocha": "9.2.2",
     "unexpected": "12.0.4",
     "unexpected-steps": "^4.2.0"
   },
