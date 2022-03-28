@@ -27,7 +27,7 @@
     "eslint-plugin-standard": "^5.0.0",
     "lerna": "^4.0.0",
     "node-publisher": "^1.4.0",
-    "prettier": "2.5.1"
+    "prettier": "2.6.1"
   },
   "workspaces": {
     "packages": [
