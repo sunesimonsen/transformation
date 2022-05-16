@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@transformation/core": "^4.3.0",
-    "ejs": "3.1.6"
+    "ejs": "3.1.7"
   },
   "devDependencies": {
     "mocha": "9.2.1",
