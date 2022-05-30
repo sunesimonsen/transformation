@@ -1,13 +1,28 @@
+### v5.0.0 (2022-05-30)
+
+#### Pull requests
+
+- [#201](https://github.com/sunesimonsen/transformation/pull/201) Don't reset uniq and uniqBy for each pipeline invocation ()
+- [#189](https://github.com/sunesimonsen/transformation/pull/189) Bump kind-of from 6.0.2 to 6.0.3 ()
+- [#188](https://github.com/sunesimonsen/transformation/pull/188) Bump unexpected from 12.0.3 to 12.0.4 ()
+- [#187](https://github.com/sunesimonsen/transformation/pull/187) Bump eslint-config-prettier from 8.3.0 to 8.4.0 ()
+- [#186](https://github.com/sunesimonsen/transformation/pull/186) Bump mocha from 9.2.0 to 9.2.1 ()
+
+#### Commits to master
+
+- [v5.0.0](https://github.com/sunesimonsen/transformation/commit/0a7428952298365873eef145f6a1f6963eb4d9f1) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/fa4ef744848158365163cdbacd017875df693f62) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v4.3.0 (2022-02-08)
 
 #### Pull requests
 
-- [#182](https://github.com/sunesimonsen/transformation/pull/182) Provide a defaults transformation ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#177](https://github.com/sunesimonsen/transformation/pull/177) Bump mocha from 9.1.4 to 9.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#185](https://github.com/sunesimonsen/transformation/pull/185) Bump node-fetch from 2.6.1 to 2.6.7 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#184](https://github.com/sunesimonsen/transformation/pull/184) Bump trim-off-newlines from 1.0.1 to 1.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#183](https://github.com/sunesimonsen/transformation/pull/183) Github already provides a toc ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#180](https://github.com/sunesimonsen/transformation/pull/180) Bump sinon from 12.0.1 to 13.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#182](https://github.com/sunesimonsen/transformation/pull/182) Provide a defaults transformation ()
+- [#177](https://github.com/sunesimonsen/transformation/pull/177) Bump mocha from 9.1.4 to 9.2.0 ()
+- [#185](https://github.com/sunesimonsen/transformation/pull/185) Bump node-fetch from 2.6.1 to 2.6.7 ()
+- [#184](https://github.com/sunesimonsen/transformation/pull/184) Bump trim-off-newlines from 1.0.1 to 1.0.3 ()
+- [#183](https://github.com/sunesimonsen/transformation/pull/183) Github already provides a toc ()
+- [#180](https://github.com/sunesimonsen/transformation/pull/180) Bump sinon from 12.0.1 to 13.0.1 ()
 
 #### Commits to master
 
@@ -18,15 +33,15 @@
 
 #### Pull requests
 
-- [#174](https://github.com/sunesimonsen/transformation/pull/174) Bump prettier from 2.4.1 to 2.5.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#173](https://github.com/sunesimonsen/transformation/pull/173) Bump medium from 1.1.1 to 1.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#171](https://github.com/sunesimonsen/transformation/pull/171) Bump mocha from 9.1.2 to 9.1.4 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#168](https://github.com/sunesimonsen/transformation/pull/168) Bump eslint-plugin-import from 2.22.1 to 2.25.4 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#167](https://github.com/sunesimonsen/transformation/pull/167) Bump eslint-plugin-promise from 5.1.0 to 5.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#169](https://github.com/sunesimonsen/transformation/pull/169) Bump shelljs from 0.8.4 to 0.8.5 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#165](https://github.com/sunesimonsen/transformation/pull/165) Bump sinon from 11.1.2 to 12.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#158](https://github.com/sunesimonsen/transformation/pull/158) Bump node-publisher from 1.5.1 to 1.5.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#159](https://github.com/sunesimonsen/transformation/pull/159) Bump mocha from 9.0.3 to 9.1.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#174](https://github.com/sunesimonsen/transformation/pull/174) Bump prettier from 2.4.1 to 2.5.1 ()
+- [#173](https://github.com/sunesimonsen/transformation/pull/173) Bump medium from 1.1.1 to 1.2.0 ()
+- [#171](https://github.com/sunesimonsen/transformation/pull/171) Bump mocha from 9.1.2 to 9.1.4 ()
+- [#168](https://github.com/sunesimonsen/transformation/pull/168) Bump eslint-plugin-import from 2.22.1 to 2.25.4 ()
+- [#167](https://github.com/sunesimonsen/transformation/pull/167) Bump eslint-plugin-promise from 5.1.0 to 5.2.0 ()
+- [#169](https://github.com/sunesimonsen/transformation/pull/169) Bump shelljs from 0.8.4 to 0.8.5 ()
+- [#165](https://github.com/sunesimonsen/transformation/pull/165) Bump sinon from 11.1.2 to 12.0.1 ()
+- [#158](https://github.com/sunesimonsen/transformation/pull/158) Bump node-publisher from 1.5.1 to 1.5.2 ()
+- [#159](https://github.com/sunesimonsen/transformation/pull/159) Bump mocha from 9.0.3 to 9.1.2 ()
 
 #### Commits to master
 
@@ -40,12 +55,12 @@
 
 #### Pull requests
 
-- [#160](https://github.com/sunesimonsen/transformation/pull/160) Fix empty partition when all partitions are full ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#154](https://github.com/sunesimonsen/transformation/pull/154) Switch from quick-lru to lru ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#153](https://github.com/sunesimonsen/transformation/pull/153) Retry step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#152](https://github.com/sunesimonsen/transformation/pull/152) Revert "Retry step" ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#151](https://github.com/sunesimonsen/transformation/pull/151) Retry step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#148](https://github.com/sunesimonsen/transformation/pull/148) Bump prettier from 2.2.1 to 2.4.1 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#160](https://github.com/sunesimonsen/transformation/pull/160) Fix empty partition when all partitions are full ()
+- [#154](https://github.com/sunesimonsen/transformation/pull/154) Switch from quick-lru to lru ()
+- [#153](https://github.com/sunesimonsen/transformation/pull/153) Retry step ()
+- [#152](https://github.com/sunesimonsen/transformation/pull/152) Revert "Retry step" ()
+- [#151](https://github.com/sunesimonsen/transformation/pull/151) Retry step ()
+- [#148](https://github.com/sunesimonsen/transformation/pull/148) Bump prettier from 2.2.1 to 2.4.1 ()
 
 #### Commits to master
 
@@ -62,12 +77,12 @@
 
 #### Pull requests
 
-- [#150](https://github.com/sunesimonsen/transformation/pull/150) Bail on errors ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#149](https://github.com/sunesimonsen/transformation/pull/149) Revert "Bail on errors" ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#145](https://github.com/sunesimonsen/transformation/pull/145) Bump tar from 4.4.15 to 4.4.19 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#142](https://github.com/sunesimonsen/transformation/pull/142) Bump eslint-plugin-mocha from 8.1.0 to 9.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#143](https://github.com/sunesimonsen/transformation/pull/143) Bump eslint-plugin-promise from 4.3.1 to 5.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#147](https://github.com/sunesimonsen/transformation/pull/147) Bail on errors ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#150](https://github.com/sunesimonsen/transformation/pull/150) Bail on errors ()
+- [#149](https://github.com/sunesimonsen/transformation/pull/149) Revert "Bail on errors" ()
+- [#145](https://github.com/sunesimonsen/transformation/pull/145) Bump tar from 4.4.15 to 4.4.19 ()
+- [#142](https://github.com/sunesimonsen/transformation/pull/142) Bump eslint-plugin-mocha from 8.1.0 to 9.0.0 ()
+- [#143](https://github.com/sunesimonsen/transformation/pull/143) Bump eslint-plugin-promise from 4.3.1 to 5.1.0 ()
+- [#147](https://github.com/sunesimonsen/transformation/pull/147) Bail on errors ()
 
 #### Commits to master
 
@@ -79,23 +94,23 @@
 #### Pull requests
 
 - [#140](https://github.com/sunesimonsen/transformation/pull/140) Bump eslint-config-standard from 16.0.2 to 16.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#138](https://github.com/sunesimonsen/transformation/pull/138) Bump hosted-git-info from 2.8.5 to 2.8.9 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#139](https://github.com/sunesimonsen/transformation/pull/139) Bump minimist from 1.2.0 to 1.2.5 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#133](https://github.com/sunesimonsen/transformation/pull/133) Bump mocha from 8.3.2 to 9.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#137](https://github.com/sunesimonsen/transformation/pull/137) Bump path-parse from 1.0.6 to 1.0.7 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#135](https://github.com/sunesimonsen/transformation/pull/135) Bump tar from 4.4.13 to 4.4.15 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#134](https://github.com/sunesimonsen/transformation/pull/134) Bump eslint from 7.25.0 to 7.32.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#128](https://github.com/sunesimonsen/transformation/pull/128) Bump set-getter from 0.1.0 to 0.1.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#121](https://github.com/sunesimonsen/transformation/pull/121) Bump unexpected from 12.0.1 to 12.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#114](https://github.com/sunesimonsen/transformation/pull/114) Bump eslint from 7.23.0 to 7.25.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#115](https://github.com/sunesimonsen/transformation/pull/115) Bump eslint-config-prettier from 8.1.0 to 8.3.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#116](https://github.com/sunesimonsen/transformation/pull/116) Bump unexpected from 12.0.0 to 12.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#110](https://github.com/sunesimonsen/transformation/pull/110) Bump eslint from 7.22.0 to 7.23.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#109](https://github.com/sunesimonsen/transformation/pull/109) Bump globby from 11.0.2 to 11.0.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#111](https://github.com/sunesimonsen/transformation/pull/111) Bump medium from 1.0.2 to 1.1.1 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#107](https://github.com/sunesimonsen/transformation/pull/107) Bump ejs from 3.1.5 to 3.1.6 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#106](https://github.com/sunesimonsen/transformation/pull/106) Bump eslint from 7.21.0 to 7.22.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#108](https://github.com/sunesimonsen/transformation/pull/108) Bump eslint-plugin-promise from 4.2.1 to 4.3.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#138](https://github.com/sunesimonsen/transformation/pull/138) Bump hosted-git-info from 2.8.5 to 2.8.9 ()
+- [#139](https://github.com/sunesimonsen/transformation/pull/139) Bump minimist from 1.2.0 to 1.2.5 ()
+- [#133](https://github.com/sunesimonsen/transformation/pull/133) Bump mocha from 8.3.2 to 9.0.3 ()
+- [#137](https://github.com/sunesimonsen/transformation/pull/137) Bump path-parse from 1.0.6 to 1.0.7 ()
+- [#135](https://github.com/sunesimonsen/transformation/pull/135) Bump tar from 4.4.13 to 4.4.15 ()
+- [#134](https://github.com/sunesimonsen/transformation/pull/134) Bump eslint from 7.25.0 to 7.32.0 ()
+- [#128](https://github.com/sunesimonsen/transformation/pull/128) Bump set-getter from 0.1.0 to 0.1.1 ()
+- [#121](https://github.com/sunesimonsen/transformation/pull/121) Bump unexpected from 12.0.1 to 12.0.3 ()
+- [#114](https://github.com/sunesimonsen/transformation/pull/114) Bump eslint from 7.23.0 to 7.25.0 ()
+- [#115](https://github.com/sunesimonsen/transformation/pull/115) Bump eslint-config-prettier from 8.1.0 to 8.3.0 ()
+- [#116](https://github.com/sunesimonsen/transformation/pull/116) Bump unexpected from 12.0.0 to 12.0.1 ()
+- [#110](https://github.com/sunesimonsen/transformation/pull/110) Bump eslint from 7.22.0 to 7.23.0 ()
+- [#109](https://github.com/sunesimonsen/transformation/pull/109) Bump globby from 11.0.2 to 11.0.3 ()
+- [#111](https://github.com/sunesimonsen/transformation/pull/111) Bump medium from 1.0.2 to 1.1.1 ()
+- [#107](https://github.com/sunesimonsen/transformation/pull/107) Bump ejs from 3.1.5 to 3.1.6 ()
+- [#106](https://github.com/sunesimonsen/transformation/pull/106) Bump eslint from 7.21.0 to 7.22.0 ()
+- [#108](https://github.com/sunesimonsen/transformation/pull/108) Bump eslint-plugin-promise from 4.2.1 to 4.3.1 ()
 
 #### Commits to master
 
@@ -107,28 +122,28 @@
 
 #### Pull requests
 
-- [#105](https://github.com/sunesimonsen/transformation/pull/105) Remove Node 10 support \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#104](https://github.com/sunesimonsen/transformation/pull/104) Bump eslint-config-prettier from 7.1.0 to 8.1.0 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#102](https://github.com/sunesimonsen/transformation/pull/102) Bump lerna from 3.22.1 to 4.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#101](https://github.com/sunesimonsen/transformation/pull/101) Bump eslint-plugin-mocha from 8.0.0 to 8.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#103](https://github.com/sunesimonsen/transformation/pull/103) Bump mocha from 8.2.1 to 8.3.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#93](https://github.com/sunesimonsen/transformation/pull/93) Bump eslint-plugin-standard from 4.1.0 to 5.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#94](https://github.com/sunesimonsen/transformation/pull/94) Bump globby from 11.0.1 to 11.0.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#99](https://github.com/sunesimonsen/transformation/pull/99) Bump eslint from 7.15.0 to 7.21.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#91](https://github.com/sunesimonsen/transformation/pull/91) Bump eslint-config-standard from 14.1.1 to 16.0.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#86](https://github.com/sunesimonsen/transformation/pull/86) Bump prettier from 2.1.2 to 2.2.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#88](https://github.com/sunesimonsen/transformation/pull/88) Bump csv-parser from 2.3.3 to 3.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#85](https://github.com/sunesimonsen/transformation/pull/85) Bump eslint-plugin-mocha from 6.3.0 to 8.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#90](https://github.com/sunesimonsen/transformation/pull/90) Bump eslint-config-prettier from 6.15.0 to 7.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#89](https://github.com/sunesimonsen/transformation/pull/89) Bump ini from 1.3.5 to 1.3.8 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#79](https://github.com/sunesimonsen/transformation/pull/79) Bump eslint-plugin-mocha from 5.3.0 to 6.3.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#84](https://github.com/sunesimonsen/transformation/pull/84) Bump eslint from 6.8.0 to 7.15.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#82](https://github.com/sunesimonsen/transformation/pull/82) Bump unexpected from 11.15.0 to 12.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#80](https://github.com/sunesimonsen/transformation/pull/80) Bump lerna from 3.19.0 to 3.22.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#75](https://github.com/sunesimonsen/transformation/pull/75) Bump ejs from 3.0.1 to 3.1.5 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#76](https://github.com/sunesimonsen/transformation/pull/76) Bump csv-writer from 1.5.0 to 1.6.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#77](https://github.com/sunesimonsen/transformation/pull/77) Bump unexpected from 11.8.1 to 11.15.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#78](https://github.com/sunesimonsen/transformation/pull/78) Lint as part of the build matrix ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#105](https://github.com/sunesimonsen/transformation/pull/105) Remove Node 10 support \(Major\) ()
+- [#104](https://github.com/sunesimonsen/transformation/pull/104) Bump eslint-config-prettier from 7.1.0 to 8.1.0 ()
+- [#102](https://github.com/sunesimonsen/transformation/pull/102) Bump lerna from 3.22.1 to 4.0.0 ()
+- [#101](https://github.com/sunesimonsen/transformation/pull/101) Bump eslint-plugin-mocha from 8.0.0 to 8.1.0 ()
+- [#103](https://github.com/sunesimonsen/transformation/pull/103) Bump mocha from 8.2.1 to 8.3.2 ()
+- [#93](https://github.com/sunesimonsen/transformation/pull/93) Bump eslint-plugin-standard from 4.1.0 to 5.0.0 ()
+- [#94](https://github.com/sunesimonsen/transformation/pull/94) Bump globby from 11.0.1 to 11.0.2 ()
+- [#99](https://github.com/sunesimonsen/transformation/pull/99) Bump eslint from 7.15.0 to 7.21.0 ()
+- [#91](https://github.com/sunesimonsen/transformation/pull/91) Bump eslint-config-standard from 14.1.1 to 16.0.2 ()
+- [#86](https://github.com/sunesimonsen/transformation/pull/86) Bump prettier from 2.1.2 to 2.2.1 ()
+- [#88](https://github.com/sunesimonsen/transformation/pull/88) Bump csv-parser from 2.3.3 to 3.0.0 ()
+- [#85](https://github.com/sunesimonsen/transformation/pull/85) Bump eslint-plugin-mocha from 6.3.0 to 8.0.0 ()
+- [#90](https://github.com/sunesimonsen/transformation/pull/90) Bump eslint-config-prettier from 6.15.0 to 7.1.0 ()
+- [#89](https://github.com/sunesimonsen/transformation/pull/89) Bump ini from 1.3.5 to 1.3.8 ()
+- [#79](https://github.com/sunesimonsen/transformation/pull/79) Bump eslint-plugin-mocha from 5.3.0 to 6.3.0 ()
+- [#84](https://github.com/sunesimonsen/transformation/pull/84) Bump eslint from 6.8.0 to 7.15.0 ()
+- [#82](https://github.com/sunesimonsen/transformation/pull/82) Bump unexpected from 11.15.0 to 12.0.0 ()
+- [#80](https://github.com/sunesimonsen/transformation/pull/80) Bump lerna from 3.19.0 to 3.22.1 ()
+- [#75](https://github.com/sunesimonsen/transformation/pull/75) Bump ejs from 3.0.1 to 3.1.5 ()
+- [#76](https://github.com/sunesimonsen/transformation/pull/76) Bump csv-writer from 1.5.0 to 1.6.0 ()
+- [#77](https://github.com/sunesimonsen/transformation/pull/77) Bump unexpected from 11.8.1 to 11.15.0 ()
+- [#78](https://github.com/sunesimonsen/transformation/pull/78) Lint as part of the build matrix ()
 
 #### Commits to master
 
@@ -140,12 +155,12 @@
 
 #### Pull requests
 
-- [#73](https://github.com/sunesimonsen/transformation/pull/73) Add a debounce step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#72](https://github.com/sunesimonsen/transformation/pull/72) Add a throttle step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#68](https://github.com/sunesimonsen/transformation/pull/68) Bump eslint-config-prettier from 6.7.0 to 6.15.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#69](https://github.com/sunesimonsen/transformation/pull/69) Bump eslint-plugin-standard from 4.0.2 to 4.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#70](https://github.com/sunesimonsen/transformation/pull/70) Bump csv-parser from 2.3.2 to 2.3.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#71](https://github.com/sunesimonsen/transformation/pull/71) Bump mocha from 6.2.2 to 8.2.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#73](https://github.com/sunesimonsen/transformation/pull/73) Add a debounce step ()
+- [#72](https://github.com/sunesimonsen/transformation/pull/72) Add a throttle step ()
+- [#68](https://github.com/sunesimonsen/transformation/pull/68) Bump eslint-config-prettier from 6.7.0 to 6.15.0 ()
+- [#69](https://github.com/sunesimonsen/transformation/pull/69) Bump eslint-plugin-standard from 4.0.2 to 4.1.0 ()
+- [#70](https://github.com/sunesimonsen/transformation/pull/70) Bump csv-parser from 2.3.2 to 2.3.3 ()
+- [#71](https://github.com/sunesimonsen/transformation/pull/71) Bump mocha from 6.2.2 to 8.2.1 ()
 
 #### Commits to master
 
@@ -156,16 +171,16 @@
 
 #### Pull requests
 
-- [#67](https://github.com/sunesimonsen/transformation/pull/67) Added deduplicate and deduplicateBy ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#63](https://github.com/sunesimonsen/transformation/pull/63) Bump eslint-plugin-import from 2.18.2 to 2.22.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#64](https://github.com/sunesimonsen/transformation/pull/64) Bump node-publisher from 1.4.0 to 1.5.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#62](https://github.com/sunesimonsen/transformation/pull/62) Bump eslint-plugin-node from 9.2.0 to 11.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#66](https://github.com/sunesimonsen/transformation/pull/66) Bump quick-lru from 5.1.0 to 5.1.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#60](https://github.com/sunesimonsen/transformation/pull/60) Bump prettier from 1.19.1 to 2.1.2 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#59](https://github.com/sunesimonsen/transformation/pull/59) Bump eslint from 6.7.2 to 6.8.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#58](https://github.com/sunesimonsen/transformation/pull/58) Bump globby from 10.0.1 to 11.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#61](https://github.com/sunesimonsen/transformation/pull/61) Bump eslint-plugin-standard from 4.0.1 to 4.0.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#57](https://github.com/sunesimonsen/transformation/pull/57) Bump eslint-config-standard from 12.0.0 to 14.1.1 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#67](https://github.com/sunesimonsen/transformation/pull/67) Added deduplicate and deduplicateBy ()
+- [#63](https://github.com/sunesimonsen/transformation/pull/63) Bump eslint-plugin-import from 2.18.2 to 2.22.1 ()
+- [#64](https://github.com/sunesimonsen/transformation/pull/64) Bump node-publisher from 1.4.0 to 1.5.1 ()
+- [#62](https://github.com/sunesimonsen/transformation/pull/62) Bump eslint-plugin-node from 9.2.0 to 11.1.0 ()
+- [#66](https://github.com/sunesimonsen/transformation/pull/66) Bump quick-lru from 5.1.0 to 5.1.1 ()
+- [#60](https://github.com/sunesimonsen/transformation/pull/60) Bump prettier from 1.19.1 to 2.1.2 ()
+- [#59](https://github.com/sunesimonsen/transformation/pull/59) Bump eslint from 6.7.2 to 6.8.0 ()
+- [#58](https://github.com/sunesimonsen/transformation/pull/58) Bump globby from 10.0.1 to 11.0.1 ()
+- [#61](https://github.com/sunesimonsen/transformation/pull/61) Bump eslint-plugin-standard from 4.0.1 to 4.0.2 ()
+- [#57](https://github.com/sunesimonsen/transformation/pull/57) Bump eslint-config-standard from 12.0.0 to 14.1.1 ()
 
 #### Commits to master
 
@@ -180,7 +195,7 @@
 
 #### Pull requests
 
-- [#56](https://github.com/sunesimonsen/transformation/pull/56) Change parallel to preserve output order ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#56](https://github.com/sunesimonsen/transformation/pull/56) Change parallel to preserve output order ()
 
 #### Commits to master
 
@@ -197,7 +212,7 @@
 
 #### Pull requests
 
-- [#55](https://github.com/sunesimonsen/transformation/pull/55) Fixed a missing promise and a bit of refactoring ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#55](https://github.com/sunesimonsen/transformation/pull/55) Fixed a missing promise and a bit of refactoring ()
 
 #### Commits to master
 
@@ -208,7 +223,7 @@
 
 #### Pull requests
 
-- [#54](https://github.com/sunesimonsen/transformation/pull/54) Make sure we reset the state for uniqBy ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#54](https://github.com/sunesimonsen/transformation/pull/54) Make sure we reset the state for uniqBy ()
 
 #### Commits to master
 
@@ -219,7 +234,7 @@
 
 #### Pull requests
 
-- [#53](https://github.com/sunesimonsen/transformation/pull/53) Added setup and cleanup steps ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#53](https://github.com/sunesimonsen/transformation/pull/53) Added setup and cleanup steps ()
 
 #### Commits to master
 
@@ -230,7 +245,7 @@
 
 #### Pull requests
 
-- [#52](https://github.com/sunesimonsen/transformation/pull/52) Allow steps to be returned from the map step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#52](https://github.com/sunesimonsen/transformation/pull/52) Allow steps to be returned from the map step ()
 
 #### Commits to master
 
@@ -241,8 +256,8 @@
 
 #### Pull requests
 
-- [#50](https://github.com/sunesimonsen/transformation/pull/50) Added appendItems and prependItems to @transformation\/core ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#51](https://github.com/sunesimonsen/transformation/pull/51) Switch to Github Actions ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#50](https://github.com/sunesimonsen/transformation/pull/50) Added appendItems and prependItems to @transformation\/core ()
+- [#51](https://github.com/sunesimonsen/transformation/pull/51) Switch to Github Actions ()
 
 #### Commits to master
 
@@ -257,8 +272,8 @@
 
 #### Pull requests
 
-- [#49](https://github.com/sunesimonsen/transformation/pull/49) Added a new @transformation\/file package for manipulating files ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#37](https://github.com/sunesimonsen/transformation/pull/37) Bump node-fetch from 2.6.0 to 2.6.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#49](https://github.com/sunesimonsen/transformation/pull/49) Added a new @transformation\/file package for manipulating files ()
+- [#37](https://github.com/sunesimonsen/transformation/pull/37) Bump node-fetch from 2.6.0 to 2.6.1 ()
 
 #### Commits to master
 
@@ -283,7 +298,7 @@
 
 #### Pull requests
 
-- [#47](https://github.com/sunesimonsen/transformation/pull/47) Default to map instead of flatMap for plain functions in a pipeline \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#47](https://github.com/sunesimonsen/transformation/pull/47) Default to map instead of flatMap for plain functions in a pipeline \(Major\) ()
 
 #### Commits to master
 
@@ -294,8 +309,8 @@
 
 #### Pull requests
 
-- [#46](https://github.com/sunesimonsen/transformation/pull/46) Let functions in a pipeline be flat map ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#35](https://github.com/sunesimonsen/transformation/pull/35) Bump lodash from 4.17.15 to 4.17.19 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#46](https://github.com/sunesimonsen/transformation/pull/46) Let functions in a pipeline be flat map ()
+- [#35](https://github.com/sunesimonsen/transformation/pull/35) Bump lodash from 4.17.15 to 4.17.19 ()
 
 #### Commits to master
 
@@ -310,7 +325,7 @@
 
 #### Pull requests
 
-- [#43](https://github.com/sunesimonsen/transformation/pull/43) Added fromFileStream and toFileStream to @transformation\/stream ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#43](https://github.com/sunesimonsen/transformation/pull/43) Added fromFileStream and toFileStream to @transformation\/stream ()
 
 #### Commits to master
 
@@ -321,7 +336,7 @@
 
 #### Pull requests
 
-- [#42](https://github.com/sunesimonsen/transformation/pull/42) Added a concat step to @transformation\/stream ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#42](https://github.com/sunesimonsen/transformation/pull/42) Added a concat step to @transformation\/stream ()
 
 #### Commits to master
 
@@ -332,7 +347,7 @@
 
 #### Pull requests
 
-- [#41](https://github.com/sunesimonsen/transformation/pull/41) Added a new process package \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#41](https://github.com/sunesimonsen/transformation/pull/41) Added a new process package \(Major\) ()
 
 #### Commits to master
 
@@ -343,8 +358,8 @@
 
 #### Pull requests
 
-- [#40](https://github.com/sunesimonsen/transformation/pull/40) Add emitRepeat, skip and take steps ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#38](https://github.com/sunesimonsen/transformation/pull/38) Add a new emitRange step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#40](https://github.com/sunesimonsen/transformation/pull/40) Add emitRepeat, skip and take steps ()
+- [#38](https://github.com/sunesimonsen/transformation/pull/38) Add a new emitRange step ()
 
 #### Commits to master
 
@@ -361,7 +376,7 @@
 
 #### Pull requests
 
-- [#36](https://github.com/sunesimonsen/transformation/pull/36) Allow any hardcoded value in chose ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#36](https://github.com/sunesimonsen/transformation/pull/36) Allow any hardcoded value in chose ()
 
 #### Commits to master
 
@@ -372,7 +387,7 @@
 
 #### Pull requests
 
-- [#34](https://github.com/sunesimonsen/transformation/pull/34) Added a reverse transformation ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#34](https://github.com/sunesimonsen/transformation/pull/34) Added a reverse transformation ()
 
 #### Commits to master
 
@@ -383,7 +398,7 @@
 
 #### Pull requests
 
-- [#33](https://github.com/sunesimonsen/transformation/pull/33) Fix issues with handling errors in parallel ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#33](https://github.com/sunesimonsen/transformation/pull/33) Fix issues with handling errors in parallel ()
 
 #### Commits to master
 
@@ -394,7 +409,7 @@
 
 #### Pull requests
 
-- [#32](https://github.com/sunesimonsen/transformation/pull/32) Don't split strings ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#32](https://github.com/sunesimonsen/transformation/pull/32) Don't split strings ()
 
 #### Commits to master
 
@@ -405,8 +420,8 @@
 
 #### Pull requests
 
-- [#31](https://github.com/sunesimonsen/transformation/pull/31) Allow emitting items from multiple streams in turn ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#30](https://github.com/sunesimonsen/transformation/pull/30) Allow emitting multiple iterables ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#31](https://github.com/sunesimonsen/transformation/pull/31) Allow emitting items from multiple streams in turn ()
+- [#30](https://github.com/sunesimonsen/transformation/pull/30) Allow emitting multiple iterables ()
 
 #### Commits to master
 
@@ -423,7 +438,7 @@
 
 #### Pull requests
 
-- [#29](https://github.com/sunesimonsen/transformation/pull/29) Simplify chose for hard-coded choices ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#29](https://github.com/sunesimonsen/transformation/pull/29) Simplify chose for hard-coded choices ()
 
 #### Commits to master
 
@@ -434,7 +449,7 @@
 
 #### Pull requests
 
-- [#28](https://github.com/sunesimonsen/transformation/pull/28) Allow chose to have pipelines that emit multiple items ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#28](https://github.com/sunesimonsen/transformation/pull/28) Allow chose to have pipelines that emit multiple items ()
 
 #### Commits to master
 
@@ -456,7 +471,7 @@
 
 #### Pull requests
 
-- [#26](https://github.com/sunesimonsen/transformation/pull/26) Adding a stream package for interoperating with Node streams ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#26](https://github.com/sunesimonsen/transformation/pull/26) Adding a stream package for interoperating with Node streams ()
 
 #### Commits to master
 
@@ -468,7 +483,7 @@
 
 #### Pull requests
 
-- [#24](https://github.com/sunesimonsen/transformation/pull/24) Added a frequencies transform. ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#24](https://github.com/sunesimonsen/transformation/pull/24) Added a frequencies transform. ()
 
 #### Commits to master
 
@@ -480,7 +495,7 @@
 
 #### Pull requests
 
-- [#23](https://github.com/sunesimonsen/transformation/pull/23) Added uniq and uniqBy transformations ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#23](https://github.com/sunesimonsen/transformation/pull/23) Added uniq and uniqBy transformations ()
 
 #### Commits to master
 
@@ -491,9 +506,9 @@
 
 #### Pull requests
 
-- [#22](https://github.com/sunesimonsen/transformation/pull/22) Added tocs to the readme's ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#21](https://github.com/sunesimonsen/transformation/pull/21) Added a keyBy transformation ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#20](https://github.com/sunesimonsen/transformation/pull/20) Document the ejs package ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#22](https://github.com/sunesimonsen/transformation/pull/22) Added tocs to the readme's ()
+- [#21](https://github.com/sunesimonsen/transformation/pull/21) Added a keyBy transformation ()
+- [#20](https://github.com/sunesimonsen/transformation/pull/20) Document the ejs package ()
 
 #### Commits to master
 
@@ -508,7 +523,7 @@
 
 #### Pull requests
 
-- [#19](https://github.com/sunesimonsen/transformation/pull/19) Document the glob package ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#19](https://github.com/sunesimonsen/transformation/pull/19) Document the glob package ()
 
 #### Commits to master
 
@@ -525,7 +540,7 @@
 
 #### Pull requests
 
-- [#16](https://github.com/sunesimonsen/transformation/pull/16) Better support nesting when extending objects ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#16](https://github.com/sunesimonsen/transformation/pull/16) Better support nesting when extending objects ()
 
 #### Commits to master
 
@@ -553,7 +568,7 @@
 
 #### Pull requests
 
-- [#15](https://github.com/sunesimonsen/transformation/pull/15) Allow users to run a process pipeline on a child process ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#15](https://github.com/sunesimonsen/transformation/pull/15) Allow users to run a process pipeline on a child process ()
 
 #### Commits to master
 
@@ -565,7 +580,7 @@
 
 #### Pull requests
 
-- [#14](https://github.com/sunesimonsen/transformation/pull/14) Documented the CSV package ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#14](https://github.com/sunesimonsen/transformation/pull/14) Documented the CSV package ()
 
 #### Commits to master
 
@@ -586,7 +601,7 @@
 
 #### Pull requests
 
-- [#13](https://github.com/sunesimonsen/transformation/pull/13) Added a memorize step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#13](https://github.com/sunesimonsen/transformation/pull/13) Added a memorize step ()
 
 #### Commits to master
 
@@ -596,8 +611,8 @@
 
 #### Pull requests
 
-- [#12](https://github.com/sunesimonsen/transformation/pull/12) Add a default for the parallel concurrency count ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#6](https://github.com/sunesimonsen/transformation/pull/6) Bump acorn from 7.1.0 to 7.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#12](https://github.com/sunesimonsen/transformation/pull/12) Add a default for the parallel concurrency count ()
+- [#6](https://github.com/sunesimonsen/transformation/pull/6) Bump acorn from 7.1.0 to 7.2.0 ()
 
 #### Commits to master
 
@@ -607,7 +622,7 @@
 
 #### Pull requests
 
-- [#7](https://github.com/sunesimonsen/transformation/pull/7) Document root project ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#7](https://github.com/sunesimonsen/transformation/pull/7) Document root project ()
 
 #### Commits to master
 
@@ -617,10 +632,10 @@
 
 #### Pull requests
 
-- [#5](https://github.com/sunesimonsen/transformation/pull/5) Added emitAll step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#4](https://github.com/sunesimonsen/transformation/pull/4) Support varargs in takeAll ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#3](https://github.com/sunesimonsen/transformation/pull/3) Setup Travis ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#1](https://github.com/sunesimonsen/transformation/pull/1) Documented the core API ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#5](https://github.com/sunesimonsen/transformation/pull/5) Added emitAll step ()
+- [#4](https://github.com/sunesimonsen/transformation/pull/4) Support varargs in takeAll ()
+- [#3](https://github.com/sunesimonsen/transformation/pull/3) Setup Travis ()
+- [#1](https://github.com/sunesimonsen/transformation/pull/1) Documented the core API ()
 
 #### Commits to master
 
