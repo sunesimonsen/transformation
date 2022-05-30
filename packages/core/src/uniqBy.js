@@ -6,9 +6,9 @@ const uniqBy = (fieldOrSelector) => {
       ? (value) => value[fieldOrSelector]
       : fieldOrSelector;
 
-  return step(async ({ take, put, CLOSED }) => {
-    const seen = new Set();
+  const seen = new Set();
 
+  return step(async ({ take, put, CLOSED }) => {
     while (true) {
       const value = await take();
       if (value === CLOSED) break;

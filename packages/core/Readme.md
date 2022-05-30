@@ -1736,6 +1736,8 @@ await expect(
 );
 ```
 
+Notice that `uniq` keep internal state from its first invocation.
+
 ## uniqBy
 
 Filters out items that is not unique by a selected value.
@@ -1793,6 +1795,8 @@ await expect(
   ]
 );
 ```
+
+Notice that `uniqBy` keep internal state from its first invocation.
 
 ## unless
 
