@@ -54,7 +54,7 @@ describe("uniq", () => {
     });
   });
 
-  it("resets state for each invocation of the step", async () => {
+  it("doesn't reset state for each invocation of the step", async () => {
     const uniqByName = uniqBy(({ name }) => name);
 
     await expect(
@@ -82,15 +82,13 @@ describe("uniq", () => {
       pipeline(
         emitItems(
           { id: 0, name: "foo", count: 0 },
-          { id: 1, name: "bar", count: 1 }
+          { id: 1, name: "bar", count: 1 },
+          { id: 4, name: "quux", count: 4 }
         ),
         uniqByName
       ),
       "to yield items",
-      [
-        { id: 0, name: "foo", count: 0 },
-        { id: 1, name: "bar", count: 1 },
-      ]
+      [{ id: 4, name: "quux", count: 4 }]
     );
   });
 });
