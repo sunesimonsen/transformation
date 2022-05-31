@@ -1,3 +1,14 @@
+### v5.1.1 (2022-05-31)
+
+#### Pull requests
+
+- [#203](https://github.com/sunesimonsen/transformation/pull/203) Create a new uniqueness set for every pipeline execution ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v5.1.1](https://github.com/sunesimonsen/transformation/commit/16310db8d6c73a64a83098a966042c99754ee52e) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/3bde463b2f184436a1a882fb415fe03af1cd7c17) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v5.1.0 (2022-05-31)
 
 #### Pull requests
