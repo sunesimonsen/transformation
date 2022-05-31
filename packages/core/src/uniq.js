@@ -1,5 +1,5 @@
 const uniqBy = require("./uniqBy");
 
-const uniq = () => uniqBy((v) => v);
+const uniq = (options) => uniqBy((v) => v, options);
 
 module.exports = uniq;
