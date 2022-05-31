@@ -960,6 +960,38 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.1.2.tgz#ccb91445360179a04e7fe6aff78c00ffc1eeaf82"
   integrity sha512-RbzJvlNzmRq5c3O09UipeuXno4tA1FE6ikOjxZK0tuxVv3412l64l5t1W5pj4+rJq9vpkm/kwiR07aZXnsKPxw==
 
+"@transformation/core@^4.1.1", "@transformation/core@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@transformation/core/-/core-4.3.0.tgz#c5361e798ed3f9334abfb6e175ea85f838193c3a"
+  integrity sha512-Wxwm5skgZZ7OkJQA2wvehIRw+3OIrnEBjp8rYDM2hpZ/fZ950Pj8E1qpf/oUAR3orZFBTsGMhhA3KRz3u5FnNA==
+  dependencies:
+    lru "^3.1.0"
+    medium "1.2.0"
+
+"@transformation/ejs@^4.1.1":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@transformation/ejs/-/ejs-4.3.0.tgz#c5547b5e14be366494e865168fa399070789fc43"
+  integrity sha512-G7IMHe7lzHFTB299fr/Fnp7eiyVrHF+NcVWV3CXnMI4oDUDmmRJYAnzjlJTl73b6zaxQVio3Q/rZUBi1hHCn6w==
+  dependencies:
+    "@transformation/core" "^4.3.0"
+    ejs "3.1.6"
+
+"@transformation/process@^4.1.1":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@transformation/process/-/process-4.3.0.tgz#b703bae9bda6c5942f884c8687f98231eaee52e3"
+  integrity sha512-bLOrBO3WN+uarzw82y4q3GT7jF4tqbCsZnAhC+skI5nmAgEzdiogyImy/bsxK2carFng+J/P8+ArAGnK880K+Q==
+  dependencies:
+    "@transformation/core" "^4.3.0"
+    "@transformation/stream" "^4.3.0"
+    medium "1.2.0"
+
+"@transformation/stream@^4.1.1", "@transformation/stream@^4.3.0":
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/@transformation/stream/-/stream-4.3.0.tgz#caa3d764584ee4a20063b2cc405e3c1dbead7668"
+  integrity sha512-Bsse8BDQJXj/NKynIM+meJFvziGlnNQ+FVnK/h3BavHYArfi5BgyLHzzVcjL5JWDJ0UFzVyHNo4xZE2aL2fAJg==
+  dependencies:
+    "@transformation/core" "^4.3.0"
+
 "@types/json5@^0.0.29":
   version "0.0.29"
   resolved "https://registry.yarnpkg.com/@types/json5/-/json5-0.0.29.tgz#ee28707ae94e11d2b827bcbe5270bcea7f3e71ee"
