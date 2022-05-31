@@ -12,21 +12,19 @@ describe("uniq", () => {
     );
   });
 
-  describe("when scope is pipeline", () => {
-    it("resets state for each invocation of the step", async () => {
-      const uniqInPipeline = uniq({ scope: "pipeline" });
+  it("resets state for each invocation of the step", async () => {
+    const uniqInPipeline = uniq({ scope: "pipeline" });
 
-      await expect(
-        pipeline(emitItems(0, 1, 2, 0, 3, 2), uniqInPipeline),
-        "to yield items",
-        [0, 1, 2, 3]
-      );
+    await expect(
+      pipeline(emitItems(0, 1, 2, 0, 3, 2), uniqInPipeline),
+      "to yield items",
+      [0, 1, 2, 3]
+    );
 
-      await expect(
-        pipeline(emitItems(0, 1, 4), uniqInPipeline),
-        "to yield items",
-        [0, 1, 4]
-      );
-    });
+    await expect(
+      pipeline(emitItems(0, 1, 4), uniqInPipeline),
+      "to yield items",
+      [0, 1, 4]
+    );
   });
 });
