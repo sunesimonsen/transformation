@@ -1,6 +1,6 @@
 {
   "name": "@transformation/csv",
-  "version": "5.1.1",
+  "version": "6.0.0",
   "description": "Reading and writing CSV files from a transformation pipeline",
   "main": "./src/index.js",
   "scripts": {
@@ -18,15 +18,15 @@
     "access": "public"
   },
   "dependencies": {
-    "@transformation/core": "^5.1.1",
-    "@transformation/stream": "^5.1.1",
+    "@transformation/core": "^6.0.0",
+    "@transformation/stream": "^6.0.0",
     "csv-parser": "3.0.0",
     "csv-writer": "1.6.0"
   },
   "devDependencies": {
     "mocha": "9.2.1",
     "unexpected": "12.0.4",
-    "unexpected-steps": "^5.0.0"
+    "unexpected-steps": "^6.0.0"
   },
   "engines": {
     "node": ">=12"

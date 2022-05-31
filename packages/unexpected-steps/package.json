@@ -1,6 +1,6 @@
 {
   "name": "unexpected-steps",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "Unexpected plugin to tests output of transformation steps",
   "main": "index.js",
   "private": true,
