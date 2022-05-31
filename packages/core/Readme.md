@@ -1736,13 +1736,6 @@ await expect(
 );
 ```
 
-Notice that `uniq` keep internal state from its first invocation. You can
-change this behavior by setting the scope to `pipeline`, the default is `global`.
-
-```js
-const uniqToPipeline = uniq({ scope: "pipeline" });
-```
-
 ## uniqBy
 
 Filters out items that is not unique by a selected value.
@@ -1799,13 +1792,6 @@ await expect(
     { id: 3, name: "qux", count: 4 },
   ]
 );
-```
-
-Notice that `uniqBy` keep internal state from its first invocation. You can
-change this behavior by setting the scope to `pipeline`, the default is `global`.
-
-```js
-const uniqByName = uniqBy(({ name }) => name, { scope: "pipeline" });
 ```
 
 ## unless

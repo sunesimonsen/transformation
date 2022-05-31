@@ -6,12 +6,8 @@ const uniqBy = (fieldOrSelector, options = {}) => {
       ? (value) => value[fieldOrSelector]
       : fieldOrSelector;
 
-  let seen = new Set();
-
   return step(async ({ take, put, CLOSED }) => {
-    if (options.scope === "pipeline") {
-      seen = new Set();
-    }
+    const seen = new Set();
 
     while (true) {
       const value = await take();
