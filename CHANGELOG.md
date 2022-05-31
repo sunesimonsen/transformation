@@ -1,3 +1,14 @@
+### v6.0.0 (2022-05-31)
+
+#### Pull requests
+
+- [#204](https://github.com/sunesimonsen/transformation/pull/204) Revert using global uniqueness for uniq and uniqBy \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v6.0.0](https://github.com/sunesimonsen/transformation/commit/682f9600b8c8e191798ff605529e837e03f293eb) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/44181103b6984edbbb1182cfbb3fc0035213e9ef) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v5.1.1 (2022-05-31)
 
 #### Pull requests
