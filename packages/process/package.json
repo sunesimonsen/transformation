@@ -1,6 +1,6 @@
 {
   "name": "@transformation/process",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "Transformations for working with processes",
   "main": "src/index.js",
   "scripts": {
@@ -18,8 +18,8 @@
     "access": "public"
   },
   "dependencies": {
-    "@transformation/core": "^5.1.0",
-    "@transformation/stream": "^5.1.0",
+    "@transformation/core": "^5.1.1",
+    "@transformation/stream": "^5.1.1",
     "medium": "1.2.0"
   },
   "devDependencies": {
