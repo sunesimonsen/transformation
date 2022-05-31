@@ -1,6 +1,6 @@
 const step = require("./step");
 
-const uniqBy = (fieldOrSelector) => {
+const uniqBy = (fieldOrSelector, options = {}) => {
   const selector =
     typeof fieldOrSelector === "string"
       ? (value) => value[fieldOrSelector]
@@ -9,6 +9,10 @@ const uniqBy = (fieldOrSelector) => {
   const seen = new Set();
 
   return step(async ({ take, put, CLOSED }) => {
+    if (options.scope === "pipeline") {
+      seen.clear();
+    }
+
     while (true) {
       const value = await take();
       if (value === CLOSED) break;

@@ -1736,7 +1736,12 @@ await expect(
 );
 ```
 
-Notice that `uniq` keep internal state from its first invocation.
+Notice that `uniq` keep internal state from its first invocation. You can
+change this behavior by setting the scope to `pipeline`, the default is `global`.
+
+```js
+const uniqToPipeline = uniq({ scope: "pipeline" });
+```
 
 ## uniqBy
 
@@ -1796,7 +1801,12 @@ await expect(
 );
 ```
 
-Notice that `uniqBy` keep internal state from its first invocation.
+Notice that `uniqBy` keep internal state from its first invocation. You can
+change this behavior by setting the scope to `pipeline`, the default is `global`.
+
+```js
+const uniqByName = uniqBy(({ name }) => name, { scope: "pipeline" });
+```
 
 ## unless
 
