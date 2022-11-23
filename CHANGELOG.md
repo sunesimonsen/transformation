@@ -1,3 +1,15 @@
+### v6.0.1 (2022-11-23)
+
+#### Pull requests
+
+- [#199](https://github.com/sunesimonsen/transformation/pull/199) Bump ejs from 3.1.6 to 3.1.8 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v6.0.1](https://github.com/sunesimonsen/transformation/commit/bb00d16f0cd0a749d73098cfa47f247960cff845) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Fixed failing tests](https://github.com/sunesimonsen/transformation/commit/403d7de6104153b7cbef5943f37c1ea07f3d152b) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/40d752aee34b08ce69296fc8c54d015614df8d2e) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v6.0.0 (2022-05-31)
 
 #### Pull requests
