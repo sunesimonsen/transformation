@@ -75,7 +75,7 @@ describe("spawn", () => {
     await expect(
       () => program(spawn("ls", ["non-existing-directory"])),
       "to error",
-      "ls: cannot access 'non-existing-directory': No such file or directory"
+      "ls: non-existing-directory: No such file or directory"
     );
   });
 
