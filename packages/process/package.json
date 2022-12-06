@@ -1,6 +1,6 @@
 {
   "name": "@transformation/process",
-  "version": "6.0.1",
+  "version": "6.1.0",
   "description": "Transformations for working with processes",
   "main": "src/index.js",
   "scripts": {
