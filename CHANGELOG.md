@@ -1,3 +1,17 @@
+### v6.1.0 (2022-12-06)
+
+#### Pull requests
+
+- [#210](https://github.com/sunesimonsen/transformation/pull/210) Bump prettier from 2.5.1 to 2.8.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#190](https://github.com/sunesimonsen/transformation/pull/190) Bump eslint-config-prettier from 8.4.0 to 8.5.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#193](https://github.com/sunesimonsen/transformation/pull/193) Bump minimist from 1.2.5 to 1.2.6 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#211](https://github.com/sunesimonsen/transformation/pull/211) Also test on Node 16 and 18 ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v6.1.0](https://github.com/sunesimonsen/transformation/commit/0eb8ddb2f77b77a2e5401c5621ea56dee502afb0) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/c0369123eea44e9dccefff021424da0d3383a848) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v6.0.1 (2022-11-23)
 
 #### Pull requests
