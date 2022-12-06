@@ -1,6 +1,6 @@
 {
   "name": "@transformation/process",
-  "version": "6.1.0",
+  "version": "7.0.0",
   "description": "Transformations for working with processes",
   "main": "src/index.js",
   "scripts": {
@@ -18,14 +18,14 @@
     "access": "public"
   },
   "dependencies": {
-    "@transformation/core": "^6.0.0",
-    "@transformation/stream": "^6.0.0",
+    "@transformation/core": "^7.0.0",
+    "@transformation/stream": "^7.0.0",
     "medium": "1.2.0"
   },
   "devDependencies": {
     "mocha": "9.2.1",
     "unexpected": "12.0.4",
-    "unexpected-steps": "^6.0.0"
+    "unexpected-steps": "^7.0.0"
   },
   "engines": {
     "node": ">=14"
