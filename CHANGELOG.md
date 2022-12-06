@@ -1,3 +1,16 @@
+### v7.0.0 (2022-12-06)
+
+#### Pull requests
+
+- [#212](https://github.com/sunesimonsen/transformation/pull/212) Drop Node 12 support \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
+#### Commits to master
+
+- [v7.0.0](https://github.com/sunesimonsen/transformation/commit/34a73231826c5e51c5c33debfb9aa66082e28cc5) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Correctly set expected node engine](https://github.com/sunesimonsen/transformation/commit/ea8d61797952de3a1de0570134309ab0f1680e34) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/8de74225b08cbecec771696b7c6bcf9a0233977c) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/6c4b3f9bd2530c8b0baa2f193b5e6da82087c96f) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v6.1.0 (2022-12-06)
 
 #### Pull requests
