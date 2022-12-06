@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [12, 14]
+        node-version: [12, 14, 16, 18]
     steps:
       - name: checkout
         uses: actions/checkout@v2
@@ -21,5 +21,5 @@ jobs:
       - name: Test
         run: yarn test
       - name: Lint
-        if: ${{ matrix.node-version == 14 }}
+        if: ${{ matrix.node-version == 18 }}
         run: yarn lint
