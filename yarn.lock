@@ -1125,37 +1125,37 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
-"@transformation/core@^4.1.1", "@transformation/core@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@transformation/core/-/core-4.3.0.tgz#c5361e798ed3f9334abfb6e175ea85f838193c3a"
-  integrity sha512-Wxwm5skgZZ7OkJQA2wvehIRw+3OIrnEBjp8rYDM2hpZ/fZ950Pj8E1qpf/oUAR3orZFBTsGMhhA3KRz3u5FnNA==
+"@transformation/core@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@transformation/core/-/core-5.1.1.tgz#e9814349754e9c8aafadf30ac1c3a5ddf4f1e858"
+  integrity sha512-8domYnuLakJw7XUtBOsSi9uJFyu7PFXtwSIFXtrk5RGwWHwdhYuNMACvq3n1Oc/MiwYE9N8PXwvDNw+nxFXY6Q==
   dependencies:
     lru "^3.1.0"
     medium "1.2.0"
 
-"@transformation/ejs@^4.1.1":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@transformation/ejs/-/ejs-4.3.0.tgz#c5547b5e14be366494e865168fa399070789fc43"
-  integrity sha512-G7IMHe7lzHFTB299fr/Fnp7eiyVrHF+NcVWV3CXnMI4oDUDmmRJYAnzjlJTl73b6zaxQVio3Q/rZUBi1hHCn6w==
+"@transformation/ejs@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@transformation/ejs/-/ejs-5.1.1.tgz#8fed7000e932cd39f6cd397c28c198b6447ef7ea"
+  integrity sha512-QCzucVHupwLysrl3sbAagKGtwtyUDcjOSw9zl3M1FWt7c0kErj7PYfnTPub9x2O1jGtjRClairVEPuvvPRngIw==
   dependencies:
-    "@transformation/core" "^4.3.0"
+    "@transformation/core" "^5.1.1"
     ejs "3.1.6"
 
-"@transformation/process@^4.1.1":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@transformation/process/-/process-4.3.0.tgz#b703bae9bda6c5942f884c8687f98231eaee52e3"
-  integrity sha512-bLOrBO3WN+uarzw82y4q3GT7jF4tqbCsZnAhC+skI5nmAgEzdiogyImy/bsxK2carFng+J/P8+ArAGnK880K+Q==
+"@transformation/process@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@transformation/process/-/process-5.1.1.tgz#5648caf3b0058de1f778fe50baddc6bcaff994b7"
+  integrity sha512-WXBz83rd/R6RmocZjjpepJf7WqLFjtmRVwHXEj6P9wwTEDeM3WmltqZui/Bs7bzY4OVT/lAuMVUmTDB7yEu1qA==
   dependencies:
-    "@transformation/core" "^4.3.0"
-    "@transformation/stream" "^4.3.0"
+    "@transformation/core" "^5.1.1"
+    "@transformation/stream" "^5.1.1"
     medium "1.2.0"
 
-"@transformation/stream@^4.1.1", "@transformation/stream@^4.3.0":
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/@transformation/stream/-/stream-4.3.0.tgz#caa3d764584ee4a20063b2cc405e3c1dbead7668"
-  integrity sha512-Bsse8BDQJXj/NKynIM+meJFvziGlnNQ+FVnK/h3BavHYArfi5BgyLHzzVcjL5JWDJ0UFzVyHNo4xZE2aL2fAJg==
+"@transformation/stream@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@transformation/stream/-/stream-5.1.1.tgz#4d56190cd4cdb74ec0638043c483859b24fcfb9d"
+  integrity sha512-bxhqeoTnYijS4eiHUuXsuzHQKp1n7RwnXSHv/HN8bfxhs1SyT/7ViEVlJH/TH4CoXHM468gMfA3nD56FK0q7Kw==
   dependencies:
-    "@transformation/core" "^4.3.0"
+    "@transformation/core" "^5.1.1"
 
 "@types/json5@^0.0.29":
   version "0.0.29"
@@ -4149,16 +4149,16 @@ node-gyp@^9.0.0:
     tar "^6.1.2"
     which "^2.0.2"
 
-node-publisher@^1.4.0:
-  version "1.5.2"
-  resolved "https://registry.yarnpkg.com/node-publisher/-/node-publisher-1.5.2.tgz#850d9395c9b2d47a0fbe728f70b5ecd76820783e"
-  integrity sha512-anePOFkE0uPLTPvcALBwKfSPXyaY69fRV1An69gTlNmEFhY76XWrzCuy7Hr/dwW0qKhOE6QLQ5zqkJba+IWQJA==
+node-publisher@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/node-publisher/-/node-publisher-1.6.0.tgz#52b9cfda3fa71c52f2983f4201bec4acef21e3a2"
+  integrity sha512-Qx/J0IIUlpzybwHgKrBSttx844h6bGaFbb4vP1inRw9etolmDPqCvKRUTMDc3YfeMCJV3TBzDgeNpj8j0FVhQA==
   dependencies:
     check-node-version "3.2.0"
     commander "2.15.1"
     inquirer "6.5.0"
     js-yaml "3.13.1"
-    offline-github-changelog "2.4.0"
+    offline-github-changelog "2.5.0"
     semver "6.2.0"
 
 nopt@^5.0.0:
@@ -4400,15 +4400,15 @@ object.values@^1.1.5:
     define-properties "^1.1.3"
     es-abstract "^1.19.1"
 
-offline-github-changelog@2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/offline-github-changelog/-/offline-github-changelog-2.4.0.tgz#215d24ad5a00bef887f69cbc95beab260b9f3ff6"
-  integrity sha512-ve/PeG8yQ2pDUcIBQO1cGDpiadvQOzqSv26GYqMmivHKp/Wlm4LmHKsprqpuMrF5GyM/rPUuVo7e/YHR5TnEvA==
+offline-github-changelog@2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/offline-github-changelog/-/offline-github-changelog-2.5.0.tgz#4008ddd42c45d1196ee942319719d766e5872438"
+  integrity sha512-fYpYbVGcqgetd7mqsgbIKIXqkoQtRXzmFwMgjIA0vBW5ltBD6T74VhVuTMJdwVau6VNX6XVBqk4ayMeOQNH+AA==
   dependencies:
-    "@transformation/core" "^4.1.1"
-    "@transformation/ejs" "^4.1.1"
-    "@transformation/process" "^4.1.1"
-    "@transformation/stream" "^4.1.1"
+    "@transformation/core" "^5.1.1"
+    "@transformation/ejs" "^5.1.1"
+    "@transformation/process" "^5.1.1"
+    "@transformation/stream" "^5.1.1"
     markdown-escape "^1.0.2"
     meow "^9.0.0"
 
