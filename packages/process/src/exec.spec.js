@@ -39,7 +39,7 @@ describe("exec", () => {
     await expect(
       () => program(exec("ls non-existing-directory")),
       "to error",
-      "ls: non-existing-directory: No such file or directory"
+      /No such file or directory/
     );
   });
 
