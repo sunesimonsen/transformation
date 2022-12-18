@@ -1,3 +1,18 @@
+### v7.0.2 (2022-12-18)
+
+#### Pull requests
+
+- [#222](https://github.com/sunesimonsen/transformation/pull/222) Bump prettier from 2.8.0 to 2.8.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#223](https://github.com/sunesimonsen/transformation/pull/223) Bump mocha from 10.1.0 to 10.2.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#225](https://github.com/sunesimonsen/transformation/pull/225) Bump sinon from 15.0.0 to 15.0.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#220](https://github.com/sunesimonsen/transformation/pull/220) Bump tar from 6.1.0 to 6.1.12 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v7.0.2](https://github.com/sunesimonsen/transformation/commit/add71d8de5c84dbbf39dd41a630678bd373e5084) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/ed3dccecbfe03d10b68a499a90abec02541d47e8) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/46fb09359bd9113171bb6958062f4881fd900ba7) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v7.0.1 (2022-12-06)
 
 #### Pull requests
