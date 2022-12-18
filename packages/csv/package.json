@@ -24,7 +24,7 @@
     "csv-writer": "1.6.0"
   },
   "devDependencies": {
-    "mocha": "10.1.0",
+    "mocha": "10.2.0",
     "unexpected": "13.0.1",
     "unexpected-steps": "^7.0.0"
   },
