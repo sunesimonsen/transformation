@@ -5600,10 +5600,10 @@ uglify-js@^3.1.4:
     commander "~2.20.3"
     source-map "~0.6.1"
 
-ukkonen@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/ukkonen/-/ukkonen-1.4.0.tgz#594629234ceccbf7e44187ad9fedbeb4866a2e5f"
-  integrity sha512-g8SLGxflI0/VNH2C8j66KcfJXrU5StJglRQBYPNiChXFlOrqqYM1icOykOAAUgTeBpktaEuCm9hjpPinQ080PA==
+ukkonen@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/ukkonen/-/ukkonen-2.1.0.tgz#7af741397e603462290aa5d4e65e514f400b29f7"
+  integrity sha512-unACtiJBMpL5Q+JKEBYtB88DVClP4Ch42NFkuj7Ck7jcJ4UKkkfvvfGQ2WeaMeuq7OIGLkbm0X7YN+TGP9C5bw==
 
 unbox-primitive@^1.0.1:
   version "1.0.1"
@@ -5620,10 +5620,10 @@ unexpected-bluebird@2.9.34-longstack2:
   resolved "https://registry.yarnpkg.com/unexpected-bluebird/-/unexpected-bluebird-2.9.34-longstack2.tgz#49acac753b0556ded6025210ee96182307d2b2c9"
   integrity sha1-SaysdTsFVt7WAlIQ7pYYIwfSssk=
 
-unexpected@13.0.1:
-  version "13.0.1"
-  resolved "https://registry.yarnpkg.com/unexpected/-/unexpected-13.0.1.tgz#8501ab965588d276c4cf63e72c1e61f0468a1e6a"
-  integrity sha512-zONsPi275j2rSvsJ9lPoVFNKJ50eJMaX08XMmnC0IXJasFnOXnqD1fZAWGlnK7hG6PeoYDLOiOsBSzbVYaWr9Q==
+unexpected@13.1.0:
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/unexpected/-/unexpected-13.1.0.tgz#fd4299d36d3911d7d8a32152a6461f0046a34791"
+  integrity sha512-5cJNtqeXwuf9hHKl8eD7cZtNhRfcmhNtZmK8XuLg7zQ1K/B7Au860YWblrjd9GnMdmsiYLCrU4mgWLJeBcDt7A==
   dependencies:
     array-changes "3.0.1"
     array-changes-async "3.0.1"
@@ -5631,7 +5631,7 @@ unexpected@13.0.1:
     diff "^5.0.0"
     greedy-interval-packer "1.2.0"
     magicpen "^6.2.4"
-    ukkonen "^1.4.0"
+    ukkonen "^2.1.0"
     unexpected-bluebird "2.9.34-longstack2"
 
 unique-filename@^2.0.0:
