@@ -22,12 +22,12 @@
     "medium": "1.2.0"
   },
   "devDependencies": {
-    "mocha": "10.2.0",
-    "sinon": "^15.0.0",
-    "unexpected": "13.0.1",
+    "mocha": "10.8.2",
+    "sinon": "^15.2.0",
+    "unexpected": "13.2.1",
     "unexpected-steps": "^7.0.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }

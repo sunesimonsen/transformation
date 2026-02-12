@@ -20,15 +20,15 @@
   "dependencies": {
     "@transformation/core": "^7.0.2",
     "@transformation/stream": "^7.0.2",
-    "csv-parser": "3.0.0",
+    "csv-parser": "3.2.0",
     "csv-writer": "1.6.0"
   },
   "devDependencies": {
-    "mocha": "10.2.0",
-    "unexpected": "13.0.1",
+    "mocha": "10.8.2",
+    "unexpected": "13.2.1",
     "unexpected-steps": "^7.0.0"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }
