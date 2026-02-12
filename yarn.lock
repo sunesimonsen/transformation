@@ -725,6 +725,38 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
+"@transformation/core@^7.0.1", "@transformation/core@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@transformation/core/-/core-7.0.2.tgz#acab9a8b6e958b5ad7856b10c672ffb12e17f271"
+  integrity sha512-Ux83vpJeFRJ96aq7zybEBJ5QmnqkV1FTOZhjW1TNT+U3H8VI+KR1SfEcclaW7FIawQQVTEStQCTYQvQRAYCMCw==
+  dependencies:
+    lru "^3.1.0"
+    medium "1.2.0"
+
+"@transformation/ejs@^7.0.1":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@transformation/ejs/-/ejs-7.0.2.tgz#5677ba5ca9296f4d48eccca6b321643cf07c85c9"
+  integrity sha512-wefkSPfKtTUPVPPo77KkoUYv8D8Ynga4i1uiRAH43JYqrQH5JCKDfXh5+G59dOR1U+Xi6DTxp9epNitqYprMSg==
+  dependencies:
+    "@transformation/core" "^7.0.2"
+    ejs "3.1.8"
+
+"@transformation/process@^7.0.1":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@transformation/process/-/process-7.0.2.tgz#94219f4361d633a8a46684c064cf2cd1c989d98f"
+  integrity sha512-6CBJcMJ1mDIykUqEIeTsbAHTnvFpxS/gQd9iKr2abH3Ts87pBh9uMO2PCNPMI+ewTsqwdNBao42x2ZAKjxzpHA==
+  dependencies:
+    "@transformation/core" "^7.0.2"
+    "@transformation/stream" "^7.0.2"
+    medium "1.2.0"
+
+"@transformation/stream@^7.0.1", "@transformation/stream@^7.0.2":
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/@transformation/stream/-/stream-7.0.2.tgz#6e9f34eddc7ac09c6bfef467926f23851c0b4aaa"
+  integrity sha512-GBo8Z6KqRea0yuKNKN2Fvw1oU6YR8WD4pWnUzS30TowQq4UXaFRBdrOAqoj1Ty+7HjqykLWAX2ra9Zfg0EcHoA==
+  dependencies:
+    "@transformation/core" "^7.0.2"
+
 "@tufjs/canonical-json@1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@tufjs/canonical-json/-/canonical-json-1.0.0.tgz#eade9fd1f537993bc1f0949f3aea276ecc4fab31"
@@ -1950,7 +1982,7 @@ ejs@3.1.10:
   dependencies:
     jake "^10.8.5"
 
-ejs@^3.1.7:
+ejs@3.1.8, ejs@^3.1.7:
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/ejs/-/ejs-3.1.8.tgz#758d32910c78047585c7ef1f92f9ee041c1c190b"
   integrity sha512-/sXZeMlhS0ArkfX2Aw780gJzXSMPnKjtspYZv+f3NiKLlubezAHDU5+9xz6gd3/NhG3txQCo6xlglmTS+oTGEQ==
