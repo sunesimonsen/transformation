@@ -1,3 +1,18 @@
+### v8.0.0 (2026-02-12)
+
+#### Pull requests
+
+- [#244](https://github.com/sunesimonsen/transformation/pull/244) Upgrade dependencies ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#243](https://github.com/sunesimonsen/transformation/pull/243) Update the required Node version to be v18 and up \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#238](https://github.com/sunesimonsen/transformation/pull/238) Bump lerna from 6.1.0 to 6.5.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#221](https://github.com/sunesimonsen/transformation/pull/221) Bump node-publisher from 1.6.0 to 3.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+- [#231](https://github.com/sunesimonsen/transformation/pull/231) Bump json5 from 1.0.1 to 1.0.2 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [v8.0.0](https://github.com/sunesimonsen/transformation/commit/dba775fb86680948677d4fc75e4405935849c156) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [Update changelog](https://github.com/sunesimonsen/transformation/commit/37b935b4d3e592eaab85cfb557f08dfead13af3c) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
+
 ### v7.0.2 (2022-12-18)
 
 #### Pull requests
@@ -164,7 +179,7 @@
 
 - [#160](https://github.com/sunesimonsen/transformation/pull/160) Fix empty partition when all partitions are full ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#154](https://github.com/sunesimonsen/transformation/pull/154) Switch from quick-lru to lru ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#153](https://github.com/sunesimonsen/transformation/pull/153) Retry step ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#153](https://github.com/sunesimonsen/transformation/pull/153) Retry step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#152](https://github.com/sunesimonsen/transformation/pull/152) Revert "Retry step" ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#151](https://github.com/sunesimonsen/transformation/pull/151) Retry step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#148](https://github.com/sunesimonsen/transformation/pull/148) Bump prettier from 2.2.1 to 2.4.1 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
@@ -184,12 +199,12 @@
 
 #### Pull requests
 
-- [#150](https://github.com/sunesimonsen/transformation/pull/150) Bail on errors ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#150](https://github.com/sunesimonsen/transformation/pull/150) Bail on errors ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#149](https://github.com/sunesimonsen/transformation/pull/149) Revert "Bail on errors" ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#145](https://github.com/sunesimonsen/transformation/pull/145) Bump tar from 4.4.15 to 4.4.19 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
 - [#142](https://github.com/sunesimonsen/transformation/pull/142) Bump eslint-plugin-mocha from 8.1.0 to 9.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
 - [#143](https://github.com/sunesimonsen/transformation/pull/143) Bump eslint-plugin-promise from 4.3.1 to 5.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
-- [#147](https://github.com/sunesimonsen/transformation/pull/147) Bail on errors ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#147](https://github.com/sunesimonsen/transformation/pull/147) Bail on errors ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
@@ -229,7 +244,7 @@
 
 #### Pull requests
 
-- [#105](https://github.com/sunesimonsen/transformation/pull/105) Remove Node 10 support \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#105](https://github.com/sunesimonsen/transformation/pull/105) Remove Node 10 support \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#104](https://github.com/sunesimonsen/transformation/pull/104) Bump eslint-config-prettier from 7.1.0 to 8.1.0 ([Sune Simonsen](mailto:sune@we-knowhow.dk), [dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
 - [#102](https://github.com/sunesimonsen/transformation/pull/102) Bump lerna from 3.22.1 to 4.0.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
 - [#101](https://github.com/sunesimonsen/transformation/pull/101) Bump eslint-plugin-mocha from 8.0.0 to 8.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
@@ -263,7 +278,7 @@
 #### Pull requests
 
 - [#73](https://github.com/sunesimonsen/transformation/pull/73) Add a debounce step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#72](https://github.com/sunesimonsen/transformation/pull/72) Add a throttle step ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#72](https://github.com/sunesimonsen/transformation/pull/72) Add a throttle step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#68](https://github.com/sunesimonsen/transformation/pull/68) Bump eslint-config-prettier from 6.7.0 to 6.15.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
 - [#69](https://github.com/sunesimonsen/transformation/pull/69) Bump eslint-plugin-standard from 4.0.2 to 4.1.0 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
 - [#70](https://github.com/sunesimonsen/transformation/pull/70) Bump csv-parser from 2.3.2 to 2.3.3 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
@@ -302,7 +317,7 @@
 
 #### Pull requests
 
-- [#56](https://github.com/sunesimonsen/transformation/pull/56) Change parallel to preserve output order ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#56](https://github.com/sunesimonsen/transformation/pull/56) Change parallel to preserve output order ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
@@ -379,7 +394,7 @@
 
 #### Pull requests
 
-- [#49](https://github.com/sunesimonsen/transformation/pull/49) Added a new @transformation\/file package for manipulating files ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#49](https://github.com/sunesimonsen/transformation/pull/49) Added a new @transformation\/file package for manipulating files ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#37](https://github.com/sunesimonsen/transformation/pull/37) Bump node-fetch from 2.6.0 to 2.6.1 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
 
 #### Commits to master
@@ -416,7 +431,7 @@
 
 #### Pull requests
 
-- [#46](https://github.com/sunesimonsen/transformation/pull/46) Let functions in a pipeline be flat map ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#46](https://github.com/sunesimonsen/transformation/pull/46) Let functions in a pipeline be flat map ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#35](https://github.com/sunesimonsen/transformation/pull/35) Bump lodash from 4.17.15 to 4.17.19 ([dependabot[bot]](mailto:49699333+dependabot[bot]@users.noreply.github.com))
 
 #### Commits to master
@@ -432,7 +447,7 @@
 
 #### Pull requests
 
-- [#43](https://github.com/sunesimonsen/transformation/pull/43) Added fromFileStream and toFileStream to @transformation\/stream ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#43](https://github.com/sunesimonsen/transformation/pull/43) Added fromFileStream and toFileStream to @transformation\/stream ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
@@ -454,7 +469,7 @@
 
 #### Pull requests
 
-- [#41](https://github.com/sunesimonsen/transformation/pull/41) Added a new process package \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#41](https://github.com/sunesimonsen/transformation/pull/41) Added a new process package \(Major\) ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
@@ -466,7 +481,7 @@
 #### Pull requests
 
 - [#40](https://github.com/sunesimonsen/transformation/pull/40) Add emitRepeat, skip and take steps ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#38](https://github.com/sunesimonsen/transformation/pull/38) Add a new emitRange step ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#38](https://github.com/sunesimonsen/transformation/pull/38) Add a new emitRange step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
@@ -505,7 +520,7 @@
 
 #### Pull requests
 
-- [#33](https://github.com/sunesimonsen/transformation/pull/33) Fix issues with handling errors in parallel ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#33](https://github.com/sunesimonsen/transformation/pull/33) Fix issues with handling errors in parallel ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
@@ -578,7 +593,7 @@
 
 #### Pull requests
 
-- [#26](https://github.com/sunesimonsen/transformation/pull/26) Adding a stream package for interoperating with Node streams ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#26](https://github.com/sunesimonsen/transformation/pull/26) Adding a stream package for interoperating with Node streams ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
@@ -675,7 +690,7 @@
 
 #### Pull requests
 
-- [#15](https://github.com/sunesimonsen/transformation/pull/15) Allow users to run a process pipeline on a child process ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#15](https://github.com/sunesimonsen/transformation/pull/15) Allow users to run a process pipeline on a child process ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
@@ -729,7 +744,7 @@
 
 #### Pull requests
 
-- [#7](https://github.com/sunesimonsen/transformation/pull/7) Document root project ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#7](https://github.com/sunesimonsen/transformation/pull/7) Document root project ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
@@ -742,7 +757,7 @@
 - [#5](https://github.com/sunesimonsen/transformation/pull/5) Added emitAll step ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#4](https://github.com/sunesimonsen/transformation/pull/4) Support varargs in takeAll ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 - [#3](https://github.com/sunesimonsen/transformation/pull/3) Setup Travis ([Sune Simonsen](mailto:sune@we-knowhow.dk))
-- [#1](https://github.com/sunesimonsen/transformation/pull/1) Documented the core API ([Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk), [Sune Simonsen](mailto:sune@we-knowhow.dk))
+- [#1](https://github.com/sunesimonsen/transformation/pull/1) Documented the core API ([Sune Simonsen](mailto:sune@we-knowhow.dk))
 
 #### Commits to master
 
