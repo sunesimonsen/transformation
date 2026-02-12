@@ -17,17 +17,17 @@
     "url": "https://github.com/sunesimonsen/transformation"
   },
   "devDependencies": {
-    "eslint": "8.29.0",
-    "eslint-config-prettier": "^8.1.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-mocha": "^10.1.0",
+    "eslint": "8.57.1",
+    "eslint-config-prettier": "^8.10.2",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-mocha": "^10.5.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-promise": "^6.6.0",
     "eslint-plugin-standard": "^5.0.0",
-    "lerna": "^6.1.0",
-    "node-publisher": "^3.0.0",
-    "prettier": "2.8.1"
+    "lerna": "^6.6.2",
+    "node-publisher": "^3.3.0",
+    "prettier": "2.8.8"
   },
   "workspaces": {
     "packages": [
@@ -35,9 +35,9 @@
     ]
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "dependencies": {
-    "eslint-plugin-n": "^15.6.0"
+    "eslint-plugin-n": "^15.7.0"
   }
 }
