@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@transformation/core": "^7.0.2",
-    "globby": "11.0.3"
+    "globby": "13.1.3"
   },
   "devDependencies": {
     "mocha": "10.2.0",
